@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- もりつく＋ v26（2026-07-19）
+<!-- もりつく＋ v27（2026-07-20）
      v24（単一10MB）から、HTML / CSS / JS / 画像 / データ に分割。見た目と動作は同一。
      更新するファイル： data/articles.json（記事） data/videos.json（動画） data/weather.json（天気・自動） -->
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>もりつく＋ | 守谷〜つくばをつなぐ、まちのテレビ局</title>
-<meta name="description" content="守谷・つくばみらい・つくば、TX沿線3市のニュース・イベント・グルメをお届けする、まちのテレビ局。">
+<title>もりつく＋ | 守谷〜つくばをつなぐ、まちの報道局</title>
+<meta name="description" content="守谷・つくばみらい・つくば、TX沿線3市のニュース・イベント・グルメをお届けする、まちの報道局。">
 <meta name="theme-color" content="#16203A">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -28,31 +28,14 @@
     <div class="head-top">
       <div class="brand">
         <div class="logo">もりつく<span class="plus" role="img" aria-label="プラス"></span></div>
-        <div class="tagline">守谷〜つくばをつなぐ、まちのテレビ局</div>
+        <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
       </div>
       <div class="onair-lamp"><span class="bulb"></span>ON AIR</div>
     </div>
-
-    <nav class="rail-nav" aria-label="地域で絞り込み">
-      <div class="rail">
-        <button class="station" data-city="all" aria-pressed="true" style="--stn:#ffffff">
-          <span class="dot"></span>すべて<span class="en">ALL LINE</span>
-        </button>
-        <button class="station" data-city="moriya" aria-pressed="false" style="--stn:var(--c-moriya)">
-          <span class="dot"></span>守谷<span class="en">MORIYA</span>
-        </button>
-        <button class="station" data-city="tsukubamirai" aria-pressed="false" style="--stn:var(--c-mirai)">
-          <span class="dot"></span>つくばみらい<span class="en">TSUKUBAMIRAI</span>
-        </button>
-        <button class="station" data-city="tsukuba" aria-pressed="false" style="--stn:var(--c-tsukuba)">
-          <span class="dot"></span>つくば<span class="en">TSUKUBA</span>
-        </button>
-      </div>
-    </nav>
   </div>
 </header>
 
-<!-- ② もりつく気象台（お天気コーナー。駅セレクタ連動で担当キャスターが交代） -->
+<!-- ② もりつく気象台（茨城県南部の予報1本。キャスターが日替わりで交代） -->
 <section class="weather-sec" id="sec-weather">
   <div class="wrap">
     <div class="sec-head">
@@ -79,13 +62,31 @@
             <h2 class="sec-title">まちの新着ニュース</h2>
           </div>
         </div>
+        <!-- 駅セレクタ（記事の地域絞り込み専用。v27でヘッダーからここへ移設） -->
+        <nav class="rail-nav" aria-label="地域で絞り込み">
+          <div class="rail">
+            <button class="station" data-city="all" aria-pressed="true" style="--stn:var(--ink)">
+              <span class="dot"></span>すべて
+            </button>
+            <button class="station" data-city="moriya" aria-pressed="false" style="--stn:var(--c-moriya)">
+              <span class="dot"></span>守谷
+            </button>
+            <button class="station" data-city="tsukubamirai" aria-pressed="false" style="--stn:var(--c-mirai)">
+              <span class="dot"></span>つくばみらい
+            </button>
+            <button class="station" data-city="tsukuba" aria-pressed="false" style="--stn:var(--c-tsukuba)">
+              <span class="dot"></span>つくば
+            </button>
+          </div>
+        </nav>
     <div class="genre-row" role="group" aria-label="ジャンルで絞り込み">
-      <button class="chip" data-cat="all" aria-pressed="true">すべて</button>
+      <button class="chip" data-cat="all" aria-pressed="true">最新記事</button>
       <button class="chip" data-cat="news" aria-pressed="false">ニュース</button>
       <button class="chip" data-cat="video" aria-pressed="false">動画</button>
       <button class="chip" data-cat="event" aria-pressed="false">イベント</button>
       <button class="chip" data-cat="gourmet" aria-pressed="false">グルメ</button>
       <button class="chip" data-cat="kids" aria-pressed="false">キッズ</button>
+      <button class="chip" data-cat="ibaraki" aria-pressed="false">県内全域</button>
         </div>
       </div>
     </div>
