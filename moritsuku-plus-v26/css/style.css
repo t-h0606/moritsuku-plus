@@ -1,0 +1,679 @@
+
+:root {
+  --studio: #16203A;        /* オンエア中のスタジオ（暗部セクション） */
+  --studio-deep: #101830;
+  --daylight: #FFFBF2;      /* 日中のまち（明部セクション） */
+  --ink: #1F2433;
+  --ink-sub: #6E7686;
+  --paper-line: #EBE3D2;
+  --onair: #FF4B5C;         /* ON AIR ランプ */
+  --c-moriya: #2FA36B;
+  --c-mirai: #F59E2D;
+  --c-tsukuba: #3D7BFF;
+  --radius: 16px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: var(--daylight);
+  color: var(--ink);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--c-tsukuba); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+.rounded { font-family: "M PLUS Rounded 1c", sans-serif; }
+
+/* ========== ① ロゴ + ② 駅セレクタ（スタジオヘッダー） ========== */
+.studio-head {
+  background:
+    radial-gradient(ellipse 90% 70% at 80% -10%, rgba(61,123,255,0.22), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 110%, rgba(255,75,92,0.12), transparent 60%),
+    var(--studio);
+  color: #fff;
+  padding: 26px 0 0;
+}
+.head-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.onair-lamp { flex-shrink: 0; }
+.brand { display: flex; flex-direction: column; gap: 4px; }
+.logo {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5.4vw, 3rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.logo .plus {
+  display: inline-grid;
+  place-items: center;
+  width: 0.94em; height: 0.94em;
+  margin-left: 6px;
+  border-radius: 26%;
+  background: var(--onair);
+  color: #fff;
+  font-size: 0.82em;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(255,75,92,0.45);
+}
+/* 全角「＋」グリフはベースライン基準で下寄りに見えるため::beforeで描画し光学補正 */
+.logo .plus::before { content: "＋"; transform: translateY(-0.09em); }
+.tagline {
+  font-size: 0.8rem;
+  color: #A9B5CC;
+  letter-spacing: 0.08em;
+}
+@media (max-width: 640px) {
+  .tagline { font-size: 0.64rem; letter-spacing: 0.04em; white-space: nowrap; }
+}
+.onair-lamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255,75,92,0.55);
+  background: rgba(255,75,92,0.1);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: #FF8B96;
+}
+.onair-lamp .bulb {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--onair);
+  box-shadow: 0 0 10px var(--onair);
+  animation: blink 1.8s ease-in-out infinite;
+}
+@keyframes blink { 50% { opacity: 0.25; box-shadow: none; } }
+
+/* 駅セレクタ */
+.rail-nav { padding: 26px 0 24px; overflow-x: auto; scrollbar-width: none; }
+@media (max-width: 640px) {
+  .studio-head { padding-top: 14px; }
+  .rail-nav { padding: 12px 0 12px; }
+}
+.rail-nav::-webkit-scrollbar { display: none; }
+.rail { position: relative; display: flex; justify-content: space-between; min-width: 500px; }
+.rail::before {
+  content: "";
+  position: absolute;
+  left: 46px; right: 46px; top: 7.5px;   /* 丸(20px)の中心=10px に線の中心を合わせる */
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #43536F, var(--c-moriya) 30%, var(--c-mirai) 62%, var(--c-tsukuba) 100%);
+  opacity: 0.85;
+}
+.station {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 0 12px;
+  color: #9DA9C0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.station .dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--studio);
+  border: 3.5px solid #55688C;
+  transition: all 0.2s;
+}
+.station:hover { color: #fff; }
+.station[aria-pressed="true"] { color: #fff; font-weight: 700; }
+.station[aria-pressed="true"] .dot {
+  background: #fff;
+  border-color: var(--stn, #fff);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--stn, #ffffff) 32%, transparent);
+}
+.station .en {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  color: #6E7F9E;
+  margin-top: -6px;
+}
+
+/* ========== ジャンル絞り込み（記事セクション内に配置） ========== */
+.genre-row {
+  display: flex; align-items: center; gap: 8px;
+  overflow-x: auto; scrollbar-width: none;
+  margin: -4px 0 20px;
+}
+.genre-row::-webkit-scrollbar { display: none; }
+.genre-label {
+  flex-shrink: 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.72rem;
+  color: var(--ink-sub); letter-spacing: 0.08em;
+}
+.chip {
+  flex-shrink: 0;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #DFD6C2;
+  background: #fff;
+  color: var(--ink-sub);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--studio); color: var(--studio); }
+.chip[aria-pressed="true"] { background: var(--studio); border-color: var(--studio); color: #fff; }
+
+/* ========== まちの新着ニュース：日替わりリポーター ========== */
+.news-head { position: relative; }
+/* 見出しはキャラの幅だけ右に逃がす。チップ行は全幅のまま、キャラの前面に重ねる */
+.news-head .sec-head { margin-bottom: 14px; padding-left: 98px; }
+.news-head .genre-row { margin-bottom: 0; position: relative; z-index: 1; }
+.news-caster {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 104px;
+  z-index: 0;              /* チップより背面 */
+  line-height: 0;
+  pointer-events: none;
+  animation: casterIn 0.5s ease-out both;
+}
+.news-caster img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 10px rgba(22,32,58,0.12));
+}
+@keyframes casterIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ========== 今週のオンエア：日替わり制作班スタッフ ========== */
+.onair-head { position: relative; display: inline-block; }
+.onair-caster {
+  position: absolute;
+  left: calc(100% - 11px);   /* 見出しの「ア」に少し重ねる */
+  bottom: -24px;             /* サムネイル上端に4px潜り込ませて隙間をなくす */
+  width: 96px;
+  height: 85px;              /* ← ここで下部をトリミング */
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+  animation: casterIn 0.5s ease-out both;
+}
+.onair-caster img { width: 100%; height: auto; display: block; }
+
+/* ========== セクション共通 ========== */
+section { padding: 44px 0 50px; }
+.sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.sec-title {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+}
+.sec-note { font-size: 0.74rem; color: var(--ink-sub); }
+.dark { background: var(--studio); color: #fff; }
+.dark.deep { background: var(--studio-deep); }
+.dark .sec-note { color: #8B98B4; }
+.eyebrow {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  color: var(--onair);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ========== ★ もりつく気象台（お天気コーナー番組） ========== */
+.weather-sec { padding: 34px 0 38px; background: #fff; border-bottom: 1px solid var(--paper-line); }
+.wx-stage {
+  position: relative;
+  display: flex; align-items: flex-end; gap: 20px;
+  border-radius: 22px;
+  padding: 20px 24px 20px 18px;
+  border: 1.5px solid rgba(31,36,51,0.08);
+}
+.wx-stage.sky-sun { background: linear-gradient(135deg, #D9F0FF 0%, #F4FBFF 55%, #FFF6DE 100%); }
+.wx-stage.sky-cloud { background: linear-gradient(135deg, #DDE8F2 0%, #EEF3F8 60%, #F7F9FB 100%); }
+.wx-stage.sky-rain { background: linear-gradient(135deg, #CBD8E6 0%, #E3EAF2 60%, #EFF3F8 100%); }
+.wx-caster {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  margin-top: -34px;
+}
+.wx-caster img { height: 148px; width: auto; filter: drop-shadow(0 8px 16px rgba(31,36,51,0.18)); }
+.wx-caster-tag {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.6rem; letter-spacing: 0.04em;
+  color: #fff; background: var(--cc, var(--onair));
+  padding: 3px 12px; border-radius: 999px; white-space: nowrap;
+}
+.wx-main { flex: 1; min-width: 0; }
+/* PC：今日の天気を大きく表示し、縦方向はセンター寄せで余白を分散 */
+@media (min-width: 641px) {
+  .wx-caster img { height: 182px; }
+  .wx-main { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .wx-bubble { font-size: 0.9rem; padding: 12px 18px; }
+  .wx-icon { font-size: 3.4rem; }
+  .wx-temp { font-size: 2.3rem; }
+  .wx-cond { font-size: 0.82rem; }
+  .wx-now { gap: 22px; }
+  .h-slot { min-width: 62px; padding: 10px 8px; }
+  .h-slot .h-icon { font-size: 1.35rem; }
+}
+.wx-bubble {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 16px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(31,36,51,0.08);
+  margin-bottom: 14px;
+  width: fit-content;
+}
+.wx-bubble::before {
+  content: "";
+  position: absolute; left: -9px; bottom: 14px;
+  border-style: solid; border-width: 7px 12px 7px 0;
+  border-color: transparent #fff transparent transparent;
+}
+.wx-now { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.wx-icon { font-size: 2.8rem; line-height: 1; }
+.wx-city { font-size: 0.76rem; color: var(--ink-sub); font-weight: 700; margin-bottom: 4px; }
+.wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
+.wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
+.wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
+.wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
+.h-slot {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  min-width: 56px; padding: 8px 6px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 14px;
+}
+.h-slot .h-time { font-size: 0.64rem; color: var(--ink-sub); font-weight: 700; }
+.h-slot .h-icon { font-size: 1.2rem; }
+.h-slot .h-temp { font-size: 0.78rem; font-weight: 700; }
+.wx-week { display: none; gap: 8px; overflow-x: auto; scrollbar-width: none; margin-top: 14px; }
+.wx-week::-webkit-scrollbar { display: none; }
+/* PC：週間予報はカード右側のパネルに格納（左側と高さが揃うようコンパクトに） */
+.wx-week-side {
+  flex-shrink: 0;
+  width: 212px;
+  align-self: flex-end;
+  background: rgba(255,255,255,0.75);
+  border-radius: 16px;
+  padding: 8px 14px 10px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.ws-title {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.66rem;
+  color: var(--ink-sub); letter-spacing: 0.08em;
+  padding-bottom: 3px;
+}
+.ws-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.71rem; font-weight: 700;
+  padding: 0 6px; border-radius: 8px;
+  line-height: 1.45;
+}
+.ws-row.today { background: color-mix(in srgb, var(--cc, var(--onair)) 12%, #fff); }
+.ws-row .ws-d { width: 2.6em; color: var(--ink-sub); font-weight: 700; font-size: 0.68rem; }
+.ws-row .ws-i { font-size: 1rem; }
+.ws-row .ws-t { margin-left: auto; }
+.ws-row .ws-t .lo { color: var(--ink-sub); font-weight: 500; }
+@media (max-width: 640px) { .wx-week-side { display: none; } }
+.w-day {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-width: 68px; padding: 10px 6px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid var(--paper-line);
+}
+.w-day.today {
+  border-color: var(--cc, var(--onair));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cc, var(--onair)) 16%, transparent);
+}
+.w-day .d-label { font-size: 0.66rem; color: var(--ink-sub); font-weight: 700; }
+.w-day .d-icon { font-size: 1.3rem; }
+.w-day .d-temp { font-size: 0.72rem; font-weight: 700; }
+.w-day .d-temp .lo { color: var(--ink-sub); font-weight: 500; }
+.weather-note { font-size: 0.68rem; color: var(--ink-sub); margin-top: 12px; }
+.wx-week-toggle { display: none; }
+.wx-foot { display: contents; }
+.wx-note-inline { display: none; }
+@media (max-width: 640px) {
+  /* 1段目:名前タグ／2段目:吹き出し／キャラは左で2段ぶち抜き／3段目:今日の天気＋時間帯予報 */
+  .wx-stage {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 6px 10px;
+    padding: 12px;
+  }
+  .wx-caster { display: contents; }
+  .wx-caster img { grid-column: 1; grid-row: 1 / 3; height: 84px; align-self: end; }
+  .wx-caster-tag { grid-column: 2; grid-row: 1; justify-self: start; font-size: 0.56rem; padding: 3px 10px; }
+  .wx-main { display: contents; }
+  .wx-bubble {
+    grid-row: 2; grid-column: 2;
+    align-self: start;
+    margin: 0;
+    font-size: 0.75rem; padding: 8px 12px;
+  }
+  .wx-city { grid-row: 3; grid-column: 1 / -1; margin-bottom: 0; }
+  .wx-now {
+    grid-row: 4; grid-column: 1 / -1;
+    display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;
+  }
+  .wx-icon { font-size: 1.9rem; }
+  .wx-temp { font-size: 1.5rem; }
+  .wx-hourly { flex: 1; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .wx-hourly::-webkit-scrollbar { display: none; }
+  .h-slot { flex: 0 0 auto; min-width: 48px; padding: 5px 4px; }
+  /* 週間予報はタップで開閉（コンパクト化のため既定は非表示） */
+  .wx-week { display: none; }
+  .wx-week.open { display: flex; margin-top: 10px; }
+  .wx-foot { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .wx-note-inline { display: inline; font-size: 0.6rem; color: var(--ink-sub); }
+  .wx-week-toggle {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid var(--paper-line);
+    background: #fff;
+    color: var(--ink-sub);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700; font-size: 0.74rem;
+  }
+  .wx-week-toggle::after { content: "▼"; font-size: 0.6rem; }
+  .wx-week-toggle.open::after { content: "▲"; }
+  .weather-note { display: none; }
+}
+
+/* ========== ④ おすすめ動画（メイン1+サブ2） ========== */
+.video-lead { display: grid; grid-template-columns: 1.9fr 1fr; gap: 16px; }
+.screen {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  display: block;
+  transition: transform 0.18s;
+}
+.screen:hover { transform: translateY(-3px); }
+.screen svg { width: 100%; height: 100%; display: block; }
+.screen .play {
+  position: absolute; inset: 0; margin: auto;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: grid; place-items: center;
+  transition: transform 0.18s;
+}
+.screen .play::after {
+  content: "";
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--studio);
+  margin-left: 4px;
+}
+.screen:hover .play { transform: scale(1.08); }
+.screen .dur {
+  position: absolute; right: 10px; bottom: 10px;
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.screen .rec {
+  position: absolute; left: 12px; top: 10px;
+  display: flex; align-items: center; gap: 6px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.screen .rec i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--onair);
+  box-shadow: 0 0 8px var(--onair);
+}
+.v-sub { display: flex; flex-direction: column; gap: 16px; }
+.v-sub .screen { flex: 1; }
+.v-sub .screen .play { width: 44px; height: 44px; }
+.v-sub .screen .play::after { border-width: 8px 0 8px 13px; }
+.v-caption { margin-top: 10px; }
+.v-caption .t { font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+.v-caption .m { font-size: 0.72rem; color: #8B98B4; margin-top: 2px; }
+.video-lead .main .v-caption .t { font-size: 1.1rem; }
+
+/* ========== ⑤ 次の放送 ========== */
+.next-strip {
+  margin-top: 34px;
+  border-radius: var(--radius);
+  border: 1.5px dashed rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.05);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.next-thumb {
+  width: 190px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.next-thumb svg { width: 100%; height: 100%; }
+.next-avatar {
+  width: 76px; height: 76px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
+}
+.next-body { flex: 1; min-width: 220px; }
+.next-label {
+  display: inline-block;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  color: var(--studio);
+  background: #FFD34D;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.next-body .t { font-weight: 700; font-size: 1.05rem; }
+.next-body .d { font-size: 0.8rem; color: #A9B5CC; margin-top: 4px; }
+
+/* ========== ⑥ 記事カード ========== */
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+@media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
+.card {
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px 20px;
+  display: flex; flex-direction: row; gap: 14px; align-items: stretch;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.card .meta { margin-top: auto; }
+.thumb {
+  flex-shrink: 0; align-self: center;
+  width: 84px; height: 84px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  font-size: 2rem;
+  overflow: hidden;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* 先頭記事のフィーチャー型：サムネイル大・上部配置 */
+.card.featured { flex-direction: column; grid-column: 1 / -1; padding: 14px 14px 15px; gap: 12px; }
+.card.featured .thumb-lg {
+  width: 100%; height: auto;
+  aspect-ratio: 16 / 9;
+  align-self: stretch;
+  font-size: 3.6rem;
+}
+.card.featured .card-main { padding: 0 6px 0 8px; }
+.card.featured .title { font-size: 1.08rem; line-height: 1.45; }
+/* PC：フィーチャー型は横並び（16:9サムネ左＋テキスト右） */
+@media (min-width: 641px) {
+  .card.featured { flex-direction: row; align-items: center; gap: 20px; }
+  .card.featured .thumb-lg { width: 46%; align-self: center; }
+  .card.featured .card-main { padding: 6px 10px 6px 0; justify-content: center; }
+  .card.featured .title { flex-grow: 0; margin-bottom: 8px; }
+}
+@media (max-width: 640px) {
+  .thumb { width: 76px; height: 76px; font-size: 1.7rem; }
+  .card.featured .thumb-lg { width: 100%; height: auto; max-height: 220px; font-size: 3rem; }
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(31,36,51,0.09); }
+.badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.cat {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 10px; border-radius: 999px; color: #fff;
+}
+.cat.news { background: #4A5A7A; }
+.cat.event { background: #8B5CD6; }
+.cat.gourmet { background: #E8603C; }
+.cat.kids { background: #E85D9C; }
+.city-badge {
+  font-size: 0.66rem; font-weight: 700;
+  padding: 2px 9px; border-radius: 999px; border: 1.5px solid;
+}
+.city-badge.moriya { color: var(--c-moriya); border-color: var(--c-moriya); }
+.city-badge.tsukubamirai { color: #C97D14; border-color: var(--c-mirai); }
+.city-badge.tsukuba { color: var(--c-tsukuba); border-color: var(--c-tsukuba); }
+.card .title { font-weight: 700; font-size: 0.95rem; line-height: 1.4; flex-grow: 1; }
+.card .meta { display: flex; gap: 8px; font-size: 0.7rem; color: var(--ink-sub); }
+.card .meta .src { font-weight: 700; }
+.card .meta .arrow { margin-left: auto; color: var(--c-tsukuba); font-weight: 700; }
+.empty { text-align: center; color: var(--ink-sub); padding: 40px 0; font-size: 0.88rem; }
+
+/* ========== ⑦ 過去放送（横スクロール） ========== */
+.shelf {
+  display: flex; gap: 14px;
+  overflow-x: auto;
+  padding: 4px 2px 14px;
+  scroll-snap-type: x mandatory;
+}
+.shelf::-webkit-scrollbar { height: 8px; }
+.shelf::-webkit-scrollbar-thumb { background: #3A4763; border-radius: 4px; }
+.shelf .item { flex: 0 0 250px; scroll-snap-align: start; }
+.shelf .screen .play { width: 40px; height: 40px; }
+.shelf .screen .play::after { border-width: 7px 0 7px 12px; }
+.ep-no {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
+  color: #8B98B4;
+}
+
+/* ========== ⑧ スタッフのお仕事 ========== */
+.staff-sec { background: #FFF3DC; }
+.staff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.staff-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid #F1E2C2;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.staff-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(120,90,20,0.14); }
+.avatar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.avatar img { width: 100%; height: 100%; object-fit: contain; }
+.staff-card .body { padding: 16px 18px 20px; }
+.staff-card .role {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em;
+  color: #B78219;
+}
+.staff-card .name { font-weight: 700; font-size: 0.95rem; }
+.staff-card .blog { font-size: 0.78rem; color: var(--ink-sub); margin-top: 4px; line-height: 1.6; }
+.staff-note {
+  margin-top: 18px;
+  font-size: 0.74rem;
+  color: #A08248;
+  text-align: center;
+}
+
+/* ========== フッター ========== */
+footer {
+  background: var(--studio-deep);
+  color: #7B88A6;
+  padding: 34px 0;
+  font-size: 0.72rem;
+  line-height: 2;
+}
+footer .f-logo {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1rem; color: #fff;
+}
+footer .links { display: flex; gap: 16px; flex-wrap: wrap; margin: 6px 0; }
+footer .links a:hover { color: #fff; }
+footer .disc { color: #566280; }
+
+@media (max-width: 760px) {
+  .video-lead { grid-template-columns: 1fr; }
+  .v-sub { flex-direction: row; }
+  .v-sub .screen { flex: 1; }
+  section { padding: 34px 0 40px; }
+}
+@media (max-width: 640px) {
+  section { padding: 22px 0 30px; }
+  .sec-head { margin-bottom: 12px; }
+  .weather-sec { padding: 12px 0 16px; }
+  .weather-sec .sec-head { margin-bottom: 8px; }
+  /* 6ジャンルを1行・1画面幅に収める（均等割り） */
+  .genre-row { margin: -4px 0 12px; gap: 4px; flex-wrap: nowrap; overflow: visible; }
+  .chip { flex: 1; min-width: 0; text-align: center; padding: 6px 2px; font-size: 0.68rem; letter-spacing: 0; }
+  /* スマホ：キャラは小さめ。チップ行は全幅のまま（背面にキャラが重なる） */
+  .news-caster { width: 72px; bottom: 13px; left: -8px; }
+  /* スマホは見出し下マージンが12pxなので、トリミング位置もそれに合わせる */
+  .onair-caster { width: 76px; height: 69px; bottom: -16px; left: calc(100% - 9px); }
+  .news-head .sec-head { margin-bottom: 8px; padding-left: 68px; }
+  /* 駅セレクタを横スクロールなしで1画面に収める */
+  .rail { min-width: 0; }
+  .station { padding: 0 2px; font-size: 0.7rem; gap: 6px; }
+  .station .en { font-size: 0.4rem; letter-spacing: 0.03em; margin-top: -4px; }
+  .station .dot { width: 15px; height: 15px; border-width: 3px; }
+  .rail::before { left: 24px; right: 24px; top: 5.5px; height: 4px; }  /* 丸(15px)の中心=7.5px */
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
