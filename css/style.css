@@ -100,52 +100,42 @@ img { display: block; max-width: 100%; }
 }
 @keyframes blink { 50% { opacity: 0.25; box-shadow: none; } }
 
-/* 駅セレクタ */
-.rail-nav { padding: 26px 0 24px; overflow-x: auto; scrollbar-width: none; }
-@media (max-width: 640px) {
-  .studio-head { padding-top: 14px; }
-  .rail-nav { padding: 12px 0 12px; }
-}
+/* 駅セレクタ（v27でヘッダー内の暗い背景から、記事セクションの明るい背景へ移設）
+   路線図の見立ては維持しつつ、白地で沈まないよう線と丸の色を作り直している */
+.rail-nav { padding: 2px 0 14px; overflow-x: auto; scrollbar-width: none; }
 .rail-nav::-webkit-scrollbar { display: none; }
-.rail { position: relative; display: flex; justify-content: space-between; min-width: 500px; }
+.rail { position: relative; display: flex; justify-content: space-between; min-width: 0; }
 .rail::before {
   content: "";
   position: absolute;
-  left: 46px; right: 46px; top: 7.5px;   /* 丸(20px)の中心=10px に線の中心を合わせる */
+  left: 40px; right: 40px; top: 4.5px;   /* 丸(14px)の中心=7px に線の中心を合わせる */
   height: 5px;
   border-radius: 3px;
-  background: linear-gradient(90deg, #43536F, var(--c-moriya) 30%, var(--c-mirai) 62%, var(--c-tsukuba) 100%);
-  opacity: 0.85;
+  background: linear-gradient(90deg, #C3CBDA, var(--c-moriya) 30%, var(--c-mirai) 62%, var(--c-tsukuba) 100%);
+  opacity: 0.9;
 }
 .station {
   position: relative; z-index: 1;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  padding: 0 12px;
-  color: #9DA9C0;
-  font-size: 0.84rem;
-  font-weight: 500;
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  padding: 0 10px;
+  color: var(--ink-sub);
+  font-size: 0.78rem;
+  font-weight: 600;
   transition: color 0.2s;
 }
 .station .dot {
-  width: 20px; height: 20px;
+  width: 14px; height: 14px;
   border-radius: 50%;
-  background: var(--studio);
-  border: 3.5px solid #55688C;
+  background: var(--paper);
+  border: 3px solid #B9C2D3;
   transition: all 0.2s;
 }
-.station:hover { color: #fff; }
-.station[aria-pressed="true"] { color: #fff; font-weight: 700; }
+.station:hover { color: var(--ink); }
+.station[aria-pressed="true"] { color: var(--ink); font-weight: 800; }
 .station[aria-pressed="true"] .dot {
-  background: #fff;
-  border-color: var(--stn, #fff);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--stn, #ffffff) 32%, transparent);
-}
-.station .en {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 0.56rem;
-  letter-spacing: 0.16em;
-  color: #6E7F9E;
-  margin-top: -6px;
+  background: var(--stn, var(--ink));
+  border-color: var(--stn, var(--ink));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--stn, #1F2433) 20%, transparent);
 }
 
 /* ========== ジャンル絞り込み（記事セクション内に配置） ========== */
@@ -184,7 +174,7 @@ img { display: block; max-width: 100%; }
 .news-caster {
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -2px;   /* 足元がチップ行の下端に揃う */
   width: 104px;
   z-index: 0;              /* チップより背面 */
   line-height: 0;
@@ -566,6 +556,7 @@ section { padding: 44px 0 50px; }
 .cat.event { background: #8B5CD6; }
 .cat.gourmet { background: #E8603C; }
 .cat.kids { background: #E85D9C; }
+.cat.ibaraki { background: #0E9AA7; }   /* 県内全域＝3市の外側。他ジャンルと混ざらない青緑 */
 .city-badge {
   font-size: 0.66rem; font-weight: 700;
   padding: 2px 9px; border-radius: 999px; border: 1.5px solid;
@@ -661,18 +652,19 @@ footer .disc { color: #566280; }
   .weather-sec .sec-head { margin-bottom: 8px; }
   /* 6ジャンルを1行・1画面幅に収める（均等割り） */
   .genre-row { margin: -4px 0 12px; gap: 4px; flex-wrap: nowrap; overflow: visible; }
-  .chip { flex: 1; min-width: 0; text-align: center; padding: 6px 2px; font-size: 0.68rem; letter-spacing: 0; }
+  /* ジャンル7種を1行に収める。4文字（最新記事・県内全域）が折り返さない字送りにしている */
+  .chip { flex: 1; min-width: 0; text-align: center; padding: 6px 1px;
+          font-size: 0.6rem; letter-spacing: -0.01em; white-space: nowrap; }
   /* スマホ：キャラは小さめ。チップ行は全幅のまま（背面にキャラが重なる） */
   .news-caster { width: 72px; bottom: 13px; left: -8px; }
   /* スマホは見出し下マージンが12pxなので、トリミング位置もそれに合わせる */
   .onair-caster { width: 76px; height: 69px; bottom: -16px; left: calc(100% - 9px); }
   .news-head .sec-head { margin-bottom: 8px; padding-left: 68px; }
   /* 駅セレクタを横スクロールなしで1画面に収める */
-  .rail { min-width: 0; }
-  .station { padding: 0 2px; font-size: 0.7rem; gap: 6px; }
-  .station .en { font-size: 0.4rem; letter-spacing: 0.03em; margin-top: -4px; }
-  .station .dot { width: 15px; height: 15px; border-width: 3px; }
-  .rail::before { left: 24px; right: 24px; top: 5.5px; height: 4px; }  /* 丸(15px)の中心=7.5px */
+  .rail-nav { padding: 0 0 10px; }
+  .station { padding: 0 2px; font-size: 0.66rem; gap: 5px; }
+  .station .dot { width: 12px; height: 12px; border-width: 2.5px; }
+  .rail::before { left: 26px; right: 26px; top: 4px; height: 4px; }  /* 丸(12px)の中心=6px */
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
