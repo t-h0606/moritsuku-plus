@@ -7,11 +7,11 @@
    ===================================================================== */
 
 const CITY_NAMES = { moriya: "守谷", tsukuba: "つくば", tsukubamirai: "つくばみらい" };
-const CAT_NAMES = { news: "ニュース", event: "イベント", gourmet: "グルメ", kids: "キッズ" };
+const CAT_NAMES = { news: "ニュース", event: "イベント", gourmet: "グルメ", kids: "キッズ", ibaraki: "県内全域" };
 
 // 読み込んだデータの置き場
 let ARTICLES = [], VIDEOS = {}, WEATHER = {}, STAFF = [];
-let CASTERS = {}, WX_COMMENTS = {}, NEWS_REPORTERS = [], ONAIR_STAFF = [], NEXT_AVATAR_IDX = 2;
+let WX_CASTERS = [], WX_COMMENTS = {}, NEWS_REPORTERS = [], ONAIR_STAFF = [], NEXT_AVATAR_IDX = 2;
 
 let state = { city: "all", cat: "all", weekOpen: false };
 
@@ -34,14 +34,14 @@ async function boot() {
     ]);
 
     STAFF = staff.staff;
-    CASTERS = staff.casters;
+    WX_CASTERS = staff.wxCasters;
     WX_COMMENTS = staff.wxComments;
     NEWS_REPORTERS = staff.newsReporters;
     ONAIR_STAFF = staff.onairStaff;
     NEXT_AVATAR_IDX = staff.nextAvatarIdx;
     ARTICLES = articles.items;
     VIDEOS = videos;
-    WEATHER = weather.areas;
+    WEATHER = weather;
 
     renderFeed();
     renderVideo();
@@ -54,7 +54,7 @@ async function boot() {
     bindControls();
 
     // ページを開きっぱなしでも午前5時をまたいだら自動で交代する
-    setInterval(() => { renderNewsCaster(); renderOnairCaster(); }, 60 * 1000);
+    setInterval(() => { renderNewsCaster(); renderOnairCaster(); renderWeather(); }, 60 * 1000);
   } catch (e) {
     console.error(e);
     document.getElementById("feed").innerHTML =
@@ -73,8 +73,10 @@ function wxType(w) {
 }
 
 function renderWeather() {
-  const w = WEATHER[state.city] || WEATHER.all;
-  const c = CASTERS[state.city] || CASTERS.all;
+  // 気象庁の予報単位は「茨城県南部」で、3市に分かれない。
+  // よって天気は常に1本。駅セレクタを押しても変わらない（記事だけが絞り込まれる）
+  const w = WEATHER.forecast;
+  const c = pickOfDay(WX_CASTERS);   // キャスターは午前5時交代の日替わり
   const type = wxType(w);
   const sky = type === "rain" ? "sky-rain" : type === "cloud" ? "sky-cloud" : "sky-sun";
   const now = new Date();
@@ -86,7 +88,7 @@ function renderWeather() {
         <span class="wx-caster-tag">${c.name} ${c.label}</span>
       </div>
       <div class="wx-main">
-        <div class="wx-bubble">${WX_COMMENTS[state.city][type]}</div>
+        <div class="wx-bubble">${WX_COMMENTS[c.comments][type]}</div>
         <div class="wx-city">${dateStr}｜${w.city}</div>
         <div class="wx-now">
           <div class="wx-icon">${w.icon}</div>
@@ -142,7 +144,8 @@ const CAT_TINTS = {
   news:    ["#2E3F63", "#5A76AC"],
   event:   ["#7A4FD0", "#B48CFF"],
   gourmet: ["#E8603C", "#FFB870"],
-  kids:    ["#E85D9C", "#FFA8CF"]
+  kids:    ["#E85D9C", "#FFA8CF"],
+  ibaraki: ["#0E7C87", "#5FC9D4"]
 };
 function thumbHTML(a, cls) {
   if (a.thumb) return `<span class="thumb ${cls}"><img src="${a.thumb}" alt=""></span>`;
@@ -179,9 +182,14 @@ function linkAttrs(url) {
 }
 
 function renderFeed() {
-  const list = ARTICLES.filter(a =>
-    (state.city === "all" || a.city.includes(state.city)) &&
-    (state.cat === "all" || state.cat === "video" || a.category === state.cat));
+  // 「県内全域」は3市に属さない記事。専用タブの中だけに出し、他のタブには一切混ざらない
+  const list = ARTICLES.filter(a => {
+    if (state.cat === "ibaraki") return a.category === "ibaraki";
+    if (a.category === "ibaraki") return false;
+    const cityOk = state.city === "all" || (a.city || []).includes(state.city);
+    const catOk = state.cat === "all" || state.cat === "video" || a.category === state.cat;
+    return cityOk && catOk;
+  });
   document.getElementById("emptyNote").hidden = list.length > 0;
   document.getElementById("feed").innerHTML = list.map((a, i) => {
     const badges = `
@@ -372,7 +380,7 @@ function setPressed(sel, attr, val) {
 
 function bindControls() {
   document.querySelectorAll(".station").forEach(b => b.addEventListener("click", () => {
-    state.city = b.dataset.city; setPressed(".station", "city", state.city); renderFeed(); renderWeather();
+    state.city = b.dataset.city; setPressed(".station", "city", state.city); renderFeed();
   }));
   document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
     state.cat = b.dataset.cat; setPressed(".chip", "cat", state.cat);
