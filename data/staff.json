@@ -58,32 +58,6 @@
       "img": "images/hayabusa-sora.webp"
     }
   ],
-  "casters": {
-    "all": {
-      "idx": 1,
-      "label": "アナウンサー",
-      "name": "四六ガマ子",
-      "cc": "#FF4B5C"
-    },
-    "moriya": {
-      "idx": 5,
-      "label": "守谷担当",
-      "name": "カワセミドリ",
-      "cc": "#2FA36B"
-    },
-    "tsukubamirai": {
-      "idx": 6,
-      "label": "つくばみらい担当",
-      "name": "白鷺ノン",
-      "cc": "#F59E2D"
-    },
-    "tsukuba": {
-      "idx": 7,
-      "label": "つくば担当",
-      "name": "隼ソラ",
-      "cc": "#3D7BFF"
-    }
-  },
   "wxComments": {
     "all": {
       "sun": "本日は晴れ！絶好のお出かけ日和です（噛まずに言えました）",
@@ -138,5 +112,35 @@
       "label": "AD"
     }
   ],
-  "nextAvatarIdx": 2
+  "nextAvatarIdx": 2,
+  "wxCasters": [
+    {
+      "idx": 1,
+      "name": "四六ガマ子",
+      "label": "アナウンサー",
+      "cc": "#FF4B5C",
+      "comments": "all"
+    },
+    {
+      "idx": 5,
+      "name": "カワセミドリ",
+      "label": "守谷担当リポーター",
+      "cc": "#2FA36B",
+      "comments": "moriya"
+    },
+    {
+      "idx": 6,
+      "name": "白鷺ノン",
+      "label": "つくばみらい担当リポーター",
+      "cc": "#F59E2D",
+      "comments": "tsukubamirai"
+    },
+    {
+      "idx": 7,
+      "name": "隼ソラ",
+      "label": "つくば担当リポーター",
+      "cc": "#3D7BFF",
+      "comments": "tsukuba"
+    }
+  ]
 }
