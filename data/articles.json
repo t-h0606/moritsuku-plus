@@ -145,7 +145,16 @@
       ],
       "category": "gourmet",
       "url": ""
+    },
+    {
+      "title": "茨城県、県内観光施設のバリアフリー化に補助金　2026年度から受付開始",
+      "source": "サンプル県政ニュース",
+      "date": "2026-07-15",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": ""
     }
   ],
-  "_つかいかた": "items の先頭が大きなカードになります。date は YYYY-MM-DD（同日なら YYYY-MM-DDTHH:MM）。「2日前」などの表示は date から自動計算されます。"
+  "_つかいかた": "items の先頭が大きなカードになります。date は YYYY-MM-DD（同日なら YYYY-MM-DDTHH:MM）。category は news/event/gourmet/kids/ibaraki。3市以外の県内ニュースは ibaraki を使い、city は [] のままにします。"
 }
