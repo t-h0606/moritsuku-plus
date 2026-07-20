@@ -1,4 +1,4 @@
-# もりつく＋ v25（ファイル分離版）
+# もりつく＋ v27
 
 v24までは1枚10MBのHTMLでしたが、中身を種類ごとに分けました。**見た目と動作はv24と同一**です（PC・スマホとも全要素の位置が1pxも変わっていないことを確認済み）。
 
@@ -41,7 +41,7 @@ data/staff.json     キャラ設定・気象台のセリフ
 | 項目 | 入れるもの |
 |---|---|
 | city | `moriya` `tsukubamirai` `tsukuba` から選ぶ。複数可（3市共通の話題なら3つ並べる） |
-| category | `news` `event` `gourmet` `kids` のどれか |
+| category | `news` `event` `gourmet` `kids` `ibaraki` のどれか。`ibaraki`（県内全域）は3市以外の県内ニュース用で、`city` は空 `[]` にします |
 | emoji | サムネイルが無いときに出る絵文字 |
 | url | 配信元の記事URL。空だとリンクしません |
 | thumb | 先頭記事だけ使います。`images/thumbs/2026-07-19-cafe.webp` のように書く |
