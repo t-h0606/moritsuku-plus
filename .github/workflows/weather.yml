@@ -1,0 +1,41 @@
+# もりつく気象台の自動更新
+# 1時間ごとに気象庁から予報を取得し、data/weather.json を書き換えます。
+name: 天気の自動更新
+
+on:
+  schedule:
+    # UTC基準。毎時10分に実行（日本時間では毎時10分）
+    - cron: "10 * * * *"
+  workflow_dispatch:      # 手動で実行するボタンも出す
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weather
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 気象庁から取得して weather.json を更新
+        run: python scripts/update_weather.py
+
+      - name: 変更があればコミット
+        run: |
+          if git diff --quiet -- data/weather.json; then
+            echo "変化なし。コミットしません。"
+            exit 0
+          fi
+          git config user.name  "moritsuku-bot"
+          git config user.email "action@github.com"
+          git add data/weather.json
+          git commit -m "天気を更新（自動）"
+          git push
