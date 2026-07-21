@@ -287,9 +287,16 @@ section { padding: 26px 0 40px; }
 .wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
 .wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
 .wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
-.wx-hourly-wrap { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+/* 降水確率の枠と注釈。注釈は枠の下に重ねて置き、縦の高さを増やさない */
+.wx-hourly-wrap { position: relative; display: flex; flex-direction: column; min-width: 0; }
 .wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
-.wx-hourly-note { font-size: 0.6rem; color: var(--ink-sub); }
+.wx-hourly-note {
+  position: absolute; top: 100%; right: 0;
+  margin-top: 3px;
+  font-size: 0.6rem; color: var(--ink-sub); white-space: nowrap;
+}
+/* 注釈は絶対配置でカード外に出るため、下に居場所を確保しておく */
+.wx-now { margin-bottom: 16px; }
 .h-slot {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   min-width: 74px; padding: 8px 6px;
@@ -372,6 +379,7 @@ section { padding: 26px 0 40px; }
   .wx-now {
     grid-row: 4; grid-column: 1 / -1;
     display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;
+    margin-bottom: 12px;   /* 右下に出る「％＝降水確率」のぶん */
   }
   .wx-icon { font-size: 1.9rem; }
   .wx-temp { font-size: 1.5rem; }
@@ -549,14 +557,18 @@ section { padding: 26px 0 40px; }
 .card.featured .title { font-size: 1.08rem; line-height: 1.45; }
 /* PC：フィーチャー型は横並び（16:9サムネ左＋テキスト右） */
 @media (min-width: 641px) {
-  .card.featured { flex-direction: row; align-items: center; gap: 20px; }
-  .card.featured .thumb-lg { width: 46%; align-self: center; }
-  .card.featured .card-main { padding: 6px 10px 6px 0; justify-content: center; }
+  .card.featured { flex-direction: row; align-items: flex-start; gap: 20px; }
+  .card.featured .thumb-lg { width: 46%; align-self: flex-start; }
+  /* テキストは上詰め。見出しが枠の一番上に来るようにする */
+  .card.featured .card-main { padding: 2px 10px 6px 0; justify-content: flex-start; }
   .card.featured .title { flex-grow: 0; margin-bottom: 8px; }
 }
 @media (max-width: 640px) {
   .thumb { width: 76px; height: 76px; font-size: 1.7rem; }
-  .card.featured .thumb-lg { width: 100%; height: auto; max-height: 220px; font-size: 3rem; }
+  /* スマホ：先頭記事は見出しを先に見せる（サムネイルは下に回す） */
+  .card.featured { flex-direction: column; }
+  .card.featured .card-main { order: 1; }
+  .card.featured .thumb-lg { order: 2; width: 100%; height: auto; max-height: 220px; font-size: 3rem; }
 }
 .card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(31,36,51,0.09); }
 .badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
