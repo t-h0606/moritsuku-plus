@@ -189,7 +189,7 @@ def build(raw, now=None):
     #
     # 気象庁の時刻は「その6時間の始まり」を指す：
     #   00:00→夜中〜朝  06:00→朝〜昼  12:00→昼〜夕  18:00→夕〜夜
-    LABELS = {0: "0-6", 6: "6-12", 12: "12-18", 18: "18-24"}
+    LABELS = {0: "00-06", 6: "06-12", 12: "12-18", 18: "18-24"}
     hourly = []
     seen = set()
     for t_, p in zip(pop_times, pops):
@@ -200,7 +200,7 @@ def build(raw, now=None):
             continue
         seen.add(key)
         hourly.append({
-            "t": LABELS.get(t_.hour, str(t_.hour)) + "時",
+            "t": LABELS.get(t_.hour, str(t_.hour)),
             "day": "今日" if t_.date() == today else "明日",
             "icon": hour_icon(emoji, p, t_.hour),
             "pop": p,

@@ -287,15 +287,17 @@ section { padding: 26px 0 40px; }
 .wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
 .wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
 .wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
+.wx-hourly-wrap { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
+.wx-hourly-note { font-size: 0.6rem; color: var(--ink-sub); }
 .h-slot {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   min-width: 74px; padding: 8px 6px;
   background: rgba(255,255,255,0.75);
   border-radius: 14px;
 }
-.h-slot .h-time { font-size: 0.62rem; color: var(--ink-sub); font-weight: 700; white-space: nowrap; }
-.h-day { display: block; font-size: 0.85em; opacity: 0.85; }
+.h-slot .h-time { font-size: 0.72rem; color: var(--ink-sub); font-weight: 700; white-space: nowrap; }
+.h-day { display: block; font-size: 0.78em; opacity: 0.8; font-weight: 700; }
 .h-slot .h-icon { font-size: 1.2rem; }
 .h-slot .h-temp { font-size: 0.78rem; font-weight: 700; }
 .wx-week { display: none; gap: 8px; overflow-x: auto; scrollbar-width: none; margin-top: 14px; }
@@ -380,9 +382,11 @@ section { padding: 26px 0 40px; }
     gap: 4px;
   }
   .wx-hourly::-webkit-scrollbar { display: none; }
-  .h-slot { flex: 0 0 auto; min-width: 46px; padding: 5px 3px; gap: 0; }
+  .h-slot { flex: 0 0 auto; min-width: 48px; padding: 5px 3px; gap: 0; }
+  .wx-hourly-wrap { flex: 1; min-width: 0; }
+  .wx-hourly-note { font-size: 0.52rem; }
   .h-slot .h-time {
-    font-size: 0.5rem; line-height: 1.25;
+    font-size: 0.6rem; line-height: 1.25;
     white-space: normal; text-align: center;
   }
   .h-slot .h-icon { font-size: 0.95rem; }
