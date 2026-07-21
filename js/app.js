@@ -96,20 +96,18 @@ function renderWeather() {
         <div class="wx-city">${dateStr}｜${w.city}</div>
         <div class="wx-now">
           <div class="wx-icon">${w.icon}</div>
-          <div>
+          <div class="wx-temp-block">
             <div class="wx-temp">${num(w.high)}°<span class="low">/ ${num(w.low)}°</span></div>
             <div class="wx-cond">${w.cond}</div>
-          </div>
-          <div class="wx-hourly-wrap">
-            <div class="wx-hourly" aria-label="時間帯ごとの降水確率">
-              ${w.hourly.map(h => `
-                <div class="h-slot">
-                  <div class="h-time">${h.day ? `<span class="h-day">${h.day}</span>` : ""}${h.t}</div>
-                  <div class="h-icon">${h.icon}</div>
-                  <div class="h-temp">${h.pop === null || h.pop === undefined ? "―" : h.pop + "%"}</div>
-                </div>`).join("")}
-            </div>
             <div class="wx-hourly-note">％＝降水確率</div>
+          </div>
+          <div class="wx-hourly" aria-label="時間帯ごとの降水確率">
+            ${w.hourly.map(h => `
+              <div class="h-slot">
+                <div class="h-time">${h.day ? `<span class="h-day">${h.day}</span>` : ""}${h.t}</div>
+                <div class="h-icon">${h.icon}</div>
+                <div class="h-temp">${h.pop === null || h.pop === undefined ? "―" : h.pop + "%"}</div>
+              </div>`).join("")}
           </div>
         </div>
       </div>

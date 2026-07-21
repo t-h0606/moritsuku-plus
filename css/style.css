@@ -33,7 +33,7 @@ img { display: block; max-width: 100%; }
     radial-gradient(ellipse 60% 50% at 10% 110%, rgba(255,75,92,0.12), transparent 60%),
     var(--studio);
   color: #fff;
-  padding: 26px 0 0;
+  padding: 14px 0 14px;   /* 駅セレクタを記事側へ移したので、ロゴ帯だけの高さに詰める */
 }
 .head-top {
   display: flex;
@@ -43,14 +43,14 @@ img { display: block; max-width: 100%; }
   flex-wrap: nowrap;
 }
 .onair-lamp { flex-shrink: 0; }
-.brand { display: flex; flex-direction: column; gap: 4px; }
+.brand { display: flex; flex-direction: column; gap: 2px; }
 /* ロゴは画像（透過WebP）。高さを基準に、幅は元画像の比率で自動 */
 .logo {
   display: block;
   line-height: 0;
 }
 .logo img {
-  height: clamp(2.2rem, 5.6vw, 3.1rem);
+  height: clamp(1.9rem, 4.8vw, 2.6rem);
   width: auto;
   display: block;
 }
@@ -68,8 +68,8 @@ img { display: block; max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 6px;
-  padding: 7px 14px;
+  margin-top: 2px;
+  padding: 6px 13px;
   border-radius: 999px;
   border: 1.5px solid rgba(255,75,92,0.55);
   background: rgba(255,75,92,0.1);
@@ -287,16 +287,14 @@ section { padding: 26px 0 40px; }
 .wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
 .wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
 .wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
-/* 降水確率の枠と注釈。注釈は枠の下に重ねて置き、縦の高さを増やさない */
-.wx-hourly-wrap { position: relative; display: flex; flex-direction: column; min-width: 0; }
 .wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
+/* 「％＝降水確率」は気温ブロックの下端に添える。
+   降水確率の枠と同じ行に収まるので、カードの高さは増えない */
+.wx-temp-block { display: flex; flex-direction: column; }
 .wx-hourly-note {
-  position: absolute; top: 100%; right: 0;
-  margin-top: 3px;
+  margin-top: 6px;
   font-size: 0.6rem; color: var(--ink-sub); white-space: nowrap;
 }
-/* 注釈は絶対配置でカード外に出るため、下に居場所を確保しておく */
-.wx-now { margin-bottom: 16px; }
 .h-slot {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   min-width: 74px; padding: 8px 6px;
@@ -379,7 +377,6 @@ section { padding: 26px 0 40px; }
   .wx-now {
     grid-row: 4; grid-column: 1 / -1;
     display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;
-    margin-bottom: 12px;   /* 右下に出る「％＝降水確率」のぶん */
   }
   .wx-icon { font-size: 1.9rem; }
   .wx-temp { font-size: 1.5rem; }
@@ -391,8 +388,7 @@ section { padding: 26px 0 40px; }
   }
   .wx-hourly::-webkit-scrollbar { display: none; }
   .h-slot { flex: 0 0 auto; min-width: 48px; padding: 5px 3px; gap: 0; }
-  .wx-hourly-wrap { flex: 1; min-width: 0; }
-  .wx-hourly-note { font-size: 0.52rem; }
+  .wx-hourly-note { font-size: 0.52rem; margin-top: 4px; }
   .h-slot .h-time {
     font-size: 0.6rem; line-height: 1.25;
     white-space: normal; text-align: center;
