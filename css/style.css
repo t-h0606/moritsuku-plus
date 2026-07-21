@@ -57,14 +57,10 @@ img { display: block; max-width: 100%; }
 .logo .plus {
   display: inline-grid;
   place-items: center;
-  width: 0.94em; height: 0.94em;
-  margin-left: 6px;
-  border-radius: 26%;
-  background: var(--onair);
+  margin-left: -2px;      /* 「もりつく」に寄せる */
   color: #fff;
-  font-size: 0.82em;
+  font-size: 0.9em;
   line-height: 1;
-  box-shadow: 0 4px 14px rgba(255,75,92,0.45);
 }
 /* 全角「＋」グリフはベースライン基準で下寄りに見えるため::beforeで描画し光学補正 */
 .logo .plus::before { content: "＋"; transform: translateY(-0.09em); }
@@ -178,7 +174,7 @@ img { display: block; max-width: 100%; }
 /* 見出しはキャラの幅だけ右に逃がす。チップ行は全幅のまま、キャラの前面に重ねる */
 .news-head .sec-head { margin-bottom: 14px; }   /* 見出しは気象台と同じ左端。キャラは背面に重ねる */
 .news-head .genre-row { margin-bottom: 0; position: relative; z-index: 1; }
-.news-head { margin-bottom: 26px; }   /* ジャンルタブと先頭記事の間隔 */
+.news-head { margin-bottom: 16px; }   /* ジャンルタブと先頭記事の間隔 */
 .news-caster {
   position: absolute;
   left: 0;
@@ -216,7 +212,7 @@ img { display: block; max-width: 100%; }
 .onair-caster img { width: 100%; height: auto; display: block; }
 
 /* ========== セクション共通 ========== */
-section { padding: 44px 0 50px; }
+section { padding: 26px 0 40px; }
 .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
 .sec-title {
   font-family: "M PLUS Rounded 1c", sans-serif;
@@ -651,17 +647,17 @@ footer .disc { color: #566280; }
   .video-lead { grid-template-columns: 1fr; }
   .v-sub { flex-direction: row; }
   .v-sub .screen { flex: 1; }
-  section { padding: 34px 0 40px; }
+  section { padding: 20px 0 32px; }
 }
 @media (max-width: 640px) {
-  section { padding: 22px 0 30px; }
+  section { padding: 14px 0 24px; }
   .sec-head { margin-bottom: 12px; }
   .weather-sec { padding: 12px 0 16px; }
   .weather-sec .sec-head { margin-bottom: 8px; }
   /* 6ジャンルを1行・1画面幅に収める（均等割り） */
   /* ジャンル7種は1画面に詰め込まず、横スライド式にして文字を読める大きさに保つ */
   .genre-row {
-    margin: -4px 0 12px; gap: 6px; flex-wrap: nowrap;
+    margin: -4px 0 12px; gap: 5px; flex-wrap: nowrap;
     overflow-x: auto; overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
@@ -670,15 +666,15 @@ footer .disc { color: #566280; }
   }
   .chip {
     flex: 0 0 auto;                   /* 幅を縮めず、文字なりの大きさを保つ */
-    padding: 8px 16px;
-    font-size: 0.84rem;
+    padding: 7px 10px;
+    font-size: 0.73rem;
     letter-spacing: 0;
     white-space: nowrap;
     scroll-snap-align: start;
   }
   /* スマホ：キャラは小さめ。チップ行は全幅のまま（背面にキャラが重なる） */
-  .news-caster { width: 84px; bottom: 10px; left: -10px; }
-  .news-head .genre-row { padding-left: 62px; margin-left: -62px; }  /* 先頭タブがキャラに隠れない */
+  /* キャラは見出しの左に置き、タブ行とは重ねない（先頭タブが切れないため） */
+  .news-caster { width: 78px; bottom: 22px; left: -8px; }
   /* スマホは見出し下マージンが12pxなので、トリミング位置もそれに合わせる */
   .onair-caster { width: 76px; height: 69px; bottom: -16px; left: calc(100% - 9px); }
   .news-head .sec-head { margin-bottom: 8px; }
