@@ -64,13 +64,17 @@ async function boot() {
 
 /* ========== もりつく気象台 ========== */
 
-// 天気の種類を判定（実API接続後も、天気コードをこの4分類に変換すればコメントが自動で出せる）
+// 天気の種類を判定。キャスターのセリフはこの4分類で選ばれる。
+// 気象庁の天気コードは update_weather.py で絵文字に変換済みなので、ここは絵文字を見れば足りる。
 function wxType(w) {
-  if (/🌧|⛈|🌦/.test(w.icon)) return "rain";
-  if (w.high >= 31) return "hot";
-  if (/⛅|☁/.test(w.icon)) return "cloud";
+  if (/🌧|⛈|🌦|❄|🌨/.test(w.icon)) return "rain";
+  if (typeof w.high === "number" && w.high >= 31) return "hot";
+  if (/⛅|☁|🌫/.test(w.icon)) return "cloud";
   return "sun";
 }
+
+// 気温などが取れなかったときは「―」を出す（数字が消えて崩れるのを防ぐ）
+function num(v) { return (v === null || v === undefined || v === "") ? "―" : v; }
 
 function renderWeather() {
   // 気象庁の予報単位は「茨城県南部」で、3市に分かれない。
@@ -93,15 +97,15 @@ function renderWeather() {
         <div class="wx-now">
           <div class="wx-icon">${w.icon}</div>
           <div>
-            <div class="wx-temp">${w.high}°<span class="low">/ ${w.low}°</span></div>
+            <div class="wx-temp">${num(w.high)}°<span class="low">/ ${num(w.low)}°</span></div>
             <div class="wx-cond">${w.cond}</div>
           </div>
-          <div class="wx-hourly">
+          <div class="wx-hourly" aria-label="時間帯ごとの降水確率">
             ${w.hourly.map(h => `
               <div class="h-slot">
-                <div class="h-time">${h.t}</div>
+                <div class="h-time">${h.day ? `<span class="h-day">${h.day}</span>` : ""}${h.t}</div>
                 <div class="h-icon">${h.icon}</div>
-                <div class="h-temp">${h.temp}°</div>
+                <div class="h-temp">${h.pop === null || h.pop === undefined ? "―" : h.pop + "%"}</div>
               </div>`).join("")}
           </div>
         </div>
@@ -112,20 +116,20 @@ function renderWeather() {
           <div class="ws-row${i === 0 ? " today" : ""}">
             <span class="ws-d">${d.d}</span>
             <span class="ws-i">${d.icon}</span>
-            <span class="ws-t">${d.hi}°<span class="lo">/${d.lo}°</span></span>
+            <span class="ws-t">${num(d.hi)}°<span class="lo">/${num(d.lo)}°</span></span>
           </div>`).join("")}
       </div>
     </div>
     <div class="wx-foot">
       <button class="wx-week-toggle${state.weekOpen ? " open" : ""}" onclick="toggleWeek()" aria-expanded="${!!state.weekOpen}">週間予報</button>
-      <span class="wx-note-inline">気象データ提供：気象庁（想定）</span>
+      <span class="wx-note-inline">気象データ提供：気象庁</span>
     </div>
     <div class="wx-week${state.weekOpen ? " open" : ""}" style="--cc:${c.cc}">
       ${w.week.map((d, i) => `
         <div class="w-day${i === 0 ? " today" : ""}">
           <div class="d-label">${d.d}</div>
           <div class="d-icon">${d.icon}</div>
-          <div class="d-temp">${d.hi}°<span class="lo">/${d.lo}°</span></div>
+          <div class="d-temp">${num(d.hi)}°<span class="lo">/${num(d.lo)}°</span></div>
         </div>`).join("")}
     </div>`;
 }

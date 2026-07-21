@@ -260,7 +260,8 @@ section { padding: 26px 0 40px; }
   .wx-temp { font-size: 2.3rem; }
   .wx-cond { font-size: 0.82rem; }
   .wx-now { gap: 22px; }
-  .h-slot { min-width: 62px; padding: 10px 8px; }
+  .h-slot {
+  min-width: 74px; min-width: 62px; padding: 10px 8px; }
   .h-slot .h-icon { font-size: 1.35rem; }
 }
 .wx-bubble {
@@ -289,11 +290,12 @@ section { padding: 26px 0 40px; }
 .wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
 .h-slot {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
-  min-width: 56px; padding: 8px 6px;
+  min-width: 74px; padding: 8px 6px;
   background: rgba(255,255,255,0.75);
   border-radius: 14px;
 }
-.h-slot .h-time { font-size: 0.64rem; color: var(--ink-sub); font-weight: 700; }
+.h-slot .h-time { font-size: 0.62rem; color: var(--ink-sub); font-weight: 700; white-space: nowrap; }
+.h-day { display: block; font-size: 0.85em; opacity: 0.85; }
 .h-slot .h-icon { font-size: 1.2rem; }
 .h-slot .h-temp { font-size: 0.78rem; font-weight: 700; }
 .wx-week { display: none; gap: 8px; overflow-x: auto; scrollbar-width: none; margin-top: 14px; }
@@ -371,9 +373,20 @@ section { padding: 26px 0 40px; }
   }
   .wx-icon { font-size: 1.9rem; }
   .wx-temp { font-size: 1.5rem; }
-  .wx-hourly { flex: 1; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  /* 降水確率は気温の右隣。3枠が収まるよう、見出しは2行に折り返して幅を節約する */
+  .wx-hourly {
+    flex: 1; min-width: 0;
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+    gap: 4px;
+  }
   .wx-hourly::-webkit-scrollbar { display: none; }
-  .h-slot { flex: 0 0 auto; min-width: 48px; padding: 5px 4px; }
+  .h-slot { flex: 0 0 auto; min-width: 46px; padding: 5px 3px; gap: 0; }
+  .h-slot .h-time {
+    font-size: 0.5rem; line-height: 1.25;
+    white-space: normal; text-align: center;
+  }
+  .h-slot .h-icon { font-size: 0.95rem; }
+  .h-slot .h-temp { font-size: 0.66rem; }
   /* 週間予報はタップで開閉（コンパクト化のため既定は非表示） */
   .wx-week { display: none; }
   .wx-week.open { display: flex; margin-top: 10px; }
