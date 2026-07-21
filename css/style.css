@@ -102,8 +102,13 @@ img { display: block; max-width: 100%; }
 
 /* 駅セレクタ（v27でヘッダー内の暗い背景から、記事セクションの明るい背景へ移設）
    路線図の見立ては維持しつつ、白地で沈まないよう線と丸の色を作り直している */
-.rail-nav { padding: 2px 0 14px; overflow-x: auto; scrollbar-width: none; }
-.rail-nav::-webkit-scrollbar { display: none; }
+/* overflow-x を使うと丸の外周（box-shadow）が上下で切れるため、
+   はみ出しは overflow:visible のまま、内側の余白で逃がす */
+.rail-nav {
+  padding: 8px 0 30px;          /* 下30px＝ジャンルタブとの間隔 */
+  padding-left: 112px;          /* 見出しキャラの右隣から路線を始める */
+  overflow: visible;
+}
 .rail { position: relative; display: flex; justify-content: space-between; min-width: 0; }
 .rail::before {
   content: "";
@@ -113,6 +118,7 @@ img { display: block; max-width: 100%; }
   border-radius: 3px;
   background: linear-gradient(90deg, #C3CBDA, var(--c-moriya) 30%, var(--c-mirai) 62%, var(--c-tsukuba) 100%);
   opacity: 0.9;
+  z-index: 0;
 }
 .station {
   position: relative; z-index: 1;
@@ -124,18 +130,19 @@ img { display: block; max-width: 100%; }
   transition: color 0.2s;
 }
 .station .dot {
+  position: relative; z-index: 1;   /* 横線より手前。線が丸の内側に透けない */
   width: 14px; height: 14px;
   border-radius: 50%;
-  background: var(--paper);
-  border: 3px solid #B9C2D3;
+  background: #B9C2D3;              /* 未選択は塗りつぶし */
+  border: 3px solid var(--daylight);/* 背景色の縁取りで線から浮かせる */
   transition: all 0.2s;
 }
 .station:hover { color: var(--ink); }
 .station[aria-pressed="true"] { color: var(--ink); font-weight: 800; }
 .station[aria-pressed="true"] .dot {
   background: var(--stn, var(--ink));
-  border-color: var(--stn, var(--ink));
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--stn, #1F2433) 20%, transparent);
+  border-color: var(--daylight);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--stn, #1F2433) 28%, transparent);
 }
 
 /* ========== ジャンル絞り込み（記事セクション内に配置） ========== */
@@ -169,14 +176,14 @@ img { display: block; max-width: 100%; }
 /* ========== まちの新着ニュース：日替わりリポーター ========== */
 .news-head { position: relative; }
 /* 見出しはキャラの幅だけ右に逃がす。チップ行は全幅のまま、キャラの前面に重ねる */
-.news-head .sec-head { margin-bottom: 14px; padding-left: 98px; }
+.news-head .sec-head { margin-bottom: 14px; }   /* 見出しは気象台と同じ左端。キャラは背面に重ねる */
 .news-head .genre-row { margin-bottom: 0; position: relative; z-index: 1; }
 .news-caster {
   position: absolute;
   left: 0;
-  bottom: -2px;   /* 足元がチップ行の下端に揃う */
+  bottom: -2px;   /* 足元がジャンルタブ行の下端に揃う */
   width: 104px;
-  z-index: 0;              /* チップより背面 */
+  z-index: 0;              /* 見出し・タブより背面 */
   line-height: 0;
   pointer-events: none;
   animation: casterIn 0.5s ease-out both;
@@ -659,12 +666,12 @@ footer .disc { color: #566280; }
   .news-caster { width: 72px; bottom: 13px; left: -8px; }
   /* スマホは見出し下マージンが12pxなので、トリミング位置もそれに合わせる */
   .onair-caster { width: 76px; height: 69px; bottom: -16px; left: calc(100% - 9px); }
-  .news-head .sec-head { margin-bottom: 8px; padding-left: 68px; }
+  .news-head .sec-head { margin-bottom: 8px; }
   /* 駅セレクタを横スクロールなしで1画面に収める */
-  .rail-nav { padding: 0 0 10px; }
+  .rail-nav { padding: 6px 0 20px; padding-left: 76px; }
   .station { padding: 0 2px; font-size: 0.66rem; gap: 5px; }
   .station .dot { width: 12px; height: 12px; border-width: 2.5px; }
-  .rail::before { left: 26px; right: 26px; top: 4px; height: 4px; }  /* 丸(12px)の中心=6px */
+  .rail::before { left: 22px; right: 22px; top: 3.5px; height: 4px; }  /* 丸(12px)の中心=6px */
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
