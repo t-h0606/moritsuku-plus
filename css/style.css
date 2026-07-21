@@ -44,26 +44,18 @@ img { display: block; max-width: 100%; }
 }
 .onair-lamp { flex-shrink: 0; }
 .brand { display: flex; flex-direction: column; gap: 4px; }
+/* ロゴは画像（透過WebP）。高さを基準に、幅は元画像の比率で自動 */
 .logo {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 900;
-  font-size: clamp(2rem, 5.4vw, 3rem);
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  display: block;
+  line-height: 0;
 }
-.logo .plus {
-  display: inline-grid;
-  place-items: center;
-  margin-left: -2px;      /* 「もりつく」に寄せる */
-  color: #fff;
-  font-size: 0.9em;
-  line-height: 1;
+.logo img {
+  height: clamp(2.2rem, 5.6vw, 3.1rem);
+  width: auto;
+  display: block;
 }
+
 /* 全角「＋」グリフはベースライン基準で下寄りに見えるため::beforeで描画し光学補正 */
-.logo .plus::before { content: "＋"; transform: translateY(-0.09em); }
 .tagline {
   font-size: 0.8rem;
   color: #A9B5CC;

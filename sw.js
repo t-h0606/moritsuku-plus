@@ -2,12 +2,13 @@
    役割：一度読んだ「入れ物」（HTML/CSS/JS/画像）を端末に保存し、2回目以降を高速化する。
    データ（data/*.json）は常に新しいものを取りに行き、通信できないときだけ保存分を使う。
    ※ サイトを更新したら下の CACHE の数字を1つ上げてください（古い保存分が捨てられます）。 */
-const CACHE = "moritsuku-v5";
+const CACHE = "moritsuku-v8";
 const SHELL = [
   "./", "./index.html", "./css/style.css", "./js/app.js", "./manifest.json",
   "./images/fukuro-kyokucho.webp", "./images/shiroku-gamako.webp", "./images/ponda-p.webp",
   "./images/uri-d.webp", "./images/fukuro-hamuta.webp", "./images/kawase-midori.webp",
-  "./images/kawase-midori-flip.webp", "./images/shirasagi-non.webp", "./images/hayabusa-sora.webp"
+  "./images/kawase-midori-flip.webp", "./images/shirasagi-non.webp", "./images/hayabusa-sora.webp",
+  "./images/logo-moritsuku.webp"
 ];
 
 self.addEventListener("install", e => {
