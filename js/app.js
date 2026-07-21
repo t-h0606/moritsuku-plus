@@ -83,8 +83,11 @@ function renderWeather() {
   const c = pickOfDay(WX_CASTERS);   // キャスターは午前5時交代の日替わり
   const type = wxType(w);
   const sky = type === "rain" ? "sky-rain" : type === "cloud" ? "sky-cloud" : "sky-sun";
+  // 表示する日付。17時の発表以降は今日の気温が予報の対象外になるため、
+  // update_weather.py が対象日を明日に切り替えて targetLabel に入れてくる。
   const now = new Date();
-  const dateStr = `${now.getMonth() + 1}月${now.getDate()}日（${"日月火水木金土"[now.getDay()]}）`;
+  const dateStr = WEATHER.targetLabel
+    || `${now.getMonth() + 1}月${now.getDate()}日（${"日月火水木金土"[now.getDay()]}）`;
   document.getElementById("weatherCard").innerHTML = `
     <div class="wx-stage ${sky}" style="--cc:${c.cc}">
       <div class="wx-caster">
@@ -117,7 +120,10 @@ function renderWeather() {
           <div class="ws-row${i === 0 ? " today" : ""}">
             <span class="ws-d">${d.d}</span>
             <span class="ws-i">${d.icon}</span>
-            <span class="ws-t">${num(d.hi)}°<span class="lo">/${num(d.lo)}°</span></span>
+            <span class="ws-t">
+              ${num(d.hi)}°<span class="lo">/${num(d.lo)}°</span>
+              <span class="ws-pop">${d.pop === null || d.pop === undefined ? "" : d.pop + "%"}</span>
+            </span>
           </div>`).join("")}
       </div>
     </div>
@@ -131,6 +137,7 @@ function renderWeather() {
           <div class="d-label">${d.d}</div>
           <div class="d-icon">${d.icon}</div>
           <div class="d-temp">${num(d.hi)}°<span class="lo">/${num(d.lo)}°</span></div>
+          <div class="d-pop">${d.pop === null || d.pop === undefined ? "" : d.pop + "%"}</div>
         </div>`).join("")}
     </div>`;
 }

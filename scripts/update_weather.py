@@ -154,32 +154,46 @@ def build(raw, now=None):
     tp_times = [datetime.fromisoformat(t) for t in ds[2]["timeDefines"]]
     temps = [to_int(v) for v in tp.get("temps", [])]
 
-    # 今日ぶんの最高・最低を拾う。気象庁は
+    # 指定した日の最高・最低を拾う。気象庁は
     # [今日09時(=最高), 今日00時(=最低), 明日00時(=最低), 明日09時(=最高)] の並びで返す。
-    # 発表が昼以降だと「今日の最低」が過ぎていて欠けることがあるので、その場合は明日の値で代用。
-    high = low = None
-    for t, v in zip(tp_times, temps):
-        if v is None:
-            continue
-        if t.date() == today:
-            if t.hour >= 6:
-                high = v if high is None else max(high, v)
-            else:
-                low = v if low is None else min(low, v)
-    if high is None and temps:
-        high = max([v for v in temps if v is not None], default=None)
-
-    # 昼以降の発表だと「今日の最低」の時刻は既に過ぎており、
-    # 気象庁はその枠に最高と同じ値を入れて実質無効化してくる。
-    # 最低が最高と同値（またはそれ以上）なら、取れていないものとして扱う。
-    if low is not None and high is not None and low >= high:
-        low = None
-
-    if low is None:
-        # 明日00時の値（＝今晩から明朝にかけての最低）で代用する
+    def temps_of(day):
+        hi = lo = None
         for t, v in zip(tp_times, temps):
-            if v is not None and t.date() > today and t.hour < 6:
+            if v is None or t.date() != day:
+                continue
+            if t.hour >= 6:
+                hi = v if hi is None else max(hi, v)
+            else:
+                lo = v if lo is None else min(lo, v)
+        # 時刻を過ぎた枠には、気象庁が最高と同じ値を入れて無効化してくることがある
+        if lo is not None and hi is not None and lo >= hi:
+            lo = None
+        return hi, lo
+
+    # 17時発表以降、今日の気温は予報の対象外になり気象庁は「-」を返す。
+    # その場合は今日の枠に明日の数字を入れず、表示そのものを明日へ切り替える
+    # （日付・天気・気温・週間予報の先頭をすべて明日に揃える）。
+    tomorrow = today + timedelta(days=1)
+    high, low = temps_of(today)
+    target_day = today
+    if high is None:
+        t_hi, t_lo = temps_of(tomorrow)
+        if t_hi is not None:
+            target_day = tomorrow
+            high, low = t_hi, t_lo
+    elif low is None:
+        # 昼の発表では今日の最低だけが過ぎている。
+        # この「最低」は今晩から明朝にかけての冷え込みなので、明日00時の値が実質同じ意味になる
+        for t, v in zip(tp_times, temps):
+            if v is not None and t.date() == tomorrow and t.hour < 6:
                 low = v
+                break
+
+    # 対象日が明日なら、天気も明日のものに差し替える
+    if target_day != today:
+        for t, c in zip(wx_times, codes):
+            if t.date() == target_day:
+                emoji, cond = code_info(c)
                 break
 
     # --- 時間帯ごとの降水確率 ---
@@ -190,6 +204,8 @@ def build(raw, now=None):
     # 気象庁の時刻は「その6時間の始まり」を指す：
     #   00:00→夜中〜朝  06:00→朝〜昼  12:00→昼〜夕  18:00→夕〜夜
     LABELS = {0: "00-06", 6: "06-12", 12: "12-18", 18: "18-24"}
+    DAY_LABELS = {today: "今日", today + timedelta(days=1): "明日",
+                  today + timedelta(days=2): "明後日"}
     hourly = []
     seen = set()
     for t_, p in zip(pop_times, pops):
@@ -201,7 +217,7 @@ def build(raw, now=None):
         seen.add(key)
         hourly.append({
             "t": LABELS.get(t_.hour, str(t_.hour)),
-            "day": "今日" if t_.date() == today else "明日",
+            "day": DAY_LABELS.get(t_.date(), f"{t_.month}/{t_.day}"),
             "icon": hour_icon(emoji, p, t_.hour),
             "pop": p,
         })
@@ -217,37 +233,32 @@ def build(raw, now=None):
     tmax = [to_int(v) for v in wt.get("tempsMax", [])]
     tmin = [to_int(v) for v in wt.get("tempsMin", [])]
 
-    week = [{"d": "今日", "icon": emoji, "hi": high, "lo": low,
-             "pop": pops[0] if pops else None}]
+    # 先頭は表示対象の日（通常は今日、17時発表以降は明日）
+    week = [{"d": DAY_LABELS.get(target_day, "今日"), "icon": emoji,
+             "hi": high, "lo": low, "pop": pops[0] if pops else None}]
 
-    # 明日は週間予報の先頭にあるが気温が空欄。日別予報の気温で補う。
-    tomorrow = today + timedelta(days=1)
-    t_high = t_low = None
-    for t, v in zip(tp_times, temps):
-        if v is None or t.date() != tomorrow:
-            continue
-        if t.hour >= 6:
-            t_high = v
-        else:
-            t_low = v
+    t_high, t_low = temps_of(tomorrow)
 
     for i, t in enumerate(wtimes):
+        if t.date() <= target_day:
+            continue                      # 先頭に出した日より前は重複するので飛ばす
         e, _ = code_info(wcodes[i] if i < len(wcodes) else "")
         hi = tmax[i] if i < len(tmax) else None
         lo = tmin[i] if i < len(tmin) else None
         if t.date() == tomorrow:
             hi = hi if hi is not None else t_high
             lo = lo if lo is not None else t_low
-            label = "明日"
-        else:
-            label = f"{t.month}/{t.day}"
-        week.append({"d": label, "icon": e, "hi": hi, "lo": lo,
+        week.append({"d": DAY_LABELS.get(t.date(), f"{t.month}/{t.day}"),
+                     "icon": e, "hi": hi, "lo": lo,
                      "pop": to_int(wpops[i]) if i < len(wpops) else None})
 
     week = week[:8]
 
+    WD = "月火水木金土日"
     return {
         "updated": now.isoformat(timespec="seconds"),
+        "targetDate": target_day.isoformat(),
+        "targetLabel": f"{target_day.month}月{target_day.day}日（{WD[target_day.weekday()]}）",
         "source": "気象庁（水戸地方気象台）",
         "reportDatetime": daily.get("reportDatetime"),
         "areaCode": AREA_CODE,
