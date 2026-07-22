@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-22T12:07",
-  "count": 205,
+  "updated": "2026-07-22T12:19",
+  "count": 206,
   "candidates": [
     {
       "id": "3e75d8427c76",
@@ -38,6 +38,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE90a3I5Y3JFaXBiVkRHR21XNGlKeDJIWUhRNms5VWdSMHhzVGRYT2pGTEZ1NHhrYmFRSjh3VU1wWlpPZW12ZGF4VGNOMGE3NXo2aU9MQk41OVlBMldONjVIanJLZzRDckVkZFRMQzhWM09ibnhNVTV3dm9Bd1IxVzg?oc=5"
+    },
+    {
+      "id": "aee5e0d27897",
+      "title": "エスロンＲＣＰ（強化プラスチック複合管）の価格改定について - PR TIMES",
+      "source": "PR TIMES",
+      "date": "2026-07-22T11:00",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1vRnJuUzlESk1qVVkzVW1oNDRiZzIzQnZnY3djUkU0S0xNcHgycEcyNC15b0ROWV9iZkJyYmYxUVlmTGg0NTV5SjZ4eUtBbEprSG1rSTFUR25tSEl5MnRuX2ppVnQza0pqZUE?oc=5",
+      "sure": false
     },
     {
       "id": "196cd40c61ea",
@@ -395,6 +408,19 @@
       "sure": true
     },
     {
+      "id": "ea372af87cf2",
+      "title": "茨城県の過去のアメダス実況(2026年07月21日)(風向・風速) - tenki.jp",
+      "source": "tenki.jp",
+      "date": "2026-07-22T00:30",
+      "city": [
+        "ibaraki"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1iMXNBbnpoTGhfb2FrRFJQRUlUS0VHWFRiTDBWR3ZNOEgwTWZpaDc4YTROVVI5UllDVnVkZzRyUjJnZG1Wa0tRbEU1WE5INDQ4Y1pLeFhPSmFLdW02aXNvYUZGS3k?oc=5",
+      "sure": true
+    },
+    {
       "id": "c9cfccdb1a10",
       "title": "＜画像6 / 9＞おいもバウムから栗カレーまで！SAPAで人気の茨城土産9選 - ウォーカープラス",
       "source": "ウォーカープラス",
@@ -417,6 +443,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5KQUx4QkZIa0dJMjJ5ajU3aGhic2RHLVUzWHJ1a0t6ZE0wV05MNGlrXzRQeE9uTHBJdmdqdnN5dndldkZOSjEyZ3pNN0xPN3FyV1E?oc=5"
+    },
+    {
+      "id": "b21bb422ece7",
+      "title": "ＤｅＮＡ伊勢が緊急降板 投球後にマウンド上で苦しいそうな表情を見せてベンチ裏へ 熱中症の症状 - デイリースポーツ",
+      "source": "デイリースポーツ",
+      "date": "2026-07-21T22:38",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00OEo0WjVXMFVmVVgtV09NSnd3dmJmUnZzMGR3V1ZhcVRKdmxnU3FadXV4eE9HLUJFemhzb0pnR2JRMWxuamVmNWdTTU9EeG4wcE40NTRlNFViRGotUUhNUUVDWW0zclkwc1pUUg?oc=5",
+      "sure": false
     },
     {
       "id": "b3de1319d512",
@@ -745,6 +784,32 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5OX3JTeWJ5eWZMYmRtX2t5b215SWl2SUxNWUFqdXgybDVuOFI3eDEydVVLM01hMGZUbWFSa25wSlZ4MHZRMGl6QURCT2hmS2doUEtoeQ?oc=5"
+    },
+    {
+      "id": "5f5fdd25cab2",
+      "title": "【国立科学博物館 筑波実験植物園】世界で最も大きな「花」のひとつショクダイオオコンニャクが開花します！ - PR TIMES",
+      "source": "PR TIMES",
+      "date": "2026-07-21T14:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81UDE2TTQ5UVNqeHlWYWNmTnlmTExQdWtJNDZad2ktUUtDc01XU0kyVHhSZDUyRUdyTjkxMzQzekVnaHVkQllzSVViUHI5T0s1ejhJOTlwZjQzTUttb3doQ0hHWVZqTnFHOXc?oc=5",
+      "sure": false
+    },
+    {
+      "id": "125ca17067d3",
+      "title": "阪神 新外国人・ガルシアを獲得 入団会見前に異例の練習参加 マイナー通算１３２発の右の大砲「このユニホームに誇りを」背番号９４ - デイリースポーツ",
+      "source": "デイリースポーツ",
+      "date": "2026-07-21T13:37",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00NHlwRUNDOGhDSjJSSWhZVTA3VHpfRHNyQ0pMTTBQUnZQTFBtVnItc2NpS3Z2LUZzN3M4c2U2Y1R4QU9PNFZvRmRfQzVLalNtbi1Za3pGZ2FjMzFkQ2JhU28xQlhtc1R5Nmc?oc=5",
+      "sure": false
     },
     {
       "id": "dc5db13b46dc",
@@ -2403,58 +2468,6 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9qWXA0XzR3c1NCYndnSEx6V2I3TlVHN1VUemJFQlRzMHVmUXZiSzN6Ym9xbDZJMnl1dUh6ZWM2dHR3cVdsaVplZTVTUWM4MXdsQ2J1eHd6N0tUZ1k5TlV3d1oyRTlXMGs1ZUFtR0NRLTJUdWR2Q0Jj?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5369f1813d74",
-      "title": "つくば市 ハチ対策を強化 - LuckyFM茨城放送",
-      "source": "LuckyFM茨城放送",
-      "date": "2026-07-16T16:46",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9icmxFZ0MyemVIdlpxUUtPckhzMWplby1EY1Q0WlNweWtOb3BCRF9RMmxQTFUwUDFNM0JkNWc4WDMzZEhhbTR4SkVlSmZHQmlzMFFBOElR?oc=5",
-      "sure": true
-    },
-    {
-      "id": "be25dc841503",
-      "title": "トピックス - city.tsukubamirai.lg.jp",
-      "source": "city.tsukubamirai.lg.jp",
-      "date": "2026-07-16T16:00",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWUI4TVJMTl9pT2pSZ01wN1dQU0J5cTFWMkNjdVFTMFlJM3U5RnQ2YUItMmk5cWRqZUlCdzJ1c1drOGdBZUJ0Yk05MHdzeXA5MHBpdEpObkRBS3pMQUR2aXdRNC1yT1NUSExLSDF0ZmhOZDVHU3MzdHh0a2ZPbTU3ZTEtdGJ1ejE4U05IUFNOWmtNWHNqN0NZTUJHNmE?oc=5",
-      "sure": false
-    },
-    {
-      "id": "76545a2ab4a9",
-      "title": "内閣支持４９％、発足後最低 - つくば経済新聞",
-      "source": "つくば経済新聞",
-      "date": "2026-07-16T16:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9JcWxxYkJ3SXF0RngyTHdQQ1pqbzBmZFJ2MFFxekE1RkZEaHRIdkNKUWFsb21vanM5V3NaTVhjTXRFaVU4VXBwQmEzdGpHWXFxMnBwZA?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d8efd8a8fbbf",
-      "title": "つくばちびっ子博士2026 KEKミッション「まちがいを発見せよ！」を開催します - kek.jp",
-      "source": "kek.jp",
-      "date": "2026-07-16T14:58",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9OdzVHRkF1U0ctem16V25FNmxRUmdIMTJaVERUWEhhUU9KZ1hFX01LSmhiZDF5ZnY0dmNhNXUteGR2M3NFRHUwS0xsVTUwUktyUHc?oc=5",
       "sure": true
     },
     {
