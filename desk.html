@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>編成会議室 | もりつく＋（局内専用）</title>
+<style>
+:root {
+  --studio: #16203A; --deep: #101830; --paper: #F6F7FA; --ink: #1F2433;
+  --sub: #6E7686; --line: #E3E6EE; --onair: #FF4B5C;
+  --moriya: #2FA36B; --mirai: #F59E2D; --tsukuba: #3D7BFF; --ibaraki: #7A5CD6;
+  --news: #4A5A7A; --event: #8B5CD6; --gourmet: #E8603C; --kids: #E85D9C;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 15px; }
+header { background: var(--studio); color: #fff; padding: 14px 18px; }
+header h1 { font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+header .lamp { width: 9px; height: 9px; border-radius: 50%; background: var(--onair);
+  box-shadow: 0 0 8px var(--onair); }
+header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 16px; }
+
+.bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.chip { padding: 5px 13px; border-radius: 999px; border: 1.5px solid var(--line);
+  background: #fff; font-size: 0.78rem; font-weight: 700; color: var(--sub); cursor: pointer; }
+.chip[data-on="1"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.meta-row { font-size: 0.74rem; color: var(--sub); margin: 8px 2px 12px; }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px 14px; margin-bottom: 10px; display: flex; gap: 10px; }
+.card.selected { border-color: var(--onair); box-shadow: 0 0 0 2px rgba(255,75,92,0.15); }
+.card input[type=checkbox] { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--onair); flex-shrink: 0; }
+.card .body { flex: 1; min-width: 0; }
+.card .title { font-weight: 700; font-size: 0.92rem; }
+.card .title a { color: inherit; text-decoration: none; }
+.card .title a:hover { text-decoration: underline; }
+.card .info { font-size: 0.72rem; color: var(--sub); margin-top: 3px; }
+.tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; align-items: center; }
+.cat-select { font-size: 0.74rem; padding: 3px 6px; border-radius: 7px; border: 1.5px solid var(--line); font-weight: 700; }
+.city-tag { font-size: 0.7rem; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+  border: 1.5px solid var(--line); color: var(--sub); background: #fff; cursor: pointer; }
+.city-tag[data-on="1"][data-c="moriya"] { border-color: var(--moriya); color: var(--moriya); }
+.city-tag[data-on="1"][data-c="tsukubamirai"] { border-color: var(--mirai); color: #C97D14; }
+.city-tag[data-on="1"][data-c="tsukuba"] { border-color: var(--tsukuba); color: var(--tsukuba); }
+.city-tag[data-on="1"][data-c="ibaraki"] { border-color: var(--ibaraki); color: var(--ibaraki); }
+
+.footer-bar { position: sticky; bottom: 0; background: var(--studio); color: #fff;
+  padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+.footer-bar .count { font-size: 0.85rem; font-weight: 700; flex: 1; }
+.btn { background: var(--onair); color: #fff; border: none; border-radius: 999px;
+  padding: 9px 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.btn.ghost { background: transparent; border: 1.5px solid #55688C; }
+
+#output-area { display: none; margin-top: 14px; }
+#output-area.show { display: block; }
+#output-area textarea { width: 100%; height: 240px; font-family: monospace; font-size: 12px;
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 10px; background: #fff; }
+#output-area .hint { font-size: 0.76rem; color: var(--sub); margin: 8px 2px; line-height: 1.7; }
+.empty { text-align: center; color: var(--sub); padding: 40px 10px; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span class="lamp"></span>編成会議室（局内専用）</h1>
+  <div class="note">報道部デスクが集めた候補から、掲載する記事を選んでください。ページ更新: <span id="updated">-</span></div>
+</header>
+
+<div class="wrap">
+  <div class="bar" id="cityBar">
+    <button class="chip" data-f="city" data-v="all" data-on="1">すべて</button>
+    <button class="chip" data-f="city" data-v="moriya">守谷</button>
+    <button class="chip" data-f="city" data-v="tsukubamirai">つくばみらい</button>
+    <button class="chip" data-f="city" data-v="tsukuba">つくば</button>
+    <button class="chip" data-f="city" data-v="ibaraki">県内全域</button>
+  </div>
+  <div class="bar" id="catBar">
+    <button class="chip" data-f="cat" data-v="all" data-on="1">すべて</button>
+    <button class="chip" data-f="cat" data-v="news">ニュース</button>
+    <button class="chip" data-f="cat" data-v="event">イベント</button>
+    <button class="chip" data-f="cat" data-v="gourmet">グルメ</button>
+    <button class="chip" data-f="cat" data-v="kids">キッズ</button>
+  </div>
+  <div class="meta-row" id="metaRow">読み込み中…</div>
+
+  <div id="list"></div>
+
+  <div id="output-area">
+    <div class="hint">
+      ↓これをコピーして、GitHubで <b>data/articles.json</b> を開き、<b>"items": [</b> の直後（先頭）に貼り付けてください。
+      先頭に貼った記事のうち一番上がフィーチャー型（大型サムネイル）になります。サムネイル画像を付けたい場合は、貼り付け後にClaudeに記事URLと画像を送って "thumb" の加工を依頼してください。
+    </div>
+    <textarea id="output" readonly></textarea>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="count"><span id="selCount">0</span> 件 選択中</div>
+  <button class="btn ghost" id="clearBtn">選択解除</button>
+  <button class="btn" id="genBtn">JSONを生成</button>
+</div>
+
+<script>
+const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば", ibaraki:"県内全域" };
+const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ" };
+const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒" };
+const ALL_CITIES = ["moriya","tsukubamirai","tsukuba","ibaraki"];
+
+let candidates = [];
+let state = { city:"all", cat:"all", selected:new Set(), edits:{} };
+
+function agoLabel(dateStr){
+  const d = new Date(dateStr), now = new Date();
+  const h = (now - d) / 3600000;
+  if (h < 24) return Math.max(1, Math.floor(h)) + "時間前";
+  const days = Math.floor(h / 24);
+  if (days === 1) return "昨日";
+  if (days < 7) return days + "日前";
+  return (d.getMonth()+1) + "月" + d.getDate() + "日";
+}
+
+function getEdit(c){
+  if (!state.edits[c.id]) state.edits[c.id] = { category:c.category, city:[...c.city] };
+  return state.edits[c.id];
+}
+
+function render(){
+  const list = document.getElementById("list");
+  const visible = candidates.filter(c => {
+    const e = getEdit(c);
+    return (state.city==="all" || e.city.includes(state.city)) &&
+           (state.cat==="all" || e.category===state.cat);
+  });
+  document.getElementById("metaRow").textContent =
+    `候補 ${visible.length} 件を表示（全 ${candidates.length} 件）`;
+
+  if (!visible.length){
+    list.innerHTML = `<div class="empty">この条件の候補はありません。次の収集（6時/12時/18時）をお待ちください。</div>`;
+    return;
+  }
+
+  list.innerHTML = visible.map(c => {
+    const e = getEdit(c);
+    const checked = state.selected.has(c.id);
+    const catOptions = Object.keys(CAT_NAMES).map(k =>
+      `<option value="${k}" ${k===e.category?"selected":""}>${EMOJI[k]} ${CAT_NAMES[k]}</option>`).join("");
+    const cityTags = ALL_CITIES.map(k =>
+      `<button class="city-tag" data-c="${k}" data-on="${e.city.includes(k)?1:0}" data-id="${c.id}">${CITY_NAMES[k]}</button>`).join("");
+    return `
+    <div class="card ${checked?"selected":""}">
+      <input type="checkbox" data-id="${c.id}" ${checked?"checked":""}>
+      <div class="body">
+        <div class="title"><a href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a></div>
+        <div class="info">${escapeHtml(c.source||"配信元不明")}｜${agoLabel(c.date)}</div>
+        <div class="tags">
+          <select class="cat-select" data-id="${c.id}">${catOptions}</select>
+          ${cityTags}
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+
+  document.getElementById("selCount").textContent = state.selected.size;
+}
+
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+document.getElementById("list").addEventListener("change", ev => {
+  const id = ev.target.dataset.id;
+  if (ev.target.type === "checkbox"){
+    ev.target.checked ? state.selected.add(id) : state.selected.delete(id);
+    render();
+  } else if (ev.target.classList.contains("cat-select")){
+    const c = candidates.find(x => x.id === id);
+    getEdit(c).category = ev.target.value;
+    render();
+  }
+});
+
+document.getElementById("list").addEventListener("click", ev => {
+  if (ev.target.classList.contains("city-tag")){
+    const c = candidates.find(x => x.id === ev.target.dataset.id);
+    const e = getEdit(c), city = ev.target.dataset.c;
+    if (e.city.includes(city)){
+      if (e.city.length > 1) e.city = e.city.filter(x => x !== city);
+    } else {
+      e.city.push(city);
+    }
+    render();
+  }
+});
+
+[["cityBar","city"],["catBar","cat"]].forEach(([barId, key]) => {
+  document.getElementById(barId).addEventListener("click", ev => {
+    if (!ev.target.dataset.v) return;
+    state[key] = ev.target.dataset.v;
+    document.querySelectorAll(`#${barId} .chip`).forEach(b =>
+      b.dataset.on = b.dataset.v === state[key] ? "1" : "0");
+    render();
+  });
+});
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+  state.selected.clear();
+  document.getElementById("output-area").classList.remove("show");
+  render();
+});
+
+document.getElementById("genBtn").addEventListener("click", () => {
+  const items = candidates.filter(c => state.selected.has(c.id)).map(c => {
+    const e = getEdit(c);
+    return {
+      title: c.title, source: c.source || "", date: c.date,
+      city: e.city.filter(x => x !== "ibaraki").length ? e.city : e.city, // そのまま
+      category: e.category, emoji: EMOJI[e.category], url: c.url, thumb: ""
+    };
+  });
+  if (!items.length){ alert("記事にチェックを入れてください"); return; }
+  const text = items.map(i => JSON.stringify(i, null, 2)).join(",\n") + ",";
+  const ta = document.getElementById("output");
+  ta.value = text;
+  document.getElementById("output-area").classList.add("show");
+  ta.focus(); ta.select();
+  try { document.execCommand("copy"); } catch(e) {}
+});
+
+async function init(){
+  try {
+    const res = await fetch("data/candidates.json", { cache:"no-store" });
+    const data = await res.json();
+    candidates = data.candidates || [];
+    document.getElementById("updated").textContent = (data.updated || "-").replace("T"," ");
+  } catch(e){
+    document.getElementById("metaRow").textContent =
+      "candidates.json が読み込めませんでした。GitHub Actionsの初回実行がまだの可能性があります。";
+    return;
+  }
+  render();
+}
+init();
+</script>
+</body>
+</html>
