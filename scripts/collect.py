@@ -33,8 +33,7 @@ ARTICLES_FILE = ROOT / "data" / "articles.json"
 
 MAX_AGE_DAYS = 7          # これより古い候補は消える
 MAX_PER_FEED = 40         # 1つのRSSから読む最大件数
-MAX_CANDIDATES = 150      # 候補リストの最大件数
-PREF_MAX = 20             # 県内全域は量が多いので絞る
+MAX_CANDIDATES = 150      # 候補リストの最大件数（3市と県内全域で別枠）
 
 # ---- 収集する注文書（クエリ）一覧 -------------------------------------
 # (デフォルト都市, デフォルトカテゴリ, 検索クエリ)
@@ -56,7 +55,7 @@ QUERIES = [
     ("tsukuba",      "kids",    "つくば (子育て OR 児童館 OR 親子 OR キッズ) when:7d"),
     ("tsukubamirai", "kids",    "つくばみらい (子育て OR 親子) when:7d"),
     # 県内全域（直近2日だけ・件数も絞る）
-    ("ibaraki",      "news",    "茨城県 when:2d"),
+    ("ibaraki",      "news",    "茨城県 when:7d"),
 ]
 
 # ここに普通のRSS（市公式サイトなど）を足すと収集対象を増やせる
@@ -159,8 +158,7 @@ def collect():
 
     for default_city, default_cat, url in feeds:
         parsed = feedparser.parse(url)
-        limit = PREF_MAX if default_city == "ibaraki" else MAX_PER_FEED
-        for entry in parsed.entries[:limit]:
+        for entry in parsed.entries[:MAX_PER_FEED]:
             title = entry.get("title", "").strip()
             link = entry.get("link", "")
             if not title or not link:
@@ -181,6 +179,9 @@ def collect():
                     if c not in pool[cid]["city"]:
                         pool[cid]["city"].append(c)
             else:
+                # タイトルに地名が入っているか（入っていない=本文マッチの可能性）
+                sure = (default_city == "ibaraki") or any(
+                    k in title for k in ("守谷", "つくば", "みらい平", "茨城"))
                 pool[cid] = {
                     "id": cid,
                     "title": title,
@@ -190,6 +191,7 @@ def collect():
                     "category": cat,
                     "emoji": EMOJI.get(cat, "📰"),
                     "url": link,
+                    "sure": sure,
                 }
 
     # --- 古いもの・掲載済みのものを除外 ---
@@ -203,7 +205,11 @@ def collect():
         result.append(c)
 
     result.sort(key=lambda c: c["date"], reverse=True)
-    result = result[:MAX_CANDIDATES]
+
+    # 3市と県内全域は別枠でそれぞれ最大件数まで保持（互いに枠を奪わない）
+    local = [c for c in result if "ibaraki" not in c["city"]][:MAX_CANDIDATES]
+    pref = [c for c in result if "ibaraki" in c["city"]][:MAX_CANDIDATES]
+    result = sorted(local + pref, key=lambda c: c["date"], reverse=True)
 
     payload = {
         "updated": now.strftime("%Y-%m-%dT%H:%M"),
