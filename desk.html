@@ -59,6 +59,10 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
   border: 1.5px solid var(--line); border-radius: 10px; padding: 10px; background: #fff; }
 #output-area .hint { font-size: 0.76rem; color: var(--sub); margin: 8px 2px; line-height: 1.7; }
 .empty { text-align: center; color: var(--sub); padding: 40px 10px; font-size: 0.85rem; }
+.card.unsure { opacity: 0.62; }
+.warn-badge { font-size: 0.66rem; font-weight: 700; color: #B8860B; background: #FFF3D6;
+  border-radius: 999px; padding: 2px 8px; }
+.chip.toggle[data-on="1"] { background: #B8860B; border-color: #B8860B; color: #fff; }
 </style>
 </head>
 <body>
@@ -82,6 +86,9 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
     <button class="chip" data-f="cat" data-v="event">イベント</button>
     <button class="chip" data-f="cat" data-v="gourmet">グルメ</button>
     <button class="chip" data-f="cat" data-v="kids">キッズ</button>
+  </div>
+  <div class="bar">
+    <button class="chip toggle" id="unsureToggle" data-on="0">⚠ タイトルに地名なしを隠す</button>
   </div>
   <div class="meta-row" id="metaRow">読み込み中…</div>
 
@@ -109,7 +116,7 @@ const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒" };
 const ALL_CITIES = ["moriya","tsukubamirai","tsukuba","ibaraki"];
 
 let candidates = [];
-let state = { city:"all", cat:"all", selected:new Set(), edits:{} };
+let state = { city:"all", cat:"all", hideUnsure:false, selected:new Set(), edits:{} };
 
 function agoLabel(dateStr){
   const d = new Date(dateStr), now = new Date();
@@ -128,10 +135,15 @@ function getEdit(c){
 
 function render(){
   const list = document.getElementById("list");
+  const LOCAL = ["moriya","tsukubamirai","tsukuba"];
   const visible = candidates.filter(c => {
     const e = getEdit(c);
-    return (state.city==="all" || e.city.includes(state.city)) &&
-           (state.cat==="all" || e.category===state.cat);
+    if (state.hideUnsure && c.sure === false) return false;
+    // 「すべて」＝3市の記事のみ。県内全域は専用タブでだけ表示する
+    const cityOk = state.city === "all"
+      ? LOCAL.some(k => e.city.includes(k))
+      : e.city.includes(state.city);
+    return cityOk && (state.cat==="all" || e.category===state.cat);
   });
   document.getElementById("metaRow").textContent =
     `候補 ${visible.length} 件を表示（全 ${candidates.length} 件）`;
@@ -148,12 +160,14 @@ function render(){
       `<option value="${k}" ${k===e.category?"selected":""}>${EMOJI[k]} ${CAT_NAMES[k]}</option>`).join("");
     const cityTags = ALL_CITIES.map(k =>
       `<button class="city-tag" data-c="${k}" data-on="${e.city.includes(k)?1:0}" data-id="${c.id}">${CITY_NAMES[k]}</button>`).join("");
+    const unsure = c.sure === false;
     return `
-    <div class="card ${checked?"selected":""}">
+    <div class="card ${checked?"selected":""} ${unsure?"unsure":""}">
       <input type="checkbox" data-id="${c.id}" ${checked?"checked":""}>
       <div class="body">
         <div class="title"><a href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a></div>
-        <div class="info">${escapeHtml(c.source||"配信元不明")}｜${agoLabel(c.date)}</div>
+        <div class="info">${escapeHtml(c.source||"配信元不明")}｜${agoLabel(c.date)}
+          ${c.sure === false ? ' <span class="warn-badge">⚠ タイトルに地名なし</span>' : ''}</div>
         <div class="tags">
           <select class="cat-select" data-id="${c.id}">${catOptions}</select>
           ${cityTags}
@@ -202,6 +216,12 @@ document.getElementById("list").addEventListener("click", ev => {
       b.dataset.on = b.dataset.v === state[key] ? "1" : "0");
     render();
   });
+});
+
+document.getElementById("unsureToggle").addEventListener("click", ev => {
+  state.hideUnsure = !state.hideUnsure;
+  ev.target.dataset.on = state.hideUnsure ? "1" : "0";
+  render();
 });
 
 document.getElementById("clearBtn").addEventListener("click", () => {
