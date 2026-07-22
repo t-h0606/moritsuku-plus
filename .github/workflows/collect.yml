@@ -1,0 +1,33 @@
+name: 報道部デスク（候補収集）
+
+on:
+  schedule:
+    - cron: "0 21,3,9 * * *"   # JST 6:00 / 12:00 / 18:00
+  workflow_dispatch:            # Actionsタブから手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 道具の準備
+        run: pip install feedparser
+
+      - name: 候補を収集
+        run: python scripts/collect.py
+
+      - name: 候補リストを保存
+        run: |
+          git config user.name "moritsuku-desk"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/candidates.json
+          git diff --cached --quiet || git commit -m "報道部デスク：候補リスト更新 $(date -u -d '+9 hours' +'%m/%d %H:%M')"
+          git push
