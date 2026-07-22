@@ -111,8 +111,8 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 
 <script>
 const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば", ibaraki:"県内全域" };
-const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ" };
-const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒" };
+const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ", ibaraki:"県内全域" };
+const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒", ibaraki:"🗾" };
 const ALL_CITIES = ["moriya","tsukubamirai","tsukuba","ibaraki"];
 
 let candidates = [];
@@ -139,10 +139,12 @@ function render(){
   const visible = candidates.filter(c => {
     const e = getEdit(c);
     if (state.hideUnsure && c.sure === false) return false;
-    // 「すべて」＝3市の記事のみ。県内全域は専用タブでだけ表示する
-    const cityOk = state.city === "all"
-      ? LOCAL.some(k => e.city.includes(k))
-      : e.city.includes(state.city);
+    // 県内全域はジャンル扱い（category==="ibaraki"、cityは空）
+    // 「すべて」＝3市の記事のみ。県内全域タブでだけ県内全域を表示する
+    const isPref = e.category === "ibaraki";
+    const cityOk = state.city === "all" ? (!isPref && LOCAL.some(k => e.city.includes(k)))
+                 : state.city === "ibaraki" ? isPref
+                 : e.city.includes(state.city);
     return cityOk && (state.cat==="all" || e.category===state.cat);
   });
   document.getElementById("metaRow").textContent =
@@ -235,7 +237,7 @@ document.getElementById("genBtn").addEventListener("click", () => {
     const e = getEdit(c);
     return {
       title: c.title, source: c.source || "", date: c.date,
-      city: e.city.filter(x => x !== "ibaraki").length ? e.city : e.city, // そのまま
+      city: e.category === "ibaraki" ? [] : e.city.filter(x => x !== "ibaraki"),
       category: e.category, emoji: EMOJI[e.category], url: c.url, thumb: ""
     };
   });
