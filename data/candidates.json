@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-22T13:26",
-  "count": 213,
+  "updated": "2026-07-22T14:46",
+  "count": 214,
   "candidates": [
     {
       "id": "c92a10324374",
@@ -24,6 +24,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxObUF2bW0tQTFBNm8wcHhsZHFWTDJKUWRaVmlrb3VydWpHRDd4dFo1NzZ6RzhEa1hBSExDYW52a2VSM2p0UXZJMDdZeGI5cy1HMDVfMmRnMjhReG5aM19HTXZxYk9HNllwQTFRWEZ4OXdnUmUxOUdZd0I3Z09vZEYxVllR?oc=5",
+      "sure": false
+    },
+    {
+      "id": "b3a024ad91d6",
+      "title": "新着情報“ノートe－パワー メダリスト ブラックアロー”2018年式ダークメタルグレー/スーパーブラック2トーン入荷しました！",
+      "source": "中古車のガリバー",
+      "date": "2026-07-22T12:02",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxObDFJd0tnY2w1NGZ3UGdJQlZ3V21wa2QxY01mdndHNzNJQXdvWVlwd2g2TVJ0cnJ5OFVycFJfUFBtaU0zSk93ZEY1ZDNEY05NWnhiQ1JzQ2IwYWNydURJVXYyUE5mRDRjTmhpV0JhMU9xMXA1dDU3U200cVN2U3NUdk1R?oc=5",
       "sure": false
     },
     {
@@ -123,6 +136,19 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFYUtEYWptQU9Ob2lRcXRteVZYMTJGanR2Y2ZURFFMbE05bUdaRlUwMVljWXp3c2dKM1F4dnRBT2xGdnBLV3RTb3NWOEJ3Mm1aWVJVR0hManIzX2VvbU1XbXREZ0U5WlZr?oc=5",
       "sure": true
+    },
+    {
+      "id": "99f2485e02fe",
+      "title": "日程＆結果",
+      "source": "デイリースポーツ",
+      "date": "2026-07-22T10:08",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4tYU1hdm5TaWtpRVk3MWlHcnFaNWxVMDU1MTJTRDZuU2NfQ3kzSUl5SnZGX0VmZkNVemRwQWNKMkhTejd1c055dlpiVEpuTVBVNTRFTDZlbENSamN1SklXNm1fUXpXRk11cFlScEV3c0dIdnREUmlvcURCbVQ?oc=5",
+      "sure": false
     },
     {
       "id": "e5ccf8fbfc42",
@@ -280,6 +306,19 @@
       "sure": true
     },
     {
+      "id": "44d4990cd0de",
+      "title": "【つくば市】夏休み限定で「TX!1日乗り放題きっぷ」が発売中です。沿線のお出かけをお得に楽しもう♪",
+      "source": "号外NET つくば市",
+      "date": "2026-07-22T07:38",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5lTDBaSjRrMklId2ZpVXpJeDh6RFFRSWZjS1FTbWNxS0JhVWFzWkplN1NNYnlmUE0tR3BUSUlLMmdMT0drVVN6a2kweU9TSE5IbkVVaXpwODByN3N6SEZYZ1Nn?oc=5",
+      "sure": true
+    },
+    {
       "id": "eb1da4f27992",
       "title": "【つくば市】7/22 最高39℃、暑さ、紫外線、昼間は晴れのちくもりの予想【朝版】",
       "source": "Yahoo!ニュース",
@@ -291,6 +330,19 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3SW5WTTVOQW9vdEMxancxbC03bU1lYlIzbk11VlhwaE1yQW1ZdTY2MWhTZ3l2SHRkUW4tT0xFV1RzUEt5Mk03aC1lZ21WcFFnbFlLcWd6NWFEZUgyWjl4ZnBXaUUzYlpDNzRUeFk1b0tOSDhZeWoyWmtxZEhmOFE?oc=5",
       "sure": true
+    },
+    {
+      "id": "19a62130a549",
+      "title": "劇団ひとり、中田翔に驚き",
+      "source": "朝日新聞",
+      "date": "2026-07-22T05:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5GZzZKUXJobjBaM0xVU29naFVoWHNLM1p0N1QwN1R0bEl4eVQ2VHlNdFVGTVBsQlY1ZWl5N0Nkd1VKNzIzQTNuZUJyekNMUUZoUWpWeGRseEVjTThk?oc=5",
+      "sure": false
     },
     {
       "id": "96db7fcdf19c",
@@ -521,6 +573,19 @@
       "sure": true
     },
     {
+      "id": "3f730aebdb85",
+      "title": "神２-１Ｄ（２１日）",
+      "source": "デイリースポーツ",
+      "date": "2026-07-21T22:27",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13Y003VXhTY1JtbEVWUVBGOWpEZGRtNVIzMjdhTGg4UUNpRExFbGU3R3U1VG04NVNNeFd0SUJJMjF1YUlUeU5DRVpRQXVCd2drNVhST2pGZ2ZfXzRDclI4aENiR3FzYmhZSnFHTw?oc=5",
+      "sure": false
+    },
+    {
       "id": "e814d4118626",
       "title": "堺雅人「毎日、子どもに読み聞かせている」絵本がまさかの！サンド伊達に「ウチに来てほしい」「いまいちウケが良くなくて」",
       "source": "デイリースポーツ",
@@ -535,7 +600,7 @@
     },
     {
       "id": "c791aac3f84a",
-      "title": "トピックス - 2026年7月21日(火曜日) | 谷和原第2保育所公式ホームページ",
+      "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
       "date": "2026-07-21T20:57",
       "city": [
@@ -548,7 +613,7 @@
     },
     {
       "id": "94df7af0c780",
-      "title": "トピックス - 2026年7月21日(火曜日) | 谷和原第2保育所公式ホームページ",
+      "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
       "date": "2026-07-21T20:57",
       "city": [
@@ -822,6 +887,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5pZm1Jb2Fqd0NteXY2Zko0LTJnTGlxLWw4bjdHMTdKUkZKaHVzNVpHS016NmVKSlEwT29xNUZMd1JtbEpnLVFOLWRRQlZZR2Z5VUhmbA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "51b349629124",
+      "title": "「朝から眩しすぎた」「銀幕スター」フジ→ＮＨＫ連続生出演の日本代表 反響のスーツは品格のブランドだった「サッカー選手に見えない」「カッケー」",
+      "source": "デイリースポーツ",
+      "date": "2026-07-21T16:20",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0yaEVoM1Y0OWI3dHkyTkNmZlprd012X2lyQS1fRXEwSzlpZzJDYVFIN3BoMFZ4bHBCUlF5bTVRZGQ4d3lnRmhPOVBzUVFhZ1NBMlo4SHlsNXhuUXdGclg2Ym1ub0FWR1JxdFNuejY4dVV3YkU?oc=5",
       "sure": false
     },
     {
@@ -1437,6 +1515,17 @@
       "sure": false
     },
     {
+      "id": "d2482a5ae6d1",
+      "title": "離岸流で水難事故多発…危険な人工岬「ヘッドランド」、茨城県が海水浴客に注意呼び掛け",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-19T21:47",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE95dTA1dXNWdUVldWx6eVRtMlZ1UUVLQlc3OGItY2pEMms2RGlWT0l5YU9kX3AyUnR3VnYxZks1ekZxWlcxQ29CLWI5Mm1uSFRWWGV5VFdxOTFpTERkaTI2cmVud2dwOTB2UWNPSjFneFlEVXBSSVl5Q3liTDQtSUk?oc=5",
+      "sure": true
+    },
+    {
       "id": "627b494a99b8",
       "title": "『豊臣兄弟！』次回あらすじ",
       "source": "朝日新聞",
@@ -1616,7 +1705,7 @@
     },
     {
       "id": "23b2078c9c7f",
-      "title": "流通量【0.01%】自然栽培さつまいもを未来へ残す挑戦 - クラウドファンディング",
+      "title": "流通量【0.01%】自然栽培さつまいもを未来へ残す挑戦",
       "source": "クラウドファンディング - READYFOR",
       "date": "2026-07-18T21:07",
       "city": [
@@ -1629,7 +1718,7 @@
     },
     {
       "id": "974756084882",
-      "title": "流通量【0.01%】自然栽培さつまいもを未来へ残す挑戦 - クラウドファンディング",
+      "title": "流通量【0.01%】自然栽培さつまいもを未来へ残す挑戦",
       "source": "クラウドファンディング - READYFOR",
       "date": "2026-07-18T21:07",
       "city": [
@@ -1693,6 +1782,19 @@
       "sure": true
     },
     {
+      "id": "150614efa8ac",
+      "title": "安住アナ、生放送で男性アナの実名",
+      "source": "朝日新聞",
+      "date": "2026-07-18T19:11",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA2YThLUmVkWVRBbW9JOFMzWXJudThHUGloV21NaU4wU1dZM0l4NGRsUUduRFZnckN4ZWFhWlplTFd2TU5OdnZSc3h1YWdPWG5TSGtGZHpDMUpRQjZM?oc=5",
+      "sure": false
+    },
+    {
       "id": "5511e7055ba5",
       "title": "近藤真彦、息子の名付け理由明かす",
       "source": "朝日新聞",
@@ -1733,6 +1835,19 @@
     },
     {
       "id": "6171dd55a301",
+      "title": "つくば謎解きサイエンス「博士のOMOSHIRO科学図鑑」｜レッツエンジョイ東京",
+      "source": "レッツエンジョイ東京",
+      "date": "2026-07-18T16:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAwcUU3MEVDdm81ZnRSZExTcU5SbVlTR01rc2ZMMW8xdUZfSVVnTFdsTktacGZlaHNadWxHZXhXdHo4bDI4dzNaSzN3MXR6ZHBTcnc?oc=5",
+      "sure": true
+    },
+    {
+      "id": "781037d1782a",
       "title": "つくば謎解きサイエンス「博士のOMOSHIRO科学図鑑」｜レッツエンジョイ東京",
       "source": "レッツエンジョイ東京",
       "date": "2026-07-18T16:00",
@@ -2087,7 +2202,7 @@
     },
     {
       "id": "065eb171a49e",
-      "title": "トピックス - 2026年7月17日(金曜日) | すみれ幼稚園公式ホームページ",
+      "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
       "date": "2026-07-17T16:35",
       "city": [
@@ -2100,7 +2215,7 @@
     },
     {
       "id": "2960527fa4f9",
-      "title": "トピックス - 2026年7月17日(金曜日) | すみれ幼稚園公式ホームページ",
+      "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
       "date": "2026-07-17T16:35",
       "city": [
@@ -2227,111 +2342,6 @@
       "sure": true
     },
     {
-      "id": "2b7def845654",
-      "title": "常磐道の「新スマートIC」8月29日開通 TX駅周辺へ時間短縮！谷和原IC‐谷田部IC間に開設",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-17T12:12",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE40aUgtcTBIS1ZrZENTYzRlRFJhVWJDaGYwaklHbmhZRm9UVkhWQXpPOWFfUXJKVmJvRE90bC1TWHdwSHd4b1E3c1VXbktMMnNuSE5icFk1QkYyV29FU0hGbEx5NmppaGVBVmdKU0MzX1ZPY0I1MjRJaUVDYWczMU0?oc=5",
-      "sure": false
-    },
-    {
-      "id": "3f028b710dc7",
-      "title": "新着情報“フィット13G・F”2018年式スカイランドブルーM入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-17T11:45",
-      "city": [
-        "moriya",
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVHhJVWlHdE01UXZKclpzSEdSeDNram5CWDZiUldvdndtUkpPczQ0MG8tNjNSdGsxU1duVXhXc2dkQVJ6Tm80cTRuU2dyRjVSQjhEVGFHaXNZLVZ4NU9tTkFUaDNJeWNhTzlpbWJMWUJzUEdjcktLa1pBZ0tTdmJTR0R3?oc=5",
-      "sure": false
-    },
-    {
-      "id": "ea1b10b10261",
-      "title": "令和7年度 社会貢献プロジェクト活動報告会",
-      "source": "tsukuba.ac.jp",
-      "date": "2026-07-17T11:41",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA1SXZsMWE3bWxXUlRydVNjOTdLV2NRNTI5NEVLdzhyb3owRlY2TEpjaG9jVkVmeVhwVFIxVGY2SDlTQTJKdElfU3RKUi1aYjBvZTVXbEFSWTZCUVNkcFI0QWl3?oc=5",
-      "sure": false
-    },
-    {
-      "id": "9844dd3180a2",
-      "title": "新着情報“ＳクラスS350”2011年式白入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-17T11:27",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVWs4VWE3UkdsQXRSRDdsVTBsVVVtZWhfN0FWWGxNcEtwQXRadmxNLW1GakxNbUJybU05ZXU0dzdwWFQ5Qmc4Z3VfdFhTS3VTU3A4a0M1Ny0yUUZWWm9XOF81Q3l6MFdkQTVNbUpJdVFuTXdSZ2ZhVWRSaU1JUGI5YThn?oc=5",
-      "sure": false
-    },
-    {
-      "id": "f28d2c3edad5",
-      "title": "保護者や子どもの悩み相談にAI活用 茨城・つくば市、24時間OK",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-17T11:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8yWXJWMkZydllNbm5UdDQzUlNaMDdTWlpscVNBOHpRVkVleW04RlFJN2NXWk8ycVQ4cWVJRmM4aUxGN3IzRE0zUEZNOUpYTGZ2cUVvX3VJS202RE1lOGhLZGdTV2dHZFp4NEVpT0NwaEREeG9kSDQtSzk0cTg5M00?oc=5",
-      "sure": true
-    },
-    {
-      "id": "95672a3e49ef",
-      "title": "保護者や子どもの悩み相談にAI活用 茨城・つくば市、24時間OK [茨城県]",
-      "source": "朝日新聞",
-      "date": "2026-07-17T11:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MODdtYzlmVzZXRURLRmh3NkJ3TTdlMEFkS3M3empPRWt6bDIyd2p4N2hPcER6UjFLN0ZlU3ZMS0M2RzhoOFlqOXBSdTNMOUY1UFlrVlE4dS1McGtSX1JDSmRJeEZBbU5nV3c2ckRB?oc=5",
-      "sure": true
-    },
-    {
-      "id": "873f58559eac",
-      "title": "保護者や子どもの悩み相談にAI活用　茨城・つくば市、24時間OK",
-      "source": "ｄメニューニュース",
-      "date": "2026-07-17T11:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaFc4cUo0amRPakdxa2phVGxBaUFhWlg2Y0VUX0QtSWhiRFZJbW5Zb2p0Z0ZXUjRHazhmc2VxRnhFS0d4bUFVY05yT0tyTmFNV0pELUFTTndQajRjbkRDYnkyVlE1WWlEb1RpRGpQQU9yX3RrWXB1ajhmcFNDZExtcVY2WlotWXlFVUl2QXVkZFRSbjloenQ4OdIBngFBVV95cUxOcGRHLUdNZlFyM1IyUXhydkR6WEJEbGhSeFdrUGhCNFNETXV4cTRia2VpWTRYTVlLOFoxaTRQWHJlVTFwZ3JVVDlsVXoweWRPODBBQnVzd01sMEtjemdEc0Z1OTFtUWxrSXlUUUdGd2FmSkJnelJ2YkxkZmJZalJPOFQwLUlTVExrc1RjVFZUaFhCeDlpOHdQRmxJSGxXdw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "1baf2bbc37ad",
-      "title": "太陽の力、梅干しに　茨城・常陸太田",
-      "source": "ｄメニューニュース",
-      "date": "2026-07-17T10:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPX1BpMk55RHpqY2h1MGQ4S1BiR25MRVBTUlNNdTFWSHVseXd4YU9nRUkwdDVDcnlxOC1TbVloSmlibi1fWFk4eWU1V1ZzanFYX3Q1WDJfdHhCcXRLTEo5ZXBFR05vR3k2c0hSU2pIQ0h5N0ktRDhmeGY3YnpDRF9GNE9qTdIBiAFBVV95cUxNWEVaRjlGbENWTTVUMUw2MDFhZFlfczFtb3I2WnhIa0taR2x1U2puR0xtRVZpUE5IblNhek5MdmxPVnJKRUgzeUNsam1BOHpzQTBzdm5LRkMtOHVXZFZaSUNYaWxJV29nWEhhMUhCY2ZrTlc0Tzh4WkwzXzNFNUxiWFhoMndQSl8t?oc=5",
-      "sure": true
-    },
-    {
       "id": "8582eba4b3e3",
       "title": "茨城県の過去のアメダス実況(2026年07月16日)(積雪深)",
       "source": "tenki.jp",
@@ -2445,7 +2455,7 @@
     },
     {
       "id": "e80d3ed7ba59",
-      "title": "震度1 茨城県南部 2026年07月17日01:10ごろ 地震詳細 | 愛媛のニュース - Nスタえひめ｜あいテレビは6チャンネル",
+      "title": "震度1 茨城県南部 2026年07月17日01:10ごろ 地震詳細 | 愛媛のニュース",
       "source": "TBS NEWS DIG",
       "date": "2026-07-17T01:10",
       "city": [],
@@ -2544,7 +2554,7 @@
     },
     {
       "id": "3fbe6f784a99",
-      "title": "震度1 茨城県南部 2026年07月17日01:10ごろ 地震詳細 | 愛媛のニュース - Nスタえひめ｜あいテレビは6チャンネル",
+      "title": "震度1 茨城県南部 2026年07月17日01:10ごろ 地震詳細 | 愛媛のニュース",
       "source": "TBS NEWS DIG",
       "date": "2026-07-17T01:10",
       "city": [],
@@ -2573,6 +2583,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWUVPZTFjbkRBYVkyelh1OTViSnpvTTRLVllma1BhQzlJeDlpc3pUQ2xsUXpQZkloS1l5Vjd5UUt0MzRubmQxbndEbVFKMkxTRDQxdWtZWWFjbDFxeUxyMi1Va056M0pTUlRfT0dudmZUOUtIZTVISTNtNXBLQWg0Nnpubzg5VVU?oc=5",
+      "sure": true
+    },
+    {
+      "id": "67c658ddca6f",
+      "title": "震度1 茨城県南部 2026年07月17日01:10ごろ 地震詳細 | 長崎のニュース | 天気 | NBC長崎放送",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-17T01:10",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUVZpNDlodmhrSjRqaUxWT1gyNDNMMkVMM1hGd1JGd3NNcTd2UG80dHhmOUtOOERQc2diWVpzLW5uLWd0T19RV00wbEltVnB1S1pwbElnVmx5UFFRYlFKWXlYd25QeG1lU2xZb0NxNFhfRXJwbm43NnFHelFXMndzbXhxcGZrRVE?oc=5",
       "sure": true
     },
     {
@@ -2639,19 +2660,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE50VUZTVThoM0lrbDZhT3dmLUlxaXV2YlZhRHVpaFc1V3lFUTVDaVFuQlFzcFYtUl9CUXFpczZZSVhWYXRoX0YwNnEtZmFSUUR6S1h0NHVhUmhUNUFrMUJmVXl4aldNdw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "71d80aef59a9",
-      "title": "つくばみらいスマートインターチェンジが令和8年8月29日（土曜日）15時に開通します",
-      "source": "city.tsukubamirai.lg.jp",
-      "date": "2026-07-15T14:06",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5Qc0hKYzRuSWJEekV3eVFUaWVDN3JiYTRURk9oSE9rODVUTnYxZDh0N1dZNTdBYkxfVHJ4WFVKSGRsMTVRM0pvUGtMZER6aUJ1SjRzb1Jhc1BQUkRhVFNYUGdfdmpSb0IwQkJSdFlkSjZQV0FMRVZJTjlYMlpUdw?oc=5",
       "sure": true
     }
   ]
