@@ -227,6 +227,11 @@ section { padding: 26px 0 40px; }
 }
 
 /* ========== ★ もりつく気象台（お天気コーナー番組） ========== */
+/* 気象台は見出しを出さず、天気カードから直接始める。
+   カード内にキャスター名が出るため、見出しが無くても何のコーナーかは伝わる */
+#sec-weather .sec-head,
+#sec-weather .sec-title { display: none; }
+
 .weather-sec { padding: 34px 0 38px; background: #fff; border-bottom: 1px solid var(--paper-line); }
 .wx-stage {
   position: relative;
@@ -681,7 +686,6 @@ footer .disc { color: #566280; }
   section { padding: 14px 0 24px; }
   .sec-head { margin-bottom: 12px; }
   .weather-sec { padding: 12px 0 16px; }
-  .weather-sec .sec-head { margin-bottom: 8px; }
   /* 6ジャンルを1行・1画面幅に収める（均等割り） */
   /* ジャンル7種は1画面に詰め込まず、横スライド式にして文字を読める大きさに保つ */
   .genre-row {
