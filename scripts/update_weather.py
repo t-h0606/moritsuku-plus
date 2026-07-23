@@ -233,9 +233,16 @@ def build(raw, now=None):
     tmax = [to_int(v) for v in wt.get("tempsMax", [])]
     tmin = [to_int(v) for v in wt.get("tempsMin", [])]
 
+    # 気象庁は週間予報の「明日」の欄に降水確率を載せない（3日間予報の6時間ごとの値で
+    # まかなえるため空文字が入る）。そこで、その日の6時間ごとの値の最大を代わりに使う。
+    # 1日のどこかで降る確からしさなので、6時間ごとの最大が最も近い値になる。
+    def pop_of_day(day):
+        vals = [p for t_, p in zip(pop_times, pops) if p is not None and t_.date() == day]
+        return max(vals) if vals else None
+
     # 先頭は表示対象の日（通常は今日、17時発表以降は明日）
     week = [{"d": DAY_LABELS.get(target_day, "今日"), "icon": emoji,
-             "hi": high, "lo": low, "pop": pops[0] if pops else None}]
+             "hi": high, "lo": low, "pop": pop_of_day(target_day)}]
 
     t_high, t_low = temps_of(tomorrow)
 
@@ -248,9 +255,11 @@ def build(raw, now=None):
         if t.date() == tomorrow:
             hi = hi if hi is not None else t_high
             lo = lo if lo is not None else t_low
+        pop = to_int(wpops[i]) if i < len(wpops) else None
+        if pop is None:
+            pop = pop_of_day(t.date())     # 明日ぶんは6時間予報から補う
         week.append({"d": DAY_LABELS.get(t.date(), f"{t.month}/{t.day}"),
-                     "icon": e, "hi": hi, "lo": lo,
-                     "pop": to_int(wpops[i]) if i < len(wpops) else None})
+                     "icon": e, "hi": hi, "lo": lo, "pop": pop})
 
     week = week[:8]
 
