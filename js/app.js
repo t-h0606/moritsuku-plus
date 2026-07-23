@@ -392,7 +392,8 @@ function setPressed(sel, attr, val) {
 
 function bindControls() {
   document.querySelectorAll(".station").forEach(b => b.addEventListener("click", () => {
-    state.city = b.dataset.city; setPressed(".station", "city", state.city); renderFeed();
+    state.city = b.dataset.city; setPressed(".station", "city", state.city);
+    renderFeed(); renderNewsCaster();
   }));
   document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
     state.cat = b.dataset.cat; setPressed(".chip", "cat", state.cat);
@@ -429,7 +430,15 @@ function pickOfDay(list, now) {
   const n = list.length;
   return list[((broadcastDayNo(now) % n) + n) % n];
 }
-function newsReporterOfDay(now) { return pickOfDay(NEWS_REPORTERS, now); }
+// 見出しに立つリポーター。まちを選んでいればその担当、「すべて」なら日替わりの当番。
+// どの市が誰の担当かは staff.json の newsReporters の city で決まる。
+function newsReporterOfDay(now) {
+  if (state.city !== "all") {
+    const r = NEWS_REPORTERS.find(x => x.city === state.city);
+    if (r) return r;
+  }
+  return pickOfDay(NEWS_REPORTERS, now);
+}
 
 // 当番のキャラ画像。useFlip が立っていれば反転版（見出しで右を向く用）を使う
 function casterImage(r) {

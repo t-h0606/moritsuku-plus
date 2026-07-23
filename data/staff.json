@@ -89,17 +89,20 @@
       "idx": 5,
       "name": "カワセ ミドリ",
       "label": "守谷担当",
-      "useFlip": true
+      "useFlip": true,
+      "city": "moriya"
     },
     {
       "idx": 6,
       "name": "白鷺 ノン",
-      "label": "つくばみらい担当"
+      "label": "つくばみらい担当",
+      "city": "tsukubamirai"
     },
     {
       "idx": 7,
       "name": "隼 ソラ",
-      "label": "つくば担当"
+      "label": "つくば担当",
+      "city": "tsukuba"
     }
   ],
   "onairStaff": [
