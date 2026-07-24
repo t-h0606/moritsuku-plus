@@ -1,7 +1,31 @@
 {
-  "updated": "2026-07-19",
+  "updated": "2026-07-24",
   "items": [
-{
+    {
+      "title": "「世界最大級の花」開花 つくば",
+      "source": "読売新聞",
+      "date": "2026-07-24T05:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9PRWlsUGdOYkVDQ2U5VFhhWXptS01iWkx0THU0cmd0ZVN1Ym04Vm0tVE5wTVdSekhfaDBJSEROQnUtaFlaQUM2dlo5VHFna2Z2czBaTW9fNWlCcTZBbUllWFRMbF8tWWthTVU5MXJXV0pwZ0k?oc=5",
+      "thumb": ""
+    },
+    {
+      "title": "若色商事 破産手続き開始決定 負債9000万円 茨城",
+      "source": "47NEWS",
+      "date": "2026-07-23T18:59",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5hUmFEY053aFRnQm1lUXFqd184WDFacHRQbG9MSjhoRVN5YU5MNXJXRzB1U1BMRjB4SG1LclhLZGJ6Z2RiMzJLeDc5QQ?oc=5",
+      "thumb": ""
+    },
+    {
       "title": "茨城県衆院議員資産公開 トップは田所氏、2億5134万円 平均3834万円",
       "source": "Yahoo!ニュース",
       "date": "2026-07-22T10:43",
@@ -10,7 +34,7 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeE9sUnB0c1ZGVHYzeHlaZ3NOZVhVNnpubmY5V0pVaE1UUURsR202bGNieUVlWDVWZUxMdk13WFJIV3BaOWJEdE1kSFc5YnFNT3ZCM01YcXdvaTVYVmVrMnI0cS1SV2ZJWHlERjlLWmJmcUdHRG9DQmV6aS1Qd2VnTEd4YW5mbG50UVRiOWpR?oc=5",
       "thumb": ""
-    }, 
+    },
     {
       "title": "新築家屋の固定資産税など計約8000万円を課税漏れ　つくば市",
       "source": "NEWSつくば",
