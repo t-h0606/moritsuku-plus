@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>記事投稿 | もりつく＋（内部用）</title>
+<style>
+  :root{
+    --navy:#16203A; --moriya:#2FA36B; --mirai:#F59E2D; --tsukuba:#3D7BFF; --onair:#FF4B5C;
+    --bg:#FAF7F0; --card:#FFFFFF; --line:#E6E1D6; --text:#22283A; --sub:#6B7280;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--bg); color:var(--text); padding-bottom:60px;
+  }
+  header{
+    background:var(--navy); color:#fff; padding:18px 20px;
+  }
+  header h1{margin:0; font-size:18px; font-weight:700;}
+  header p{margin:4px 0 0; font-size:12px; opacity:.7;}
+  main{max-width:640px; margin:0 auto; padding:20px 16px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px; margin-bottom:16px;
+  }
+  .card h2{font-size:14px; margin:0 0 12px; color:var(--sub); font-weight:700; letter-spacing:.02em;}
+  label{display:block; font-size:13px; font-weight:600; margin:12px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=text], input[type=url], input[type=datetime-local], textarea, select{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    font-size:14px; font-family:inherit; background:#fff; color:var(--text);
+  }
+  textarea{resize:vertical; min-height:56px;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    padding:8px 14px; border-radius:999px; border:1px solid var(--line);
+    background:#fff; font-size:13px; cursor:pointer; user-select:none;
+  }
+  .chip.on{color:#fff; border-color:transparent;}
+  .chip[data-city=moriya].on{background:var(--moriya);}
+  .chip[data-city=tsukubamirai].on{background:var(--mirai);}
+  .chip[data-city=tsukuba].on{background:var(--tsukuba);}
+  .chip[data-city].disabled{opacity:.35; pointer-events:none;}
+  .genre-select{display:flex; gap:8px; flex-wrap:wrap;}
+  .genre-select .chip.on{background:var(--navy);}
+  .emoji-row{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;}
+  .emoji-btn{
+    font-size:18px; padding:6px 10px; border-radius:8px; border:1px solid var(--line);
+    background:#fff; cursor:pointer;
+  }
+  .emoji-btn.on{border-color:var(--navy); background:#EEF1F7;}
+  .drop{
+    border:2px dashed var(--line); border-radius:12px; padding:20px; text-align:center;
+    color:var(--sub); font-size:13px; cursor:pointer; background:#FCFBF8;
+  }
+  .drop.drag{border-color:var(--tsukuba); color:var(--tsukuba);}
+  .preview-wrap{margin-top:12px;}
+  canvas{width:100%; max-width:100%; border-radius:10px; border:1px solid var(--line); display:block;}
+  .slider-row{margin-top:10px;}
+  .slider-row span{font-size:12px; color:var(--sub);}
+  input[type=range]{width:100%;}
+  .thumb-actions{display:flex; gap:8px; margin-top:8px;}
+  .btn-sm{
+    font-size:12px; padding:6px 10px; border-radius:8px; border:1px solid var(--line);
+    background:#fff; cursor:pointer; color:var(--sub);
+  }
+  .submit-btn{
+    width:100%; padding:14px; border:none; border-radius:10px; background:var(--onair);
+    color:#fff; font-size:15px; font-weight:700; cursor:pointer; margin-top:6px;
+  }
+  .submit-btn:disabled{background:#ccc; cursor:not-allowed;}
+  .pat-row{display:flex; gap:8px;}
+  .pat-row input{flex:1;}
+  .pat-row button{
+    padding:10px 14px; border-radius:8px; border:none; background:var(--navy);
+    color:#fff; font-size:13px; cursor:pointer; white-space:nowrap;
+  }
+  .pat-status{font-size:12px; margin-top:8px;}
+  .pat-status.ok{color:var(--moriya);}
+  .pat-status.ng{color:var(--sub);}
+  #log{
+    font-size:13px; padding:12px 14px; border-radius:10px; margin-top:12px;
+    display:none; white-space:pre-wrap; line-height:1.6;
+  }
+  #log.show{display:block;}
+  #log.ok{background:#EAF7F0; color:#1E7A4C; border:1px solid #BFE6CF;}
+  #log.err{background:#FDEDEC; color:#B3261E; border:1px solid #F3C6C3;}
+  #log.busy{background:#EEF1F7; color:var(--navy); border:1px solid #D6DCEA;}
+  .hint{font-size:11.5px; color:var(--sub); margin-top:4px; line-height:1.5;}
+  .req{color:var(--onair);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>もりつく＋　記事投稿ページ</h1>
+  <p>内部用・検索対象外／GitHub Desktopを使わず記事を追加します</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>① アクセス許可証（初回のみ）</h2>
+    <div class="pat-row">
+      <input type="text" id="patInput" placeholder="ghp_ から始まるトークンを貼り付け">
+      <button id="patSaveBtn" type="button">保存</button>
+    </div>
+    <div class="pat-status" id="patStatus">未設定です。トークンを貼り付けて保存してください。</div>
+    <div class="hint">
+      ※ desk.html（編成会議室）とは別に、このページ専用で保存されます。一度保存すれば、以降は毎回入力不要です。<br>
+      ※ 保存はこの端末・このブラウザ内だけです（他の人には見えません）。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>② 記事情報</h2>
+
+    <label>記事URL <span class="req">必須</span></label>
+    <input type="url" id="f_url" placeholder="https://news.yahoo.co.jp/articles/xxxx">
+
+    <label>タイトル（見出し） <span class="req">必須</span></label>
+    <textarea id="f_title" placeholder="見出しをそのまま貼り付け"></textarea>
+
+    <label>配信元 <span class="req">必須</span></label>
+    <input type="text" id="f_source" placeholder="例：ねとらぼ">
+
+    <label>掲載日時 <span class="req">必須</span></label>
+    <input type="datetime-local" id="f_date">
+
+    <label>ジャンル <span class="req">必須</span></label>
+    <div class="genre-select" id="genreSelect">
+      <div class="chip" data-genre="news">ニュース</div>
+      <div class="chip" data-genre="event">イベント</div>
+      <div class="chip" data-genre="gourmet">グルメ</div>
+      <div class="chip" data-genre="kids">キッズ</div>
+      <div class="chip" data-genre="ibaraki">県内全域</div>
+    </div>
+
+    <label>地域 <span id="cityReq" class="req">必須</span></label>
+    <div class="chips" id="cityChips">
+      <div class="chip" data-city="moriya">守谷</div>
+      <div class="chip" data-city="tsukubamirai">つくばみらい</div>
+      <div class="chip" data-city="tsukuba">つくば</div>
+    </div>
+    <div class="hint" id="cityHint">複数選択可。「県内全域」ジャンルを選ぶと自動的に対象外になります。</div>
+
+    <label>絵文字（サムネが無いときに表示）</label>
+    <div class="emoji-row" id="emojiRow">
+      <div class="emoji-btn" data-emoji="📰">📰</div>
+      <div class="emoji-btn" data-emoji="🏢">🏢</div>
+      <div class="emoji-btn" data-emoji="🎪">🎪</div>
+      <div class="emoji-btn" data-emoji="🍔">🍔</div>
+      <div class="emoji-btn" data-emoji="🍜">🍜</div>
+      <div class="emoji-btn" data-emoji="☕">☕</div>
+      <div class="emoji-btn" data-emoji="🍰">🍰</div>
+      <div class="emoji-btn" data-emoji="👶">👶</div>
+      <div class="emoji-btn" data-emoji="🌸">🌸</div>
+      <div class="emoji-btn" data-emoji="🏮">🏮</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>③ サムネイル画像（任意）</h2>
+    <div class="drop" id="dropZone">
+      画像をドラッグ＆ドロップ、またはタップして選択<br>
+      <span style="font-size:11px;">自動で16:9に切り抜き・縮小・WebP化されます</span>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" style="display:none;">
+    <div class="preview-wrap" id="previewWrap" style="display:none;">
+      <canvas id="canvas" width="1200" height="675"></canvas>
+      <div class="slider-row">
+        <span id="sliderLabel">切り取り位置</span>
+        <input type="range" id="posSlider" min="0" max="100" value="50">
+      </div>
+      <div class="thumb-actions">
+        <button type="button" class="btn-sm" id="clearThumbBtn">サムネを外す</button>
+        <span class="hint" id="sizeHint" style="margin:auto 0 auto 4px;"></span>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="submit-btn" id="submitBtn">この記事をサイトに掲載する</button>
+  <div id="log"></div>
+
+</main>
+
+<script>
+(function(){
+  const OWNER = "t-h0606";
+  const REPO = "moritsuku-plus";
+  const ARTICLES_PATH = "data/articles.json";
+  const THUMB_DIR = "images/thumbs";
+  const PAT_KEY = "moritsuku_add_article_pat";
+
+  // ---------- PAT ----------
+  const patInput = document.getElementById('patInput');
+  const patStatus = document.getElementById('patStatus');
+
+  function loadPat(){ return localStorage.getItem(PAT_KEY) || ""; }
+  function refreshPatStatus(){
+    const pat = loadPat();
+    if(pat){
+      patStatus.textContent = "設定済みです（保存済みのトークンを使用します）";
+      patStatus.className = "pat-status ok";
+      patInput.value = "";
+      patInput.placeholder = "変更する場合はここに新しいトークンを貼り付け";
+    } else {
+      patStatus.textContent = "未設定です。トークンを貼り付けて保存してください。";
+      patStatus.className = "pat-status ng";
+    }
+  }
+  document.getElementById('patSaveBtn').addEventListener('click', function(){
+    const v = patInput.value.trim();
+    if(!v){ alert("トークンを入力してください"); return; }
+    localStorage.setItem(PAT_KEY, v);
+    refreshPatStatus();
+  });
+  refreshPatStatus();
+
+  // ---------- ジャンル・地域 ----------
+  let selectedGenre = null;
+  const selectedCities = new Set();
+
+  document.querySelectorAll('#genreSelect .chip').forEach(el=>{
+    el.addEventListener('click', function(){
+      document.querySelectorAll('#genreSelect .chip').forEach(x=>x.classList.remove('on'));
+      el.classList.add('on');
+      selectedGenre = el.dataset.genre;
+      updateCityLock();
+    });
+  });
+
+  function updateCityLock(){
+    const isIbaraki = selectedGenre === 'ibaraki';
+    document.querySelectorAll('#cityChips .chip').forEach(el=>{
+      el.classList.toggle('disabled', isIbaraki);
+      if(isIbaraki){ el.classList.remove('on'); selectedCities.delete(el.dataset.city); }
+    });
+    document.getElementById('cityReq').style.display = isIbaraki ? 'none' : 'inline';
+    document.getElementById('cityHint').textContent = isIbaraki
+      ? "「県内全域」ジャンルのため、地域は自動的に対象外（空）になります。"
+      : "複数選択可。「県内全域」ジャンルを選ぶと自動的に対象外になります。";
+  }
+
+  document.querySelectorAll('#cityChips .chip').forEach(el=>{
+    el.addEventListener('click', function(){
+      if(el.classList.contains('disabled')) return;
+      el.classList.toggle('on');
+      const c = el.dataset.city;
+      if(el.classList.contains('on')) selectedCities.add(c); else selectedCities.delete(c);
+    });
+  });
+
+  // ---------- 絵文字 ----------
+  let selectedEmoji = "";
+  document.querySelectorAll('.emoji-btn').forEach(el=>{
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('on'));
+      el.classList.add('on');
+      selectedEmoji = el.dataset.emoji;
+    });
+  });
+
+  // ---------- 画像処理 ----------
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const previewWrap = document.getElementById('previewWrap');
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const posSlider = document.getElementById('posSlider');
+  const sliderLabel = document.getElementById('sliderLabel');
+  const sizeHint = document.getElementById('sizeHint');
+
+  let uploadedImg = null;
+  let cropAxis = 'v'; // 'v' = 縦方向をスライド, 'h' = 横方向をスライド
+  let thumbBlob = null;
+  let thumbFilename = null;
+
+  dropZone.addEventListener('click', ()=>fileInput.click());
+  dropZone.addEventListener('dragover', e=>{ e.preventDefault(); dropZone.classList.add('drag'); });
+  dropZone.addEventListener('dragleave', ()=> dropZone.classList.remove('drag'));
+  dropZone.addEventListener('drop', e=>{
+    e.preventDefault(); dropZone.classList.remove('drag');
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', e=>{
+    if(e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+  });
+
+  function handleFile(file){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      const img = new Image();
+      img.onload = function(){
+        uploadedImg = img;
+        const srcRatio = img.width / img.height;
+        const targetRatio = 16/9;
+        cropAxis = srcRatio > targetRatio ? 'h' : 'v';
+        sliderLabel.textContent = cropAxis === 'v' ? '上下の位置' : '左右の位置';
+        posSlider.value = 50;
+        previewWrap.style.display = 'block';
+        drawCanvas();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function drawCanvas(){
+    if(!uploadedImg) return;
+    const img = uploadedImg;
+    const targetRatio = 16/9;
+    let sx, sy, sw, sh;
+    const pos = posSlider.value / 100;
+    if(cropAxis === 'h'){
+      sh = img.height;
+      sw = sh * targetRatio;
+      sx = (img.width - sw) * pos;
+      sy = 0;
+    } else {
+      sw = img.width;
+      sh = sw / targetRatio;
+      sx = 0;
+      sy = (img.height - sh) * pos;
+    }
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(function(blob){
+      thumbBlob = blob;
+      sizeHint.textContent = blob ? ("約 " + Math.round(blob.size/1024) + "KB") : "";
+    }, 'image/webp', 0.72);
+  }
+  posSlider.addEventListener('input', drawCanvas);
+
+  document.getElementById('clearThumbBtn').addEventListener('click', function(){
+    uploadedImg = null; thumbBlob = null; thumbFilename = null;
+    previewWrap.style.display = 'none';
+    fileInput.value = '';
+  });
+
+  // ---------- base64 (UTF-8対応) ----------
+  function b64EncodeUnicode(str){
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    for(let i=0;i<bytes.length;i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  }
+  function b64DecodeUnicode(b64){
+    const binary = atob(b64.replace(/\n/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++) bytes[i] = binary.charCodeAt(i);
+    return new TextDecoder('utf-8').decode(bytes);
+  }
+  function blobToBase64(blob){
+    return new Promise((resolve, reject)=>{
+      const reader = new FileReader();
+      reader.onloadend = ()=> resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+  function randHex(n){
+    let s = '';
+    const chars = '0123456789abcdef';
+    for(let i=0;i<n;i++) s += chars[Math.floor(Math.random()*16)];
+    return s;
+  }
+
+  // ---------- GitHub API ----------
+  function ghHeaders(pat){
+    return {
+      "Authorization": "token " + pat,
+      "Accept": "application/vnd.github+json"
+    };
+  }
+  async function ghGetFile(pat, path){
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+      headers: ghHeaders(pat)
+    });
+    if(!res.ok){
+      const t = await res.text();
+      throw new Error(`取得失敗 (${res.status}): ${t.slice(0,200)}`);
+    }
+    return res.json();
+  }
+  async function ghPutFile(pat, path, base64Content, message, sha){
+    const body = { message, content: base64Content };
+    if(sha) body.sha = sha;
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: Object.assign({ "Content-Type": "application/json" }, ghHeaders(pat)),
+      body: JSON.stringify(body)
+    });
+    if(!res.ok){
+      const t = await res.text();
+      throw new Error(`更新失敗 (${res.status}): ${t.slice(0,300)}`);
+    }
+    return res.json();
+  }
+
+  // ---------- 送信 ----------
+  const logEl = document.getElementById('log');
+  function log(msg, type){
+    logEl.textContent = msg;
+    logEl.className = 'show ' + (type||'');
+  }
+
+  document.getElementById('submitBtn').addEventListener('click', async function(){
+    const pat = loadPat();
+    const url = document.getElementById('f_url').value.trim();
+    const title = document.getElementById('f_title').value.trim();
+    const source = document.getElementById('f_source').value.trim();
+    const dateRaw = document.getElementById('f_date').value; // YYYY-MM-DDTHH:MM
+
+    if(!pat){ log("① のアクセス許可証が未設定です。先に保存してください。", 'err'); return; }
+    if(!url || !title || !source || !dateRaw || !selectedGenre){
+      log("必須項目（URL・タイトル・配信元・掲載日時・ジャンル）が足りません。", 'err'); return;
+    }
+    if(selectedGenre !== 'ibaraki' && selectedCities.size === 0){
+      log("地域を1つ以上選んでください（県内全域ジャンルの場合は不要です）。", 'err'); return;
+    }
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    log("処理中です…", 'busy');
+
+    try{
+      // サムネのファイル名を決定
+      let thumbPath = "";
+      if(thumbBlob){
+        const dateOnly = dateRaw.slice(0,10);
+        thumbFilename = `${dateOnly}-${selectedGenre}-${randHex(4)}.webp`;
+        thumbPath = `${THUMB_DIR}/${thumbFilename}`;
+      }
+
+      // 1) articles.json を取得
+      log("記事一覧を取得中…", 'busy');
+      const fileData = await ghGetFile(pat, ARTICLES_PATH);
+      const jsonText = b64DecodeUnicode(fileData.content);
+      const data = JSON.parse(jsonText);
+      if(!Array.isArray(data.items)) throw new Error("articles.json の形式が想定と違います（items が見つかりません）");
+
+      const newArticle = {
+        title: title,
+        source: source,
+        date: dateRaw,
+        city: selectedGenre === 'ibaraki' ? [] : Array.from(selectedCities),
+        category: selectedGenre,
+        emoji: selectedEmoji || "📰",
+        url: url,
+        thumb: thumbPath
+      };
+
+      // 先頭記事(0番目)の直後、つまり2番目に挿入
+      const newItems = data.items.slice();
+      if(newItems.length === 0){ newItems.push(newArticle); }
+      else { newItems.splice(1, 0, newArticle); }
+      data.items = newItems;
+
+      // 2) サムネ画像を先にアップロード（あれば）
+      if(thumbBlob){
+        log("サムネイル画像をアップロード中…", 'busy');
+        const imgB64 = await blobToBase64(thumbBlob);
+        await ghPutFile(pat, thumbPath, imgB64, `サムネ追加: ${thumbFilename}`);
+      }
+
+      // 3) articles.json を更新
+      log("記事一覧を更新中…", 'busy');
+      const newContentB64 = b64EncodeUnicode(JSON.stringify(data, null, 2));
+      await ghPutFile(pat, ARTICLES_PATH, newContentB64, `記事追加: ${title}`, fileData.sha);
+
+      log("掲載が完了しました！サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
+
+      // フォームをリセット（PATは残す）
+      document.getElementById('f_url').value = '';
+      document.getElementById('f_title').value = '';
+      document.getElementById('f_source').value = '';
+      document.getElementById('f_date').value = '';
+      document.querySelectorAll('#genreSelect .chip').forEach(x=>x.classList.remove('on'));
+      document.querySelectorAll('#cityChips .chip').forEach(x=>x.classList.remove('on'));
+      document.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('on'));
+      selectedGenre = null; selectedCities.clear(); selectedEmoji = '';
+      updateCityLock();
+      uploadedImg = null; thumbBlob = null; thumbFilename = null;
+      previewWrap.style.display = 'none';
+      fileInput.value = '';
+
+    } catch(err){
+      log("エラーが発生しました：\n" + err.message, 'err');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  updateCityLock();
+})();
+</script>
+
+</body>
+</html>
