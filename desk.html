@@ -145,7 +145,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 
   <div id="output-area">
     <div class="hint">
-      ↓手動で貼りたい場合用のJSONです。GitHubで <b>data/articles.json</b> を開き、<b>"items": [</b> の直後（先頭）に貼り付けてください。
+      ↓手動で貼りたい場合用のJSONです。GitHubで <b>data/articles.json</b> を開き、先頭記事（フィーチャー枠）の閉じ<b>},</b> の直後＝2件目の位置に貼り付けてください（先頭に貼ると大型サムネイル枠に入ってしまいます）。
     </div>
     <textarea id="output" readonly></textarea>
   </div>
@@ -394,7 +394,9 @@ document.getElementById("publishBtn").addEventListener("click", async () => {
     const fresh = items.filter(i => !existing.has(i.url));
     if (!fresh.length) throw new Error("選択した記事はすべて掲載済みです");
 
-    data.items = [...fresh, ...(data.items || [])];
+    // 先頭記事（フィーチャー枠・サムネイル付き）は動かさず、2件目の位置に積む
+    const cur = data.items || [];
+    data.items = cur.length ? [cur[0], ...fresh, ...cur.slice(1)] : [...fresh];
     const d = new Date();
     data.updated = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 
