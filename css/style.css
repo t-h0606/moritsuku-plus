@@ -293,7 +293,7 @@ section { padding: 26px 0 40px; }
 .wx-now { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap; }
 .wx-icon { font-size: 2.8rem; line-height: 1; }
 .wx-city { font-size: 0.76rem; color: var(--ink-sub); font-weight: 700; margin-bottom: 4px; }
-.wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
+.wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; white-space: nowrap; }
 .wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
 .wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
 .wx-hourly {
@@ -358,11 +358,22 @@ section { padding: 26px 0 40px; }
 }
 /* 幅の狭いPC・タブレット横向き：週間予報とキャラを少し細くして、
    吹き出しや気温が押し潰されないようにする（このブロックは基本指定より後に置くこと） */
-@media (min-width: 641px) and (max-width: 940px) {
+@media (min-width: 641px) and (max-width: 1090px) {
   .wx-week-side { width: 214px; padding: 8px 12px 10px; }
   .ws-row { font-size: 0.84rem; min-height: 28px; gap: 7px; }
   .ws-row .ws-d { font-size: 0.8rem; }
   .ws-row .ws-i { font-size: 1.12rem; }
+  /* 降水確率の枠は固定幅をやめ、残った幅を4つで分け合う（切れずに全部見える） */
+  .wx-now { gap: 12px; }
+  .wx-icon { font-size: 2.3rem; }
+  .wx-temp { font-size: 1.7rem; }
+  .wx-hourly { overflow-x: auto; gap: 6px; width: 100%; }
+  .h-slot { flex: 1 1 0; min-width: 44px; padding: 8px 3px; }
+  .h-slot .h-time { font-size: 0.62rem; }
+  .h-slot .h-icon { font-size: 1.15rem; }
+  .h-slot .h-temp { font-size: 0.72rem; }
+  .wx-caster img { height: 152px; }
+  .wx-caster-tag { font-size: 0.68rem; padding: 4px 12px; }
 }
 @media (min-width: 641px) and (max-width: 860px) {
   .wx-caster img { height: 136px; }
