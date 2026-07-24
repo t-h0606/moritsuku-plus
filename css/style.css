@@ -253,7 +253,10 @@ section { padding: 26px 0 40px; }
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 700; font-size: 0.78rem; letter-spacing: 0.04em;
   color: #fff; background: var(--cc, var(--onair));
-  padding: 5px 16px; border-radius: 999px; white-space: nowrap;
+  padding: 5px 16px; border-radius: 999px;
+  /* 名前が極端に長い場合だけ折り返す。左の欄が広がりすぎて
+     降水確率の枠を押し出すのを防ぐための保険 */
+  max-width: 300px; white-space: normal; text-align: center; line-height: 1.35;
 }
 .wx-main { flex: 1; min-width: 0; }
 /* PC：今日の天気を大きく表示し、縦方向はセンター寄せで余白を分散 */
@@ -268,7 +271,6 @@ section { padding: 26px 0 40px; }
   .wx-icon { font-size: 3.4rem; }
   .wx-temp { font-size: 2.3rem; }
   .wx-cond { font-size: 0.82rem; }
-  .wx-now { gap: 14px; }
   .h-slot .h-icon { font-size: 1.35rem; }
 }
 .wx-bubble {
@@ -358,6 +360,16 @@ section { padding: 26px 0 40px; }
 }
 /* 幅の狭いPC・タブレット横向き：週間予報とキャラを少し細くして、
    吹き出しや気温が押し潰されないようにする（このブロックは基本指定より後に置くこと） */
+/* 広い画面での気象台。基本指定より後に置かないと効かないので、必ずこの位置に置くこと。
+   降水確率の4枠は固定幅にせず、残った幅を分け合う形にしている。
+   キャスター名の長さ（「白鷺ノン つくばみらい担当リポーター」は長い）や
+   端末のフォントによって左側の幅が変わっても、枠が切れないようにするため。 */
+@media (min-width: 1091px) {
+  .wx-now { gap: 14px; }
+  .wx-hourly { gap: 8px; min-width: 0; flex: 1 1 auto; }
+  .h-slot { flex: 1 1 0; min-width: 46px; max-width: 92px; }
+}
+
 @media (min-width: 641px) and (max-width: 1090px) {
   .wx-week-side { width: 214px; padding: 8px 12px 10px; }
   .ws-row { font-size: 0.84rem; min-height: 28px; gap: 7px; }
