@@ -14,15 +14,29 @@
       "thumb": "images/thumbs/2026-07-24-tsukuba-station.webp"
     },
     {
-  "title": "「茨城県のハンバーグの名店」一番うまいと思う店はどこ？　アットホームな空間で極上の手作りハンバーグを味わえる人気店などを紹介！",
-  "source": "ねとらぼ",
-  "date": "2026-07-20T19:00",
-  "city": ["tsukuba"],
-  "category": "gourmet",
-  "emoji": "🍔",
-  "url": "https://news.yahoo.co.jp/articles/9e3aed5885f2ca59ab963a3749b17baf0b3f41d6",
-  "thumb": "images/thumbs/2026-07-24-tsukuba-hamburg.webp"
-},
+      "title": "夏のつくばで盛り上がろう！「第14回世界のつくばで盆おどり2026」が7月25日にデイズタウン平面駐車場で開催",
+      "source": "さんたつ",
+      "date": "2026-07-20T14:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "📰",
+      "url": "https://article.yahoo.co.jp/detail/4091bfe35c50fd44672d0f5f1171e2f15ac0e237",
+      "thumb": ""
+    },
+    {
+      "title": "「茨城県のハンバーグの名店」一番うまいと思う店はどこ？　アットホームな空間で極上の手作りハンバーグを味わえる人気店などを紹介！",
+      "source": "ねとらぼ",
+      "date": "2026-07-20T19:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍔",
+      "url": "https://news.yahoo.co.jp/articles/9e3aed5885f2ca59ab963a3749b17baf0b3f41d6",
+      "thumb": "images/thumbs/2026-07-24-tsukuba-hamburg.webp"
+    },
     {
       "title": "茨城県古河市で同居女性の唇を縫った疑いで女が逮捕された事件 女を強要の疑いで再逮捕 茨城県警",
       "source": "TBS NEWS DIG",
