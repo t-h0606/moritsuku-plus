@@ -9,34 +9,58 @@
 :root {
   --studio: #16203A; --deep: #101830; --paper: #F6F7FA; --ink: #1F2433;
   --sub: #6E7686; --line: #E3E6EE; --onair: #FF4B5C;
-  --moriya: #2FA36B; --mirai: #F59E2D; --tsukuba: #3D7BFF; --ibaraki: #7A5CD6;
+  --moriya: #2FA36B; --mirai: #F59E2D; --tsukuba: #3D7BFF; --ibaraki: #17A2A8;
   --news: #4A5A7A; --event: #8B5CD6; --gourmet: #E8603C; --kids: #E85D9C;
+  --bm: #E8A13C;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
   background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 15px; }
-header { background: var(--studio); color: #fff; padding: 14px 18px; }
+header { background: var(--studio); color: #fff; padding: 14px 18px;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 header h1 { font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
 header .lamp { width: 9px; height: 9px; border-radius: 50%; background: var(--onair);
   box-shadow: 0 0 8px var(--onair); }
 header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
-.wrap { max-width: 860px; margin: 0 auto; padding: 16px; }
+.gear { background: none; border: 1.5px solid #3A4763; color: #9DA9C0; border-radius: 8px;
+  padding: 6px 12px; font-size: 0.78rem; cursor: pointer; flex-shrink: 0; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 16px; padding-bottom: 90px; }
+
+/* 設定パネル */
+#settings { display: none; background: #fff; border: 1.5px solid var(--line);
+  border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+#settings.show { display: block; }
+#settings h2 { font-size: 0.9rem; margin-bottom: 8px; }
+#settings p { font-size: 0.76rem; color: var(--sub); margin-bottom: 10px; line-height: 1.7; }
+#settings input { width: 100%; padding: 9px 12px; border: 1.5px solid var(--line);
+  border-radius: 8px; font-size: 0.85rem; margin-bottom: 10px; }
+#settings .row { display: flex; gap: 8px; }
+.mini-btn { padding: 7px 14px; border-radius: 8px; border: 1.5px solid var(--line);
+  background: #fff; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+.mini-btn.primary { background: var(--studio); border-color: var(--studio); color: #fff; }
+#tokenStatus { font-size: 0.74rem; font-weight: 700; margin-bottom: 8px; }
 
 .bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
 .chip { padding: 5px 13px; border-radius: 999px; border: 1.5px solid var(--line);
   background: #fff; font-size: 0.78rem; font-weight: 700; color: var(--sub); cursor: pointer; }
 .chip[data-on="1"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.chip.toggle[data-on="1"] { background: #B8860B; border-color: #B8860B; color: #fff; }
+.chip.bmview[data-on="1"] { background: var(--bm); border-color: var(--bm); color: #fff; }
 .meta-row { font-size: 0.74rem; color: var(--sub); margin: 8px 2px 12px; }
 
 .card { background: #fff; border: 1px solid var(--line); border-radius: 12px;
   padding: 12px 14px; margin-bottom: 10px; display: flex; gap: 10px; }
 .card.selected { border-color: var(--onair); box-shadow: 0 0 0 2px rgba(255,75,92,0.15); }
+.card.unsure { opacity: 0.62; }
 .card input[type=checkbox] { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--onair); flex-shrink: 0; }
 .card .body { flex: 1; min-width: 0; }
 .card .title { font-weight: 700; font-size: 0.92rem; }
 .card .title a { color: inherit; text-decoration: none; }
 .card .title a:hover { text-decoration: underline; }
 .card .info { font-size: 0.72rem; color: var(--sub); margin-top: 3px; }
+.warn-badge { font-size: 0.66rem; font-weight: 700; color: #B8860B; background: #FFF3D6;
+  border-radius: 999px; padding: 2px 8px; }
+.bm-badge { font-size: 0.66rem; font-weight: 700; color: var(--bm); }
 .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; align-items: center; }
 .cat-select { font-size: 0.74rem; padding: 3px 6px; border-radius: 7px; border: 1.5px solid var(--line); font-weight: 700; }
 .city-tag { font-size: 0.7rem; font-weight: 700; padding: 2px 9px; border-radius: 999px;
@@ -44,35 +68,59 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 .city-tag[data-on="1"][data-c="moriya"] { border-color: var(--moriya); color: var(--moriya); }
 .city-tag[data-on="1"][data-c="tsukubamirai"] { border-color: var(--mirai); color: #C97D14; }
 .city-tag[data-on="1"][data-c="tsukuba"] { border-color: var(--tsukuba); color: var(--tsukuba); }
-.city-tag[data-on="1"][data-c="ibaraki"] { border-color: var(--ibaraki); color: var(--ibaraki); }
 
-.footer-bar { position: sticky; bottom: 0; background: var(--studio); color: #fff;
-  padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
-.footer-bar .count { font-size: 0.85rem; font-weight: 700; flex: 1; }
-.btn { background: var(--onair); color: #fff; border: none; border-radius: 999px;
-  padding: 9px 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-.btn.ghost { background: transparent; border: 1.5px solid #55688C; }
+.footer-bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--studio); color: #fff;
+  padding: 10px 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.footer-bar .count { font-size: 0.8rem; font-weight: 700; margin-right: auto; }
+.btn { border: none; border-radius: 999px; padding: 9px 16px; font-size: 0.8rem;
+  font-weight: 700; cursor: pointer; }
+.btn.ghost { background: transparent; border: 1.5px solid #55688C; color: #fff; }
+.btn.bm { background: var(--bm); color: #fff; }
+.btn.gen { background: #55688C; color: #fff; }
+.btn.publish { background: var(--onair); color: #fff; }
+.btn:disabled { opacity: 0.45; cursor: default; }
 
 #output-area { display: none; margin-top: 14px; }
 #output-area.show { display: block; }
-#output-area textarea { width: 100%; height: 240px; font-family: monospace; font-size: 12px;
+#output-area textarea { width: 100%; height: 220px; font-family: monospace; font-size: 12px;
   border: 1.5px solid var(--line); border-radius: 10px; padding: 10px; background: #fff; }
 #output-area .hint { font-size: 0.76rem; color: var(--sub); margin: 8px 2px; line-height: 1.7; }
 .empty { text-align: center; color: var(--sub); padding: 40px 10px; font-size: 0.85rem; }
-.card.unsure { opacity: 0.62; }
-.warn-badge { font-size: 0.66rem; font-weight: 700; color: #B8860B; background: #FFF3D6;
-  border-radius: 999px; padding: 2px 8px; }
-.chip.toggle[data-on="1"] { background: #B8860B; border-color: #B8860B; color: #fff; }
+
+#toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: 70px;
+  background: var(--ink); color: #fff; padding: 10px 20px; border-radius: 999px;
+  font-size: 0.82rem; font-weight: 700; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s; z-index: 50; max-width: 90%; text-align: center; }
+#toast.show { opacity: 1; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1><span class="lamp"></span>編成会議室（局内専用）</h1>
-  <div class="note">報道部デスクが集めた候補から、掲載する記事を選んでください。ページ更新: <span id="updated">-</span></div>
+  <div>
+    <h1><span class="lamp"></span>編成会議室（局内専用）</h1>
+    <div class="note">候補から記事を選んで掲載。ページ更新: <span id="updated">-</span></div>
+  </div>
+  <button class="gear" id="gearBtn">⚙ 設定</button>
 </header>
 
 <div class="wrap">
+  <div id="settings">
+    <h2>📡 直接掲載の設定（GitHubトークン）</h2>
+    <div id="tokenStatus"></div>
+    <p>
+      「サイトに掲載」ボタンでarticles.jsonを直接更新するには、GitHubのアクセストークンが必要です。
+      GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate new token。
+      Repository accessで <b>moritsuku-plus のみ</b> を選び、Permissionsの <b>Contents</b> を <b>Read and write</b> にして作成し、
+      表示された「github_pat_」で始まる文字列を下に貼ってください。トークンはこの端末のブラウザ内にだけ保存されます。
+    </p>
+    <input type="password" id="tokenInput" placeholder="github_pat_...">
+    <div class="row">
+      <button class="mini-btn primary" id="tokenSave">保存</button>
+      <button class="mini-btn" id="tokenDelete">削除</button>
+    </div>
+  </div>
+
   <div class="bar" id="cityBar">
     <button class="chip" data-f="city" data-v="all" data-on="1">すべて</button>
     <button class="chip" data-f="city" data-v="moriya">守谷</button>
@@ -89,6 +137,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
   </div>
   <div class="bar">
     <button class="chip toggle" id="unsureToggle" data-on="0">⚠ タイトルに地名なしを隠す</button>
+    <button class="chip bmview" id="bmToggle" data-on="0">★ ブックマーク <span id="bmCount">0</span></button>
   </div>
   <div class="meta-row" id="metaRow">読み込み中…</div>
 
@@ -96,8 +145,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 
   <div id="output-area">
     <div class="hint">
-      ↓これをコピーして、GitHubで <b>data/articles.json</b> を開き、<b>"items": [</b> の直後（先頭）に貼り付けてください。
-      先頭に貼った記事のうち一番上がフィーチャー型（大型サムネイル）になります。サムネイル画像を付けたい場合は、貼り付け後にClaudeに記事URLと画像を送って "thumb" の加工を依頼してください。
+      ↓手動で貼りたい場合用のJSONです。GitHubで <b>data/articles.json</b> を開き、<b>"items": [</b> の直後（先頭）に貼り付けてください。
     </div>
     <textarea id="output" readonly></textarea>
   </div>
@@ -105,85 +153,118 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 
 <div class="footer-bar">
   <div class="count"><span id="selCount">0</span> 件 選択中</div>
-  <button class="btn ghost" id="clearBtn">選択解除</button>
-  <button class="btn" id="genBtn">JSONを生成</button>
+  <button class="btn ghost" id="clearBtn">解除</button>
+  <button class="btn bm" id="bmBtn">★ ブックマーク</button>
+  <button class="btn gen" id="genBtn">JSON</button>
+  <button class="btn publish" id="publishBtn">📡 サイトに掲載</button>
 </div>
 
+<div id="toast"></div>
+
 <script>
-const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば", ibaraki:"県内全域" };
+const OWNER = "t-h0606", REPO = "moritsuku-plus", FILE_PATH = "data/articles.json";
+const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば" };
 const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ", ibaraki:"県内全域" };
 const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒", ibaraki:"🗾" };
-const ALL_CITIES = ["moriya","tsukubamirai","tsukuba","ibaraki"];
+const LOCAL = ["moriya","tsukubamirai","tsukuba"];
+const LS_BM = "mk_bookmarks", LS_TOKEN = "mk_token", LS_POSTED = "mk_posted";
 
 let candidates = [];
-let state = { city:"all", cat:"all", hideUnsure:false, selected:new Set(), edits:{} };
+let state = { city:"all", cat:"all", hideUnsure:false, bmView:false, selected:new Set(), edits:{} };
+
+const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const lsSet = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+let bookmarks = lsGet(LS_BM, []);
+let postedUrls = new Set(lsGet(LS_POSTED, []));
+
+function toast(msg, ms = 2600) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._tm); t._tm = setTimeout(() => t.classList.remove("show"), ms);
+}
 
 function agoLabel(dateStr){
-  const d = new Date(dateStr), now = new Date();
-  const h = (now - d) / 3600000;
+  const d = new Date(dateStr), h = (Date.now() - d) / 3600000;
   if (h < 24) return Math.max(1, Math.floor(h)) + "時間前";
   const days = Math.floor(h / 24);
   if (days === 1) return "昨日";
   if (days < 7) return days + "日前";
   return (d.getMonth()+1) + "月" + d.getDate() + "日";
 }
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function currentList(){ return state.bmView ? bookmarks : candidates; }
 
 function getEdit(c){
+  if (state.bmView) return c;  // ブックマークは本体を直接編集
   if (!state.edits[c.id]) state.edits[c.id] = { category:c.category, city:[...c.city] };
   return state.edits[c.id];
 }
 
+function finalItem(c){
+  const e = getEdit(c);
+  return {
+    title: c.title, source: c.source || "", date: c.date,
+    city: e.category === "ibaraki" ? [] : e.city.filter(x => LOCAL.includes(x)),
+    category: e.category, emoji: EMOJI[e.category] || "📰", url: c.url, thumb: c.thumb || ""
+  };
+}
+
 function render(){
   const list = document.getElementById("list");
-  const LOCAL = ["moriya","tsukubamirai","tsukuba"];
-  const visible = candidates.filter(c => {
+  const src = currentList();
+  const visible = src.filter(c => {
     const e = getEdit(c);
-    if (state.hideUnsure && c.sure === false) return false;
-    // 県内全域はジャンル扱い（category==="ibaraki"、cityは空）
-    // 「すべて」＝3市の記事のみ。県内全域タブでだけ県内全域を表示する
+    if (!state.bmView && postedUrls.has(c.url)) return false;
+    if (!state.bmView && state.hideUnsure && c.sure === false) return false;
     const isPref = e.category === "ibaraki";
     const cityOk = state.city === "all" ? (!isPref && LOCAL.some(k => e.city.includes(k)))
                  : state.city === "ibaraki" ? isPref
                  : e.city.includes(state.city);
-    return cityOk && (state.cat==="all" || e.category===state.cat);
+    return cityOk && (state.cat === "all" || e.category === state.cat);
   });
-  document.getElementById("metaRow").textContent =
-    `候補 ${visible.length} 件を表示（全 ${candidates.length} 件）`;
+
+  document.getElementById("metaRow").textContent = state.bmView
+    ? `ブックマーク ${visible.length} 件を表示（全 ${bookmarks.length} 件）`
+    : `候補 ${visible.length} 件を表示（全 ${candidates.length} 件）`;
 
   if (!visible.length){
-    list.innerHTML = `<div class="empty">この条件の候補はありません。次の収集（6時/12時/18時）をお待ちください。</div>`;
-    return;
+    list.innerHTML = `<div class="empty">${state.bmView ? "この条件のブックマークはありません。" : "この条件の候補はありません。次の収集（6時/12時/18時）をお待ちください。"}</div>`;
+  } else {
+    list.innerHTML = visible.map(c => {
+      const e = getEdit(c);
+      const checked = state.selected.has(c.id);
+      const catOptions = Object.keys(CAT_NAMES).map(k =>
+        `<option value="${k}" ${k===e.category?"selected":""}>${EMOJI[k]} ${CAT_NAMES[k]}</option>`).join("");
+      const cityTags = LOCAL.map(k =>
+        `<button class="city-tag" data-c="${k}" data-on="${e.city.includes(k)?1:0}" data-id="${c.id}">${CITY_NAMES[k]}</button>`).join("");
+      const isBm = bookmarks.some(b => b.id === c.id);
+      return `
+      <div class="card ${checked?"selected":""} ${!state.bmView && c.sure===false ? "unsure":""}">
+        <input type="checkbox" data-id="${c.id}" ${checked?"checked":""}>
+        <div class="body">
+          <div class="title"><a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a></div>
+          <div class="info">${escapeHtml(c.source||"配信元不明")}｜${agoLabel(c.date)}
+            ${!state.bmView && isBm ? ' <span class="bm-badge">★保存済み</span>' : ''}
+            ${!state.bmView && c.sure===false ? ' <span class="warn-badge">⚠ タイトルに地名なし</span>' : ''}</div>
+          <div class="tags">
+            <select class="cat-select" data-id="${c.id}">${catOptions}</select>
+            ${cityTags}
+          </div>
+        </div>
+      </div>`;
+    }).join("");
   }
 
-  list.innerHTML = visible.map(c => {
-    const e = getEdit(c);
-    const checked = state.selected.has(c.id);
-    const catOptions = Object.keys(CAT_NAMES).map(k =>
-      `<option value="${k}" ${k===e.category?"selected":""}>${EMOJI[k]} ${CAT_NAMES[k]}</option>`).join("");
-    const cityTags = ALL_CITIES.map(k =>
-      `<button class="city-tag" data-c="${k}" data-on="${e.city.includes(k)?1:0}" data-id="${c.id}">${CITY_NAMES[k]}</button>`).join("");
-    const unsure = c.sure === false;
-    return `
-    <div class="card ${checked?"selected":""} ${unsure?"unsure":""}">
-      <input type="checkbox" data-id="${c.id}" ${checked?"checked":""}>
-      <div class="body">
-        <div class="title"><a href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a></div>
-        <div class="info">${escapeHtml(c.source||"配信元不明")}｜${agoLabel(c.date)}
-          ${c.sure === false ? ' <span class="warn-badge">⚠ タイトルに地名なし</span>' : ''}</div>
-        <div class="tags">
-          <select class="cat-select" data-id="${c.id}">${catOptions}</select>
-          ${cityTags}
-        </div>
-      </div>
-    </div>`;
-  }).join("");
-
   document.getElementById("selCount").textContent = state.selected.size;
+  document.getElementById("bmCount").textContent = bookmarks.length;
+  document.getElementById("bmBtn").textContent = state.bmView ? "★ 解除" : "★ ブックマーク";
 }
 
-function escapeHtml(s){
-  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
+function findItem(id){ return currentList().find(x => x.id === id); }
+function selectedItems(){ return currentList().filter(c => state.selected.has(c.id)); }
 
 document.getElementById("list").addEventListener("change", ev => {
   const id = ev.target.dataset.id;
@@ -191,21 +272,19 @@ document.getElementById("list").addEventListener("change", ev => {
     ev.target.checked ? state.selected.add(id) : state.selected.delete(id);
     render();
   } else if (ev.target.classList.contains("cat-select")){
-    const c = candidates.find(x => x.id === id);
+    const c = findItem(id); if (!c) return;
     getEdit(c).category = ev.target.value;
+    if (state.bmView){ c.emoji = EMOJI[c.category]; lsSet(LS_BM, bookmarks); }
     render();
   }
 });
 
 document.getElementById("list").addEventListener("click", ev => {
   if (ev.target.classList.contains("city-tag")){
-    const c = candidates.find(x => x.id === ev.target.dataset.id);
+    const c = findItem(ev.target.dataset.id); if (!c) return;
     const e = getEdit(c), city = ev.target.dataset.c;
-    if (e.city.includes(city)){
-      if (e.city.length > 1) e.city = e.city.filter(x => x !== city);
-    } else {
-      e.city.push(city);
-    }
+    e.city = e.city.includes(city) ? e.city.filter(x => x !== city) : [...e.city, city];
+    if (state.bmView) lsSet(LS_BM, bookmarks);
     render();
   }
 });
@@ -226,40 +305,160 @@ document.getElementById("unsureToggle").addEventListener("click", ev => {
   render();
 });
 
+document.getElementById("bmToggle").addEventListener("click", ev => {
+  state.bmView = !state.bmView;
+  state.selected.clear();
+  ev.target.dataset.on = state.bmView ? "1" : "0";
+  render();
+});
+
 document.getElementById("clearBtn").addEventListener("click", () => {
   state.selected.clear();
   document.getElementById("output-area").classList.remove("show");
   render();
 });
 
+// ---- ① ブックマーク ----
+document.getElementById("bmBtn").addEventListener("click", () => {
+  const items = selectedItems();
+  if (!items.length){ toast("記事にチェックを入れてください"); return; }
+  if (state.bmView){
+    const ids = new Set(items.map(c => c.id));
+    bookmarks = bookmarks.filter(b => !ids.has(b.id));
+    lsSet(LS_BM, bookmarks);
+    state.selected.clear();
+    toast(`${ids.size} 件をブックマークから外しました`);
+  } else {
+    let added = 0;
+    items.forEach(c => {
+      if (bookmarks.some(b => b.id === c.id)) return;
+      const e = getEdit(c);
+      bookmarks.unshift({ ...c, category: e.category, city: [...e.city], emoji: EMOJI[e.category] });
+      added++;
+    });
+    lsSet(LS_BM, bookmarks);
+    toast(added ? `★ ${added} 件をブックマークしました` : "選択した記事はすべて保存済みです");
+  }
+  render();
+});
+
+// ---- JSON生成（手動貼り付け用の予備手段） ----
 document.getElementById("genBtn").addEventListener("click", () => {
-  const items = candidates.filter(c => state.selected.has(c.id)).map(c => {
-    const e = getEdit(c);
-    return {
-      title: c.title, source: c.source || "", date: c.date,
-      city: e.category === "ibaraki" ? [] : e.city.filter(x => x !== "ibaraki"),
-      category: e.category, emoji: EMOJI[e.category], url: c.url, thumb: ""
-    };
-  });
-  if (!items.length){ alert("記事にチェックを入れてください"); return; }
+  const items = selectedItems().map(finalItem);
+  if (!items.length){ toast("記事にチェックを入れてください"); return; }
   const text = items.map(i => JSON.stringify(i, null, 2)).join(",\n") + ",";
   const ta = document.getElementById("output");
   ta.value = text;
   document.getElementById("output-area").classList.add("show");
   ta.focus(); ta.select();
-  try { document.execCommand("copy"); } catch(e) {}
+  try { document.execCommand("copy"); toast("JSONをコピーしました"); } catch(e) {}
+});
+
+// ---- ② サイトに直接掲載（GitHub API） ----
+const b64encode = (str) => {
+  const bytes = new TextEncoder().encode(str);
+  let bin = "";
+  bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin);
+};
+const b64decode = (b64) => {
+  const bin = atob(b64.replace(/\n/g, ""));
+  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+};
+
+document.getElementById("publishBtn").addEventListener("click", async () => {
+  const token = localStorage.getItem(LS_TOKEN);
+  if (!token){
+    toast("先に ⚙設定 でGitHubトークンを保存してください", 3500);
+    document.getElementById("settings").classList.add("show");
+    updateTokenStatus();
+    return;
+  }
+  const items = selectedItems().map(finalItem);
+  if (!items.length){ toast("記事にチェックを入れてください"); return; }
+  if (!confirm(`${items.length} 件をサイトに掲載します。よろしいですか？`)) return;
+
+  const btn = document.getElementById("publishBtn");
+  btn.disabled = true; btn.textContent = "送信中…";
+  try {
+    const api = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`;
+    const headers = { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" };
+
+    const res = await fetch(api, { headers, cache: "no-store" });
+    if (res.status === 401 || res.status === 403) throw new Error("トークンが無効です。⚙設定から登録し直してください");
+    if (!res.ok) throw new Error("articles.json の取得に失敗しました (" + res.status + ")");
+    const info = await res.json();
+    const data = JSON.parse(b64decode(info.content));
+
+    const existing = new Set((data.items || []).map(i => i.url));
+    const fresh = items.filter(i => !existing.has(i.url));
+    if (!fresh.length) throw new Error("選択した記事はすべて掲載済みです");
+
+    data.items = [...fresh, ...(data.items || [])];
+    const d = new Date();
+    data.updated = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+
+    const put = await fetch(api, {
+      method: "PUT", headers,
+      body: JSON.stringify({
+        message: `編成会議：記事${fresh.length}件を掲載`,
+        content: b64encode(JSON.stringify(data, null, 2)),
+        sha: info.sha
+      })
+    });
+    if (put.status === 409) throw new Error("他の更新と衝突しました。もう一度押してください");
+    if (!put.ok) throw new Error("書き込みに失敗しました (" + put.status + ")");
+
+    fresh.forEach(i => postedUrls.add(i.url));
+    lsSet(LS_POSTED, [...postedUrls].slice(-300));
+    if (state.bmView){
+      const pubIds = new Set(selectedItems().map(c => c.id));
+      bookmarks = bookmarks.filter(b => !pubIds.has(b.id));
+      lsSet(LS_BM, bookmarks);
+    }
+    state.selected.clear();
+    toast(`📡 ${fresh.length} 件を掲載しました！数分でサイトに反映されます`, 4000);
+    render();
+  } catch (err) {
+    toast("エラー：" + err.message, 4500);
+  } finally {
+    btn.disabled = false; btn.textContent = "📡 サイトに掲載";
+  }
+});
+
+// ---- 設定パネル ----
+function updateTokenStatus(){
+  const has = !!localStorage.getItem(LS_TOKEN);
+  document.getElementById("tokenStatus").textContent = has ? "✅ トークン保存済み（この端末）" : "❌ 未設定";
+  document.getElementById("tokenStatus").style.color = has ? "#2FA36B" : "#FF4B5C";
+}
+document.getElementById("gearBtn").addEventListener("click", () => {
+  document.getElementById("settings").classList.toggle("show");
+  updateTokenStatus();
+});
+document.getElementById("tokenSave").addEventListener("click", () => {
+  const v = document.getElementById("tokenInput").value.trim();
+  if (!v){ toast("トークンを入力してください"); return; }
+  localStorage.setItem(LS_TOKEN, v);
+  document.getElementById("tokenInput").value = "";
+  updateTokenStatus();
+  toast("トークンを保存しました");
+});
+document.getElementById("tokenDelete").addEventListener("click", () => {
+  localStorage.removeItem(LS_TOKEN);
+  updateTokenStatus();
+  toast("トークンを削除しました");
 });
 
 async function init(){
   try {
-    const res = await fetch("data/candidates.json", { cache:"no-store" });
+    const res = await fetch("data/candidates.json", { cache: "no-store" });
     const data = await res.json();
     candidates = data.candidates || [];
-    document.getElementById("updated").textContent = (data.updated || "-").replace("T"," ");
+    document.getElementById("updated").textContent = (data.updated || "-").replace("T", " ");
   } catch(e){
     document.getElementById("metaRow").textContent =
-      "candidates.json が読み込めませんでした。GitHub Actionsの初回実行がまだの可能性があります。";
-    return;
+      "candidates.json が読み込めませんでした。収集の初回実行がまだの可能性があります。";
   }
   render();
 }
