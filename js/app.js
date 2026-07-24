@@ -163,8 +163,9 @@ const CAT_TINTS = {
 };
 function thumbHTML(a, cls) {
   if (a.thumb) return `<span class="thumb ${cls}"><img src="${a.thumb}" alt=""></span>`;
+  // サムネイル画像が無いときは、ジャンル色のグラデーションの上に局のロゴを置く
   const [c1, c2] = CAT_TINTS[a.category] || ["#9DA9C0", "#C9D2E4"];
-  return `<span class="thumb ${cls}" style="background:linear-gradient(135deg,${c1},${c2})">${a.emoji || "📰"}</span>`;
+  return `<span class="thumb ${cls} thumb-logo" style="background:linear-gradient(135deg,${c1},${c2})"><img src="images/logo-moritsuku.webp" alt="もりつく＋"></span>`;
 }
 
 // 記事の日付から「2時間前」「昨日」などの表示を自動で作る。

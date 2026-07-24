@@ -603,6 +603,13 @@ section { padding: 26px 0 40px; }
   overflow: hidden;
 }
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* サムネイル画像が無いとき：グラデーションの中央に局ロゴ（切り抜かず全体を見せる） */
+.thumb-logo img {
+  width: auto; height: auto;
+  max-width: 68%; max-height: 42%;
+  object-fit: contain;
+  opacity: 0.92;
+}
 /* 先頭記事のフィーチャー型：サムネイル大・上部配置 */
 .card.featured { flex-direction: column; grid-column: 1 / -1; padding: 14px 14px 15px; gap: 12px; }
 .card.featured .thumb-lg {
