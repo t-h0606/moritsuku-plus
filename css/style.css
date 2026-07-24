@@ -268,9 +268,7 @@ section { padding: 26px 0 40px; }
   .wx-icon { font-size: 3.4rem; }
   .wx-temp { font-size: 2.3rem; }
   .wx-cond { font-size: 0.82rem; }
-  .wx-now { gap: 22px; }
-  .h-slot {
-  min-width: 74px; min-width: 62px; padding: 10px 8px; }
+  .wx-now { gap: 14px; }
   .h-slot .h-icon { font-size: 1.35rem; }
 }
 .wx-bubble {
@@ -290,13 +288,19 @@ section { padding: 26px 0 40px; }
   border-style: solid; border-width: 7px 12px 7px 0;
   border-color: transparent #fff transparent transparent;
 }
-.wx-now { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+/* 画面が狭くても縦に折り返さない。あふれる場合は降水確率の枠だけ横に流す
+   （折り返すとカードが一気に40px以上伸びてしまうため） */
+.wx-now { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap; }
 .wx-icon { font-size: 2.8rem; line-height: 1; }
 .wx-city { font-size: 0.76rem; color: var(--ink-sub); font-weight: 700; margin-bottom: 4px; }
 .wx-temp { font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900; font-size: 1.9rem; line-height: 1.2; }
 .wx-temp .low { color: var(--ink-sub); font-size: 1.1rem; font-weight: 500; margin-left: 4px; }
 .wx-cond { font-size: 0.78rem; color: var(--ink-sub); }
-.wx-hourly { display: flex; gap: 8px; flex-wrap: wrap; }
+.wx-hourly {
+  display: flex; gap: 8px; flex-wrap: nowrap;
+  min-width: 0; overflow-x: auto; scrollbar-width: none;
+}
+.wx-hourly::-webkit-scrollbar { display: none; }
 /* 「％＝降水確率」は気温ブロックの下端に添える。
    降水確率の枠と同じ行に収まるので、カードの高さは増えない */
 .wx-temp-block { display: flex; flex-direction: column; }
@@ -306,7 +310,7 @@ section { padding: 26px 0 40px; }
 }
 .h-slot {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
-  min-width: 74px; padding: 8px 6px;
+  min-width: 58px; padding: 8px 5px;
   background: rgba(255,255,255,0.75);
   border-radius: 14px;
 }
@@ -319,28 +323,28 @@ section { padding: 26px 0 40px; }
 /* PC：週間予報はカード右側のパネルに格納（左側と高さが揃うようコンパクトに） */
 .wx-week-side {
   flex-shrink: 0;
-  width: 224px;
+  width: 268px;
   align-self: flex-end;
   background: rgba(255,255,255,0.75);
   border-radius: 16px;
-  padding: 9px 15px 10px;
+  padding: 10px 16px 12px;
   display: flex; flex-direction: column; gap: 0;
 }
 .ws-title {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 700; font-size: 0.76rem;
+  font-weight: 700; font-size: 0.86rem;
   color: var(--ink-sub); letter-spacing: 0.08em;
   padding-bottom: 3px;
 }
 .ws-row {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.84rem; font-weight: 700;
-  padding: 0 7px; border-radius: 8px;
-  line-height: 1.32; min-height: 27px;
+  display: flex; align-items: center; gap: 9px;
+  font-size: 0.95rem; font-weight: 700;
+  padding: 0 8px; border-radius: 9px;
+  line-height: 1.3; min-height: 31px;
 }
 .ws-row.today { background: color-mix(in srgb, var(--cc, var(--onair)) 12%, #fff); }
-.ws-row .ws-d { width: 3.1em; white-space: nowrap; color: var(--ink-sub); font-weight: 700; font-size: 0.8rem; }
-.ws-row .ws-i { font-size: 1.12rem; }
+.ws-row .ws-d { width: 3.1em; white-space: nowrap; color: var(--ink-sub); font-weight: 700; font-size: 0.88rem; }
+.ws-row .ws-i { font-size: 1.3rem; }
 /* 気温と降水確率は1行に横並び。気温を左、降水確率を右端に置く */
 .ws-row .ws-t {
   margin-left: auto;
@@ -352,6 +356,21 @@ section { padding: 26px 0 40px; }
   font-size: 0.9em; font-weight: 700;
   color: var(--c-tsukuba); opacity: 0.85;
 }
+/* 幅の狭いPC・タブレット横向き：週間予報とキャラを少し細くして、
+   吹き出しや気温が押し潰されないようにする（このブロックは基本指定より後に置くこと） */
+@media (min-width: 641px) and (max-width: 940px) {
+  .wx-week-side { width: 214px; padding: 8px 12px 10px; }
+  .ws-row { font-size: 0.84rem; min-height: 28px; gap: 7px; }
+  .ws-row .ws-d { font-size: 0.8rem; }
+  .ws-row .ws-i { font-size: 1.12rem; }
+}
+@media (min-width: 641px) and (max-width: 860px) {
+  .wx-caster img { height: 136px; }
+  .wx-caster-tag { font-size: 0.64rem; padding: 4px 11px; }
+  .wx-week-side { width: 190px; }
+  .ws-row { font-size: 0.78rem; min-height: 26px; }
+}
+
 @media (max-width: 640px) { .wx-week-side { display: none; } }
 .w-day {
   display: flex; flex-direction: column; align-items: center; gap: 1px;
