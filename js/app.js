@@ -39,7 +39,9 @@ async function boot() {
     NEWS_REPORTERS = staff.newsReporters;
     ONAIR_STAFF = staff.onairStaff;
     NEXT_AVATAR_IDX = staff.nextAvatarIdx;
-    ARTICLES = articles.items;
+    // 記事の並び順：配信元の公開日が新しい順。
+    // ただし articles.json の先頭1件は「フィーチャー枠」として日付に関係なく固定する。
+    ARTICLES = sortArticles(articles.items);
     VIDEOS = videos;
     WEATHER = weather;
 
@@ -191,6 +193,22 @@ function agoLabel(a) {
 
 function linkAttrs(url) {
   return url ? `href="${url}" target="_blank" rel="noopener"` : `href="#"`;
+}
+
+// 記事の並び替え。先頭1件は固定、残りを date の新しい順に並べる。
+// date が無い記事や読めない記事はいちばん後ろにまわす。
+function articleTime(a) {
+  if (!a || !a.date) return -Infinity;
+  const t = new Date(String(a.date).replace(" ", "T")).getTime();
+  return isNaN(t) ? -Infinity : t;
+}
+
+function sortArticles(items) {
+  const list = (items || []).slice();
+  if (list.length <= 2) return list;
+  const head = list.shift();                       // 先頭記事は動かさない
+  list.sort((a, b) => articleTime(b) - articleTime(a));
+  return [head].concat(list);
 }
 
 function renderFeed() {
