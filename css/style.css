@@ -224,7 +224,8 @@ section { padding: 26px 0 40px; }
   vertical-align: middle;
 }
 @media (max-width: 640px) {
-  .news-updated { display: block; margin: 4px 0 0; font-size: 0.72rem; }
+  /* スマホでもPCと同じく見出しの右隣に置く（入りきらないときだけ折り返す） */
+  .news-updated { margin-left: 8px; font-size: 0.6rem; }
 }
 
 .sec-note { font-size: 0.74rem; color: var(--ink-sub); }
@@ -443,7 +444,8 @@ section { padding: 26px 0 40px; }
     padding: 12px;
   }
   .wx-caster { display: contents; }
-  .wx-caster img { grid-column: 1; grid-row: 1 / 3; height: 84px; align-self: end; }
+  /* リポーターを大きく＆上の余白を詰める（名前タグ＋吹き出しの2段ぶち抜き、下端合わせ） */
+  .wx-caster img { grid-column: 1; grid-row: 1 / 3; height: 112px; align-self: end; }
   .wx-caster-tag { grid-column: 2; grid-row: 1; justify-self: start; font-size: 0.56rem; padding: 3px 10px; }
   .wx-main { display: contents; }
   .wx-bubble {

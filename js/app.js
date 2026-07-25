@@ -273,7 +273,8 @@ function renderNewsUpdated(updated) {
   if (isNaN(d)) { el.textContent = ""; return; }
   const hasTime = /T\d/.test(raw);
   const base = `${d.getMonth() + 1}月${d.getDate()}日`;
-  el.textContent = hasTime ? `${base}${d.getHours()}時更新` : `${base}更新`;
+  const hm = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+  el.textContent = hasTime ? `${base}${hm}更新` : `${base}更新`;
 }
 
 function renderFeed() {
