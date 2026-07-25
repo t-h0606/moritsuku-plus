@@ -42,6 +42,7 @@ async function boot() {
     // 記事の並び順：配信元の公開日が新しい順。
     // ただし articles.json の先頭1件は「フィーチャー枠」として日付に関係なく固定する。
     ARTICLES = sortArticles(articles.items);
+    renderNewsUpdated(articles.updated);
     VIDEOS = videos;
     WEATHER = weather;
 
@@ -75,6 +76,54 @@ function wxType(w) {
   return "sun";
 }
 
+// その日の実データ（気温・時間帯ごとの降水確率）から、キャスターのコメントを
+// 毎回組み立てる。①洗濯アドバイス ②気温・天気の注意 ③キャラの一言、の3部品を
+// staff.json の wxComments から選んでつなぐ。文言を直したいときは staff.json を編集。
+function popAt(w, slot) {
+  const h = (w.hourly || []).find(x => x.t === slot);
+  return h && typeof h.pop === "number" ? h.pop : null;
+}
+
+// ① 洗濯物アドバイスのキーを決める
+function laundryKey(w) {
+  const morning = popAt(w, "06-12");     // 午前
+  const afternoon = popAt(w, "12-18");   // 午後
+  const dayPops = (w.hourly || []).map(h => h.pop).filter(p => typeof p === "number");
+  const maxDay = (morning != null || afternoon != null)
+    ? Math.max(morning ?? 0, afternoon ?? 0)
+    : (dayPops.length ? Math.max(...dayPops) : 0);
+  const rainy = /🌧|⛈|🌦|❄|🌨/.test(w.icon || "");
+  // 午前は乾く見込みだが午後に崩れる → 早めの取り込みを促す（最優先）
+  if (afternoon != null && afternoon >= 50 && morning != null && morning < 40) return "morningThenRain";
+  if (rainy || maxDay >= 60) return "bad";
+  if (maxDay >= 30) return "risky";
+  return "good";
+}
+
+// ② 気温・天気の注意のキーを決める（安全に関わる暑さ・冷えを優先）
+function cautionKey(w) {
+  const hi = typeof w.high === "number" ? w.high : null;
+  const rainy = /🌧|⛈|🌦|❄|🌨/.test(w.icon || "");
+  if (hi != null && hi >= 35) return "veryhot";
+  if (hi != null && hi >= 33) return "hot";
+  if (hi != null && hi >= 30) return "warm";
+  if (hi != null && hi <= 13) return "cold";
+  if (hi != null && hi <= 19) return "cool";
+  if (rainy) return "rain";
+  return "mild";
+}
+
+function wxComment(who, w) {
+  const set = WX_COMMENTS[who];
+  if (!set || !set.laundry) return "";   // 旧データ形式なら空にして崩れを防ぐ
+  const parts = [
+    set.laundry[laundryKey(w)],
+    set.caution[cautionKey(w)],
+    set.flavor
+  ].filter(Boolean);
+  return parts.join(" ");
+}
+
 // 気温などが取れなかったときは「―」を出す（数字が消えて崩れるのを防ぐ）
 function num(v) { return (v === null || v === undefined || v === "") ? "―" : v; }
 
@@ -97,7 +146,7 @@ function renderWeather() {
         <span class="wx-caster-tag">${c.name} ${c.label}</span>
       </div>
       <div class="wx-main">
-        <div class="wx-bubble">${WX_COMMENTS[c.comments][type]}</div>
+        <div class="wx-bubble">${wxComment(c.comments, w)}</div>
         <div class="wx-city">${dateStr}｜${w.city}</div>
         <div class="wx-now">
           <div class="wx-icon">${w.icon}</div>
@@ -210,6 +259,21 @@ function sortArticles(items) {
   const head = list.shift();                       // 先頭記事は動かさない
   list.sort((a, b) => articleTime(b) - articleTime(a));
   return [head].concat(list);
+}
+
+// 「まちの新着ニュース」見出しの右隣に「M月D日 H時更新」を出す。
+// articles.json の updated（例 "2026-07-24T15:30"）を使う。編成会議室で
+// 掲載すると自動で書き換わる。時刻が無い（日付だけの）ときは「M月D日更新」。
+function renderNewsUpdated(updated) {
+  const el = document.getElementById("news-updated");
+  if (!el) return;
+  if (!updated) { el.textContent = ""; return; }
+  const raw = String(updated);
+  const d = new Date(raw.replace(" ", "T"));
+  if (isNaN(d)) { el.textContent = ""; return; }
+  const hasTime = /T\d/.test(raw);
+  const base = `${d.getMonth() + 1}月${d.getDate()}日`;
+  el.textContent = hasTime ? `${base}${d.getHours()}時更新` : `${base}更新`;
 }
 
 function renderFeed() {

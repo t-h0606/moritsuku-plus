@@ -398,7 +398,7 @@ document.getElementById("publishBtn").addEventListener("click", async () => {
     const cur = data.items || [];
     data.items = cur.length ? [cur[0], ...fresh, ...cur.slice(1)] : [...fresh];
     const d = new Date();
-    data.updated = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+    data.updated = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}T${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
 
     const put = await fetch(api, {
       method: "PUT", headers,

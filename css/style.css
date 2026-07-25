@@ -212,6 +212,21 @@ section { padding: 26px 0 40px; }
   font-size: 1.3rem;
   letter-spacing: 0.03em;
 }
+/* 見出し右の「M月D日H時更新」。控えめな小さめ表示 */
+.news-updated {
+  margin-left: 10px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--muted, #8892a6);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+@media (max-width: 640px) {
+  .news-updated { display: block; margin: 4px 0 0; font-size: 0.72rem; }
+}
+
 .sec-note { font-size: 0.74rem; color: var(--ink-sub); }
 .dark { background: var(--studio); color: #fff; }
 .dark.deep { background: var(--studio-deep); }
@@ -283,6 +298,8 @@ section { padding: 26px 0 40px; }
   box-shadow: 0 4px 14px rgba(31,36,51,0.08);
   margin-bottom: 14px;
   width: fit-content;
+  max-width: 460px;      /* コメントが3文になったので、横に伸びすぎず折り返すように */
+  line-height: 1.55;
 }
 .wx-bubble::before {
   content: "";
@@ -434,6 +451,7 @@ section { padding: 26px 0 40px; }
     align-self: start;
     margin: 0;
     font-size: 0.75rem; padding: 8px 12px;
+    line-height: 1.5; max-width: none;
   }
   .wx-city { grid-row: 3; grid-column: 1 / -1; margin-bottom: 0; }
   .wx-now {
