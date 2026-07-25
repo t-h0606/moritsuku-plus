@@ -459,6 +459,12 @@
       else { newItems.splice(1, 0, newArticle); }
       data.items = newItems;
 
+      // 更新日時を「今」に設定（＝この記事を掲載した瞬間の日付・時刻）。
+      // サイト見出しの「◯月◯日HH:MM更新」はこの値を表示する。
+      const nowD = new Date();
+      const pad2 = n => String(n).padStart(2, "0");
+      data.updated = `${nowD.getFullYear()}-${pad2(nowD.getMonth()+1)}-${pad2(nowD.getDate())}T${pad2(nowD.getHours())}:${pad2(nowD.getMinutes())}`;
+
       // 2) サムネ画像を先にアップロード（あれば）
       if(thumbBlob){
         log("サムネイル画像をアップロード中…", 'busy');
