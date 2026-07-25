@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T23:49",
+  "updated": "2026-07-25T23:54",
   "items": [
     {
       "title": "カスミ、ミスターマックスほか／茨城県つくば市に「つくば市陣場複合施設（店舗面積5342m2）」27年2月9日新設",
@@ -12,6 +12,18 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBmZXpwYVhreEhFZkh2dHotUkdoOTdPTkhrZ0w5cXRLZ0pqLXdnVEpSUnZVNFRWbnppSVVJZDFnX0w5eVA0T1lVRVZaZzhPeUFILWxHZzhB?oc=5",
       "thumb": "images/thumbs/2026-07-24-tsukuba-station.webp"
+    },
+    {
+      "title": "酒気帯びで追突事故　容疑で20歳男逮捕　危険運転に数値基準　改正法施行後、茨城県内初摘発　県警つくば署",
+      "source": "茨城新聞",
+      "date": "2026-07-23T21:15",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.yahoo.co.jp/articles/d52931e797cc3d6e74a9cb1ed08162f363a08609",
+      "thumb": ""
     },
     {
       "title": "龍ケ崎の住宅火災　焼け跡から新たに1遺体　茨城",
