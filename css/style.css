@@ -444,8 +444,12 @@ section { padding: 26px 0 40px; }
     padding: 12px;
   }
   .wx-caster { display: contents; }
-  /* リポーターを大きく＆上の余白を詰める（名前タグ＋吹き出しの2段ぶち抜き、下端合わせ） */
-  .wx-caster img { grid-column: 1; grid-row: 1 / 3; height: 112px; align-self: end; }
+  /* レイアウト上の占有幅は元の84pxに戻す（吹き出しの横幅を元に戻すため）。
+     見た目だけ拡大して上の余白を埋める。transformは場所取りに影響しない */
+  .wx-caster img {
+    grid-column: 1; grid-row: 1 / 3; height: 84px; width: auto; align-self: end;
+    transform: scale(1.2); transform-origin: bottom center;
+  }
   .wx-caster-tag { grid-column: 2; grid-row: 1; justify-self: start; font-size: 0.56rem; padding: 3px 10px; }
   .wx-main { display: contents; }
   .wx-bubble {
