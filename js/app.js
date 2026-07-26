@@ -41,7 +41,9 @@ async function boot() {
     NEXT_AVATAR_IDX = staff.nextAvatarIdx;
     // 記事の並び順：配信元の公開日が新しい順。
     // ただし articles.json の先頭1件は「フィーチャー枠」として日付に関係なく固定する。
-    ARTICLES = sortArticles(articles.items);
+    // 記事は articles.json の並びのまま読み込む。並び順と先頭記事の決定は
+    // renderFeed が行う（ジャンルごとに featured 指定の記事を先頭に固定する）。
+    ARTICLES = articles.items;
     renderNewsUpdated(articles.updated);
     VIDEOS = videos;
     WEATHER = weather;
@@ -253,12 +255,16 @@ function articleTime(a) {
   return isNaN(t) ? -Infinity : t;
 }
 
-function sortArticles(items) {
-  const list = (items || []).slice();
-  if (list.length <= 2) return list;
-  const head = list.shift();                       // 先頭記事は動かさない
-  list.sort((a, b) => articleTime(b) - articleTime(a));
-  return [head].concat(list);
+// 各タブ（ジャンル）の並び順を決める。
+//  ・featured:true が指定された記事があれば、それを先頭記事（大きいカード）に固定する。
+//    ジャンルごとに1つだけ指定できる想定（記事投稿ページ側で担保）。
+//  ・featured 指定が無いジャンルは、日付が新しい記事を先頭にする（従来どおり）。
+//  ・先頭記事以外は、配信元の公開日が新しい順に並べる。
+function orderForFeed(filtered) {
+  const list = (filtered || []).slice();
+  const feat = list.find(a => a && a.featured === true);
+  const rest = list.filter(a => a !== feat).sort((a, b) => articleTime(b) - articleTime(a));
+  return feat ? [feat].concat(rest) : rest;
 }
 
 // 「まちの新着ニュース」見出しの右隣に「M月D日 H時更新」を出す。
@@ -279,13 +285,15 @@ function renderNewsUpdated(updated) {
 
 function renderFeed() {
   // 「県内全域」は3市に属さない記事。専用タブの中だけに出し、他のタブには一切混ざらない
-  const list = ARTICLES.filter(a => {
+  const filtered = ARTICLES.filter(a => {
     if (state.cat === "ibaraki") return a.category === "ibaraki";
     if (a.category === "ibaraki") return false;
     const cityOk = state.city === "all" || (a.city || []).includes(state.city);
     const catOk = state.cat === "all" || state.cat === "video" || a.category === state.cat;
     return cityOk && catOk;
   });
+  // このタブの先頭記事（featured）を固定し、残りを日付順に並べる
+  const list = orderForFeed(filtered);
   document.getElementById("emptyNote").hidden = list.length > 0;
   document.getElementById("feed").innerHTML = list.map((a, i) => {
     const badges = `

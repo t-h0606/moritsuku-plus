@@ -71,6 +71,8 @@
     color:#fff; font-size:15px; font-weight:700; cursor:pointer; margin-top:6px;
   }
   .submit-btn:disabled{background:#ccc; cursor:not-allowed;}
+  .submit-btn.feat{ background:var(--navy); margin-top:10px; }
+  .submit-btn.feat:disabled{ background:#ccc; }
   .pat-row{display:flex; gap:8px;}
   .pat-row input{flex:1;}
   .pat-row button{
@@ -181,7 +183,11 @@
     </div>
   </div>
 
-  <button type="button" class="submit-btn" id="submitBtn">この記事をサイトに掲載する</button>
+  <button type="button" class="submit-btn" id="submitBtn">この記事を掲載する</button>
+  <button type="button" class="submit-btn feat" id="submitFeatBtn">★ 先頭記事として掲載する（大きく表示）</button>
+  <div class="hint" style="margin-top:6px;">
+    「先頭記事」は各ジャンルの一番上に大きく固定表示されます。ジャンルごとに1つだけで、新しく指定すると同じジャンルの前の先頭記事は自動で通常表示に戻ります。先頭記事にはサムネイル画像（③）が必要です。
+  </div>
   <div id="log"></div>
 
 </main>
@@ -407,7 +413,7 @@
     logEl.className = 'show ' + (type||'');
   }
 
-  document.getElementById('submitBtn').addEventListener('click', async function(){
+  async function submitArticle(asFeatured){
     const pat = loadPat();
     const url = document.getElementById('f_url').value.trim();
     const title = document.getElementById('f_title').value.trim();
@@ -421,9 +427,13 @@
     if(selectedGenre !== 'ibaraki' && selectedCities.size === 0){
       log("地域を1つ以上選んでください（県内全域ジャンルの場合は不要です）。", 'err'); return;
     }
+    if(asFeatured && !thumbBlob){
+      log("先頭記事にはサムネイル画像が必要です。③でサムネイル画像を追加してください。", 'err'); return;
+    }
 
     const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
+    const submitFeatBtn = document.getElementById('submitFeatBtn');
+    submitBtn.disabled = true; submitFeatBtn.disabled = true;
     log("処理中です…", 'busy');
 
     try{
@@ -452,11 +462,19 @@
         url: url,
         thumb: thumbPath
       };
+      if(asFeatured) newArticle.featured = true;
 
-      // 先頭記事(0番目)の直後、つまり2番目に挿入
       const newItems = data.items.slice();
-      if(newItems.length === 0){ newItems.push(newArticle); }
-      else { newItems.splice(1, 0, newArticle); }
+      if(asFeatured){
+        // 同じジャンルの既存の先頭記事フラグを外す（ジャンルにつき先頭記事は1つ）
+        newItems.forEach(a => { if(a.category === selectedGenre && a.featured) delete a.featured; });
+        // 先頭記事は配列の一番上に置く（「最新記事」タブの先頭にも出る）
+        newItems.unshift(newArticle);
+      } else {
+        // 通常記事は先頭記事の直後（2番目）に挿入
+        if(newItems.length === 0){ newItems.push(newArticle); }
+        else { newItems.splice(1, 0, newArticle); }
+      }
       data.items = newItems;
 
       // 更新日時を「今」に設定（＝この記事を掲載した瞬間の日付・時刻）。
@@ -475,9 +493,9 @@
       // 3) articles.json を更新
       log("記事一覧を更新中…", 'busy');
       const newContentB64 = b64EncodeUnicode(JSON.stringify(data, null, 2));
-      await ghPutFile(pat, ARTICLES_PATH, newContentB64, `記事追加: ${title}`, fileData.sha);
+      await ghPutFile(pat, ARTICLES_PATH, newContentB64, `記事追加${asFeatured ? "(先頭記事)" : ""}: ${title}`, fileData.sha);
 
-      log("掲載が完了しました！サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
+      log((asFeatured ? "先頭記事として掲載しました！" : "掲載が完了しました！") + "サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
 
       // フォームをリセット（PATは残す）
       document.getElementById('f_url').value = '';
@@ -496,9 +514,13 @@
     } catch(err){
       log("エラーが発生しました：\n" + err.message, 'err');
     } finally {
-      submitBtn.disabled = false;
+      submitBtn.disabled = false; submitFeatBtn.disabled = false;
     }
-  });
+  }
+
+  document.getElementById('submitBtn').addEventListener('click', () => submitArticle(false));
+  document.getElementById('submitFeatBtn').addEventListener('click', () => submitArticle(true));
+
 
   updateCityLock();
 })();
