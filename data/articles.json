@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T20:29",
+  "updated": "2026-07-26T20:55",
   "items": [
     {
       "title": "カスミ、ミスターマックスほか／茨城県つくば市に「つくば市陣場複合施設（店舗面積5342m2）」27年2月9日新設",
@@ -12,6 +12,18 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBmZXpwYVhreEhFZkh2dHotUkdoOTdPTkhrZ0w5cXRLZ0pqLXdnVEpSUnZVNFRWbnppSVVJZDFnX0w5eVA0T1lVRVZaZzhPeUFILWxHZzhB?oc=5",
       "thumb": "images/thumbs/2026-07-24-tsukuba-station.webp"
+    },
+    {
+      "title": "古民家レストランで創作イタリア料理（つくば市） 令 和8年7月24日放送",
+      "source": "pref.ibaraki.jp",
+      "date": "2026-07-24T13:36",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQ3JqTmJUX3ZNYlJwa0lnUUQtRUVEcWtOUmxUVFpWMnlBRnBqRzhvYS1pSVZST1oxUW16VXFGVGMydDdaa19iZUh3ZHZZSlFsSllMWnMwUUNrSGoyb2twT1lRU3JpQUNGVGRGSnY5R0JULWdTWFIyYjJhUWtEd3hBaDFYYUw?oc=5",
+      "thumb": ""
     },
     {
       "title": "つくば発 鳥取ローバーチャレンジ＆URCを目指した惑星探査機開発",
