@@ -1,7 +1,237 @@
 {
-  "updated": "2026-07-26T19:42",
-  "count": 216,
+  "updated": "2026-07-27T06:56",
+  "count": 217,
   "candidates": [
+    {
+      "id": "c302d72e811b",
+      "title": "プロ野球・阪神１―０巨人",
+      "source": "つくば経済新聞",
+      "date": "2026-07-27T04:44",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1feU9CUDBrWUUtekdpdF9nRllYajZXanBMWUhtSHBGOHNCcXlZM0pEWnhpV3NrNV9XYTlacTBsRGtZQUVyN0k4akN3dEJkR21oNUF3Vg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "20188dd930f8",
+      "title": "茨城県の過去の雨雲レーダー(2026年07月26日)",
+      "source": "tenki.jp",
+      "date": "2026-07-27T00:22",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1yYlVUcUlPZDcwS2NmVjhHajFxTjFiWDdnY3N5MWJUeC0zSTlXLXhCSWJGR0Y4MDFxbExjTU8xSjRjaGN0T2xGUTRabVNOdDlHaS1ZY2xxRQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "5813063e2b8f",
+      "title": "八王子実践が甲子園初出場",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T23:52",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5URzdyNkhzM2FyRWMxMVJqelRPUlJlTUxVeXBwZ0NPY2JnckRaQTlHeGdZOVNIVThCa2NDWFVfZFlOTHZiYlFyc3dKT3A1MU1iZURHeQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "61273115c812",
+      "title": "茨城県で最大震度1の地震 茨城県・日立市、常陸太田市、高萩市、常陸大宮市",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-26T23:48",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1iZzFCWmZ3dkxTZ2V1VnpHSUtWMXdxcElaWW52aW9hVE5rMDRRTmlGOEdjank2OGVsN3cycVYxVFF1bG9NLU5rMWdhWGpjbHNYZENCOGdqRQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "663d25f57ddb",
+      "title": "新着情報“ＧクラスG350 ブルーテック”2015年式オブシディアンブラックM入荷しました！",
+      "source": "中古車のガリバー",
+      "date": "2026-07-26T21:49",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTk03RENpVnllY3hPZDJSV012alJFTm5kVlBPRk5JMWE2bHRtcG40aHByc09IWWNCNjRzbG1nRFZNSXFvZV85aEdOYlhkQmtVbnBWWDBfMlR0cWppUk56MFpEYUNRTmRTMllhVUk4VzFLUU5jaVdKaGhSNXpyN041OVR3?oc=5",
+      "sure": false
+    },
+    {
+      "id": "baff8a8b50f2",
+      "title": "【レベル3大雨警報】茨城県・牛久市に発表 21:11時点（TBS NEWS DIG Powered by JNN）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T21:13",
+      "city": [
+        "moriya",
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE43RGpnbUFERDNHZWhWZHNtUzc5R3lTaFdPMldCbXZhTTNZbW1JQ09VeHpxaXMtUFNpbmJ6TDllOVhPeDUzcUlGcjJkMk5zUF9IQW5IVzgxTXgtRDJQUjJmWTZQWmZlY19UVkJtbHBqQXJQVkJNTURKRDZzcDFJVVE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a9feb94f2985",
+      "title": "【レベル３大雨警報】茨城県・牛久市に発表 21:11時点",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-26T21:11",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9jY2NWVHpaOW5fdzhvWGJHU2ZvQXFDVGdUaDR3NzRmcndsYnhUTlJJZWVCU3NMNm5DeXItMlJ0djNKLW5mejgwU3ZIMlFETmc5djNoM2Z5UQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "fc297a7e67bc",
+      "title": "【レベル3大雨警報】茨城県・石岡市、常総市、つくば市などに発表 20:43時点（TBS NEWS DIG Powered by JNN）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5SQ3FPWVNha3A3RXc3UFpDM3RIZVlpbE1leHJqQjZzOUZsd1BaT1d0OHRkUUJSSG81UFNVNnY5V0h0RjYxMXNINHBFVWJHWTBtcnlpR2ljRzRmRWwzcnZJVWNHV1J3Qjl2bjNfX2NVTnlHVVJRek1fV0JzYnhjSWc?oc=5",
+      "sure": true
+    },
+    {
+      "id": "7a27e08576ad",
+      "title": "【レベル3大雨警報】茨城県・石岡市、常総市、つくば市などに発表 20:43時点 (TBS NEWS DIG Powered by JNN)",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSzBCZDBoSGtGand1M1p5S21RTTNKS1VNTmtGcm5ScnJqenJWd0xwUGhrMmdsUHIydWJ0dGt1cEdJYlJRSC1xNDlUUWw5N3AzaTlwMnN5UmF5aE1ENGNUc2tZLUpoQjlWSFpRZmVXZVhGS0Viby1TMGtNd1lBWFUyQW11V2FpUHp3NENIVURB?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a988db8f0d97",
+      "title": "相模原殺傷事件から１０年",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBqbEREZmozeFAtcWlqeEVlM3owNGc1R2E4Tl85QUw4bWllczM5MDl5eWxidWhHZFJyUDJZbGlfYjlSWGFBOFJLRjBXQkVSckdwekt1Qg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "c592e1900ea5",
+      "title": "プロ野球・日本ハム６―２楽天",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9nd2x6a1d3NFZsY19XOGRzdlJNMU1QUjJ6REVuWFlaYndaSUNpRVRaVkJEZFlnVF9ONnVBbWZKZmZ1Zm5jalVHaGNNZWJvWUZpNU1yMw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "2cbf5dc43355",
+      "title": "群衆に車、１人死亡、１６人負傷",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfX2d0U0dfODR5Q3ZMdTJPcFFfRG5SOFA5dW92dVdYRjk1MG51S2FtY0tBdlZlaEs4QmVDbHFKMlZjQTFGdU5KODhuMjdxRVRiOE5PTA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "0410149ddc04",
+      "title": "トランプ氏批判も覚悟",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T20:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vSGNPWU9ZWG5Hd0trU3JSc1B4X1I0SUFoa3hiY0pfTUQ1akVIcVNFTDN4OFczNjF3bTZNb0tzemdadEdaSXBmNC1PbGoyQ3BZYkRxSA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "5f87f47edae0",
+      "title": "【レベル３大雨警報】茨城県・石岡市、常総市、つくば市などに発表 20:43時点",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-26T20:43",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1vWU1OX1FZYzFBaVgtZFNuNGs4X0pSVHVIdEE3SFBYWFFPWUlKRlBGZU1jNllpT0d2cm9faTRHZm03Y2w2djcyOGFpMlJEQU4zTFpDcTlaUQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "8955f05b2f5e",
+      "title": "【レベル3大雨警報】茨城県・土浦市に発表 20:22時点（TBS NEWS DIG Powered by JNN）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T20:23",
+      "city": [
+        "moriya",
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBjSjdSOC04T05HOEE2WTBlQU5xcEpNTlBUOFB0VWZScWwwaXhWUGFwUG5tYU9qNkQwVmVSWE9Hc29fa0NyQmJaRW9acTF1bEZHZW9BOVJUY193Vk12OE5VX21iakZoRDVXQXU1RU1STnlva1dkbm5GNExFZm5LN3M?oc=5",
+      "sure": true
+    },
+    {
+      "id": "f76020be64ed",
+      "title": "【レベル３大雨警報】茨城県・土浦市に発表 20:22時点",
+      "source": "ｄメニューニュース",
+      "date": "2026-07-26T20:22",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE43eTVvUUZzYlFlZGU3UFBRZERFRFVVOGVCMlhaNVZHM1NSdVU4ODdqTktWcjJnMl92UUtmR2N2aHNRR3F1TTQ4Tl9uRTVfazdsTFpHSDhmQkFYR25rTUo5M3JZLXdwRTZPY1V4eHpQamo0OHNl0gF0QVVfeXFMTjd5NW9RRnNiUWVkZTdQUFFkREVEVVU4ZUIyWFo1VkczU1J1VTg4N2pOS1ZyMmcyX3ZRS2ZHY3Zoc1FHcXVNNDhOX25FNV9rN2xMWkdIOGZCQVhHbmtNSjkzclktd3BFNk9jVXh4elBqajQ4c2U?oc=5",
+      "sure": true
+    },
+    {
+      "id": "4d0deecbe1f8",
+      "title": "【レベル3大雨警報】茨城県・取手市に発表 19:40時点（TBS NEWS DIG Powered by JNN）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T19:42",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CZGp4VlZkYy00NlM1OElBNVBOVDY0YVdSVnFCVlEtMW91OUFLYjVYVHZqMTNrRmRRZG9xX3VFb0xZS0FPTXdaVFJYa0hDR2QxSEJXSFFCN3Z3OTJPbHZMcVc3eldSazJVNThNam9fX1B6M0x2cm5qV3lyRjZwWHc?oc=5",
+      "sure": true
+    },
+    {
+      "id": "b3abaa015517",
+      "title": "【レベル３大雨警報】茨城県・取手市に発表 19:40時点",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-26T19:40",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9KcF9GcHlkN1hqZzBZbzhFMHBhVEhhczB5OUZtcnpGWmg1d2ItSHp0dE9tVnJPQWMtQl90aUF5M2Y2Z2hOeW11ODZOSWdWZ0UyUk1EUjFZMTIxRWtUeTByMVAyVE8?oc=5",
+      "sure": true
+    },
     {
       "id": "e2e977e75b17",
       "title": "見た目も味も心をつかむ。「ヌメロサンドゥ」(茨城県・守谷市)で出会う、感性あふれるフランス菓子（ufu.）",
@@ -16,19 +246,6 @@
       "sure": true
     },
     {
-      "id": "4f98c93c8bd1",
-      "title": "見た目も味も心をつかむ。「ヌメロサンドゥ」（茨城県・守谷市）で出会う、感性あふれるフランス菓子 (2026年7月26日掲載)",
-      "source": "ライブドアニュース",
-      "date": "2026-07-26T18:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBUSWNKTzh6U0hISVZwTHNnLXpuODRUcXg3WU1UdjBGNEJlZnUwZExUbjBkUi1qV3BxNWJFU01QZ3Jwa1F4Y2R6WFAtc1VZX0NTQTBPejJLa3RJaGhUYmc?oc=5",
-      "sure": true
-    },
-    {
       "id": "245410c10296",
       "title": "親子ら3人海に流され父死亡 茨城",
       "source": "Yahoo!ニュース",
@@ -40,38 +257,64 @@
       "sure": true
     },
     {
-      "id": "5096ff88842b",
-      "title": "【茨城県】廃校をリノベした激レア工場に、4DXの没入体験も！ 大人も子どもも楽しめる工場見学3選",
-      "source": "All About ニュース",
-      "date": "2026-07-26T17:15",
+      "id": "42ee623b3ef7",
+      "title": "茨城・鹿嶋で「３人くらい流されている」と１１９番、1人死亡…離岸流に巻き込まれたか",
+      "source": "読売新聞",
+      "date": "2026-07-26T17:03",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1KUXpCcFpaaWo3V2VlUVhKbThHanRtbmlvMjV0eDk1UHhBTHY3X2oxaFFsTmNJY2dWTjdHYVNGczJGb2sxUThQSTNkbWhBM2dKMU1ZdUY2ejRZYkkyLVZqWmpnT1NCUQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a358c838ad2d",
+      "title": "【つくばに新規オープン】トランクルーム「スペラボつくば店」が2026年8月1日にオープン！",
+      "source": "PR TIMES",
+      "date": "2026-07-26T17:00",
       "city": [
-        "moriya"
+        "tsukuba"
       ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1LNzZqYTRyYmQzRDI1a1ZNbXoxRjZDNXZoT1I5QVRKdng3ZG5PVTVSZFhaRFhPakRmeGt6dDFuOFFnWVRzWG1US1h2VHJTQ1V3Q082bHNaZ3NLUQ?oc=5",
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9FTWRoSlBabHJsMlNmclhOZDBaWHpSYmVaaWNvX08wREVpa3lEWlk0QlNHcnZRUHk4bWhodlpabWRnSDU4dlpFWjNnRkNIcV9uQkMtT0IyM05pY3l6cGtOdlVHVWNydUxlS2c?oc=5",
       "sure": true
     },
     {
-      "id": "c697c80123d6",
-      "title": "山本耕史と行く茨城県結城市の旅！子どもが大好きな料理や習い事事情など 家族エピソードが続々",
-      "source": "日本テレビ",
-      "date": "2026-07-26T14:31",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBmb19waUc2MC1KQXZmSm9IcXpKdkZNcWZpMHdrMzVNYTVGRmg3aFF4RzZ5ZkNFVzdYZ0MzNDdLa1BZZnJGUDlHR3FRVURvazRVSGVJYWtDM2JDQkhhU2hJZGN2WF9RT2hlVF9qbjBFYk0xZ0lz?oc=5",
-      "sure": true
+      "id": "d391bf37f1b6",
+      "title": "元幕内大翔丸「寂しさある」",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T16:39",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1aanJERUdLbHFOc3JEZHcyZlVhTHhYSXZLUHRxakNZbjc5UVczMURoZGdQUnV6V3E0NjBYUHZhNllqRzVVaEtyb3ZraVNTc0dYNzk2MA?oc=5",
+      "sure": false
     },
     {
-      "id": "7b0d80f2f859",
-      "title": "【速報】茨城・武井釜海岸で親子含む3人の水難事故 父親（56）死亡・小6息子（11）は軽傷 現場付近には人工岬「ヘッドランド」あり「離岸流」発生しやすい状況",
-      "source": "TBS NEWS DIG",
-      "date": "2026-07-26T13:41",
+      "id": "2b0c201e8a1a",
+      "title": "今永は７勝目 大リーグ",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T14:37",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9kc1VQbkNwaGVmQjFXSmF5WWIzYnpFUHNBZ3VydnpVaFhWVGZnVGszZV9fU09SZ1pjQWtfMGpUODNfUHBZSXcyX2MwSTh1OFVpQ2JONA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "d1716c075cfc",
+      "title": "「3人が流されている」海岸で親子含む3人の水難事故 父親（56）死亡 小6息子（11）と義兄（55）は軽傷 「離岸流」が発生しやすい状況 茨城・鹿嶋市 武井釜海岸（TBS NEWS DIG Powered by JNN）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T13:40",
       "city": [],
       "category": "ibaraki",
       "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE94VUhNbDh6ZEJTM3ljWnN5djBYUzVuX1IyUFc2Y0p1V0MwNEp4NURnNWNibXJ5aUxrMW5KcGY0OVhIdmYzeU9hdXdrY0FoRVFxUlhnUnVSdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56ZU1YYkpuRkd4cEZRYzIxQmo3eFdnc3FHb3IzdFlId0ZXaS1LWWktdzFCS2VWVWhvUlBtajkySDZ0RjJ1M1dGWVJGWG9POGJlMXNhNmJjMFpLZW5fc3JlY2dfM1RNVEU1X05Xb0hjcEJ4VUU4U0R0ZldaVnk3NHc?oc=5",
       "sure": true
     },
     {
@@ -153,8 +396,21 @@
       "sure": false
     },
     {
+      "id": "cd6b69d98261",
+      "title": "ベルリンで群衆に車",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T12:37",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9CMkNCTkZWVXhESDAxRW9QODlkd25xbDN2dTJRSE5PT2ZPZE94Rk1XLXNhQnZRUnhkSWhqZ2UwenRUY0JpNWhmbG9IMWFraVNRQk1FMg?oc=5",
+      "sure": false
+    },
+    {
       "id": "a5b632ebaf4e",
-      "title": "6回戦、守谷・中村選手を攻める中村学園・木原選手（左）＝26日午前、福岡市東区（撮影・佐藤雄太朗） - 八代白百合など8強進出 玉竜旗女子2日目 午後に決勝",
+      "title": "6回戦、守谷・中村選手を攻める中村学園・木原選手（左）＝26日午前、福岡市東区（撮影・佐藤雄太朗）",
       "source": "西日本新聞me",
       "date": "2026-07-26T11:47",
       "city": [
@@ -250,6 +506,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBScnZYZ2UtTnhzcUZKRzhfbzFCSFhpZ29XcHVxbTBmUnBmU1FTMXoxdXpOczNvRVgybF9PNllZMUxKdG8teHNzNm11MTVidzNURTJtbg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "099d0b0c0b57",
+      "title": "犠牲者悼み、追悼式",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T00:43",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE04N0E5RmY0UVNzY3dSaE9yMUp3RDk4ZWl1ZUVYVDFJeTh5LUl3U0RXRXlBTDRhUV9qUUF6MEJuMWxoX0otNGNzMUJMaERERXJwVU9YNw?oc=5",
       "sure": false
     },
     {
@@ -440,19 +709,6 @@
       "sure": true
     },
     {
-      "id": "5cfed20fd6b8",
-      "title": "つくば発 鳥取ローバーチャレンジ＆URCを目指した惑星探査機開発",
-      "source": "クラウドファンディング - READYFOR",
-      "date": "2026-07-25T13:10",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA4SGM5emNGa2ZsNVU5YWNIWkk0YnFaUDJrVVFfTEtOMnRzZDYxbkQ3SkJETEtCeWV1VEVCYk9DZUNTMDk0YXFqMnhDZEJkRkFjX2Ixd2NNTEQ?oc=5",
-      "sure": true
-    },
-    {
       "id": "dd1f76244a67",
       "title": "着水するスターシップ",
       "source": "つくば経済新聞",
@@ -616,6 +872,19 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9uWnc3X0g2VmFVVVlzLWMxaWdpdVpkOGIyQllueURWbWZ2b3dDN3g1NVM4aDZ2MEh1SVRxbUxYaUhxWjlfQ1JpazRRalc0Q2YtWTZXdXozN3pqblFZVjhIdWRmeTZ4R2ItclNualRoTTFrYktJc29qNDBVM19PM00?oc=5",
       "sure": true
+    },
+    {
+      "id": "1e8a274ad4e4",
+      "title": "冷え冷えをお届け｜筑波サーキットもお祭り的～筑波ロードレースな朝！！ : 酒の近江屋･サラダ館野田花井店･醤油の里ライブ",
+      "source": "t.co",
+      "date": "2026-07-25T10:10",
+      "city": [
+        "moriya"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE41ZjZoRU5EbjlwaDl0NGsxZW9Jam1mS1NCam56dVo0UkNBdEt0SWNIdW9FdlFLWWt4NjlJ?oc=5",
+      "sure": false
     },
     {
       "id": "eb2ca4e35409",
@@ -1090,19 +1359,6 @@
       "sure": false
     },
     {
-      "id": "4da7d14df2ca",
-      "title": "古民家レストランで創作イタリア料理（つくば市） 令 和8年7月24日放送",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-07-24T13:36",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQ3JqTmJUX3ZNYlJwa0lnUUQtRUVEcWtOUmxUVFpWMnlBRnBqRzhvYS1pSVZST1oxUW16VXFGVGMydDdaa19iZUh3ZHZZSlFsSllMWnMwUUNrSGoyb2twT1lRU3JpQUNGVGRGSnY5R0JULWdTWFIyYjJhUWtEd3hBaDFYYUw?oc=5",
-      "sure": true
-    },
-    {
       "id": "b0a2105fc1dc",
       "title": "「国家情報局長」に原和也内閣情報官",
       "source": "つくば経済新聞",
@@ -1226,19 +1482,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5xRHUwSHlQYkNVRTFrNzZ3dW0zd3RxcWhrMXBhU29tNnBYaEpoWlEwLVdoX0xIWno2SnF4MXktZWtxZVlnaVowYlhudTNTR0gxRDZkc3dGcUl1UEhHX1UwT2RHYngyc0d5S0VaV05XSVNSYjNKVGtPdnFTSUs?oc=5",
-      "sure": true
-    },
-    {
-      "id": "77ca27cb3c16",
-      "title": "2026年度 鹿島アントラーズつくばジュニア（小学4年生）選考会（9/12）のお知らせ",
-      "source": "antlers.co.jp",
-      "date": "2026-07-24T11:51",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1KY1dPQm1ENGQ3RVk0T2g5RUVHeXItNDlmOFdOQVlNYm04ZVR2NXZZUTdHMXN6RGw2a012eVdvcU4xc0dBM1JLVjNnd3VvQ0JHMThhTjRENmdBdGh2ZE1rNDFVQUtzbXdt?oc=5",
       "sure": true
     },
     {
@@ -1366,6 +1609,19 @@
       "category": "gourmet",
       "emoji": "🍜",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CYkh4cWNNR050aTdfZDFMSnFOWU1MaF8tWFRwV2ppRWhxMFp5TV9jeWN3LTByVmlvMjZGZUlxcDRCbzQ0UG44MlJEMmRpYi1nVVNOYUQ4N1NiSFU5?oc=5",
+      "sure": false
+    },
+    {
+      "id": "46d9915a78b8",
+      "title": "志らく、訃報フライング投稿に私見",
+      "source": "朝日新聞",
+      "date": "2026-07-24T08:40",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBWnV5VU53T2NDTWVrYnlMNzFIMlRZTVFLTHR6b3ZsRVU0aGhQOHo4THdyenI5NUd5OTJxSEI4ZGdzZjFlWGNXSXIwaG5rMjA1LWNzbUtWay1nYzJp?oc=5",
       "sure": false
     },
     {
@@ -2031,151 +2287,6 @@
       "sure": true
     },
     {
-      "id": "34f2b3b555af",
-      "title": "茨城県の雨雲レーダー(実況)",
-      "source": "tenki.jp",
-      "date": "2026-07-23T12:05",
-      "city": [
-        "moriya",
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9acjlJODA5VFFLUDZmd1BVRXZwbl85Y19CNkhyQ2hUTER1eEtNR3BGeDJ2bXJaQVBjS0x0LUpGWUVQQQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "287acba39beb",
-      "title": "「ドン・キホーテ」の次は「無印良品」、北見市で続く全国系商業店舗の進出",
-      "source": "リアルエコノミー",
-      "date": "2026-07-23T12:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0zVFB3SjR5ZXRnZks5cnFFY1Jra3pyM29vTWMzQ2M1bXJ4Ykp3dklNd2ZSVk9lU1R4NG1vUmFtcmIyQU1xck1VOHhJa0FxMElN?oc=5",
-      "sure": false
-    },
-    {
-      "id": "98589a1267c2",
-      "title": "14歳で妊娠シングルマザーの過去",
-      "source": "朝日新聞",
-      "date": "2026-07-23T10:57",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5sWDFVeGYwclpjZTZReldoOXZOWkx4NHlVSFNYN0hKWFluSHJPcC1RNC1hU0N6RVY1X1lIUVlFeGg2Z2tuUHJsVUljQS1VOHAyT3JjZG9XRElvMkwy?oc=5",
-      "sure": false
-    },
-    {
-      "id": "bd838562198f",
-      "title": "peco、先輩・若槻千夏に苦笑い",
-      "source": "朝日新聞",
-      "date": "2026-07-23T10:09",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBQU2tuMmY1NzFmQVhWSVQxUlQ1WlZFNWZLazNRSWJySjZoWXBuTWtCQmJoaVhTcFFrN1ozT2tZd2JoN3NvNnBRVXdiY2ZmcXJoNWJRY3ZQODVESlFo?oc=5",
-      "sure": false
-    },
-    {
-      "id": "9ea3e2b3e841",
-      "title": "科学の甲子園全国大会3月つくば・ジュニア全国大会12月姫路で開催",
-      "source": "newscafe.ne.jp",
-      "date": "2026-07-23T10:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1LalR3anowbkZzaGlIOUNXampncUppUmsydl9fX09lR1p1NFNxTkNNVHpVM285RUNIUE5tSG00WUhuQjh5Tkx5RGJ4LWIteG1aVmJMaW5YcGtuVF9reHVyZGwtTnBuRjBWbEE?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d85b735bf945",
-      "title": "科学の甲子園全国大会3月つくば・ジュニア全国大会12月姫路で開催（リセマム）",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-23T09:45",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFByWHF0cUJqdVp5ODlkU0hsU3JIakNVc2ZwaWdyVFNsVEZUUVVBTzNNaC1VYkxVN0RsYW1DWWx6U1VRRjU2TUpBUVhOM3NGaVNpdC1raDJqajhLdktxOHpybmVfQmZGZTFPbkxaVWNhRlVZYnByNjVGaElSYXNPMm8?oc=5",
-      "sure": true
-    },
-    {
-      "id": "86a682f34de3",
-      "title": "科学の甲子園全国大会3月つくば・ジュニア全国大会12月姫路で開催 (リセマム)",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-23T09:45",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUEZMbFYzeGRhQ2x6R0lKaTRFSjhrNlhEcl82S3VMcDk3M1p0bUVyYkhPZVRzcUp1X1dCdktRcTVEbU5qcXpNUDM1TmlBS1J2QkdpV0c2Zk4xbzkxSXk1UjhBTUdReG5rcF9mTUFLdVJUcFRrNzhBYi05UkY3djNrR3dBemthUUVncTBHdi1R?oc=5",
-      "sure": true
-    },
-    {
-      "id": "1efaf05aadb2",
-      "title": "新着情報“ＧＬＢGLB200d 4マチック AMGラインパッケージ”2022年式デジタルホワイト入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-23T09:33",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQjRyQTY1dkVINlZ1UmdPTTRVaGVpTk1raENKMEQwR2UxcmdVT0RndWVDTGRBSVlRYzZqRFhWM1JOMzFPNlZiN2FmQ0kyWW1WcWMwaG5ZendKVV9VdUstYUJNQk1ESzNyMXoxOE1sSWxwTDV2QlVVbms4R1JhODhXM2Z3?oc=5",
-      "sure": false
-    },
-    {
-      "id": "b5df3d932b29",
-      "title": "新着情報“ヴェゼルX・ホンダセンシング”2017年式プレミアムクリスタルレッドメタリック入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-23T09:33",
-      "city": [
-        "moriya",
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxObk00V3MzUFUwOFJnU2JzRGhzTW1ZV0w1VUpyR3ZKN1ZLTmsyeVpudk1taDZHZmdxRGxpZ0lYbGo5eDVPQ2VJeVlkUXk5VmVsUEJuMHhsX3F1Z0Y4WTRiak0tOXNBdXkwcFdTdkpNcWZSeTVGeTdaQ3owT29jV0gyaUdB?oc=5",
-      "sure": false
-    },
-    {
-      "id": "15689279003c",
-      "title": "新着情報“ＡクラスA180 スタイル AMGライン”2020年式ポーラホワイト入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-23T09:33",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNU1hacnBUV09wOVZqbXdfaVZLVE5iWEl6b0hpU1JSYkVGSGEzOHNtVUt3TjNmYkxjcVhITko1ZEtYdDdiTGNlU2htWVNYalcwdy01a0g0TWFPT3hfQVZHaElQeDctNGwzRjd2Zjh3azgwb2Mwa3pManZ1TUg5NUJXWExR?oc=5",
-      "sure": false
-    },
-    {
-      "id": "b3b2af4dbb04",
-      "title": "新着情報“Ｘ１xDrive 18d xライン”2019年式アルピンホワイトⅢ入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-23T09:33",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdWw5akE4bThvWVliVXVVRFFicnp4c3V0Y0FHWW9jTDVoVXQtdlJOMnlTdW1DT0praDdYWFFyaEpiTURacmVtN3ZTSDF5ZmR5Sk5Id2JOcEpXMW5rZDIzcFVzeVVLc0V4VDA2ckJ1Q2I3dnhrZ3NzQ2h1V2FRUjNZN1BR?oc=5",
-      "sure": false
-    },
-    {
       "id": "87111d39b375",
       "title": "年金プラス収入を枝物で創出 茨城県奥久慈の常陸農協が耕作放棄地を再生",
       "source": "projectdesign.jp",
@@ -2184,84 +2295,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQN184RTRiZ0RsMVFnUTlueHd6SlZkMFZIQVR5OEk4bHc5Y09vczNLajk4ZnUxZUhBNWFzSVcyUzlqTTB4cWh6a0ZkTVNfYlYxS3dpOWtTeWNoRzkwc2ptWXNWcEFkaTBuRXoySXJPcnNEcVlwRnpSVlZHajN3WG50bHJ6X21Ndw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "294ceeda00ef",
-      "title": "（写真）M-1王者・たくろう主宰『たくろう万博』開催決定 ミャクミャクとのコラボ商品も発売",
-      "source": "クランクイン！",
-      "date": "2026-07-23T08:15",
-      "city": [
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE42THQ4Wk1RR05TQVQwVDZCVnk1emRFTjBkSGlMM0RjS25aQUQway1WWHZwVXJkN1ZtdlpPTFQ4T3oxVEhrNjJRNmY3MnZyZXRfOGV3OGhaamJfX3o4Rnpaem9hdUdCZw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "e18013d1a470",
-      "title": "カラオケ ビッグエコー守谷店の今日・明日の天気 週末の天気・紫外線情報【お出かけスポット天気】",
-      "source": "tenki.jp",
-      "date": "2026-07-23T08:10",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ZMHpmbDBFWHJ2OHE3SWhfQmNrcHpJS0ZwM2toSlliT05weE1YQThYTDlkLVR0WU9KX0lGd3VHdnh5VXVjd3lGTTk4MFNxaERPVnc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "910b88a23344",
-      "title": "【2026年】柏市の内視鏡検査 おすすめしたい7医院",
-      "source": "メディカルドック",
-      "date": "2026-07-23T07:51",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5tME1LTTNZQnR2OWFoRzV4bnpoc0d3ZFlJTVNqNHVWRzMzZ0RLUlhIVUxGLWIwOHFMX2VEcldBZ2ZXVGY3dXhCY2hUWUxGNHdGWFE0cmlqbVBFdk9CTkl3enZoQjY?oc=5",
-      "sure": false
-    },
-    {
-      "id": "84cb3394bc4f",
-      "title": "【つくば市】シン・いばらきメシ総選挙2026のつくば市代表グルメが決定！「常陸油ヤもつ煮込みうどん」が気になる",
-      "source": "号外NET つくば市",
-      "date": "2026-07-23T07:38",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0taE1BSkF5TkMtR0lzT29mbUUxMEd0a0M3YkxQVTFyYnBLaTZpaW0xZklMbnZMem9WbU5vOEQzYnFLMV9vT1BhNWhqZ1pCS05oS1lxbmYxcXk0Xy1WdndxVTd0em8xZw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a679029734cb",
-      "title": "【つくば市】シン・いばらきメシ総選挙2026のつくば市代表グルメが決定！「常陸もつ煮込みうどん～酒粕仕立て～」が気になる",
-      "source": "号外NET つくば市",
-      "date": "2026-07-23T07:38",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0taE1BSkF5TkMtR0lzT29mbUUxMEd0a0M3YkxQVTFyYnBLaTZpaW0xZklMbnZMem9WbU5vOEQzYnFLMV9vT1BhNWhqZ1pCS05oS1lxbmYxcXk0Xy1WdndxVTd0em8xZw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d7d7a45638a1",
-      "title": "【つくば市】7/23 最高36℃、厳しい暑さ、夜は雨の予想【朝版】",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-23T05:54",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBDM2xjRkRiOHIwd21EN2NQbHFobHM0dG5IX2hSSzl4YmpnWHlBTHJHUWhXeXVYb2tCejJXLWZrMEQyTmlCWlgwcW5xSzVpSWhRVXRWYnc5UzFGWmppLU56cWx2TUFxUEc3cnR4blhpZUlwVmRoWFlfSHRxYUFTLW8?oc=5",
       "sure": true
     },
     {
@@ -2660,28 +2693,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9FR1ZGUG9VRHVXQVlYajJJakdpdzg3TnZWWWlOcXJ4NkdibXNzVE5UVEJxWGNySXhzM1ZubERXalJRZzBxTUMxd1VBZWtzS1JvNWpEeVFTWVZkMGl4SmlSVUw1czI?oc=5",
-      "sure": true
-    },
-    {
-      "id": "79b1b12b6593",
-      "title": "茨城 篭岩山 60代の登山者が滑落して死亡",
-      "source": "NHKニュース",
-      "date": "2026-07-19T22:27",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE56MXNSc2NzaG1wR0NjNnZ4bTAxeU9fc01KTmV4QzFLYXRFTEJXY0VnNlFWN1VEd2d3V09sQnBQaUdTdGVzaUpOc3hrZEJxcDFoVDlWVjZ4a0xNTnNRYWRn?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d2482a5ae6d1",
-      "title": "離岸流で水難事故多発…危険な人工岬「ヘッドランド」、茨城県が海水浴客に注意呼び掛け",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-19T21:47",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE95dTA1dXNWdUVldWx6eVRtMlZ1UUVLQlc3OGItY2pEMms2RGlWT0l5YU9kX3AyUnR3VnYxZks1ekZxWlcxQ29CLWI5Mm1uSFRWWGV5VFdxOTFpTERkaTI2cmVud2dwOTB2UWNPSjFneFlEVXBSSVl5Q3liTDQtSUk?oc=5",
       "sure": true
     }
   ]
