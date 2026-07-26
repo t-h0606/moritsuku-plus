@@ -1,7 +1,33 @@
 {
-  "updated": "2026-07-27T06:56",
-  "count": 217,
+  "updated": "2026-07-27T08:50",
+  "count": 218,
   "candidates": [
+    {
+      "id": "b2fb6af5822f",
+      "title": "積水ハウスとパナソニック、換気時除湿で快適な室内環境を創出=次世代室内環境システム・スマートイクスに上位モデル追加",
+      "source": "住宅産業新聞",
+      "date": "2026-07-27T08:06",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9pTzNhV1p4aDdUQlFLeXRsQmJHZXlFelBJTXVER25oODl3d1F3T0dOdEc4c1VXOVhPaWFFSTVLVUlRVl9QV1ZTdWlDVmnSAUxBVV95cUxPaU8zYVdaeGg3VEJRS3l0bEJiR2V5RXpQSU11REduaDg5d3dRd09HTnRHOHNVVzlYT2lhRUk1S1VJUVZfUFdWU3VpQ1Zp?oc=5",
+      "sure": false
+    },
+    {
+      "id": "00eca99692a6",
+      "title": "ふるさと納税 茨城県内手数料42億円超 総額の11%、財源圧迫",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-27T07:09",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9RWk1sSk1IN21JSmhETlF5RnNVLTNDaXJUeTZtVFp5bjdvM1lkMG11SEtVNzA1SFlYYVBQeHFqbVYxTmx5ZEI1RXpuejJ6aC1zYlFzSmFKdFNTU05nemd2VXN0RVNhLWw0TTVlb2g1UDRMYlc1UVpBcjRJWHA0QzA?oc=5",
+      "sure": true
+    },
     {
       "id": "c302d72e811b",
       "title": "プロ野球・阪神１―０巨人",
@@ -13,6 +39,32 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1feU9CUDBrWUUtekdpdF9nRllYajZXanBMWUhtSHBGOHNCcXlZM0pEWnhpV3NrNV9XYTlacTBsRGtZQUVyN0k4akN3dEJkR21oNUF3Vg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "8256e09a419c",
+      "title": "日本は準々決勝進出",
+      "source": "つくば経済新聞",
+      "date": "2026-07-27T00:47",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBKVEE5Slh5QVo0Z0NhTU8xZFp5RGJFNHhqNlhqaVRERTJId3hBNWQ0ZVNzWWlPT2VhNWFYZl9hNy1DcVlySGxyMHBTRUc5TlZmcHdIYQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "427275332963",
+      "title": "１９歳加藤、ツアー初Ｖ 女子ゴルフ",
+      "source": "つくば経済新聞",
+      "date": "2026-07-27T00:40",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBGZ3YxRkgtVjRmemNtSmNvbWFxelF3SjMzLVowMUFvcDY0XzBXdmNna3FBdkstN1RxU3N1cFZBeDJzMkZrX2t5VlZVWGEzcTBFREI4Ng?oc=5",
       "sure": false
     },
     {
@@ -56,7 +108,8 @@
       "source": "中古車のガリバー",
       "date": "2026-07-26T21:49",
       "city": [
-        "tsukuba"
+        "tsukuba",
+        "moriya"
       ],
       "category": "news",
       "emoji": "📰",
@@ -82,7 +135,9 @@
       "title": "【レベル３大雨警報】茨城県・牛久市に発表 21:11時点",
       "source": "TBS NEWS DIG",
       "date": "2026-07-26T21:11",
-      "city": [],
+      "city": [
+        "moriya"
+      ],
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9jY2NWVHpaOW5fdzhvWGJHU2ZvQXFDVGdUaDR3NzRmcndsYnhUTlJJZWVCU3NMNm5DeXItMlJ0djNKLW5mejgwU3ZIMlFETmc5djNoM2Z5UQ?oc=5",
@@ -225,7 +280,8 @@
       "source": "TBS NEWS DIG",
       "date": "2026-07-26T19:40",
       "city": [
-        "moriya"
+        "moriya",
+        "tsukubamirai"
       ],
       "category": "news",
       "emoji": "📰",
@@ -294,6 +350,17 @@
       "sure": false
     },
     {
+      "id": "b12c5980baac",
+      "title": "茨城県鹿嶋市の武井釜海岸で親子ら3人が沖に流され父親（56）が死亡 小6の息子（11）ら2人はサーファーに救助され軽傷",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-26T15:17",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5KTzE5SGozSHUyT3JFUGNUU0wwUWo3alBRUzlLX1dqMFZHa056ZFBBVnVlT25hdlFXbWRTdldjSVJYSm0yZVRySy1JSjQ1UXN0UkYzN2FsU2l6cUlQQ2RZc3o1YWgyaWViblJtTU5nS1hIdHlWT2ZsQUtnUGpZakE?oc=5",
+      "sure": true
+    },
+    {
       "id": "2b0c201e8a1a",
       "title": "今永は７勝目 大リーグ",
       "source": "つくば経済新聞",
@@ -316,6 +383,19 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56ZU1YYkpuRkd4cEZRYzIxQmo3eFdnc3FHb3IzdFlId0ZXaS1LWWktdzFCS2VWVWhvUlBtajkySDZ0RjJ1M1dGWVJGWG9POGJlMXNhNmJjMFpLZW5fc3JlY2dfM1RNVEU1X05Xb0hjcEJ4VUU4U0R0ZldaVnk3NHc?oc=5",
       "sure": true
+    },
+    {
+      "id": "f5a1a6b43057",
+      "title": "米大統領、イラン攻撃中止を命令",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T13:39",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5mRHRGZ0NUVnlWb3REZkZMZG5RWTl0Nk1TQWNoQlJmNkVsakNWc2JZNUxTWnA0WmZZQnItcVgtZWdHVGVCY2RGM0c1d3p0X20yVzJZdQ?oc=5",
+      "sure": false
     },
     {
       "id": "dc058264640a",
@@ -420,6 +500,19 @@
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE10SXdYUkVnc2FEQWQwN2pGR0thcDNZZ21LREI4X09ZRWIwT2VyX0wwd0p5NGliZHh2VU82VV9naktJUnN1X0lYUUtYY0tCaXV1VFZWVHJ6VQ?oc=5",
       "sure": true
+    },
+    {
+      "id": "b369eedcc722",
+      "title": "松山英樹、１３位のまま ゴルフ",
+      "source": "つくば経済新聞",
+      "date": "2026-07-26T11:32",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5mUXVOcFFEY3BDN2FXa1FWWVRJMlhMNTlteVRwcnlBS05hcUdndmRTUGRMSXl3aVN5bU55c2FHSlV0ZVpaQXZIcGc5S1l6ZlhiMnZlRA?oc=5",
+      "sure": false
     },
     {
       "id": "20674f3de62c",
@@ -579,6 +672,20 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNelI5T1NlMllvem56YjB0UE9uSWl6MVZ2SnBZR2JOVkNZNTNrMGVrZnRzVDlyZVJWZE5vWXZGa0RNdzBOU01zNDUxcC1Qa3FFN3hVRU9YSVhhdENqeVBDM09TbVRpekVOQmRBMzlBX201VnZPQUVHRUxnWU94LVloVkNNS2RaRVMySFNCVGRPRVd3ZkcwdzIzM0VPZw?oc=5",
       "sure": false
+    },
+    {
+      "id": "34f2b3b555af",
+      "title": "茨城県の雨雲レーダー(実況)",
+      "source": "tenki.jp",
+      "date": "2026-07-25T23:55",
+      "city": [
+        "moriya",
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9acjlJODA5VFFLUDZmd1BVRXZwbl85Y19CNkhyQ2hUTER1eEtNR3BGeDJ2bXJaQVBjS0x0LUpGWUVQQQ?oc=5",
+      "sure": true
     },
     {
       "id": "cf400dfae56f",
@@ -2083,6 +2190,19 @@
       "sure": true
     },
     {
+      "id": "9bb38a7a631c",
+      "title": "抽選会に参加した澤さん",
+      "source": "つくば経済新聞",
+      "date": "2026-07-23T16:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KZ1pLX0FETGttR2ZSWndXajY0elJFODFyRjlLbjBoallQcHVhZURlUURhamttNGJBM0xKWnYtdFdmMUREZDZnV09aZ09MRGVvR0dBTA?oc=5",
+      "sure": false
+    },
+    {
       "id": "91faf3ce6588",
       "title": "中小企業の財務支援で注目、市ノ澤翔のSNS総フォロワー数が15万人を突破",
       "source": "福島民友新聞社",
@@ -2159,110 +2279,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ydWVCaFcwbkdkaExEZ2wyUmhpNmIzUGNwNDU2RnRjeGpWR3NfRFV1b0J2TFEyMTNYdF9NZnVPOGlmVHNKYXA4aVNuaWx3NDFDZ0VBTTZRSXowbXBodkY0ejhFUHZzR1k?oc=5",
       "sure": true
-    },
-    {
-      "id": "478d18e5e4a8",
-      "title": "ヒコロヒー、夢で不思議体験",
-      "source": "朝日新聞",
-      "date": "2026-07-23T13:04",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE94MW5TUHZNcVpwRTFRbU1uQWVfOVNwdEZBSEpXYUxFaFBpMVRNdWNjTDF4NDJuR21EY0FBTWUyekJvRmlMSWRCdU1qMGxrSzFzQmR3aVctS0tBdURJ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "75c38fab70d1",
-      "title": "茨城・守谷市と開智学園 学習交流へ連携",
-      "source": "茨城新聞クロスアイ",
-      "date": "2026-07-23T13:03",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAtRkgzSUViR3FuNGMwTjNiS1JFMXJTeW01TXZXN3N4WGkzZklySXg4MHA5UmdiVTJ2bjI0d2g5VGVEUTA4eGVodmRhQlljOFU0UkxqeGZ3cVRldDdWYVg2clpGZ3J1RlhoOGVBdHVJZ2tOamc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "8029d2926c73",
-      "title": "サンリオ“平成レトロ”シール発売",
-      "source": "朝日新聞",
-      "date": "2026-07-23T12:56",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41bnlpOXA0YXViRXVONU1QUFQ0N0FNbUgzV3I4dk1WUmoyUnNrdDlvMS15YThMNE1fQzVmTEZpOUZLRWd1cGVJbjZVX2NaaUc3RnpFR04wWnlfd1la?oc=5",
-      "sure": false
-    },
-    {
-      "id": "4044c0efe9ee",
-      "title": "野菜炒め専門店ベジ家、オーナー研修中は野菜炒め500円。",
-      "source": "PR TIMES",
-      "date": "2026-07-23T12:53",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1FRnUxa25MS2JuclNPTFZsZmlmZDhYTmc2cENZXzU1R1pYTmdlYV9FUzFKNVVxRTFvUzVid2dUNjB3V2RtNmRYOG5SYk00NHNXeXptUURJTExuNVU0blhhNExjZFB3M1l4Tnc?oc=5",
-      "sure": false
-    },
-    {
-      "id": "48dbd364d85a",
-      "title": "能登地震で災害公営住宅が完成",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T12:53",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1reE9IRTZLdFhqTFBWZzRPdXRwQzRUV2pPZDhGejdVVDhfcWZJYUxBRE8wMGlWa1FoLVV6U3E1NGJEY0ltUks2LWloMktTNHlMTzEzTg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "9749e233c8ee",
-      "title": "小泉氏、核抑止「タブーなく議論を」",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T12:53",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE56bWZEQ1ctdHA5SHpJamR4cjNkelRUeENwZjFnVDVlTmJDRVJ4VjJwTlZFTm5xZnlsZUhqR0RQLXlMZjZmNmZKVUktU3ZiUndIc19zcg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "59eeed5d23b7",
-      "title": "猛暑の１６日間、死者５７６４人増",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T12:53",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE04ZFFKSWJFNDFLNDJSc3lPV3pCNFYtMUtCWUVxczlTeS1JMGh4NEtwek9oYkUwTFlJLUIxNzdwUDAtaXdUaFpvXzFrUzlORzg3bWZXdg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "a9816cb8b04a",
-      "title": "【新店OPEN】リカバリーウェアReD",
-      "source": "ニコニコニュース",
-      "date": "2026-07-23T12:45",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9EVVhPS3dKNHRtVmdSVTNNMm1XZ3JrdkJWOHJmQXlvRE9aZEtUU1p3aHNnWnBCNno4OHZJNnpGLUdCNTJDVHlRUm0wZHZHcl9vSnZsRE9FTmFmTjIxdzREUUpsb0NocmRjSWRYWXE4c0lWeXM?oc=5",
-      "sure": false
     },
     {
       "id": "c5c967c8048c",
