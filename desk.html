@@ -77,6 +77,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 .btn.ghost { background: transparent; border: 1.5px solid #55688C; color: #fff; }
 .btn.bm { background: var(--bm); color: #fff; }
 .btn.gen { background: #55688C; color: #fff; }
+.btn.del { background: #7A8394; color: #fff; }
 .btn.publish { background: var(--onair); color: #fff; }
 .btn:disabled { opacity: 0.45; cursor: default; }
 
@@ -119,6 +120,12 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
       <button class="mini-btn primary" id="tokenSave">保存</button>
       <button class="mini-btn" id="tokenDelete">削除</button>
     </div>
+    <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--line);">
+      <div style="font-size:0.82rem; font-weight:700; margin-bottom:6px;">🗑 削除した候補</div>
+      <p style="margin-bottom:8px;">「削除」した候補はこの端末で非表示になります（候補リスト自体は消えません）。下のボタンで、削除した候補をすべて表示に戻せます。</p>
+      <div style="font-size:0.8rem; margin-bottom:8px;">現在の削除件数：<b id="dismissedCount">0</b> 件</div>
+      <button class="mini-btn" id="restoreBtn">すべて表示に戻す</button>
+    </div>
   </div>
 
   <div class="bar" id="cityBar">
@@ -156,6 +163,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
   <button class="btn ghost" id="clearBtn">解除</button>
   <button class="btn bm" id="bmBtn">★ ブックマーク</button>
   <button class="btn gen" id="genBtn">JSON</button>
+  <button class="btn del" id="delBtn">🗑 削除</button>
   <button class="btn publish" id="publishBtn">📡 サイトに掲載</button>
 </div>
 
@@ -167,7 +175,7 @@ const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba
 const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ", ibaraki:"県内全域" };
 const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒", ibaraki:"🗾" };
 const LOCAL = ["moriya","tsukubamirai","tsukuba"];
-const LS_BM = "mk_bookmarks", LS_TOKEN = "mk_token", LS_POSTED = "mk_posted";
+const LS_BM = "mk_bookmarks", LS_TOKEN = "mk_token", LS_POSTED = "mk_posted", LS_DISMISSED = "mk_dismissed";
 
 let candidates = [];
 let state = { city:"all", cat:"all", hideUnsure:false, bmView:false, selected:new Set(), edits:{} };
@@ -176,6 +184,7 @@ const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d;
 const lsSet = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 let bookmarks = lsGet(LS_BM, []);
 let postedUrls = new Set(lsGet(LS_POSTED, []));
+let dismissedUrls = new Set(lsGet(LS_DISMISSED, []));   // 「削除」で非表示にした候補のURL
 
 function toast(msg, ms = 2600) {
   const t = document.getElementById("toast");
@@ -218,6 +227,7 @@ function render(){
   const visible = src.filter(c => {
     const e = getEdit(c);
     if (!state.bmView && postedUrls.has(c.url)) return false;
+    if (!state.bmView && dismissedUrls.has(c.url)) return false;   // 削除（非表示）した候補は出さない
     if (!state.bmView && state.hideUnsure && c.sure === false) return false;
     const isPref = e.category === "ibaraki";
     const cityOk = state.city === "all" ? (!isPref && LOCAL.some(k => e.city.includes(k)))
@@ -354,6 +364,33 @@ document.getElementById("genBtn").addEventListener("click", () => {
   try { document.execCommand("copy"); toast("JSONをコピーしました"); } catch(e) {}
 });
 
+// ---- 選択した記事を削除（非表示） ----
+// 候補表示中：この端末の非表示リストに追加して一覧から消す（candidates.json自体は触らない）。
+// ブックマーク表示中：ブックマークから削除する。
+document.getElementById("delBtn").addEventListener("click", () => {
+  const items = selectedItems();
+  if (!items.length){ toast("記事にチェックを入れてください"); return; }
+
+  if (state.bmView){
+    if (!confirm(`${items.length} 件をブックマークから削除します。よろしいですか？`)) return;
+    const ids = new Set(items.map(c => c.id));
+    bookmarks = bookmarks.filter(b => !ids.has(b.id));
+    lsSet(LS_BM, bookmarks);
+    state.selected.clear();
+    toast(`🗑 ${ids.size} 件をブックマークから削除しました`);
+    render();
+    return;
+  }
+
+  if (!confirm(`${items.length} 件を候補リストから削除（非表示）します。\n※ 後で「⚙設定」からまとめて元に戻せます。`)) return;
+  items.forEach(c => dismissedUrls.add(c.url));
+  lsSet(LS_DISMISSED, [...dismissedUrls].slice(-1000));   // 上限1000件（古いものから捨てる）
+  state.selected.clear();
+  updateDismissedCount();
+  toast(`🗑 ${items.length} 件を削除しました`);
+  render();
+});
+
 // ---- ② サイトに直接掲載（GitHub API） ----
 const b64encode = (str) => {
   const bytes = new TextEncoder().encode(str);
@@ -434,9 +471,23 @@ function updateTokenStatus(){
   document.getElementById("tokenStatus").textContent = has ? "✅ トークン保存済み（この端末）" : "❌ 未設定";
   document.getElementById("tokenStatus").style.color = has ? "#2FA36B" : "#FF4B5C";
 }
+function updateDismissedCount(){
+  const el = document.getElementById("dismissedCount");
+  if (el) el.textContent = dismissedUrls.size;
+}
 document.getElementById("gearBtn").addEventListener("click", () => {
   document.getElementById("settings").classList.toggle("show");
   updateTokenStatus();
+  updateDismissedCount();
+});
+document.getElementById("restoreBtn").addEventListener("click", () => {
+  if (!dismissedUrls.size){ toast("削除した候補はありません"); return; }
+  if (!confirm(`削除した ${dismissedUrls.size} 件をすべて表示に戻します。よろしいですか？`)) return;
+  dismissedUrls.clear();
+  lsSet(LS_DISMISSED, []);
+  updateDismissedCount();
+  render();
+  toast("削除した候補をすべて戻しました");
 });
 document.getElementById("tokenSave").addEventListener("click", () => {
   const v = document.getElementById("tokenInput").value.trim();
