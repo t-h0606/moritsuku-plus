@@ -1,6 +1,19 @@
 {
-  "updated": "2026-07-27T21:43",
+  "updated": "2026-07-27T22:23",
   "items": [
+    {
+      "title": "最高の「醤油ラーメン」につくば「ひしお」で出会った",
+      "source": "GOURMET",
+      "date": "2026-07-27T22:22",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "📰",
+      "url": "https://www.leon.jp/gourmet/354881",
+      "thumb": "images/thumbs/2026-07-27-gourmet-7dfa.webp",
+      "featured": true
+    },
     {
       "title": "「守谷」タクシーの運転手が選ぶ 絶品グルメBEST③ とても素晴らしい食事をすることが出来 感動しました。",
       "source": "時遊さんぽ",
@@ -11,8 +24,7 @@
       "category": "gourmet",
       "emoji": "📰",
       "url": "https://youtu.be/1PcRhwo2irI",
-      "thumb": "images/thumbs/2026-07-27-gourmet-11ef.webp",
-      "featured": true
+      "thumb": "images/thumbs/2026-07-27-gourmet-11ef.webp"
     },
     {
       "title": "【つくば市】子どもとコンサートに参加できるイベント♪ホテル日航つくばで「夏の終わりのファミリーチャペルコンサート」が開催されます",
