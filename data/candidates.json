@@ -1,7 +1,44 @@
 {
-  "updated": "2026-07-27T15:26",
-  "count": 217,
+  "updated": "2026-07-27T21:18",
+  "count": 220,
   "candidates": [
+    {
+      "id": "431f1c7d081d",
+      "title": "トピックス - 2026年7月27日(月曜日) | 富士見ヶ丘小学校公式ホームページ",
+      "source": "city.tsukubamirai.lg.jp",
+      "date": "2026-07-27T15:31",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMjRjQnI0VnNTWU5fdmJaRmFvUldVUUpqVUtkcDIyZVpaaS0xTmVOOGxZYzVOclZZdWhjeHE0b3ZSM3M5cWMzUWU1b25vTGFreUxtUVdYSUJEVW4xWTJnYlNDdFZhWjF1akhNUWpSVm9OcHVvLTNGWmhaZFFHOG5VTUxhM0E0TGIxaXdraGpFa0h3cE0tenNkR1gyUjRrZw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "ef3fa79a1df2",
+      "title": "台風13号(2026年)の茨城県の暴風域に入る確率",
+      "source": "tenki.jp",
+      "date": "2026-07-27T15:00",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5lMEdFbHBMcWNaSk15OUFsTXo2Smp1REdGUlExSTRMb3hRUV9ONWd5UTFvR0ZUY2o1SjZ3ZTJDYnZmc2ZTMHV6QTZfNnVNTFkyS0NNbUQ5UHk4VXEwNUxHeXBhQQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "0fcd13a185e0",
+      "title": "救急受入病床の安定確保に向けた転院の円滑化",
+      "source": "pref.ibaraki.jp",
+      "date": "2026-07-27T14:28",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWDlXUmwtRkhmVHU3b0FpNktldjBRcVQwUmhkWThMUGl3Rnh3Vkl0QzFxZ2lPQk1CazExQzhXVkQ5b29wWFBHT1VwYURkbHkyS0JHb0hScWhMcXFuMkxXYk5xejJiTWI2a1ZVdzZOUk1HVUxTd3lCR3NGeGhOMHV0eFdB?oc=5",
+      "sure": false
+    },
     {
       "id": "3c211ed0f623",
       "title": "BUBU MITSUOKA、茨城県のつくばショールームを8月末で閉店へ",
@@ -52,6 +89,19 @@
       "category": "kids",
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBzenZPNlBUNDBzWDNMQ05tMmk4X0pRT1hzTnh6SEt3Ujh1NVVtR1AtTy1CbUthQWhMTHBYVXlZM2FTSi1BbXo1bm1EMEVMR0xpSy1BVA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "ab9d3c180262",
+      "title": "理科の勉強からADASに、ヴァレオが女子中高生向けに体験イベント（8月7日締切）",
+      "source": "Motor Fan",
+      "date": "2026-07-27T12:40",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9zWXdvdS1iZnlZMDd6S24td0Q1YjVOUW1uY2hCcE5VTjJVY0Z3SzVuVEhjMWRiZTFtUFdPczBmdU9VNUR0OGp6bmptWmpwZw?oc=5",
       "sure": false
     },
     {
@@ -183,6 +233,19 @@
       "sure": true
     },
     {
+      "id": "0c6919fbd38e",
+      "title": "＜画像6 / 6＞大型ショッピングセンターが“街化”するワケ",
+      "source": "ウォーカープラス",
+      "date": "2026-07-27T07:42",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1wa28ydXozWG1ReTJuT0twdDNWSTc2M0ZLdUdRNHREYURYcHJScjBWdW9FbFhDS1VZRllHTFNySC1JME5La0pzMXRYU28yOUdQZmpHWFdLd29NV3BvUGxJNTIzTEQ?oc=5",
+      "sure": false
+    },
+    {
       "id": "304eaed5f117",
       "title": "【つくば市】7/27 最高30℃、暑さに注意、昼間は晴れる予想【朝版】",
       "source": "Yahoo!ニュース",
@@ -193,6 +256,17 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MclFPZDJyZTlqYjdOR2hOV2VmMEJEZW5WcU44ZE1ucG1LRFVaaWdIektZN0Yyc2pxZFlBNzM2TERNX1UxYlh4ZnJ3bGY2X0lfSDk0MTVtWC1uNkxKZ2JXMHFvdmp2Y0tjTHdEdDROcmk2YU1sbGNPaXZMMEowMXM?oc=5",
+      "sure": true
+    },
+    {
+      "id": "329cab8b3daf",
+      "title": "茨城県の過去の天気(実況天気・2026年07月26日)",
+      "source": "tenki.jp",
+      "date": "2026-07-27T05:00",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iMm1Wdk9ubTR0cU1QMFExMFV4c0c0S2YtcWhSYXo5Y3FpTlROVDFWMXRsNUpYcFhLcF9VMUlJc0ZpbXRDYUkwdG1HNC1xLWNhYkU1V0JXU0g0Zw?oc=5",
       "sure": true
     },
     {
@@ -340,7 +414,8 @@
       "source": "TBS NEWS DIG",
       "date": "2026-07-26T21:11",
       "city": [
-        "moriya"
+        "moriya",
+        "tsukubamirai"
       ],
       "category": "ibaraki",
       "emoji": "🗾",
@@ -503,6 +578,17 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CeFVvLVVHbEtKc3lzQ3Q0REEwd1l2Smo3YTNldnhyUHBCNDFnM2FuYTZadGtuTGdMdVp3SEVRSHBoaUlGdUZWUHJQcDF0TzdMcmdwTlZFWUU0UUdELUxfd09lUGZMc2g2Tk84anROZFVLX3JxVEl5QklkNThrNU0?oc=5",
+      "sure": true
+    },
+    {
+      "id": "418ab87efd8e",
+      "title": "茨城 鹿嶋 海水浴中の親子ら3人流される 56歳の父親死亡",
+      "source": "NHKニュース",
+      "date": "2026-07-26T17:58",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE44U2lROENNSFlKNmVrc2k4bWIwQXVDMUxGeWZEZmxReTYwQ3BsLUFpOWgxQnBPcUlYMnFldjVwb1NudEduTGcxUDRUdXVaUkg1OXZMUE9JT3VWdEJGWTk0?oc=5",
       "sure": true
     },
     {
@@ -741,6 +827,19 @@
       "emoji": "🍜",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5mUXVOcFFEY3BDN2FXa1FWWVRJMlhMNTlteVRwcnlBS05hcUdndmRTUGRMSXl3aVN5bU55c2FHSlV0ZVpaQXZIcGc5S1l6ZlhiMnZlRA?oc=5",
       "sure": false
+    },
+    {
+      "id": "34b25756dfc2",
+      "title": "高田馬場「紫苑」の「塩拉麺」に感動、そして我が人生最高の「醤油ラーメン」につくば「ひしお」で出会った",
+      "source": "Web LEON",
+      "date": "2026-07-26T08:45",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBTbFhsTk9GbjlXRUV4OUZLR29HeU5jbDk0djJBUy1NcmdBU2FoTG5YemZWRFR1QTlVMDM4ajM0ZVZhLUdvU0RXSGRn?oc=5",
+      "sure": true
     },
     {
       "id": "20674f3de62c",
@@ -1299,6 +1398,19 @@
       "sure": true
     },
     {
+      "id": "96649647ce47",
+      "title": "＜森への招待状 県森林文化アカデミー＞ 支障木、使い道探る",
+      "source": "47NEWS",
+      "date": "2026-07-25T05:05",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBKZ2xSVFQ0dlp4eVpWcU42MC11cXgyc0ZGb2FwY1pHaWdaX2Qzd0h4RTdLQmUzN2k1bk52SnJFc3ZNT25PNjZzLXo5OA?oc=5",
+      "sure": false
+    },
+    {
       "id": "83c01cd1ea1f",
       "title": "森林火災で非常事態宣言",
       "source": "つくば経済新聞",
@@ -1590,6 +1702,19 @@
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0zTHpsMW82cklsb05RaEYxc1R1MDl6bWs1ejJGSEtDYU1CVU1od2hkaVRxTFZKQ1czd1RxMW9zRWlMbmROT3E4d2t6bkVfbmhxbmRrbw?oc=5",
       "sure": false
+    },
+    {
+      "id": "132c86ab93e2",
+      "title": "【フロアマップ公開中】ビックマーチつくば本店 | つくば市 みどりの駅 | パチンコ・パチスロ店舗情報",
+      "source": "DMMぱちタウン",
+      "date": "2026-07-24T16:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1iUUwzMmVSZjRlSl9FNElMM0FLUXZIUnQ3RWVsUzFiYTQxeDhZVnVZNlBGRThsTnBUYjVRaUUwczc1RkMtX3VwMktWR1hyUS1fSExR?oc=5",
+      "sure": true
     },
     {
       "id": "08dca5b74f6e",
@@ -2221,97 +2346,6 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1uX0ZDVTlZRlpVUmVpdXdPSzBaaVhUV0RBM185dTYzZ29HVXBGdS01Zk9lVDNKeXlCT1VTNW1GcUJIMzE1UTFKX3JmUnVNRi1IUzFveGMzdHRwemdsMkI1Z3RKTXM3Yk9aUFctNlY0MWs0Zw?oc=5",
       "sure": true
-    },
-    {
-      "id": "b44dd5ff4036",
-      "title": "「チームの勝ちが最優先」 プロ野球",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T20:52",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB1WE44RC1uUTBuSWRpanFRaWJfUFc1aGljWEpuVmJycWxKQXdIZUxRYTdrNmdUUnctT1E4WlBIeXZKLTd0UEdiOVlQNjhyQXIyNGNWUg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "0ad40631a33a",
-      "title": "倉林紅が首位発進 女子ゴルフ",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T20:52",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1hajBsM09JaE1hR0dWNFVGQXcxYUxHb2FXWi1xOEJSaFVkY0NlQXZjZHBIang1Z3ZOZ2RZejBralFWdENleEtTMkplOXVMWWZwYU5acA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "08902b3a8f82",
-      "title": "安青錦が２敗目",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T20:52",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8weTRVWmR1QUlkekc3dmtycUJldkN4RjJvRTlQVFdrczE0eVI1elNYNmUzOF9FTVVvUUxpaG1tcXBBbmczeTZKNDBzc3JiaWVBNmptTg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "9c2d02b4f44c",
-      "title": "中国外相、ＡＳＥＡＮプラス３欠席",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T20:52",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9IbjI0NUNOZjd6M0puQ1piak4yRFNhcGdQQnoyc000ZkFMVU5BTTFLMGZnQUJ0T1NCaDEyWV9vdnVFX1NwTmZYMHhzTC1KT1p1WmRNXw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "dcf69af0a942",
-      "title": "インド「ゴキブリ党」で抗議拡大",
-      "source": "つくば経済新聞",
-      "date": "2026-07-23T20:52",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBYT2loclhQdWJIU1lTRldCeGJoSThQUTJKM1c3N0IySDhhNnhzbnJmdmhONlZfSjRQUVplLUZvcDM1dmJvV3BHSmdzNmRKaC1vWURKTQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "921d4fcc1962",
-      "title": "＜画像7 / 12＞マギー審司が気仙沼の母校訪問、“耳カー”で集めた応援の声を届ける",
-      "source": "ウォーカープラス",
-      "date": "2026-07-23T20:49",
-      "city": [
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBVM3VmM3pjWE9Td29kVXBvcE5vYUE5TkpYM3lDSkZqOUIzc0VNS2VSRVFCUHQtUDVWQXROT2lRVzk3bFNWc29naFJ3MXVILThsdERnUDlvejY2dWRibFpJYlZEODEtM3BD?oc=5",
-      "sure": false
-    },
-    {
-      "id": "77913f42d02e",
-      "title": "「東北の麻薬王」関係先か、捜索",
-      "source": "デイリースポーツ",
-      "date": "2026-07-23T20:15",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9ob05EOFdPcEx4U0gtbGczd1gza1RZcmQtWVJRYTBLc2puMjJZTHBBQWdzVC1HdjVqUXJubm44Y3k1OW5WX3gzeVZMSU40RHNKOW9pVWJ5WmZpWjR2WThoYktCWkZGa2FrYVhlVVFMOFc4eUstZ3ZV?oc=5",
-      "sure": false
     },
     {
       "id": "c5c967c8048c",
