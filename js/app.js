@@ -255,14 +255,20 @@ function articleTime(a) {
   return isNaN(t) ? -Infinity : t;
 }
 
-// 各タブ（ジャンル）の並び順を決める。
+// 各タブの並び順を決める。
 //  ・featured:true が指定された記事があれば、それを先頭記事（大きいカード）に固定する。
 //    ジャンルごとに1つだけ指定できる想定（記事投稿ページ側で担保）。
-//  ・featured 指定が無いジャンルは、日付が新しい記事を先頭にする（従来どおり）。
+//  ・「最新記事」タブ（と「動画」タブの記事欄）だけは別枠で、featuredAll:true が
+//    指定された記事を先頭に固定する。ジャンルの featured とは完全に独立していて、
+//    あるジャンルの先頭記事を差し替えても「最新記事」タブの並びには影響しない。
+//  ・featured / featuredAll のどちらも指定が無いタブは、日付が新しい記事を先頭にする
+//    （従来どおりのフォールバック）。
 //  ・先頭記事以外は、配信元の公開日が新しい順に並べる。
-function orderForFeed(filtered) {
+//  useAllFlag が true のときは featuredAll を、false のときは featured を見て先頭を決める。
+function orderForFeed(filtered, useAllFlag) {
   const list = (filtered || []).slice();
-  const feat = list.find(a => a && a.featured === true);
+  const featKey = useAllFlag ? "featuredAll" : "featured";
+  const feat = list.find(a => a && a[featKey] === true);
   const rest = list.filter(a => a !== feat).sort((a, b) => articleTime(b) - articleTime(a));
   return feat ? [feat].concat(rest) : rest;
 }
@@ -292,8 +298,10 @@ function renderFeed() {
     const catOk = state.cat === "all" || state.cat === "video" || a.category === state.cat;
     return cityOk && catOk;
   });
-  // このタブの先頭記事（featured）を固定し、残りを日付順に並べる
-  const list = orderForFeed(filtered);
+  // 「最新記事」タブ（＝state.cat が all または video）は featuredAll を見て先頭を決め、
+  // それ以外の個別ジャンルタブは featured を見て先頭を決める（互いに独立して固定される）
+  const useAllFlag = (state.cat === "all" || state.cat === "video");
+  const list = orderForFeed(filtered, useAllFlag);
   document.getElementById("emptyNote").hidden = list.length > 0;
   document.getElementById("feed").innerHTML = list.map((a, i) => {
     const badges = `

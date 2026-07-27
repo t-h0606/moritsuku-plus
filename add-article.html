@@ -73,6 +73,13 @@
   .submit-btn:disabled{background:#ccc; cursor:not-allowed;}
   .submit-btn.feat{ background:var(--navy); margin-top:10px; }
   .submit-btn.feat:disabled{ background:#ccc; }
+  .feat-all-row{
+    display:flex; align-items:flex-start; gap:8px; font-weight:600; font-size:13px;
+    margin:16px 0 4px; cursor:pointer; padding:10px 12px; border:1px solid var(--line);
+    border-radius:10px; background:#FCFBF8;
+  }
+  .feat-all-row input[type=checkbox]{ width:auto; margin-top:2px; flex-shrink:0; }
+  .feat-all-row span{ font-weight:600; color:var(--text); }
   .pat-row{display:flex; gap:8px;}
   .pat-row input{flex:1;}
   .pat-row button{
@@ -184,9 +191,15 @@
   </div>
 
   <button type="button" class="submit-btn" id="submitBtn">この記事を掲載する</button>
+
+  <label class="feat-all-row" for="featAllCheck">
+    <input type="checkbox" id="featAllCheck">
+    <span>「最新記事」タブの先頭にもする（チェックなし＝このジャンルだけ先頭固定。「最新記事」タブの並びには影響しません）</span>
+  </label>
   <button type="button" class="submit-btn feat" id="submitFeatBtn">★ 先頭記事として掲載する（大きく表示）</button>
   <div class="hint" style="margin-top:6px;">
-    「先頭記事」は各ジャンルの一番上に大きく固定表示されます。ジャンルごとに1つだけで、新しく指定すると同じジャンルの前の先頭記事は自動で通常表示に戻ります。先頭記事にはサムネイル画像（③）が必要です。
+    「先頭記事」は選んだジャンルの一番上に大きく固定表示されます。ジャンルごとに1つだけで、新しく指定すると同じジャンルの前の先頭記事は自動で通常表示に戻ります。先頭記事にはサムネイル画像（③）が必要です。<br>
+    上のチェックを入れたときだけ、「最新記事」タブの先頭も同時にこの記事に差し替わります（この場合も、それまで「最新記事」タブの先頭だった記事は自動的に通常表示に戻ります）。チェックを入れなければ「最新記事」タブの並びには一切影響しません。
   </div>
   <div id="log"></div>
 
@@ -419,6 +432,8 @@
     const title = document.getElementById('f_title').value.trim();
     const source = document.getElementById('f_source').value.trim();
     const dateRaw = document.getElementById('f_date').value; // YYYY-MM-DDTHH:MM
+    const featAllCheck = document.getElementById('featAllCheck');
+    const alsoAll = !!(asFeatured && featAllCheck && featAllCheck.checked);
 
     if(!pat){ log("① のアクセス許可証が未設定です。先に保存してください。", 'err'); return; }
     if(!url || !title || !source || !dateRaw || !selectedGenre){
@@ -463,12 +478,19 @@
         thumb: thumbPath
       };
       if(asFeatured) newArticle.featured = true;
+      if(alsoAll) newArticle.featuredAll = true;
 
       const newItems = data.items.slice();
       if(asFeatured){
         // 同じジャンルの既存の先頭記事フラグを外す（ジャンルにつき先頭記事は1つ）
         newItems.forEach(a => { if(a.category === selectedGenre && a.featured) delete a.featured; });
-        // 先頭記事は配列の一番上に置く（「最新記事」タブの先頭にも出る）
+        // チェックを入れたときだけ「最新記事」タブの先頭も差し替える（featuredAllは全体で1つだけ。
+        // ジャンルの featured とは独立しているので、チェックを入れなければ既存の featuredAll には触れない）
+        if(alsoAll){
+          newItems.forEach(a => { if(a.featuredAll) delete a.featuredAll; });
+        }
+        // 記事本体は配列の先頭に置く（表示順は日付・featured/featuredAllで決まるため、
+        // 配列上の位置そのものは表示に影響しない）
         newItems.unshift(newArticle);
       } else {
         // 通常記事は先頭記事の直後（2番目）に挿入
@@ -495,7 +517,9 @@
       const newContentB64 = b64EncodeUnicode(JSON.stringify(data, null, 2));
       await ghPutFile(pat, ARTICLES_PATH, newContentB64, `記事追加${asFeatured ? "(先頭記事)" : ""}: ${title}`, fileData.sha);
 
-      log((asFeatured ? "先頭記事として掲載しました！" : "掲載が完了しました！") + "サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
+      let doneMsg = asFeatured ? "先頭記事として掲載しました！" : "掲載が完了しました！";
+      if(alsoAll) doneMsg = "先頭記事として掲載し、「最新記事」タブの先頭も差し替えました！";
+      log(doneMsg + "サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
 
       // フォームをリセット（PATは残す）
       document.getElementById('f_url').value = '';
@@ -510,6 +534,7 @@
       uploadedImg = null; thumbBlob = null; thumbFilename = null;
       previewWrap.style.display = 'none';
       fileInput.value = '';
+      if(featAllCheck) featAllCheck.checked = false;
 
     } catch(err){
       log("エラーが発生しました：\n" + err.message, 'err');
