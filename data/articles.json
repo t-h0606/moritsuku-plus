@@ -1,6 +1,20 @@
 {
-  "updated": "2026-07-27T23:03",
+  "updated": "2026-07-28T07:39",
   "items": [
+    {
+      "title": "子ども連れも安心のイベント！ママハピEXPO＠イオンタウン守谷",
+      "source": "ママハピ",
+      "date": "2026-07-28T07:37",
+      "city": [
+        "moriya"
+      ],
+      "category": "kids",
+      "emoji": "📰",
+      "url": "https://www.mamahapi.jp/event/moriya_20260827/",
+      "thumb": "images/thumbs/2026-07-28-kids-91bd.webp",
+      "featured": true,
+      "featuredAll": true
+    },
     {
       "title": "つくばちびっ子博士2026　KEKミッション「まちがいを発見せよ！」を開催します",
       "source": "https://ibanavi.net/event/19599",
@@ -48,8 +62,7 @@
       "category": "event",
       "emoji": "📰",
       "url": "https://tsukuba.goguynet.jp/2026/07/27/family-chapel-concert/",
-      "thumb": "images/thumbs/2026-07-27-event-7c9e.webp",
-      "featuredAll": true
+      "thumb": "images/thumbs/2026-07-27-event-7c9e.webp"
     },
     {
       "title": "茨城県鹿嶋市の武井釜海岸で親子ら3人が沖に流され父親（56）が死亡　小6の息子（11）ら2人はサーファーに救助され軽傷",
