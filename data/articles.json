@@ -1,6 +1,19 @@
 {
-  "updated": "2026-07-27T22:29",
+  "updated": "2026-07-27T23:03",
   "items": [
+    {
+      "title": "つくばちびっ子博士2026　KEKミッション「まちがいを発見せよ！」を開催します",
+      "source": "https://ibanavi.net/event/19599",
+      "date": "2026-07-27T23:01",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "📰",
+      "url": "https://ibanavi.net/event/19599",
+      "thumb": "images/thumbs/2026-07-27-event-b1a4.webp",
+      "featured": true
+    },
     {
       "title": "最高の「醤油ラーメン」につくば「ひしお」で出会った",
       "source": "GOURMET",
@@ -36,7 +49,6 @@
       "emoji": "📰",
       "url": "https://tsukuba.goguynet.jp/2026/07/27/family-chapel-concert/",
       "thumb": "images/thumbs/2026-07-27-event-7c9e.webp",
-      "featured": true,
       "featuredAll": true
     },
     {
