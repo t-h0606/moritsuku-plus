@@ -11,7 +11,7 @@ const CAT_NAMES = { news: "ニュース", event: "イベント", gourmet: "グ�
 
 // 記事一覧の「もっと見る」の件数設定。最初に出す件数と、ボタンを押すたびに増える件数。
 const FEED_INITIAL_COUNT = 15;
-const FEED_STEP = 10;
+const FEED_STEP = 15;
 
 // 読み込んだデータの置き場
 let ARTICLES = [], VIDEOS = {}, WEATHER = {}, STAFF = [];
