@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T07:59",
+  "updated": "2026-07-28T09:36",
   "items": [
     {
       "title": "子ども連れも安心のイベント！ママハピEXPO＠イオンタウン守谷",
@@ -14,6 +14,18 @@
       "thumb": "images/thumbs/2026-07-28-kids-91bd.webp",
       "featured": true,
       "featuredAll": true
+    },
+    {
+      "title": "プラネタリウム版「チ。 ー地球の運動についてー」(つくばエキスポセンター)",
+      "source": "ウォーカープラス",
+      "date": "2026-07-28T09:35",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "📰",
+      "url": "https://www.walkerplus.com/event/ar0308e600786/",
+      "thumb": ""
     },
     {
       "title": "茨城県内の住宅着工最少に　初の1万5000戸割れ　25年度5.6%減　省エネ義務化、反動減",
