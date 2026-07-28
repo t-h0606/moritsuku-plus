@@ -297,12 +297,11 @@ function renderNewsUpdated(updated) {
 // remaining＝残り件数。押すと FEED_STEP 件（残りがそれ未満ならその分だけ）追加表示される。
 function moreButtonHTML(remaining) {
   if (remaining <= 0) return "";
-  const next = Math.min(FEED_STEP, remaining);
   return `
     <div class="feed-more-wrap" style="grid-column:1/-1;flex:1 1 100%;width:100%;display:flex;justify-content:center;margin-top:20px;">
       <button type="button" class="feed-more-btn" onclick="loadMoreFeed()"
         style="display:inline-block;padding:12px 28px;border:none;border-radius:999px;background:#16203A;color:#fff;font-size:14px;font-weight:700;cursor:pointer;">
-        もっと見る（+${next}件）
+        もっと見る
       </button>
     </div>`;
 }
