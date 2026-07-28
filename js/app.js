@@ -9,11 +9,15 @@
 const CITY_NAMES = { moriya: "守谷", tsukuba: "つくば", tsukubamirai: "つくばみらい" };
 const CAT_NAMES = { news: "ニュース", event: "イベント", gourmet: "グルメ", kids: "キッズ", ibaraki: "県内全域" };
 
+// 記事一覧の「もっと見る」の件数設定。最初に出す件数と、ボタンを押すたびに増える件数。
+const FEED_INITIAL_COUNT = 15;
+const FEED_STEP = 10;
+
 // 読み込んだデータの置き場
 let ARTICLES = [], VIDEOS = {}, WEATHER = {}, STAFF = [];
 let WX_CASTERS = [], WX_COMMENTS = {}, NEWS_REPORTERS = [], ONAIR_STAFF = [], NEXT_AVATAR_IDX = 2;
 
-let state = { city: "all", cat: "all", weekOpen: false };
+let state = { city: "all", cat: "all", weekOpen: false, visibleCount: FEED_INITIAL_COUNT };
 
 /* ========== データ読み込み ========== */
 async function loadJSON(path) {
@@ -289,6 +293,27 @@ function renderNewsUpdated(updated) {
   el.textContent = hasTime ? `${base}${hm}更新` : `${base}更新`;
 }
 
+// 「もっと見る」ボタンのHTML。まだ表示していない記事が残っているときだけ作る。
+// remaining＝残り件数。押すと FEED_STEP 件（残りがそれ未満ならその分だけ）追加表示される。
+function moreButtonHTML(remaining) {
+  if (remaining <= 0) return "";
+  const next = Math.min(FEED_STEP, remaining);
+  return `
+    <div class="feed-more-wrap" style="grid-column:1/-1;flex:1 1 100%;width:100%;display:flex;justify-content:center;margin-top:20px;">
+      <button type="button" class="feed-more-btn" onclick="loadMoreFeed()"
+        style="display:inline-block;padding:12px 28px;border:none;border-radius:999px;background:#16203A;color:#fff;font-size:14px;font-weight:700;cursor:pointer;">
+        もっと見る（+${next}件）
+      </button>
+    </div>`;
+}
+
+// 「もっと見る」ボタンを押したときの動作：表示件数を増やして再描画するだけ。
+// データは最初に読み込み済みのものをそのまま使うので、通信は発生しない。
+function loadMoreFeed() {
+  state.visibleCount += FEED_STEP;
+  renderFeed();
+}
+
 function renderFeed() {
   // 「県内全域」は3市に属さない記事。専用タブの中だけに出し、他のタブには一切混ざらない
   const filtered = ARTICLES.filter(a => {
@@ -303,7 +328,11 @@ function renderFeed() {
   const useAllFlag = (state.cat === "all" || state.cat === "video");
   const list = orderForFeed(filtered, useAllFlag);
   document.getElementById("emptyNote").hidden = list.length > 0;
-  document.getElementById("feed").innerHTML = list.map((a, i) => {
+
+  // 表示件数は state.visibleCount までに絞る（「もっと見る」で少しずつ増やす）
+  const visibleList = list.slice(0, state.visibleCount);
+
+  const cardsHTML = visibleList.map((a, i) => {
     const badges = `
       <div class="badges">
         <span class="cat ${a.category}">${CAT_NAMES[a.category]}</span>
@@ -331,6 +360,8 @@ function renderFeed() {
       </div>
     </a>`;
   }).join("");
+
+  document.getElementById("feed").innerHTML = cardsHTML + moreButtonHTML(list.length - visibleList.length);
 }
 
 /* ========== 動画 ========== */
@@ -493,10 +524,12 @@ function setPressed(sel, attr, val) {
 function bindControls() {
   document.querySelectorAll(".station").forEach(b => b.addEventListener("click", () => {
     state.city = b.dataset.city; setPressed(".station", "city", state.city);
+    state.visibleCount = FEED_INITIAL_COUNT;   // まちを変えたら表示件数を最初からやり直す
     renderFeed(); renderNewsCaster();
   }));
   document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
     state.cat = b.dataset.cat; setPressed(".chip", "cat", state.cat);
+    state.visibleCount = FEED_INITIAL_COUNT;   // ジャンルを変えたら表示件数を最初からやり直す
     applyVideoMode(state.cat === "video");
     renderFeed();
   }));
