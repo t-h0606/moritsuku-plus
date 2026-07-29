@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T17:56",
+  "updated": "2026-07-29T17:58",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "【期間限定出店！】茨城 イーアスつくばにて小樽洋菓子舗ルタオが8月5日（水）より、北海道のプレミアムギフトスイーツをお届け。",
+      "source": "PR TIMES",
+      "date": "2026-07-29T09:30",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8teWJFTjd1NlVpLTBMcS1hQjYwbDFtdG9NcHFYc3ZrUzkzeklQSDd2aXNIWXVXZUJFam15NDE0T2hCbV9meEJJTXlPX1FjaFpISDlsY294dlFfaVhkZXdXaEs2bjlNQ05vdFE?oc=5",
+      "thumb": ""
     },
     {
       "title": "巨大データセンターの排熱で気温上昇? つくば住民、計画に懸念",
