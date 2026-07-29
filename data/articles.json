@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T17:37",
+  "updated": "2026-07-29T17:46",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "地ビール品評会で2品金賞 筑波山麓の天然水使用 茨城・つくばの醸造所",
+      "source": "47NEWS",
+      "date": "2026-07-29T06:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1QNHRybFpaY3d1N0MzQjYweGh1Smd3WDVhVjJORnlINmJRSkFiZWswQy11RFNRZ1lWamI5ZEtsemxycUxFcTFKTWtLdw?oc=5",
+      "thumb": ""
     },
     {
       "title": "20268/1 常総市・大生郷天満宮八朔祭",
