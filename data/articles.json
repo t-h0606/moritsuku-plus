@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T17:46",
+  "updated": "2026-07-29T17:56",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "巨大データセンターの排熱で気温上昇? つくば住民、計画に懸念",
+      "source": "毎日新聞",
+      "date": "2026-07-29T09:15",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA0YlBYQnAyek03RnFocGZJUncwbFUyM0lSU1g0UlZVOTNKZnZRNmp3aFRydlUwRkRzdnp1QWthcXd5UXhHNFhwd3FCMmlhd0wxUlhETVItOVplVHF2MUh0NkRtTFZUOGlp?oc=5",
+      "thumb": ""
     },
     {
       "title": "地ビール品評会で2品金賞 筑波山麓の天然水使用 茨城・つくばの醸造所",
