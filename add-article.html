@@ -45,6 +45,7 @@
   .chip[data-city].disabled{opacity:.35; pointer-events:none;}
   .genre-select{display:flex; gap:8px; flex-wrap:wrap;}
   .genre-select .chip.on{background:var(--navy);}
+  #sourceQuickRow .chip.on{background:var(--navy);}
   .emoji-row{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;}
   .emoji-btn{
     font-size:18px; padding:6px 10px; border-radius:8px; border:1px solid var(--line);
@@ -134,6 +135,11 @@
 
     <label>配信元 <span class="req">必須</span></label>
     <input type="text" id="f_source" placeholder="例：ねとらぼ">
+    <div class="chips" id="sourceQuickRow" style="margin-top:8px;">
+      <div class="chip" data-source="茨城新聞クロスアイ">茨城新聞クロスアイ</div>
+      <div class="chip" data-source="号外NET">号外NET</div>
+    </div>
+    <div class="hint">よく使う配信元はボタンで入力できます。それ以外は上の欄に直接入力してください。</div>
 
     <label>掲載日時 <span class="req">必須</span></label>
     <input type="datetime-local" id="f_date">
@@ -271,6 +277,22 @@
       if(el.classList.contains('on')) selectedCities.add(c); else selectedCities.delete(c);
     });
   });
+
+  // ---------- 配信元クイック入力 ----------
+  const sourceInput = document.getElementById('f_source');
+  function refreshSourceQuickState(){
+    const val = sourceInput.value;
+    document.querySelectorAll('#sourceQuickRow .chip').forEach(el=>{
+      el.classList.toggle('on', el.dataset.source === val);
+    });
+  }
+  document.querySelectorAll('#sourceQuickRow .chip').forEach(el=>{
+    el.addEventListener('click', function(){
+      sourceInput.value = el.dataset.source;
+      refreshSourceQuickState();
+    });
+  });
+  sourceInput.addEventListener('input', refreshSourceQuickState);
 
   // ---------- 絵文字 ----------
   let selectedEmoji = "";
@@ -525,6 +547,7 @@
       document.getElementById('f_url').value = '';
       document.getElementById('f_title').value = '';
       document.getElementById('f_source').value = '';
+      refreshSourceQuickState();
       document.getElementById('f_date').value = '';
       document.querySelectorAll('#genreSelect .chip').forEach(x=>x.classList.remove('on'));
       document.querySelectorAll('#cityChips .chip').forEach(x=>x.classList.remove('on'));
