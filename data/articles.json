@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T17:48",
+  "updated": "2026-07-31T08:21",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "つくば・農研機構上級研究員の内藤健さん、著書「アズキの起源」が科学出版賞",
+      "source": "Yahoo!ニュース",
+      "date": "2026-07-30T20:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1felNad2R6NVdyeHlPZHp6OWtsSU0zenp1VE4tUnFLbDcxV29selFjX2xMLVN5cmY3MldwU1d2eGtiOTI4XzI2TWVHRmU1Q1QzeUV2MlF2Zk1uR1AyYTRuTWlHcFJhQ09OOHd2TlBQY3NhMGFLNnBEWThtcVRuUm8?oc=5",
+      "thumb": ""
     },
     {
       "title": "世代を問わない地域密着型洋食レストラン「Home Dining Aren（ホームダイニングアレン）」",
