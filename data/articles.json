@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T09:15",
+  "updated": "2026-07-30T09:16",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "つくば市 熊本地震で防災科学技術研究所の職員を現地に派遣",
+      "source": "NHKニュース",
+      "date": "2026-07-29T17:15",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFByNWl6dEQzSXBTYVdSWkRXRnphVF9aNnFWaUs0YjNGcnhJOWV4aXZVWk9EM0t3WkNYeEdpWTRkS1RBMkxHLUVVVjFrMkxmT3pkZkN4ZFJZSDk?oc=5",
+      "thumb": ""
     },
     {
       "title": "つくば市【違法放置車両を構造から考える】7月29日(水)なぜすぐ撤去できないのか。",
