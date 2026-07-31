@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T18:12",
+  "updated": "2026-08-01T07:54",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "つくば市市制施行40周年記念ロゴマーク募集",
+      "source": "Koubo",
+      "date": "2026-08-01T00:13",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9zMk5JQjZndW1KWk4xVXBQMUk0VThPVjZQODd6Tk5KM2JTbms2YklUTDlJMXNXRXdiWTc5aHZENG5MekhBRVE?oc=5",
+      "thumb": ""
     },
     {
       "title": "列車運行のご案内（臨時列車・臨時停車） ～「まつりつくば2026」はTXで便利に～",
