@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T18:06",
+  "updated": "2026-07-31T18:12",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,18 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "列車運行のご案内（臨時列車・臨時停車） ～「まつりつくば2026」はTXで便利に～",
+      "source": "PR TIMES",
+      "date": "2026-07-31T14:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBhRVRJNGhNdlhJRnZxc1RuTEdjYVB1aUVGUGctV29ZekFhRDVYb3FSUUk5TU5LLVZFMkpsZWNXQThQT3VFZUFRSnlpdDFpUF9WMWJmNHFjVE5BbVN3c2F0dDNMQl9FSUtmNVE?oc=5",
+      "thumb": ""
     },
     {
       "title": "【ホテル日航つくば】市川蓮根×つくたび『掘って、食べて、学ぶ！レンコン体験DAY』を9月19日（土）に開催",
