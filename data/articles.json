@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T08:50",
+  "updated": "2026-08-02T08:19",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,20 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "【女性に聞いた】「茨城県の道の駅」人気ランキング！　第2位は「グランテラス筑西」、1位は？",
+      "source": "ねとらぼ",
+      "date": "2026-08-02T08:19",
+      "city": [
+        "moriya",
+        "tsukubamirai",
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "📰",
+      "url": "https://news.yahoo.co.jp/articles/6bf27f2dbd0087b35d0d66d3ec00b6aeefd52072",
+      "thumb": ""
     },
     {
       "title": "【つくば市】2026年3月にオープンした「寿司・しゃぶしゃぶ ゆず庵 つくば店」へ行ってみました",
