@@ -502,8 +502,36 @@ section { padding: 26px 0 40px; }
   .weather-note { display: none; }
 }
 
-/* ========== ④ おすすめ動画（メイン1+サブ2） ========== */
-.video-lead { display: grid; grid-template-columns: 1.9fr 1fr; gap: 16px; }
+/* ========== ④ 番組（縦動画・番組ごとに横スクロール） ========== */
+.show-row + .show-row { margin-top: 36px; }
+.show-row .sec-head { margin-bottom: 18px; }
+.show-row .sec-title { position: relative; padding-left: 15px; }
+/* 見出しの左に番組カラーの帯。色は videos.json の accent から */
+.show-row .sec-title::before {
+  content: "";
+  position: absolute; left: 0; top: 0.16em; bottom: 0.16em;
+  width: 5px; border-radius: 3px;
+  background: var(--accent, #3D7BFF);
+}
+.show-empty { color: #8B98B4; font-size: 0.85rem; padding: 22px 0 8px; }
+
+.short-shelf {
+  display: flex; gap: 12px;
+  overflow-x: auto;
+  padding: 4px 22px 14px 2px;
+  margin-right: -22px;              /* 右端を画面の端まで流し切る（まだ先がある感） */
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.short-shelf::-webkit-scrollbar { height: 8px; }
+.short-shelf::-webkit-scrollbar-thumb { background: #3A4763; border-radius: 4px; }
+.short-shelf .item { flex: 0 0 168px; scroll-snap-align: start; }
+.short-shelf .screen { aspect-ratio: 9 / 16; }   /* ← 縦動画。共通の16:9を上書き */
+.short-shelf .screen .play { width: 46px; height: 46px; }
+.short-shelf .screen .play::after { border-width: 8px 0 8px 14px; margin-left: 3px; }
+.short-shelf .v-caption { margin-top: 8px; }
+.short-shelf .v-caption .t { font-size: 0.84rem; line-height: 1.45; }
+
 .screen {
   position: relative;
   border-radius: var(--radius);
@@ -515,6 +543,7 @@ section { padding: 26px 0 40px; }
 }
 .screen:hover { transform: translateY(-3px); }
 .screen svg { width: 100%; height: 100%; display: block; }
+.screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .screen .play {
   position: absolute; inset: 0; margin: auto;
   width: 62px; height: 62px;
@@ -532,78 +561,17 @@ section { padding: 26px 0 40px; }
 }
 .screen:hover .play { transform: scale(1.08); }
 .screen .dur {
-  position: absolute; right: 10px; bottom: 10px;
+  position: absolute; right: 8px; bottom: 8px;
   background: rgba(0,0,0,0.72);
   color: #fff;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 7px;
   border-radius: 6px;
 }
-.screen .rec {
-  position: absolute; left: 12px; top: 10px;
-  display: flex; align-items: center; gap: 6px;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-}
-.screen .rec i {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--onair);
-  box-shadow: 0 0 8px var(--onair);
-}
-.v-sub { display: flex; flex-direction: column; gap: 16px; }
-.v-sub .screen { flex: 1; }
-.v-sub .screen .play { width: 44px; height: 44px; }
-.v-sub .screen .play::after { border-width: 8px 0 8px 13px; }
 .v-caption { margin-top: 10px; }
 .v-caption .t { font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
 .v-caption .m { font-size: 0.72rem; color: #8B98B4; margin-top: 2px; }
-.video-lead .main .v-caption .t { font-size: 1.1rem; }
-
-/* ========== ⑤ 次の放送 ========== */
-.next-strip {
-  margin-top: 34px;
-  border-radius: var(--radius);
-  border: 1.5px dashed rgba(255,255,255,0.28);
-  background: rgba(255,255,255,0.05);
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-.next-thumb {
-  width: 190px;
-  aspect-ratio: 16/9;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-  position: relative;
-}
-.next-thumb svg { width: 100%; height: 100%; }
-.next-avatar {
-  width: 76px; height: 76px;
-  object-fit: contain;
-  flex-shrink: 0;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
-}
-.next-body { flex: 1; min-width: 220px; }
-.next-label {
-  display: inline-block;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 900;
-  font-size: 0.66rem;
-  letter-spacing: 0.24em;
-  color: var(--studio);
-  background: #FFD34D;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 8px;
-}
-.next-body .t { font-weight: 700; font-size: 1.05rem; }
-.next-body .d { font-size: 0.8rem; color: #A9B5CC; margin-top: 4px; }
 
 /* ========== ⑥ 記事カード ========== */
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
@@ -684,24 +652,6 @@ section { padding: 26px 0 40px; }
 .card .meta .arrow { margin-left: auto; color: var(--c-tsukuba); font-weight: 700; }
 .empty { text-align: center; color: var(--ink-sub); padding: 40px 0; font-size: 0.88rem; }
 
-/* ========== ⑦ 過去放送（横スクロール） ========== */
-.shelf {
-  display: flex; gap: 14px;
-  overflow-x: auto;
-  padding: 4px 2px 14px;
-  scroll-snap-type: x mandatory;
-}
-.shelf::-webkit-scrollbar { height: 8px; }
-.shelf::-webkit-scrollbar-thumb { background: #3A4763; border-radius: 4px; }
-.shelf .item { flex: 0 0 250px; scroll-snap-align: start; }
-.shelf .screen .play { width: 40px; height: 40px; }
-.shelf .screen .play::after { border-width: 7px 0 7px 12px; }
-.ep-no {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
-  color: #8B98B4;
-}
-
 /* ========== ⑧ スタッフのお仕事 ========== */
 .staff-sec { background: #FFF3DC; }
 .staff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
@@ -754,9 +704,6 @@ footer .links a:hover { color: #fff; }
 footer .disc { color: #566280; }
 
 @media (max-width: 760px) {
-  .video-lead { grid-template-columns: 1fr; }
-  .v-sub { flex-direction: row; }
-  .v-sub .screen { flex: 1; }
   section { padding: 20px 0 32px; }
 }
 @media (max-width: 640px) {
@@ -786,6 +733,13 @@ footer .disc { color: #566280; }
   .news-caster { width: 78px; bottom: 22px; left: -8px; }
   /* スマホは見出し下マージンが12pxなので、トリミング位置もそれに合わせる */
   .onair-caster { width: 76px; height: 69px; bottom: -16px; left: calc(100% - 9px); }
+  /* スマホの縦動画カード：390px幅で2.3枚見える大きさ */
+  .show-row + .show-row { margin-top: 26px; }
+  .show-row .sec-head { margin-bottom: 14px; }
+  .short-shelf { gap: 10px; }
+  .short-shelf .item { flex: 0 0 148px; }
+  .short-shelf .screen .play { width: 40px; height: 40px; }
+  .short-shelf .screen .play::after { border-width: 7px 0 7px 12px; }
   .news-head .sec-head { margin-bottom: 8px; }
   /* 駅セレクタを横スクロールなしで1画面に収める */
   .rail-nav { padding: 6px 0 20px; padding-left: 76px; }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- もりつく＋ v50（2026-07-24）
+<!-- もりつく＋ v51（2026-08-01）
      v24（単一10MB）から、HTML / CSS / JS / 画像 / データ に分割。見た目と動作は同一。
      更新するファイル： data/articles.json（記事） data/videos.json（動画） data/weather.json（天気・自動） -->
 <html lang="ja">
@@ -95,40 +95,14 @@
   </div>
 </section>
 
-<!-- ④ おすすめ動画 -->
+<!-- ④ 番組（縦動画・番組ごとに横スクロール）
+     見出しも中身も data/videos.json の shows から描画される。番組を増やすときは
+     videos.json に1ブロック足すだけでよく、このHTMLは触らなくてよい。 -->
 <section class="dark" id="sec-video">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="onair-head">
-        <h2 class="sec-title">今週のオンエア</h2>
-        <!-- 日替わりの制作班スタッフ（午前5時に交代）。見出しの「ア」の後ろに立つ -->
-        <div class="onair-caster" id="onairCaster">
-          <img id="onairCasterImg" alt="">
-        </div>
-      </div>
-    </div>
-
-    <div class="video-lead" id="videoLead"></div>
-
-    <!-- ⑤ 次の放送（data/videos.json の next から描画） -->
-    <div class="next-strip" id="nextStrip"></div>
-  </div>
+  <div class="wrap" id="showRows"></div>
 </section>
 
-<!-- ⑥ 過去放送 -->
-<section class="dark deep" id="sec-library">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <h2 class="sec-title">放送ライブラリー</h2>
-      </div>
-      <span class="sec-note">過去のオンエアを横スクロールで</span>
-    </div>
-    <div class="shelf" id="shelf"></div>
-  </div>
-</section>
-
-<!-- 動画ジャンル選択時のみ：記事カードがここ（放送ライブラリーの下）へ移動する受け皿 -->
+<!-- 動画ジャンル選択時のみ：記事カードがここ（番組セクションの下）へ移動する受け皿 -->
 <section id="sec-feed-slot" hidden>
   <div class="wrap" id="feedSlot"></div>
 </section>
