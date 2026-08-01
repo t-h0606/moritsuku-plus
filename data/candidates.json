@@ -1,7 +1,46 @@
 {
-  "updated": "2026-08-01T14:52",
-  "count": 221,
+  "updated": "2026-08-01T19:38",
+  "count": 223,
   "candidates": [
+    {
+      "id": "f1c6c30222c0",
+      "title": "桑木は１打差２位 全英女子ゴルフ",
+      "source": "つくば経済新聞",
+      "date": "2026-08-01T14:10",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBINGUtenZPN0JtT2c3bi1UVVI5S0FjNlRrWHo1SzZrN0hXVGpYbXUwM2RfbTVhcW92TzZOeVJ3TTNzNHFXdlpaVzJ6WldlVVdPWXU2WA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "dda63324ecc8",
+      "title": "村上は２４号２ラン 大リーグ",
+      "source": "つくば経済新聞",
+      "date": "2026-08-01T14:10",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1rVDdVRHplZFRCVDlzd2FwUm5FYnJFT2lTUk5LVjk3OW5LUjR4Y2xUX0ZkYUxDaHgtT0lDX3pRSmVTU2VORTRyRmlKN21kM2VPb0FUcw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "4fef6ce7f162",
+      "title": "ＦＩＦＡ、子会社設立計画を撤回",
+      "source": "つくば経済新聞",
+      "date": "2026-08-01T12:36",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE41R2FHeENIaUwxZGcyZVNNLW9TSGlVSVUwNzQ4cVFFQzAtWXRraEZXaC1VLV95WDVPLTlzNFgzT3VDcVVMVE93T0trMmJ6eXlYYkNvVQ?oc=5",
+      "sure": false
+    },
     {
       "id": "5b25b09519f8",
       "title": "初の週末、ボランティア開始",
@@ -43,7 +82,7 @@
     },
     {
       "id": "b869f93de4d4",
-      "title": "トピックス - 2026年8月1日(土曜日) | 谷和原小学校公式ホームページ",
+      "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
       "date": "2026-08-01T11:13",
       "city": [
@@ -65,6 +104,19 @@
       "category": "kids",
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE16MklfUHVsdWlyaUVwYU50YUlaUXY2ZFZPYTd6UkNrbjNRX085N2hHT0Y3bjRHeXN6TURxRktnTWVNaF9sV2xNWGVudWFud2I1VS13NQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "af9bb4e486b6",
+      "title": "熊本アンテナ店に行列",
+      "source": "つくば経済新聞",
+      "date": "2026-08-01T11:07",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BTFRtdHVnc1BiSkZMcXcyZE9abkliMHdyYzJKSjMtajY5N0JGTkEwTFBDODJlMUJVSHM0eWhDVnNMNTkxalRfU0FLVF9neXp6elR2OA?oc=5",
       "sure": false
     },
     {
@@ -133,6 +185,30 @@
       "sure": false
     },
     {
+      "id": "1628cec37509",
+      "title": "熊本地震 茨城県の各自治体に支援の輪 ふるさと納税、代理で対応",
+      "source": "東京新聞デジタル",
+      "date": "2026-08-01T08:18",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9zdzBNeFFtem0zbFUya2s0X0xPeEZabVh5Z21xRGRZRTRWMnF4STNIcHlIZnhkYnhONTJTLXpaUS1ob2NKUkZOUl9xSy1ZWEh1SkMw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "1bc131296d04",
+      "title": "秋季茨城大会1次予選の組み合わせ決定！水戸商、明秀日立、霞ケ浦、土浦日大の初戦の相手は？【26年秋高校野球】",
+      "source": "Yahoo!ニュース",
+      "date": "2026-08-01T06:55",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBQRjFObzdFSFpZRlJ5RnA0aEZ2MGxmVXdxNnFMOFg2MkU3N1JFUWhCQk5wT193dVEwODVtOXc2NElQT0NrM0NyYXdMeGJ6V3Q1ZGpZSjdQQ1hLUjRtS0N2Z0dSUWR5QXFyQVotXzlrbnhFcGFtN3d2a1dJY3RPY28?oc=5",
+      "sure": true
+    },
+    {
       "id": "28f510a140b5",
       "title": "傍らのひと （３０）プロゴルフのキャディー 原田真由美（はらだ・まゆみ）さん 不振の時こそ存在価値 どんな言葉で何を語るか",
       "source": "chukei-news.co.jp",
@@ -167,6 +243,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB0VGtsdjRCYWc4eHp1YmFJRkhkS3BlVkZQWFNPSFl6X3dFdkZrNHFoOUd1WTl5S0RTZ1hURTB2bVhzTHM2T0pmOVZpd002QTFUR2p3R19RcW9IZWEtdEE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "e0497a8bb64a",
+      "title": "茨城県の過去のアメダス実況(2026年07月31日)(積雪深)",
+      "source": "tenki.jp",
+      "date": "2026-08-01T03:02",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9leUV3ZUQyX3l1WUxXRGRNbG1pakdfZXF0d1p0eUV5dVl2ckZ0RlA3aWhsMHcwV0FMSnZqN0hOczg3TmVZNzJXUWRVZ09vSkhPNDlSS3RqZVV3cnp2Ylk3b2VzLTg?oc=5",
       "sure": true
     },
     {
@@ -205,6 +292,19 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBsMUVwT2VHSFEwenp3eDN3SmhScUZDMFoxTFJUYWhTd0tiY0pMLWl4RlZJSzFqYjBCTlZKRDZLSkJxVGktWDNqcGQzR3FCRVRxaktKR2tDOFI?oc=5",
       "sure": true
+    },
+    {
+      "id": "139ee7ad72b4",
+      "title": "桑木志帆は通算６アンダー",
+      "source": "つくば経済新聞",
+      "date": "2026-08-01T00:26",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PRndCeXlzamgxTWNGcFlWcjB5ZDVLV0hVR29oLV9KeGV0MnZ3bXJHcFVzamhVUWsyVDRHTGpETGVNb1FQTjdwbHctTGF3eTROajFJTw?oc=5",
+      "sure": false
     },
     {
       "id": "005c079510b5",
@@ -283,6 +383,19 @@
       "sure": false
     },
     {
+      "id": "b3b0e3761068",
+      "title": "被団協田中さん、若手芸術家と対話",
+      "source": "つくば経済新聞",
+      "date": "2026-07-31T22:09",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PWHpSQ3FFY2RXOHhTZkFqalpadmZMNU9nNzNrVmRkLXI5d0QxMjB3VHhndWNrdTZnSWUxRE11dk5xMG9mY21qWEpyR2lMQ0VYbi1BaQ?oc=5",
+      "sure": false
+    },
+    {
       "id": "28dfe7565bc9",
       "title": "金融政策、現状を維持",
       "source": "つくば経済新聞",
@@ -306,6 +419,32 @@
       "category": "kids",
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9YbTVqc3E3dE5KQnc5MFFudUVfcy1mSExZWUtxbGFTX001V1AyZFZvYTFfNm5xWk1RN0p0bnEtOXl3X19FQWJqdmxEenVZOXUwOXV2Sg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "390f723af614",
+      "title": "中立公、合流判断「８月末目途」",
+      "source": "つくば経済新聞",
+      "date": "2026-07-31T21:59",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE84eWNRczJCM0UwWS1tLTlQRmpBQWlWOGNxS0dFcDlfNFZCR2loYU5GQWRTMUdTN1VZNEJ6SThKSXY4Q3VIWDBzdWxqV3V0empUaV9Xbg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "13a66de51cfd",
+      "title": "七夕飾り制作が大詰め",
+      "source": "つくば経済新聞",
+      "date": "2026-07-31T21:14",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1RUTdURlduZS1wNGRNTUQxVGpfb2x6eHNxUkw1dkhESmFxS1FRZ29NakJIUFlCamQ0amxnN3FScWlPYVlnbzF1ZFVSVlpxSVY1Tl9QYQ?oc=5",
       "sure": false
     },
     {
@@ -397,6 +536,19 @@
       "category": "kids",
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8weFBWMXJ0OGJ6VTVjbUdWUWNzTFB6QXNCeDVueWpVbHEtdG5Ycjhfc29CSm1LMDViaUloRDNkZWozWEhIUWU3SGdPLWpLd0twcXFPMg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "822add6d2e5d",
+      "title": "宇野昌磨と本田真凜、プログラム披露",
+      "source": "つくば経済新聞",
+      "date": "2026-07-31T20:31",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1XTjFUYWtEZ20tMXdfVVNSVDJtUFRJT3ptQzI5LTJxNU5pRDE1WlFnV3RyTlg1WEZ3Y0JVSUFsSWx0ak9XX09tSFpnbTVlUktUQUMyRA?oc=5",
       "sure": false
     },
     {
@@ -786,7 +938,7 @@
     },
     {
       "id": "fc9c1d67e247",
-      "title": "震度1 茨城県南部 2026年07月31日11:40ごろ 地震詳細 | 愛媛のニュース - Nスタえひめ｜あいテレビは6チャンネル",
+      "title": "震度1 茨城県南部 2026年07月31日11:40ごろ 地震詳細 | 愛媛のニュース",
       "source": "TBS NEWS DIG",
       "date": "2026-07-31T11:46",
       "city": [],
@@ -906,6 +1058,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBnNmF4SjFxMkI0RUVLTnpLNnBxZTM1TlBRbmtfT184dGs1eUpLalJET21JSXEyYkxyX2xfMkdXNFc0LVpVYWxHblRTVmJVTDRfRmpfcTZLRmU1cDItdVV5TWM4bzNKcmZ5dEE?oc=5",
+      "sure": false
+    },
+    {
+      "id": "687f21c6791d",
+      "title": "高市首相、元島民ひ孫らと面会",
+      "source": "つくば経済新聞",
+      "date": "2026-07-31T08:20",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0zUVNlTEJHVG12QWl3cHhWOVhrUWt2M243NjdNNnRMZlIwUzFvZl9WamVaYmg0S1c4b3ZmeGEtLTJFMmV5bjUwOGhaYXhWdG1WMGJISQ?oc=5",
       "sure": false
     },
     {
@@ -1266,6 +1431,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1aX1pRT1Q4VC10eVNuQ1VnRnR0a0M4UDlLaW1DQmlXXy02aU1fQlVuaTdaX0ExS1BuMENPZHVhNm1LZUhxN1NrcnV4ZGJ1WHJOU2R4MA?oc=5",
+      "sure": false
+    },
+    {
+      "id": "4a872c86adb0",
+      "title": "刑事責任不問は「耐えられない」",
+      "source": "茨城新聞クロスアイ",
+      "date": "2026-07-30T18:41",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPU25WVkd3aThVdjdMTDlTWnpRTi1qeXZ2R01yRmtGVlgyanl5dVRRZXBzeFhlRmhlTFY0cXBibklYOUt3cjdrZ0lfY19qWk5pc21JOWFzNTlDYWwxNk4wbF9lNDJ2YWlKd2xzTm9GX2M1SHhpbnVoS25YRl90Q0V6ajhQM1B3bm9iUlVYbURfUTd4STB0MS1faTI2MVBseE0?oc=5",
       "sure": false
     },
     {
@@ -1957,6 +2135,19 @@
       "sure": true
     },
     {
+      "id": "1f860554e120",
+      "title": "涼しさを演出するタペストリー つくば駅前の商業施設に展示",
+      "source": "NEWSつくば",
+      "date": "2026-07-29T20:39",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBQSTh1NW1vS21mQ1pHMi1vem9QaFNuYnhNdGh3dzRjcUFiLW5pLVJ0QUhBU3FmY0x0SExiQ2o0N01JSHN6NlZKTlVidERjcWNUSFdFWFVYbUsyREpFenNXSFdQdjhrZw?oc=5",
+      "sure": true
+    },
+    {
       "id": "80b27ba92dae",
       "title": "本塁打競争は細川優勝 プロ野球",
       "source": "つくば経済新聞",
@@ -2124,176 +2315,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBxVWYwdlFaQVZLeW1fNWExY2N4R05JdjBubENTQzRiMC1LdzVDVmx2YVFWTkNaVE5kd09UTW45Ukw4cGp1ejhZVVBGZ0FLNk05VmxjTWhXbF8?oc=5",
       "sure": true
-    },
-    {
-      "id": "7cbfd240d9a4",
-      "title": "リアルタイム現地情報",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-07-29T16:00",
-      "city": [
-        "tsukubamirai",
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdmhyZE4yT0Nsbk1DX21RTS1JazlWaTROOGhQODFvSmx0Z2tvS2R0SHktM1NNY1JNQ1poeFQ2VF82elJZcS12Q2d3RGNyWXNzRXRHdGlyZU9ZUkttdUdHQlpiNUJXXzdXcHdfaEJYWEFmbGRpend5RDhpOHliZDk3dllUU2huN1lmeF9jSnJVcw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "7a61e9585269",
-      "title": "ミャンマー、日本企業に投資呼び掛け",
-      "source": "つくば経済新聞",
-      "date": "2026-07-29T16:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB4SC1uZ2d5RnFfXzBlSUZZY2FnOEV6dEdERnA1cVk3bUl5N2lzQXJkSVJLcEU1VW5uYWZnNHJUbkduRGk0b0JDdWE5Mm1OVGRsY3FaNA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "db4c86c98167",
-      "title": "ガチで旨い「ラーメンWalker茨城グランプリ」総合部門発表！1位はフレンチを取り入れた鶏白湯",
-      "source": "ウォーカープラス",
-      "date": "2026-07-29T16:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5UQk5maDd4TlZodjhxdzRuc0FDc0t5T2VSUUhQNld4Vi14cko1czlLczlFZExzSV84YU1Db3paZ0tkdzdpNEw2ZmFYV0F3R3BDdVRLMNIBWkFVX3lxTE1sNDlMb2ZzbnA4VFA1bGRsb3E3eWFvU0RlY3lxNW0xZUVSZC1Vbk93SkdNWU1rbndvVWo5NHVDUUVBQjVfdU1VNEZrZHRid01uQUNzc3BoYkQ1QQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5ff10c009fb2",
-      "title": "北見ケ丘で子ども散策会 8月2日開催 エゾリスの著者らの説明聞きながら",
-      "source": "47NEWS",
-      "date": "2026-07-29T15:30",
-      "city": [
-        "moriya"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1XWVNfSTg0dXMzb0h6SkNLR2lhNFpMNUM1Snh6Q0hhM05PRHJNTi12UlBsaTQ5Z0d2N0ZoU1Z5aTVKQ3IxTkpRZE1XSQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "5e437ea980b9",
-      "title": "上柳昌彦 あさぼらけ",
-      "source": "ニッポン放送 ラジオAM1242+FM93",
-      "date": "2026-07-29T15:05",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAxWkdBOVpfWTVFdXhzTVpnYzc5SHhsT2RhWVgydExUbURoSjdQYWlrRkZXS2RFTGhQVGdHdV8yWWgtTXczbWd5VHlqU211Tnd1cW1xTXd1X09HS1paM0hNWEdwNFBuU25va0lyZEFTcw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "569c710e3f1e",
-      "title": "【登壇決定】株式会社SHIFT",
-      "source": "ニコニコニュース",
-      "date": "2026-07-29T13:30",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0yQy1lOGpIOXhJNnlTNjRDM193YkhEVk9rMGlQWVJJNi1rREpZVHMyZFQ3SE5BNE0xUm5rT29RbWFac0hnZGEwNXlEOXloWnRMVWZCLXFQS2hFekZRb0dPYmpOZ05RejNaU1NGMEltWlBmRS1tQW1MOXFqUQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "d5d813f36e6f",
-      "title": "＜画像1 / 5＞常磐道で絶対食べたい！SA・PAグルメ5選",
-      "source": "ウォーカープラス",
-      "date": "2026-07-29T12:40",
-      "city": [
-        "moriya"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9aZkNldlBUNXh1LUJJdHFsNmt6SmNod0duLXB6TWVpWUZJVEV0MUJBZUN0aXdkaFF4QW9SMGp6R0RvcXkxcXVDTG56aG5hZVd0TllpQy1tek5lSjlFU2JoYW9YZWdFaWxVTkE?oc=5",
-      "sure": false
-    },
-    {
-      "id": "8bfde07a031d",
-      "title": "イランが「奇襲」ミサイル",
-      "source": "つくば経済新聞",
-      "date": "2026-07-29T12:38",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KaW00b0lRNzB0b1JvY2NpMDZzdVpvbFExTEF4TmZfTXFUV2xIeWlBaE9PaDZwWGZta1ktUjVsak9mNndYTGVYcjc1UnR6eFRBVi1pYg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "88a5eb63f37a",
-      "title": "【登壇決定】株式会社SHIFT AI代表・木内翔大氏が「LMU」認定講師として登壇。生成AI時代に求められるAI活用人材の育成を支援",
-      "source": "時事ドットコム",
-      "date": "2026-07-29T11:46",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5KS2dVZEFiREJLUlo3R0tHNkN6WjZTSDU2cVJwUW1jSGVnRnpUdFFNZmJPZzlXcHFMcFBMNVVCZ1UwTUVrY2VNSE1yWnZpRThCWER1QW91ZmhSUzgtUkMxRHluTW16TGU2QTBj?oc=5",
-      "sure": false
-    },
-    {
-      "id": "bcdc4011a977",
-      "title": "山里亮太、地震時のデマ投稿＆拡散は「人の命を奪う可能性がある」強く呼びかけ",
-      "source": "デイリースポーツ",
-      "date": "2026-07-29T11:41",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8zNzd0aWZranNXZEZvdWM0UnliYmRubnZSQzlnZ0hBeXpQeEI1RkJiRlQyeEp3bUZNUWsxZmlhRGt6b3RlYU0xdy0zSHlJMThvM1d1V2ZMU3NoeXVHWHl0cTZzQ1FVSVhZTGc?oc=5",
-      "sure": false
-    },
-    {
-      "id": "5a166929fa8e",
-      "title": "キャリア教育における副教材「小学生のためのお仕事ちょうさノート」に前川製作所 守谷工場が掲載されました",
-      "source": "PR TIMES",
-      "date": "2026-07-29T11:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE82SDNZSFN3a0VwTGgwNndFd29TdVpUTDU2SXpXMWkxZy1ZUnVFclNZUWc0STM4OUhMS1VTRk5IcEF2Q1EwVXFkZ2VGY3lYMEFfNHA5Q1hpdzNkWFR1Z2hxemJfbHFaLVJWS0E?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5c8ab3be0d33",
-      "title": "選手名鑑",
-      "source": "デイリースポーツ",
-      "date": "2026-07-29T10:12",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQV0sxOTlwMGllM2E3X2JvRTgyQzQxVFgtVTZid0dDdGlzRmxwRUt3SmFlaEdJR3F2SUU3YWJ1b1lEMGZ1dmVfcXpVZ0tDVlpqZXF4NXQwcldpbzYxRkpDNHN5MHp4R1BRalJaaXpDNzZ5UnRQRzI2aUc0dVBrZVFGanB0ZGVKaXM1X3Vr?oc=5",
-      "sure": false
-    },
-    {
-      "id": "a58669142bf7",
-      "title": "ポラスグループ、学生・建築コンペ開催=応募作品点数は過去最高の822点に",
-      "source": "住宅産業新聞",
-      "date": "2026-07-29T10:07",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9XSmNxTFVNUHZObUtVT184aEFpRnhvOVdGTTRnU3lqbVRCRXk4NlFUMnd2SUZ2eGswSkpheXR2OTd5YmZGcmN6eFlGMmPSAUxBVV95cUxPV0pjcUxVTVB2Tm1LVU9fOGhBaUZ4bzlXRk00Z1N5am1UQkV5ODZRVDJ3dklGdnhrMEpKYXl0djk3eWJmRnJjenhZRjJj?oc=5",
-      "sure": false
     },
     {
       "id": "f7c14c3ad530",
