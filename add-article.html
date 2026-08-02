@@ -43,6 +43,7 @@
   .chip[data-city=tsukubamirai].on{background:var(--mirai);}
   .chip[data-city=tsukuba].on{background:var(--tsukuba);}
   .chip[data-city].disabled{opacity:.35; pointer-events:none;}
+  .chip[data-genre].disabled{opacity:.35; pointer-events:none;}
   .genre-select{display:flex; gap:8px; flex-wrap:wrap;}
   .genre-select .chip.on{background:var(--navy);}
   #sourceQuickRow .chip.on{background:var(--navy);}
@@ -152,6 +153,7 @@
       <div class="chip" data-genre="kids">キッズ</div>
       <div class="chip" data-genre="ibaraki">県内全域</div>
     </div>
+    <div class="hint" id="genreHint">複数選択可。選んだジャンルすべてに同じ記事が掲載されます。「県内全域」を選ぶと他のジャンルは選べません。</div>
 
     <label>地域 <span id="cityReq" class="req">必須</span></label>
     <div class="chips" id="cityChips">
@@ -245,20 +247,48 @@
   refreshPatStatus();
 
   // ---------- ジャンル・地域 ----------
-  let selectedGenre = null;
+  const selectedGenres = new Set();
   const selectedCities = new Set();
+
+  function updateGenreLock(){
+    // 「県内全域」を選んでいる間は他のジャンルを選べないようにする（互いに排他）
+    const isIbaraki = selectedGenres.has('ibaraki');
+    document.querySelectorAll('#genreSelect .chip').forEach(el=>{
+      if (el.dataset.genre !== 'ibaraki') el.classList.toggle('disabled', isIbaraki);
+    });
+  }
 
   document.querySelectorAll('#genreSelect .chip').forEach(el=>{
     el.addEventListener('click', function(){
-      document.querySelectorAll('#genreSelect .chip').forEach(x=>x.classList.remove('on'));
-      el.classList.add('on');
-      selectedGenre = el.dataset.genre;
+      const g = el.dataset.genre;
+      if (g === 'ibaraki') {
+        if (selectedGenres.has('ibaraki')) {
+          selectedGenres.delete('ibaraki');
+          el.classList.remove('on');
+        } else {
+          // 県内全域を選んだら、他のジャンルはすべて解除する
+          selectedGenres.clear();
+          selectedGenres.add('ibaraki');
+          document.querySelectorAll('#genreSelect .chip').forEach(x => x.classList.remove('on'));
+          el.classList.add('on');
+        }
+      } else {
+        if (selectedGenres.has('ibaraki')) return; // 念のための保険（通常はdisabledで弾かれる）
+        if (selectedGenres.has(g)) {
+          selectedGenres.delete(g);
+          el.classList.remove('on');
+        } else {
+          selectedGenres.add(g);
+          el.classList.add('on');
+        }
+      }
+      updateGenreLock();
       updateCityLock();
     });
   });
 
   function updateCityLock(){
-    const isIbaraki = selectedGenre === 'ibaraki';
+    const isIbaraki = selectedGenres.has('ibaraki');
     document.querySelectorAll('#cityChips .chip').forEach(el=>{
       el.classList.toggle('disabled', isIbaraki);
       if(isIbaraki){ el.classList.remove('on'); selectedCities.delete(el.dataset.city); }
@@ -458,10 +488,10 @@
     const alsoAll = !!(asFeatured && featAllCheck && featAllCheck.checked);
 
     if(!pat){ log("① のアクセス許可証が未設定です。先に保存してください。", 'err'); return; }
-    if(!url || !title || !source || !dateRaw || !selectedGenre){
+    if(!url || !title || !source || !dateRaw || selectedGenres.size === 0){
       log("必須項目（URL・タイトル・配信元・掲載日時・ジャンル）が足りません。", 'err'); return;
     }
-    if(selectedGenre !== 'ibaraki' && selectedCities.size === 0){
+    if(!selectedGenres.has('ibaraki') && selectedCities.size === 0){
       log("地域を1つ以上選んでください（県内全域ジャンルの場合は不要です）。", 'err'); return;
     }
     if(asFeatured && !thumbBlob){
@@ -474,11 +504,12 @@
     log("処理中です…", 'busy');
 
     try{
+      const genreArray = Array.from(selectedGenres);
       // サムネのファイル名を決定
       let thumbPath = "";
       if(thumbBlob){
         const dateOnly = dateRaw.slice(0,10);
-        thumbFilename = `${dateOnly}-${selectedGenre}-${randHex(4)}.webp`;
+        thumbFilename = `${dateOnly}-${genreArray.join('_')}-${randHex(4)}.webp`;
         thumbPath = `${THUMB_DIR}/${thumbFilename}`;
       }
 
@@ -493,8 +524,8 @@
         title: title,
         source: source,
         date: dateRaw,
-        city: selectedGenre === 'ibaraki' ? [] : Array.from(selectedCities),
-        category: selectedGenre,
+        city: selectedGenres.has('ibaraki') ? [] : Array.from(selectedCities),
+        category: genreArray,
         emoji: selectedEmoji || "📰",
         url: url,
         thumb: thumbPath
@@ -502,10 +533,18 @@
       if(asFeatured) newArticle.featured = true;
       if(alsoAll) newArticle.featuredAll = true;
 
+      // 記事のcategoryは「文字列1つ」（旧・編成会議室経由）と「配列」（今回から）の
+      // 両方があり得るため、この判定関数でどちらの形でも同じように扱う
+      function itemHasGenre(item, g){
+        return Array.isArray(item.category) ? item.category.includes(g) : item.category === g;
+      }
+
       const newItems = data.items.slice();
       if(asFeatured){
-        // 同じジャンルの既存の先頭記事フラグを外す（ジャンルにつき先頭記事は1つ）
-        newItems.forEach(a => { if(a.category === selectedGenre && a.featured) delete a.featured; });
+        // 選んだジャンルそれぞれについて、既存の先頭記事フラグを外す（ジャンルにつき先頭記事は1つ）
+        newItems.forEach(a => {
+          if(a.featured && genreArray.some(g => itemHasGenre(a, g))) delete a.featured;
+        });
         // チェックを入れたときだけ「最新記事」タブの先頭も差し替える（featuredAllは全体で1つだけ。
         // ジャンルの featured とは独立しているので、チェックを入れなければ既存の featuredAll には触れない）
         if(alsoAll){
@@ -552,7 +591,8 @@
       document.querySelectorAll('#genreSelect .chip').forEach(x=>x.classList.remove('on'));
       document.querySelectorAll('#cityChips .chip').forEach(x=>x.classList.remove('on'));
       document.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('on'));
-      selectedGenre = null; selectedCities.clear(); selectedEmoji = '';
+      selectedGenres.clear(); selectedCities.clear(); selectedEmoji = '';
+      updateGenreLock();
       updateCityLock();
       uploadedImg = null; thumbBlob = null; thumbFilename = null;
       previewWrap.style.display = 'none';

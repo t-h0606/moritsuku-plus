@@ -54,13 +54,16 @@ async function boot() {
 
     renderFeed();
     renderVideo();
+    renderNext();
+    renderShelf();
     renderStaff();
     renderWeather();
     renderNewsCaster();
+    renderOnairCaster();
     bindControls();
 
     // ページを開きっぱなしでも午前5時をまたいだら自動で交代する
-    setInterval(() => { renderNewsCaster(); refreshOnairCaster(); renderWeather(); }, 60 * 1000);
+    setInterval(() => { renderNewsCaster(); renderOnairCaster(); renderWeather(); }, 60 * 1000);
   } catch (e) {
     console.error(e);
     document.getElementById("feed").innerHTML =
@@ -213,10 +216,22 @@ const CAT_TINTS = {
   kids:    ["#E85D9C", "#FFA8CF"],
   ibaraki: ["#0E7C87", "#5FC9D4"]
 };
+// category は「文字列1つ」（旧・編成会議室経由の記事）と「配列（複数可）」（新・記事投稿ページ）の
+// どちらの形でも入っている可能性があるため、この2つのヘルパーで両対応する。
+function hasCategory(a, cat) {
+  if (!a) return false;
+  return Array.isArray(a.category) ? a.category.includes(cat) : a.category === cat;
+}
+function categoryList(a) {
+  if (!a || !a.category) return [];
+  return Array.isArray(a.category) ? a.category : [a.category];
+}
+
 function thumbHTML(a, cls) {
   if (a.thumb) return `<span class="thumb ${cls}"><img src="${a.thumb}" alt=""></span>`;
-  // サムネイル画像が無いときは、ジャンル色のグラデーションの上に局のロゴを置く
-  const [c1, c2] = CAT_TINTS[a.category] || ["#9DA9C0", "#C9D2E4"];
+  // サムネイル画像が無いときは、ジャンル色のグラデーションの上に局のロゴを置く（複数ジャンルのときは先頭のジャンル色を使う）
+  const primaryCat = categoryList(a)[0];
+  const [c1, c2] = CAT_TINTS[primaryCat] || ["#9DA9C0", "#C9D2E4"];
   return `<span class="thumb ${cls} thumb-logo" style="background:linear-gradient(135deg,${c1},${c2})"><img src="images/logo-moritsuku.webp" alt="もりつく＋"></span>`;
 }
 
@@ -313,10 +328,10 @@ function loadMoreFeed() {
 function renderFeed() {
   // 「県内全域」は3市に属さない記事。専用タブの中だけに出し、他のタブには一切混ざらない
   const filtered = ARTICLES.filter(a => {
-    if (state.cat === "ibaraki") return a.category === "ibaraki";
-    if (a.category === "ibaraki") return false;
+    if (state.cat === "ibaraki") return hasCategory(a, "ibaraki");
+    if (hasCategory(a, "ibaraki")) return false;
     const cityOk = state.city === "all" || (a.city || []).includes(state.city);
-    const catOk = state.cat === "all" || state.cat === "video" || a.category === state.cat;
+    const catOk = state.cat === "all" || state.cat === "video" || hasCategory(a, state.cat);
     return cityOk && catOk;
   });
   // 「最新記事」タブ（＝state.cat が all または video）は featuredAll を見て先頭を決め、
@@ -331,7 +346,7 @@ function renderFeed() {
   const cardsHTML = visibleList.map((a, i) => {
     const badges = `
       <div class="badges">
-        <span class="cat ${a.category}">${CAT_NAMES[a.category]}</span>
+        ${categoryList(a).map(c => `<span class="cat ${c}">${CAT_NAMES[c] || c}</span>`).join("")}
         ${a.city.map(c => `<span class="city-badge ${c}">${CITY_NAMES[c]}</span>`).join("")}
       </div>`;
     const meta = `<div class="meta"><span class="src">${a.source}</span><span>${agoLabel(a)}</span><span class="arrow">→</span></div>`;
@@ -375,84 +390,125 @@ function youtubeWatch(v) {
 }
 function youtubeThumb(v) {
   const id = youtubeId(v);
-  // 縦動画（ショート）は oardefault が9:16。YouTubeが自動で選んだ1コマが入る
-  return id ? `https://i.ytimg.com/vi/${id}/oardefault.jpg` : "";
-}
-function youtubeThumbFallback(v) {
-  // oardefault が無い動画のときの保険。16:9なので中央を切り抜いて使う
-  const id = youtubeId(v);
-  return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "";
+  return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : "";
 }
 
-/* ========== ④ 番組（縦動画・番組ごとに横スクロール） ==========
-   中身は data/videos.json の shows に入っています。
-   番組を増やすときは shows に1ブロック足すだけで、このコードは触らなくて大丈夫です。 */
-
-// YouTubeが未設定のときに出す仮サムネイル（9:16・番組カラー）
-function shortArtSVG(show, uid) {
-  const c = show.accent || "#3D7BFF";
-  const label = show.label || show.title || "";
-  return `<svg viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs><linearGradient id="${uid}" x1="0" y1="0" x2="0.6" y2="1">
-      <stop offset="0" stop-color="${c}"/><stop offset="1" stop-color="#16203A"/>
+// YouTubeが未設定のときに出す仮サムネイル（番組ごとの絵柄）
+function artSVG(art, uid) {
+  const a = art || {};
+  const t = a.title || "", s = a.sub || "";
+  if (a.style === "news") {
+    return `<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="${uid}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#16203A"/><stop offset="1" stop-color="#3D7BFF"/>
+      </linearGradient></defs>
+      <rect width="640" height="360" fill="url(#${uid})"/>
+      <rect x="0" y="268" width="640" height="92" fill="#101830" opacity="0.85"/>
+      <rect x="30" y="288" width="220" height="18" rx="9" fill="#3D7BFF"/>
+      <rect x="30" y="316" width="330" height="12" rx="6" fill="#55688C"/>
+      <text x="34" y="120" font-family="sans-serif" font-size="52" font-weight="900" fill="#fff">${t}</text>
+      <text x="36" y="160" font-family="sans-serif" font-size="26" font-weight="700" fill="#9DB8FF">${s}</text>
+    </svg>`;
+  }
+  if (a.style === "gourmet") {
+    return `<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="${uid}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#E8603C"/><stop offset="1" stop-color="#FF9A6B"/>
+      </linearGradient></defs>
+      <rect width="640" height="360" fill="url(#${uid})"/>
+      <circle cx="320" cy="200" r="120" fill="#fff" opacity="0.16"/>
+      <circle cx="320" cy="200" r="86" fill="#fff" opacity="0.2"/>
+      <text x="36" y="98" font-family="sans-serif" font-size="36" font-weight="900" fill="#fff">${t}</text>
+      <text x="36" y="140" font-family="sans-serif" font-size="36" font-weight="900" fill="#fff">${s}</text>
+    </svg>`;
+  }
+  // 既定＝TXさんぽ調
+  return `<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+    <defs><linearGradient id="${uid}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F59E2D"/><stop offset="1" stop-color="#FFD34D"/>
     </linearGradient></defs>
-    <rect width="360" height="640" fill="url(#${uid})"/>
-    <circle cx="286" cy="146" r="104" fill="#fff" opacity="0.12"/>
-    <circle cx="176" cy="330" r="54" fill="#fff" opacity="0.16"/>
-    <text x="28" y="556" font-family="sans-serif" font-size="30" font-weight="900" fill="#fff">${label}</text>
-    <text x="30" y="590" font-family="sans-serif" font-size="17" font-weight="700" fill="#fff" opacity="0.7">COMING SOON</text>
+    <rect width="640" height="360" fill="url(#${uid})"/>
+    <circle cx="520" cy="80" r="90" fill="#ffffff" opacity="0.18"/>
+    <path d="M0 300 Q160 240 320 290 T640 280 V360 H0 Z" fill="#D97F12" opacity="0.55"/>
+    <text x="42" y="205" font-family="sans-serif" font-size="44" font-weight="900" fill="#fff">${t}</text>
+    <text x="44" y="248" font-family="sans-serif" font-size="24" font-weight="700" fill="#fff" opacity="0.9">${s}</text>
   </svg>`;
 }
 
-// 番組見出しに立つキャラ。数字＝staff.json の並び順、"onair"＝日替わり（ウリD→ハム太）
-function showCaster(show) {
-  const c = show.caster;
-  if (c === "onair") return ONAIR_STAFF.length ? pickOfDay(ONAIR_STAFF) : null;
-  if (typeof c === "number" && STAFF[c]) return { idx: c, label: STAFF[c].role };
-  return null;
-}
-
-function shortCardHTML(v, show, uid) {
-  const id = youtubeId(v.youtube);
-  const inner = id
-    ? `<img src="${youtubeThumb(v.youtube)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${youtubeThumbFallback(v.youtube)}'">`
-    : shortArtSVG(show, uid);
+function screenHTML(v, uid) {
+  const thumb = youtubeThumb(v.youtube);
+  const inner = thumb
+    ? `<img src="${thumb}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">`
+    : artSVG(v.art, uid);
   return `
-      <div class="item">
-        <a class="screen" ${linkAttrs(youtubeWatch(v.youtube))} aria-label="動画：${v.title || ""}">
-          ${inner}
-          <span class="play" aria-hidden="true"></span>
-          ${v.duration ? `<span class="dur">${v.duration}</span>` : ""}
-        </a>
-        <div class="v-caption">
-          <div class="t">${v.title || ""}</div>
-          ${v.meta ? `<div class="m">${v.meta}</div>` : ""}
-        </div>
-      </div>`;
+    <a class="screen" ${linkAttrs(youtubeWatch(v.youtube))} aria-label="動画：${v.title}">
+      ${inner}
+      ${v.rec ? '<span class="rec"><i></i>REC</span>' : ""}
+      <span class="play" aria-hidden="true"></span>
+      ${v.duration ? `<span class="dur">${v.duration}</span>` : ""}
+    </a>`;
 }
 
 function renderVideo() {
-  const shows = VIDEOS.shows || [];
-  currentOnairStaff = ONAIR_STAFF.length ? pickOfDay(ONAIR_STAFF) : null;
-  document.getElementById("showRows").innerHTML = shows.map((show, si) => {
-    const items = show.items || [];
-    const r = showCaster(show);
-    const caster = r
-      ? `<div class="onair-caster" title="${STAFF[r.idx].name}／${r.label}"><img src="${casterImage(r)}" alt="${STAFF[r.idx].name}"></div>`
-      : "";
-    const body = items.length
-      ? `<div class="short-shelf">${items.map((v, i) => shortCardHTML(v, show, `sv${si}-${i}`)).join("")}</div>`
-      : `<div class="show-empty">この番組はただいま制作中です。放送までもうしばらくお待ちください。</div>`;
-    return `
-    <div class="show-row" style="--accent:${show.accent || "#3D7BFF"}">
-      <div class="sec-head">
-        <div class="onair-head">
-          <h2 class="sec-title">${show.title || ""}</h2>
-          ${caster}
+  const lead = VIDEOS.lead, subs = VIDEOS.subs || [];
+  document.getElementById("videoLead").innerHTML = `
+      <div class="main">
+        ${screenHTML(lead, "vg-lead")}
+        <div class="v-caption">
+          <div class="t">${lead.title}</div>
+          <div class="m">${lead.meta}</div>
         </div>
-        ${show.note ? `<span class="sec-note">${show.note}</span>` : ""}
       </div>
-      ${body}
+      <div class="v-sub">
+        ${subs.map((v, i) => `
+        <div>
+          ${screenHTML(v, "vg-sub" + i)}
+          <div class="v-caption"><div class="t">${v.title}</div><div class="m">${v.meta}</div></div>
+        </div>`).join("")}
+      </div>`;
+}
+
+function renderNext() {
+  const n = VIDEOS.next || {};
+  document.getElementById("nextStrip").innerHTML = `
+      <div class="next-thumb">
+        <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="320" height="180" fill="#101830"/>
+          <text x="24" y="76" font-family="sans-serif" font-size="30" font-weight="900" fill="#2FA36B">COMING</text>
+          <text x="24" y="112" font-family="sans-serif" font-size="30" font-weight="900" fill="#fff">SOON…</text>
+          <rect x="24" y="132" width="130" height="10" rx="5" fill="#3A4763"/>
+        </svg>
+      </div>
+      <img class="next-avatar" src="${STAFF[NEXT_AVATAR_IDX].img}" alt="制作プロデューサー ポン田P">
+      <div class="next-body">
+        <span class="next-label">次回予告</span>
+        <div class="t">${n.title || ""}</div>
+        <div class="d">${n.desc || ""}</div>
+      </div>`;
+}
+
+function renderShelf() {
+  const list = VIDEOS.library || [];
+  document.getElementById("shelf").innerHTML = list.map((e, i) => {
+    const thumb = youtubeThumb(e.youtube);
+    const inner = thumb
+      ? `<img src="${thumb}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">`
+      : `<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="ep${i}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="${e.c1}"/><stop offset="1" stop-color="${e.c2}"/>
+          </linearGradient></defs>
+          <rect width="320" height="180" fill="url(#ep${i})"/>
+          <circle cx="268" cy="36" r="46" fill="#fff" opacity="0.15"/>
+          <text x="20" y="104" font-family="sans-serif" font-size="26" font-weight="900" fill="#fff">${e.label}</text>
+        </svg>`;
+    return `
+    <div class="item">
+      <a class="screen" ${linkAttrs(youtubeWatch(e.youtube))} aria-label="過去放送：${e.t}">
+        ${inner}
+        <span class="play" aria-hidden="true"></span>
+        <span class="dur">${e.dur}</span>
+      </a>
+      <div class="v-caption"><span class="ep-no">${e.no}</span><div class="t" style="font-size:0.85rem">${e.t}</div></div>
     </div>`;
   }).join("");
 }
@@ -491,8 +547,8 @@ function bindControls() {
 }
 
 // ジャンル「動画」選択時：ヘッダー〜気象台〜「まちの新着ニュース」見出し〜ジャンルは固定のまま、
-// ジャンルより下を「番組（縦動画）→記事カード→スタッフ紹介」の順にする。
-// 実装：記事カード（#feed）だけを番組セクション下の受け皿へ移動する
+// ジャンルより下を「今週のオンエア（次回予告含む）→放送ライブラリー→記事カード→スタッフ紹介」の順にする。
+// 実装：記事カード（#feed）だけを放送ライブラリー下の受け皿セクションへ移動する
 function applyVideoMode(on) {
   const slot = document.getElementById("sec-feed-slot");
   const feed = document.getElementById("feed");
@@ -549,12 +605,17 @@ function renderNewsCaster() {
 }
 
 let currentOnairStaff = null;
-// caster:"onair" の番組（TXさんぽ）の見出しキャラは午前5時に交代する。
-// 当番が変わったときだけ番組欄を描き直す（変わっていなければ何もしない）。
-function refreshOnairCaster() {
-  const r = ONAIR_STAFF.length ? pickOfDay(ONAIR_STAFF) : null;
+function renderOnairCaster() {
+  const r = pickOfDay(ONAIR_STAFF);
   if (r === currentOnairStaff) return;
-  renderVideo();
+  currentOnairStaff = r;
+  const s = STAFF[r.idx];
+  const el = document.getElementById("onairCaster");
+  const img = document.getElementById("onairCasterImg");
+  img.src = casterImage(r);
+  img.alt = s.name + "（" + r.label + "）";
+  el.title = s.name + "／" + r.label;
+  el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
 }
 
 /* ========== アプリ化（PWA）の下ごしらえ ========== */
