@@ -1,7 +1,33 @@
 {
-  "updated": "2026-08-02T14:53",
-  "count": 221,
+  "updated": "2026-08-02T19:37",
+  "count": 218,
   "candidates": [
+    {
+      "id": "c8e18b700b29",
+      "title": "【土浦市】大和町「アイスは別腹 土浦店」に期間限定の桃メニューが登場！一番人気は桃丸ごと1個の「桃尻美人パフェ」",
+      "source": "地域ニュースサイト号外NET",
+      "date": "2026-08-02T19:15",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sd3VNTk9FcG1pTjJUWjk4OU1pM2F2ZEtsWkhTdjRndlJqdXh3XzN2UURGbWMxM3hxWW5vaTZHN0dOYXJSclRrcUo0NDg5WXBvQjltbWFQS25nNGtqSjZkS01qSEZqcWdDbkxGdl9LRU1WNFVzSnA2dGxIZ1pBTW8?oc=5",
+      "sure": true
+    },
+    {
+      "id": "5eba3f978d3d",
+      "title": "「納涼盆踊り大会2026」本日開催！花火の打ち上げも（茨城県つくば市）",
+      "source": "夜景FAN",
+      "date": "2026-08-02T16:01",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQXhlanktc1A2a2FLV0JidXB4QjAwbHVqekJrUk5GT3RYOXBmRWdnVFpaaG9ZTnppTkJHTm5YMXl4WnZYYkZfYVBnWm5xUjB6VHRUWjBRc3B1RjdnRWNsZmlxREwya1pZY2s0M2NTZW9pRUxyWldEY25qN3JxdHNxSVptY3E0T0k?oc=5",
+      "sure": true
+    },
     {
       "id": "25464be5a2b3",
       "title": "茨城・つくばで昆虫研究体験 小学生が標本作り学ぶ [茨城県]",
@@ -16,16 +42,14 @@
       "sure": true
     },
     {
-      "id": "2c6d0b9dcf6a",
-      "title": "茨城・つくばで昆虫研究体験 小学生が標本作り学ぶ",
-      "source": "Yahoo!ニュース",
+      "id": "0da049ad4d6a",
+      "title": "高校野球選手権 茨城代表霞ケ浦、初戦は中京と対決 第5日4試合目",
+      "source": "朝日新聞",
       "date": "2026-08-02T11:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1oall3ejVwVm4tTTFaYVdSYUU4TFNjVGdkbjdQWGNSaVRDNVhqUldMUlY5MUFtME5SQXVPLXBqS00ybFdPUXE4MnUtazFWNlEtdVlmblV0MVVscWtzUmhiS1VSdVl3dTA2dHpFbkJYVTZaa0dXbGMzV1pKQ3VxdHM?oc=5",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMnpzdlNldWxXcUtWM0NDUDlfQmo5QVlRZVJpdk5KeEpvcElrVnlEVlhSR2owdjdEN0ZyV3pXWVdxVWVhRVJ4MHh2RG1OajlQLWdMS193TW8wR2R3MEhPSG0xM2RfY3BRRDdNM2syb2tGOU1wMnlBUkp0UWp1U3hKTjNpNnZJM2xGRTh2S3R0TU5fdkkzUkJtaERmU25hcVQ2N0JtUw?oc=5",
       "sure": true
     },
     {
@@ -78,6 +102,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE90Y05nNG1HWEJ4T2pOSGhmWVRyNGNlNjJMZ0JMWGc1a2RMVHpfNlRZR1FvYXVkX2c5WVBqc3VMTTFxNEVRZG9BRF9JTEJYVW1pMTBN?oc=5",
+      "sure": false
+    },
+    {
+      "id": "d5d813f36e6f",
+      "title": "＜画像1 / 5＞常磐道で絶対食べたい！SA・PAグルメ5選",
+      "source": "ウォーカープラス",
+      "date": "2026-08-02T06:28",
+      "city": [
+        "moriya"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9aZkNldlBUNXh1LUJJdHFsNmt6SmNod0duLXB6TWVpWUZJVEV0MUJBZUN0aXdkaFF4QW9SMGp6R0RvcXkxcXVDTG56aG5hZVd0TllpQy1tek5lSjlFU2JoYW9YZWdFaWxVTkE?oc=5",
       "sure": false
     },
     {
@@ -143,6 +180,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5zb0hlZU9BakJ3SV9wLXAzT0gyNEZ4T3U0YjNRNzdUVkRzcU5wWjJuSW5EaGg2cFhxWmU5YlRSYTNEQ3o5UGFLVGNROEpQT3YtYTVpMXdSMmJmOFFack1PR3RpeE5GZm5JWWdCR2ZPTXl2TmdWOWU2MG1xaVpKUFU?oc=5",
+      "sure": true
+    },
+    {
+      "id": "0c9090e7ec6e",
+      "title": "画像1 / 2＞不思議な空間が広がる「世にも不思議な美術展～トリックアートの世界2～」が茨城県つくば市で開催中",
+      "source": "ウォーカープラス",
+      "date": "2026-08-02T03:07",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBoYWNTakkwN3ItS05kekxtMU11eWRkVkREd1I0VVZzU2MxaFp1SF9Ld0ZCamg1QVR2OHJ1V2l3Nk9GOTVkbS12VE5jc3pBdVVaZU02SjRtX3hwQlFqLXdjU0VBODNtYkNHbnRB?oc=5",
       "sure": true
     },
     {
@@ -723,17 +773,17 @@
       "sure": true
     },
     {
-      "id": "2e0286252d79",
-      "title": "関東三大祭とは？いつ開催？川越まつり、石岡のおまつり、もう一つはどこ？",
-      "source": "ｄメニューニュース",
-      "date": "2026-08-01T06:00",
+      "id": "6ca2db101fac",
+      "title": "＜画像9 / 20＞豆乳でHカップバストを目指します！日テレジェニック候補生が水着姿で大集結",
+      "source": "ウォーカープラス",
+      "date": "2026-08-01T06:53",
       "city": [
         "kinko"
       ],
       "category": "event",
       "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOakFhYnJZR3pGT2ZHWnFwSHE5LUtCaUJYMjJ2bThiQ3cxNnpJajNiVXdmTjd4UjJsNndCb3RUbmFPUTEzeVdKUmlqajdFU2YxSFZ6YmY0bWN5VlBCOXJlOUpVeGVseGUtcDhQUkN3dG1vWmhpWHlWa3BGT2lzUWs5NVVSWHlGNXdBMkNKWXpBMXAwNlJWcExJV29B0gGWAUFVX3lxTE9OemlIanlEcnROaGNyUTR1TXQ5cU9nOHV6Sm9aU1l2MmdDenJZSEtTOG5GZFl5VUJYNVhDZFZsSkdVRm40Z3hUWVBHWlZCSHdWTUxqVFpwMjBISVFILXNIeGNmY1hJVFlzTkIxbk1TbzNJYmgtZEJaRE1HQ2RrZEdxblBDUnpJdlc2YUpSU19UMVBWNzBwdw?oc=5",
-      "sure": true
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5uellGSjNYbnNwckFHbFhMZlZJcHhpdzNUZGdrSDZ0YUFJX3pLMDNiaUZwWlNNMlBReHk4eDZMTm1kMTVWYWtWMDh3YnFBSGhOZWlkM1AtOVJWb2g5NWZmNlNqV292a1li?oc=5",
+      "sure": false
     },
     {
       "id": "de0f853561b9",
@@ -847,19 +897,6 @@
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SakpDa3ZRS09lV0lzUDRMc1VpZkxCcGtyc0NabHNXWE5kdks5T1BsX0t5bkFFZF9nZWFGTkdibDgySC1WakFSVnJnWUd0LVFXUkRUaA?oc=5",
       "sure": false
-    },
-    {
-      "id": "fdd88e79a5a6",
-      "title": "第34回取手市ソフトバレーボール大会を開催します",
-      "source": "city.toride.ibaraki.jp",
-      "date": "2026-08-01T00:33",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRWtQOXVtNV9CN1lQNDZCd3JRbzgzNmV2ZUZ1eksyY19PdVQxWjV4QWVGams3Z2tEZFl2RTlpRVpmckVhV1BWYVRBbDh2UVlLMkdLSi1YWG9wWGpnSVNQVWtiM1p0SEdubHRhTkdmLW5pd3RvaUJzS2JScV8zWXhId0tYTm5pVzVJNFExQTdJcV9OZXNvMlN6MUo2MENieFV3SFdtTmI4WjBwalE?oc=5",
-      "sure": true
     },
     {
       "id": "2409a958bb19",
@@ -1244,6 +1281,17 @@
       "sure": true
     },
     {
+      "id": "6f7f2f2e3e9e",
+      "title": "震度2 茨城県北部 2026年07月31日18:10ごろ 地震詳細 | RCC NEWS | 広島ニュース | RCC中国放送",
+      "source": "TBS NEWS DIG",
+      "date": "2026-07-31T18:29",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQ040TmkySTJSR3I0ZHBoTXNfX2EyQlZnU1ozazRiZWtUY1haMy1qcG9IX1Z3UmoxZXVaaVQzNGVabVpDRGphcURVYWJKNVc5RVZfQ1FpR2NoR19WYWRwejRiLVBVLUJ0T25BNU80UUZ4bHJRa0w5T2o0UGNVdDZGQ09FdGgyWEE?oc=5",
+      "sure": true
+    },
+    {
       "id": "cc737f2c6850",
       "title": "神栖 障害児を預かる事業所が不正受給 茨城県が指定取り消し",
       "source": "NHKニュース",
@@ -1362,19 +1410,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WTjg4MHR5dzdCYTNiR0Y1REZ4MEVaVDhaMklVY0lpOGVaeWx5N2FyUjc2bFkwS1czZGgxcmo5RVdwcUFLMDdPcGZwYUtKYTc0aUNZZDZEQVRIS203aWhHVmRiMDhTckJHemc?oc=5",
       "sure": false
-    },
-    {
-      "id": "dad342e483d4",
-      "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！ 水遊び・スイカ・縁日・抽選会など、 お盆休みは家族みんなで“熱くて涼しい”夏を満喫！ | 株式会社COLLECT",
-      "source": "アットプレス",
-      "date": "2026-07-31T16:00",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9yeFlfa2NBWW5vR2pIODVPcTEweFJYMjNaanVGSXo0MGNZSHVKWk1zVHN0elFZc1B5ZTV5YVpGRGhxN1NXVGI2azBTSTdqQQ?oc=5",
-      "sure": true
     },
     {
       "id": "19e8261f3e1e",
@@ -1699,19 +1734,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ybDNiT3pXUTVHWTk5RnZpUFpZM2ZINGMwR3drMHhFZkdpQXJXZ2tKbmJqUUJzOTBxNmdxaVFJbHBKeGNqVEs1X0JGVEZQX042NUR3WjRTbUxldUJPbnd0MDZ0N0kycFo0Z0ZwbDFsSXlaZw?oc=5",
       "sure": false
-    },
-    {
-      "id": "5966ffe30afd",
-      "title": "【土浦の新名所】コンセプトは\"昼から乾杯できる横丁\" 昭和レトロな食のエンタメ空間「モール505横丁」が8月18日（火）グランドオープン | 株式会社LifeBox",
-      "source": "アットプレス",
-      "date": "2026-07-31T11:10",
-      "city": [
-        "kinko"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBOV1VMSE9fUzMzWUhEeWxJNzdBSlQwWlhtX25RMnZuMjZwLWFDb2lsSFcwbFhYTEJJRWVrQ2cyRlM1ZWszYlhfbVhaNEg3LUU?oc=5",
-      "sure": true
     },
     {
       "id": "db55faec0089",
@@ -2215,6 +2237,19 @@
       "sure": false
     },
     {
+      "id": "56f1f0617863",
+      "title": "トラックと軽ワゴン車衝突で3人死傷 茨城・土浦市 - 最新の社会ニュース【随時更新】 (ニュース) | 無料動画・見逃し配信を見るなら",
+      "source": "ABEMA",
+      "date": "2026-07-30T19:41",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4zdEswdEstQ0JmUGMyT2pPRVhzMVY1ZGRTeTk4c0RzMU5kQUN6T3otZUJra1EzazZPSl9pTVlrZnRRS0U0elg1UkFycktBbF8tVGh1QjlwMWFPWjQ?oc=5",
+      "sure": true
+    },
+    {
       "id": "a2d5ffd9b605",
       "title": "松本剛明さん死去、６７歳",
       "source": "tsukuba.keizai.biz",
@@ -2225,19 +2260,6 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5QOWsyU0lUZlk5U1N4QXJsNjl6MzlrUGEtRnVybDRFRXZISnQxak9vdDBZZlRzZUtJd2tBNEY5V1oxSnN4d1FNZHhuRkhuWWt3ZF9ERQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "c14f5637d4be",
-      "title": "新着情報“ヴェルファイア2．5Z Gエディション”2018年式スパークリングブラックパールクリスタルシャイン入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-07-30T19:07",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONXhIMHl4TXVGUlhsT1EwODdxNHBETVZXS2l2OC1rM3YwamdTZC1BV1JEa1hXMTZZWWQ0ZWQ0MUt5N1BOZUg0eWFUZHFnT0lMTDlPNllWRS03S3ZPT3k2VV93NXVWR0hCRnNxRFMyYTUyLUIwM21QWlh5eGhlNnoyS1NR?oc=5",
       "sure": false
     },
     {
@@ -2686,61 +2708,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5YYjk2dXZiT09pX2l2ejcxZU83LWt1b09sSXdHNkg1QnRQLWxnTlZROE5SdllrMVVOMlVNNjdGeVNzY2p4QUgza2s5OWxMMG4tXzZuWlRLWQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "418ab87efd8e",
-      "title": "茨城 鹿嶋 海水浴中の親子ら3人流される 56歳の父親死亡",
-      "source": "NHKニュース",
-      "date": "2026-07-26T17:58",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE44U2lROENNSFlKNmVrc2k4bWIwQXVDMUxGeWZEZmxReTYwQ3BsLUFpOWgxQnBPcUlYMnFldjVwb1NudEduTGcxUDRUdXVaUkg1OXZMUE9JT3VWdEJGWTk0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d90b69498429",
-      "title": "前市長の急死に伴う茨城・下妻市長選 新顔と元職の一騎打ちに [茨城県]",
-      "source": "朝日新聞",
-      "date": "2026-07-26T17:40",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA1UU5BTmp0NUp5TVdoNXpPcTVVWUZPMktjNXByTHpOclBQTFhFOGlFVTIzZFBPdFF4dFZTYUprSHJEV3BKdTdvNDNJTk5xWjVOZGdaOE1YY2tZRDNHcGF6ZVlPdE5CbEk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "245410c10296",
-      "title": "親子ら3人海に流され父死亡 茨城",
-      "source": "Yahoo!ニュース",
-      "date": "2026-07-26T17:18",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9lNkdxR2R1U0JkdTZPbWZHMm1CWFhMS3R5SFFoQmhJM3JRZFljWnZxczhiRUdnTk51UHJGVkYzWVlaa1ZESEtQR3JnSEMyOWd1?oc=5",
-      "sure": true
-    },
-    {
-      "id": "42ee623b3ef7",
-      "title": "茨城・鹿嶋で「３人くらい流されている」と１１９番、1人死亡…離岸流に巻き込まれたか",
-      "source": "読売新聞",
-      "date": "2026-07-26T17:03",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1KUXpCcFpaaWo3V2VlUVhKbThHanRtbmlvMjV0eDk1UHhBTHY3X2oxaFFsTmNJY2dWTjdHYVNGczJGb2sxUThQSTNkbWhBM2dKMU1ZdUY2ejRZYkkyLVZqWmpnT1NCUQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "49f41769224d",
-      "title": "県広報紙「ひばり」8月号「その他のトピックス」",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-07-26T16:00",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcTRFTERwMG1jbHR6NENyV0JydjNEejcwQzcyekpMTjJZVC1LNks4ZXZtSXNPUlVkZl9TSGE5MWJBV2dtZUdvN2dKdE5mQTV4U0tYMzBxSUQxeV9YLVg4MVI0N1o2a3hSSkhLNGZ4WHV0b0ZUS29oaGN6N0NheUxxQ1BTMlQ4RUMta0M5Mm12Z2J6RDk2T2c?oc=5",
       "sure": true
     }
   ]
