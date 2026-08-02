@@ -814,12 +814,12 @@ footer .disc { color: #566280; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2px;
-  width: 14px; height: 14px;
+  gap: 2.5px;
+  width: 19px; height: 19px;
   flex-shrink: 0;
 }
-.manga-ico i { display: block; border-radius: 1.5px; background: #FF8B96; }
+.manga-ico i { display: block; border-radius: 2px; background: #FF8B96; }
 @media (max-width: 640px) {
   .manga-btn { padding: 6px 11px; font-size: 0.7rem; letter-spacing: 0.02em; gap: 6px; }
-  .manga-ico { width: 12px; height: 12px; }
+  .manga-ico { width: 17px; height: 17px; gap: 2px; }
 }
