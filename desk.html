@@ -10,6 +10,7 @@
   --studio: #16203A; --deep: #101830; --paper: #F6F7FA; --ink: #1F2433;
   --sub: #6E7686; --line: #E3E6EE; --onair: #FF4B5C;
   --moriya: #2FA36B; --mirai: #F59E2D; --tsukuba: #3D7BFF; --ibaraki: #17A2A8;
+  --kinko: #8892A6;
   --news: #4A5A7A; --event: #8B5CD6; --gourmet: #E8603C; --kids: #E85D9C;
   --bm: #E8A13C;
 }
@@ -68,6 +69,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 .city-tag[data-on="1"][data-c="moriya"] { border-color: var(--moriya); color: var(--moriya); }
 .city-tag[data-on="1"][data-c="tsukubamirai"] { border-color: var(--mirai); color: #C97D14; }
 .city-tag[data-on="1"][data-c="tsukuba"] { border-color: var(--tsukuba); color: var(--tsukuba); }
+.city-tag[data-on="1"][data-c="kinko"] { border-color: var(--kinko); color: var(--kinko); }
 
 .footer-bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--studio); color: #fff;
   padding: 10px 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -133,6 +135,7 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
     <button class="chip" data-f="city" data-v="moriya">守谷</button>
     <button class="chip" data-f="city" data-v="tsukubamirai">つくばみらい</button>
     <button class="chip" data-f="city" data-v="tsukuba">つくば</button>
+    <button class="chip" data-f="city" data-v="kinko">3市周辺</button>
     <button class="chip" data-f="city" data-v="ibaraki">県内全域</button>
   </div>
   <div class="bar" id="catBar">
@@ -171,10 +174,10 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 
 <script>
 const OWNER = "t-h0606", REPO = "moritsuku-plus", FILE_PATH = "data/articles.json";
-const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば" };
+const CITY_NAMES = { moriya:"守谷", tsukubamirai:"つくばみらい", tsukuba:"つくば", kinko:"3市周辺" };
 const CAT_NAMES = { news:"ニュース", event:"イベント", gourmet:"グルメ", kids:"キッズ", ibaraki:"県内全域" };
 const EMOJI = { news:"📰", event:"🎪", gourmet:"🍜", kids:"🧒", ibaraki:"🗾" };
-const LOCAL = ["moriya","tsukubamirai","tsukuba"];
+const LOCAL = ["moriya","tsukubamirai","tsukuba","kinko"];
 const LS_BM = "mk_bookmarks", LS_TOKEN = "mk_token", LS_POSTED = "mk_posted", LS_DISMISSED = "mk_dismissed";
 
 let candidates = [];

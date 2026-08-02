@@ -54,6 +54,10 @@ QUERIES = [
     ("moriya",       "kids",    "守谷 (子育て OR 児童館 OR 親子 OR キッズ) when:7d"),
     ("tsukuba",      "kids",    "つくば (子育て OR 児童館 OR 親子 OR キッズ) when:7d"),
     ("tsukubamirai", "kids",    "つくばみらい (子育て OR 親子) when:7d"),
+    # 3市周辺（土浦・常総・取手・牛久・石岡）— v追加。ジャンルは最新記事/イベント/グルメのみ収集
+    ("kinko",         "news",    "(土浦市 OR 常総市 OR 取手市 OR 牛久市 OR 石岡市) when:7d"),
+    ("kinko",         "event",   "(土浦 OR 常総 OR 取手 OR 牛久 OR 石岡) (イベント OR 祭り OR フェス OR 開催 OR マルシェ) when:7d"),
+    ("kinko",         "gourmet", "(土浦 OR 常総 OR 取手 OR 牛久 OR 石岡) (オープン OR 開店 OR 新店 OR グルメ OR 新メニュー) when:7d"),
     # 県内全域（直近2日だけ・件数も絞る）
     ("ibaraki",      "news",    "茨城県 when:7d"),
 ]
@@ -70,6 +74,8 @@ GOURMET_WORDS = ["オープン", "開店", "閉店", "新店", "ランチ", "カ
 EVENT_WORDS = ["イベント", "祭り", "まつり", "フェス", "開催", "マルシェ", "花火",
                "コンサート", "ワークショップ", "展示", "体験会"]
 KIDS_WORDS = ["子育て", "児童館", "親子", "キッズ", "子ども", "こども", "保育", "幼稚園"]
+# 3市周辺の判定用地名（タイトルにこれらが入っていれば city:kinko を付ける）
+KINKO_WORDS = ["土浦", "常総", "取手", "牛久", "石岡"]
 
 EMOJI = {"news": "📰", "event": "🎪", "gourmet": "🍜", "kids": "🧒", "ibaraki": "🗾"}
 
@@ -117,6 +123,8 @@ def detect_cities(title: str, default_city: str) -> list:
         hits.append("tsukubamirai")
     if "つくば" in t:
         hits.append("tsukuba")
+    if any(w in title for w in KINKO_WORDS):
+        hits.append("kinko")
     return hits or [default_city]
 
 
@@ -178,7 +186,7 @@ def collect():
         # 「地名あり/なし」の印を付け直す
         if "sure" not in c:
             c["sure"] = (c.get("category") == "ibaraki") or any(
-                k in c.get("title", "") for k in ("守谷", "つくば", "みらい平", "茨城"))
+                k in c.get("title", "") for k in ("守谷", "つくば", "みらい平", "茨城", *KINKO_WORDS))
         pool[c["id"]] = c
 
     # --- RSSを巡回して新しい候補を追加 ---
@@ -214,7 +222,7 @@ def collect():
             else:
                 # タイトルに地名が入っているか（入っていない=本文マッチの可能性）
                 sure = (default_city == "ibaraki") or any(
-                    k in title for k in ("守谷", "つくば", "みらい平", "茨城"))
+                    k in title for k in ("守谷", "つくば", "みらい平", "茨城", *KINKO_WORDS))
                 pool[cid] = {
                     "id": cid,
                     "title": title,
