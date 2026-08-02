@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T08:19",
+  "updated": "2026-08-02T09:05",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,20 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "イバライドでフェルムドフェスティバル開催れ　稲敷市",
+      "source": "こもれび森のイバライド",
+      "date": "2026-08-02T09:05",
+      "city": [
+        "moriya",
+        "tsukubamirai",
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "📰",
+      "url": "https://www.ibaraido.co.jp/wp/24529",
+      "thumb": ""
     },
     {
       "title": "【女性に聞いた】「茨城県の道の駅」人気ランキング！　第2位は「グランテラス筑西」、1位は？",
