@@ -2,7 +2,7 @@
    役割：一度読んだ「入れ物」（HTML/CSS/JS/画像）を端末に保存し、2回目以降を高速化する。
    データ（data/*.json）は常に新しいものを取りに行き、通信できないときだけ保存分を使う。
    ※ サイトを更新したら下の CACHE の数字を1つ上げてください（古い保存分が捨てられます）。 */
-const CACHE = "moritsuku-v38";
+const CACHE = "moritsuku-v39";
 const SHELL = [
   "./", "./index.html", "./css/style.css", "./js/app.js", "./manifest.json",
   "./images/fukuro-kyokucho.webp", "./images/shiroku-gamako.webp", "./images/ponda-p.webp",
@@ -11,7 +11,17 @@ const SHELL = [
   "./images/logo-moritsuku.webp"
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // 【v39で修正】caches.addAll(SHELL) だとブラウザのHTTPキャッシュが返す「古いapp.js」を
+  // そのままキャッシュしてしまうことがあった（CACHE番号を上げても中身が更新されない事故の原因）。
+  // fetch(url, {cache:"reload"}) で毎回ネットワークから新規に取得することで、
+  // CACHE番号を上げたときに必ず最新の中身に入れ替わるようにする。
+  e.waitUntil(
+    caches.open(CACHE).then(cache =>
+      Promise.all(SHELL.map(url =>
+        fetch(url, { cache: "reload" }).then(res => cache.put(url, res))
+      ))
+    ).then(() => self.skipWaiting())
+  );
 });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys()
