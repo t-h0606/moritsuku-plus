@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T19:19",
+  "updated": "2026-08-02T19:26",
   "items": [
     {
       "title": "土浦キララまつり２０２６",
@@ -24,6 +24,14 @@
       "area": "3市周辺",
       "place": "道の駅常総",
       "url": "https://www.atpress.ne.jp/news/619240"
+    },
+    {
+      "title": "石岡のおまつり",
+      "start": "2026-09-19",
+      "end": "2026-09-21",
+      "area": "3市周辺",
+      "place": "常陸國總社宮",
+      "url": "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/"
     }
   ]
 }
