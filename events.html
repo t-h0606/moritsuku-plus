@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- もりつく＋ イベントカレンダー（2026-08-02 新設）
+     中身は data/events.json だけを見て描画します。イベントの追加・修正は
+     add-event.html（イベント投稿ページ）から行ってください。
+     表示する月数は下の MONTHS_SHOWN（今月を含む月数）で変えられます。 -->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>イベントカレンダー | もりつく＋</title>
+<meta name="description" content="守谷・つくばみらい・つくば、TX沿線3市とその周辺のイベントを3か月分まとめたカレンダー。">
+<meta name="theme-color" content="#16203A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== イベントカレンダー専用（このページだけで使うスタイル） ===== */
+.ev-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  flex-shrink: 0; margin-top: 2px;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff; font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.ev-back:hover { background: rgba(255,255,255,0.12); }
+
+.ev-hero { padding: 26px 0 6px; }
+.ev-hero .ev-h1 { font-size: 1.7rem; }
+.ev-hero .ev-lead {
+  margin-top: 8px; font-size: 0.85rem; color: var(--ink-sub); line-height: 1.75;
+  max-width: 46em;
+}
+
+/* 本日のイベント */
+.ev-today { padding: 22px 0 10px; }
+.ev-today-box {
+  border: 1.5px solid rgba(255,75,92,0.28);
+  background: linear-gradient(180deg, #FFF6F2, #fff 60%);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.live-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--onair); margin-right: 8px; vertical-align: 1px;
+  box-shadow: 0 0 0 4px rgba(255,75,92,0.16);
+}
+.ev-empty { color: var(--ink-sub); font-size: 0.85rem; padding: 10px 2px; }
+
+/* 地域の絞り込みチップ */
+.ev-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.ev-fchip {
+  padding: 7px 14px; border-radius: 999px;
+  border: 1.5px solid var(--paper-line); background: #fff;
+  font-size: 0.78rem; font-weight: 700; color: var(--ink-sub);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.ev-fchip[aria-pressed="true"] { background: var(--studio); border-color: var(--studio); color: #fff; }
+
+/* 月の見出し */
+.ev-month { margin-bottom: 26px; }
+.ev-month-head {
+  display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px;
+  padding-bottom: 6px; border-bottom: 2px solid var(--paper-line);
+}
+.ev-month-title {
+  font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900;
+  font-size: 1.12rem; letter-spacing: 0.04em;
+}
+.ev-month-count { font-size: 0.72rem; color: var(--ink-sub); }
+
+/* イベント1件 */
+.ev-list { display: flex; flex-direction: column; gap: 10px; }
+.ev-row {
+  display: flex; align-items: stretch; gap: 0;
+  background: #fff; border: 1px solid var(--paper-line);
+  border-radius: 12px; overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+a.ev-row:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(31,36,51,0.09); }
+.ev-date {
+  flex: 0 0 92px;
+  background: var(--acc, var(--c-kinko));
+  color: #fff; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  padding: 12px 6px; text-align: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.ev-date .dnum { font-weight: 900; font-size: 1.02rem; line-height: 1.15; letter-spacing: 0.02em; }
+.ev-date .dwk { font-size: 0.66rem; font-weight: 700; opacity: 0.9; margin-left: 3px; }
+.ev-date .dsep { font-size: 0.66rem; opacity: 0.75; line-height: 1; }
+.ev-body { flex: 1 1 0; min-width: 0; padding: 11px 14px 12px; display: flex; flex-direction: column; gap: 7px; }
+.ev-title {
+  font-weight: 700; font-size: 0.95rem; line-height: 1.45; color: var(--ink);
+  display: flex; align-items: flex-start; gap: 6px;
+}
+a.ev-row .ev-title { color: var(--link-ink, #1F2433); }
+.ev-title .ext { flex-shrink: 0; font-size: 0.72rem; color: var(--c-tsukuba); margin-top: 3px; }
+.ev-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ev-area {
+  font-size: 0.66rem; font-weight: 700; padding: 2px 9px;
+  border-radius: 999px; border: 1.5px solid var(--acc, var(--c-kinko));
+  color: var(--acc, var(--c-kinko)); white-space: nowrap;
+}
+.ev-place {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.76rem; color: var(--ink-sub); min-width: 0;
+}
+.ev-place .lbl {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em;
+  background: #F2EFE6; color: #7C8494; padding: 2px 7px; border-radius: 5px; flex-shrink: 0;
+}
+.ev-note {
+  margin-top: 26px; font-size: 0.72rem; color: var(--ink-sub); line-height: 1.7;
+  border-top: 1px solid var(--paper-line); padding-top: 14px;
+}
+@media (max-width: 640px) {
+  .ev-hero .ev-h1 { font-size: 1.42rem; }
+  .ev-hero .ev-lead { font-size: 0.78rem; }
+  .ev-date { flex: 0 0 78px; padding: 10px 4px; }
+  .ev-date .dnum { font-size: 0.92rem; }
+  .ev-body { padding: 10px 12px 11px; }
+  .ev-title { font-size: 0.9rem; }
+  .ev-back { padding: 5px 11px; font-size: 0.66rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="studio-head">
+  <div class="wrap">
+    <div class="head-top">
+      <div class="brand">
+        <a href="index.html"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
+        <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
+      </div>
+      <a class="ev-back" href="index.html">← トップへ戻る</a>
+    </div>
+  </div>
+</header>
+
+<section class="ev-hero">
+  <div class="wrap">
+    <span class="eyebrow">EVENT CALENDAR</span>
+    <h2 class="sec-title ev-h1">イベントカレンダー</h2>
+    <p class="ev-lead">守谷・つくばみらい・つくばとその周辺で開かれるイベントを、今月から3か月分まとめています。詳細については、各イベント名をタップ（クリック）していただくとご確認いただけます。</p>
+  </div>
+</section>
+
+<section class="ev-today">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:12px;">
+      <h2 class="sec-title"><span class="live-dot"></span>本日のイベント</h2>
+      <span class="sec-note" id="todayDate"></span>
+    </div>
+    <div class="ev-today-box"><div id="todayList" class="ev-list"></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="ev-filter" id="areaFilter" role="group" aria-label="地域で絞り込み"></div>
+    <div id="months"></div>
+    <p class="ev-note">
+      掲載しているイベントはすべて実在のものです。日程・内容・中止の有無は変更になる場合がありますので、詳しくは各イベントの公式ページをご確認ください。<br>
+      情報の掲載・修正のご依頼は、もりつく＋編成部までお知らせください。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">もりつく＋</div>
+    <div class="links">
+      <a href="index.html">トップへ戻る</a><a href="#">会社概要</a><a href="#">お問い合わせ</a><a href="#">出演・情報提供</a>
+    </div>
+    <div class="disc">
+      もりつく＋は架空のローカルテレビ局です。掲載しているニュース・イベント・グルメ情報は実在のものであり、見出しは各配信元の記事へリンクしています。<br>
+      記事の著作権はすべて各配信元に帰属します。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* 今月を含めて何か月分を表示するか。4にすれば4か月分出ます */
+  const MONTHS_SHOWN = 3;
+
+  /* 地域名から色（局カラー）を決める。上から順に見て、最初に当たったものを使う。
+     ※「つくばみらい」を「つくば」より先に判定すること（順番が逆だと色が入れ替わります） */
+  const AREA_COLORS = [
+    ["つくばみらい", "var(--c-mirai)"],
+    ["守谷",         "var(--c-moriya)"],
+    ["つくば",       "var(--c-tsukuba)"]
+  ];
+  const DEFAULT_COLOR = "var(--c-kinko)";
+  /* 絞り込みチップに常に出す地域（イベントが0件でも表示されます） */
+  const BASE_AREAS = ["守谷市", "つくばみらい市", "つくば市", "土浦市", "常総市"];
+
+  const WK = "日月火水木金土";
+  let EVENTS = [];
+  let areaFilter = "all";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function parseDate(s) {
+    const m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s || ""));
+    return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+  }
+  function startOf(ev) { return parseDate(ev.start) || parseDate(ev.date); }
+  function endOf(ev) { return parseDate(ev.end) || startOf(ev); }
+  function areaColor(area) {
+    const a = String(area || "");
+    for (const [key, col] of AREA_COLORS) if (a.indexOf(key) >= 0) return col;
+    return DEFAULT_COLOR;
+  }
+  function safeUrl(u) {
+    const s = String(u || "").trim();
+    return /^https?:\/\//i.test(s) ? s : "";
+  }
+  function dayCell(d) {
+    return `<span class="dnum">${d.getMonth() + 1}/${d.getDate()}<span class="dwk">(${WK[d.getDay()]})</span></span>`;
+  }
+
+  function rowHTML(ev) {
+    const s = startOf(ev), e = endOf(ev);
+    if (!s) return "";
+    const multi = e && e.getTime() !== s.getTime();
+    const url = safeUrl(ev.url);
+    const tag = url ? "a" : "div";
+    const attrs = url ? ` href="${esc(url)}" target="_blank" rel="noopener"` : "";
+    return `
+    <${tag} class="ev-row"${attrs} style="--acc:${areaColor(ev.area)}">
+      <span class="ev-date">
+        ${dayCell(s)}
+        ${multi ? `<span class="dsep">｜</span>${dayCell(e)}` : ""}
+      </span>
+      <span class="ev-body">
+        <span class="ev-title">${esc(ev.title)}${url ? '<span class="ext" aria-hidden="true">↗</span>' : ""}</span>
+        <span class="ev-meta">
+          ${ev.area ? `<span class="ev-area">${esc(ev.area)}</span>` : ""}
+          ${ev.place ? `<span class="ev-place"><span class="lbl">開催場所</span>${esc(ev.place)}</span>` : ""}
+        </span>
+      </span>
+    </${tag}>`;
+  }
+
+  function visible(list) {
+    return areaFilter === "all" ? list : list.filter(ev => (ev.area || "") === areaFilter);
+  }
+
+  function renderToday() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    document.getElementById("todayDate").textContent =
+      `${today.getMonth() + 1}月${today.getDate()}日（${WK[today.getDay()]}）`;
+    const list = visible(EVENTS).filter(ev => {
+      const s = startOf(ev), e = endOf(ev) || startOf(ev);
+      return s && s <= today && e >= today;
+    }).sort((a, b) => startOf(a) - startOf(b));
+    document.getElementById("todayList").innerHTML = list.length
+      ? list.map(rowHTML).join("")
+      : '<div class="ev-empty">本日開催のイベントは登録されていません。下のカレンダーから、これからのイベントをご覧ください。</div>';
+  }
+
+  function renderMonths() {
+    const now = new Date();
+    const box = document.getElementById("months");
+    let html = "";
+    for (let i = 0; i < MONTHS_SHOWN; i++) {
+      const mStart = new Date(now.getFullYear(), now.getMonth() + i, 1);
+      const mEnd = new Date(now.getFullYear(), now.getMonth() + i + 1, 0);
+      // その月にかかっているイベント（月をまたぐイベントは各月に出ます）
+      const list = visible(EVENTS).filter(ev => {
+        const s = startOf(ev), e = endOf(ev) || startOf(ev);
+        return s && s <= mEnd && e >= mStart;
+      }).sort((a, b) => (startOf(a) - startOf(b)) || (endOf(a) - endOf(b)));
+      html += `
+      <div class="ev-month">
+        <div class="ev-month-head">
+          <span class="ev-month-title">${mStart.getFullYear()}年${mStart.getMonth() + 1}月</span>
+          <span class="ev-month-count">${list.length ? list.length + "件" : ""}</span>
+        </div>
+        ${list.length
+          ? `<div class="ev-list">${list.map(rowHTML).join("")}</div>`
+          : '<div class="ev-empty">この月のイベントはまだ入電していません。</div>'}
+      </div>`;
+    }
+    box.innerHTML = html;
+  }
+
+  function renderFilter() {
+    const found = [];
+    EVENTS.forEach(ev => { if (ev.area && found.indexOf(ev.area) < 0) found.push(ev.area); });
+    const areas = BASE_AREAS.concat(found.filter(a => BASE_AREAS.indexOf(a) < 0));
+    const box = document.getElementById("areaFilter");
+    box.innerHTML = `<button class="ev-fchip" data-area="all" aria-pressed="true">すべて</button>` +
+      areas.map(a => `<button class="ev-fchip" data-area="${esc(a)}" aria-pressed="false">${esc(a)}</button>`).join("");
+    box.querySelectorAll(".ev-fchip").forEach(b => b.addEventListener("click", () => {
+      areaFilter = b.dataset.area;
+      box.querySelectorAll(".ev-fchip").forEach(x =>
+        x.setAttribute("aria-pressed", x.dataset.area === areaFilter ? "true" : "false"));
+      renderToday(); renderMonths();
+    }));
+  }
+
+  async function boot() {
+    try {
+      const res = await fetch("data/events.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error("events.json " + res.status);
+      const data = await res.json();
+      EVENTS = (data.items || []).filter(ev => ev && ev.title && startOf(ev));
+      renderFilter();
+      renderToday();
+      renderMonths();
+    } catch (e) {
+      console.error(e);
+      document.getElementById("months").innerHTML =
+        '<div class="empty">イベント情報の読み込みに失敗しました。ページを再読み込みしてください。</div>';
+      document.getElementById("todayList").innerHTML = "";
+    }
+  }
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(e => console.log("SW未登録", e));
+    });
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

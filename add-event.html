@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>イベント投稿 | もりつく＋（内部用）</title>
+<style>
+  :root{
+    --navy:#16203A; --moriya:#2FA36B; --mirai:#F59E2D; --tsukuba:#3D7BFF; --kinko:#8892A6; --onair:#FF4B5C;
+    --bg:#FAF7F0; --card:#FFFFFF; --line:#E6E1D6; --text:#22283A; --sub:#6B7280;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--bg); color:var(--text); padding-bottom:60px;
+  }
+  header{background:var(--navy); color:#fff; padding:18px 20px;}
+  header h1{margin:0; font-size:18px; font-weight:700;}
+  header p{margin:4px 0 0; font-size:12px; opacity:.7;}
+  main{max-width:640px; margin:0 auto; padding:20px 16px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px; margin-bottom:16px;
+  }
+  .card h2{font-size:14px; margin:0 0 12px; color:var(--sub); font-weight:700; letter-spacing:.02em;}
+  label{display:block; font-size:13px; font-weight:600; margin:12px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=text], input[type=url], input[type=date], textarea{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    font-size:14px; font-family:inherit; background:#fff; color:var(--text);
+  }
+  .date-row{display:flex; gap:10px; align-items:flex-end;}
+  .date-row > div{flex:1; min-width:0;}
+  .chips{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    padding:8px 14px; border-radius:999px; border:1px solid var(--line);
+    background:#fff; font-size:13px; cursor:pointer; user-select:none;
+  }
+  .chip.on{color:#fff; border-color:transparent;}
+  .chip[data-area="守谷市"].on{background:var(--moriya);}
+  .chip[data-area="つくばみらい市"].on{background:var(--mirai);}
+  .chip[data-area="つくば市"].on{background:var(--tsukuba);}
+  .chip[data-area="土浦市"].on{background:var(--kinko);}
+  .chip[data-area="常総市"].on{background:var(--kinko);}
+  .submit-btn{
+    width:100%; padding:14px; border:none; border-radius:10px; background:var(--onair);
+    color:#fff; font-size:15px; font-weight:700; cursor:pointer; margin-top:6px;
+  }
+  .submit-btn:disabled{background:#ccc; cursor:not-allowed;}
+  .btn-sm{
+    font-size:12px; padding:6px 10px; border-radius:8px; border:1px solid var(--line);
+    background:#fff; cursor:pointer; color:var(--sub);
+  }
+  .btn-sm.danger{color:#B3261E; border-color:#F0C9C6;}
+  .pat-row{display:flex; gap:8px;}
+  .pat-row input{flex:1;}
+  .pat-row button{
+    padding:10px 14px; border-radius:8px; border:none; background:var(--navy);
+    color:#fff; font-size:13px; cursor:pointer; white-space:nowrap;
+  }
+  .pat-status{font-size:12px; margin-top:8px;}
+  .pat-status.ok{color:var(--moriya);}
+  .pat-status.ng{color:var(--sub);}
+  #log{
+    font-size:13px; padding:12px 14px; border-radius:10px; margin-top:12px;
+    display:none; white-space:pre-wrap; line-height:1.6;
+  }
+  #log.show{display:block;}
+  #log.ok{background:#EAF7F0; color:#1E7A4C; border:1px solid #BFE6CF;}
+  #log.err{background:#FDEDEC; color:#B3261E; border:1px solid #F3C6C3;}
+  #log.busy{background:#EEF1F7; color:var(--navy); border:1px solid #D6DCEA;}
+  .hint{font-size:11.5px; color:var(--sub); margin-top:4px; line-height:1.5;}
+  .req{color:var(--onair);}
+  .ev-item{
+    display:flex; align-items:flex-start; gap:10px; padding:10px 0;
+    border-bottom:1px dashed var(--line); font-size:13px;
+  }
+  .ev-item:last-child{border-bottom:none;}
+  .ev-item .d{
+    flex:0 0 96px; font-weight:700; font-size:12px; color:#fff; text-align:center;
+    background:var(--kinko); border-radius:6px; padding:5px 4px; line-height:1.35;
+  }
+  .ev-item .t{flex:1; min-width:0;}
+  .ev-item .t b{display:block; font-size:13px; margin-bottom:2px; word-break:break-word;}
+  .ev-item .t span{font-size:11.5px; color:var(--sub);}
+  .ev-item .ops{display:flex; flex-direction:column; gap:4px; flex-shrink:0;}
+  .past{opacity:.5;}
+  .list-head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px;}
+  .editing{background:#FFF7E6; border:1px solid #F2D9A0; border-radius:10px; padding:10px 12px;
+    font-size:12.5px; margin-bottom:12px; display:none;}
+  .editing.show{display:block;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>もりつく＋　イベント投稿ページ</h1>
+  <p>内部用・検索対象外／イベントカレンダー（events.html）に1件ずつ追加します</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>① アクセス許可証（初回のみ）</h2>
+    <div class="pat-row">
+      <input type="text" id="patInput" placeholder="ghp_ から始まるトークンを貼り付け">
+      <button id="patSaveBtn" type="button">保存</button>
+    </div>
+    <div class="pat-status ng" id="patStatus"></div>
+    <div class="hint">記事投稿ページと同じトークンで大丈夫です。この端末のブラウザにだけ保存されます。</div>
+  </div>
+
+  <div class="card">
+    <h2>② イベントの内容</h2>
+
+    <div class="editing" id="editingBox">
+      いま「編集モード」です。保存すると元のイベントが差し替わります。
+      <button type="button" class="btn-sm" id="cancelEditBtn" style="margin-left:8px;">編集をやめる</button>
+    </div>
+
+    <label>開催日 <span class="req">＊</span></label>
+    <div class="date-row">
+      <div>
+        <input type="date" id="f_start">
+        <div class="hint">開始日</div>
+      </div>
+      <div>
+        <input type="date" id="f_end">
+        <div class="hint">終了日（1日だけのイベントは空のままでOK）</div>
+      </div>
+    </div>
+
+    <label for="f_title">イベント名 <span class="req">＊</span></label>
+    <input type="text" id="f_title" placeholder="例：もりや七夕まつり">
+
+    <label>開催地域 <span class="req">＊</span></label>
+    <div class="chips" id="areaChips">
+      <div class="chip" data-area="守谷市">守谷市</div>
+      <div class="chip" data-area="つくばみらい市">つくばみらい市</div>
+      <div class="chip" data-area="つくば市">つくば市</div>
+      <div class="chip" data-area="土浦市">土浦市</div>
+      <div class="chip" data-area="常総市">常総市</div>
+    </div>
+    <input type="text" id="f_area" placeholder="ボタンを押すとここに入ります（手入力もできます）" style="margin-top:8px;">
+    <div class="hint">上のボタンは入力の近道です。ここに直接書いた地域名（例：取手市、牛久市、県内全域）がそのまま掲載されます。</div>
+
+    <label for="f_place">開催場所</label>
+    <input type="text" id="f_place" placeholder="例：守谷市中央公民館">
+
+    <label for="f_url">イベントサイトURL</label>
+    <input type="url" id="f_url" placeholder="https://…">
+    <div class="hint">イベント名をタップしたときに開くページです。空にすると、リンクなしの案内として掲載されます。</div>
+  </div>
+
+  <button type="button" class="submit-btn" id="submitBtn">このイベントをカレンダーに掲載する</button>
+  <div id="log"></div>
+
+  <div class="card" style="margin-top:18px;">
+    <div class="list-head">
+      <h2 style="margin:0;">③ 掲載中のイベント（<span id="evCount">-</span>件）</h2>
+      <div style="display:flex; gap:6px;">
+        <button type="button" class="btn-sm" id="reloadBtn">読み込み直す</button>
+        <button type="button" class="btn-sm danger" id="purgeBtn">終了分を一括削除</button>
+      </div>
+    </div>
+    <div id="evList"><div class="hint">読み込み中です…</div></div>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  const OWNER = "t-h0606";
+  const REPO  = "moritsuku-plus";
+  const PATH  = "data/events.json";
+  const PAT_KEY = "moritsuku_add_event_pat";
+
+  // ---------- PAT ----------
+  const patInput = document.getElementById('patInput');
+  const patStatus = document.getElementById('patStatus');
+  function loadPat(){ return localStorage.getItem(PAT_KEY) || ""; }
+  function refreshPatStatus(){
+    const pat = loadPat();
+    if(pat){
+      patStatus.textContent = "設定済みです（保存済みのトークンを使用します）";
+      patStatus.className = "pat-status ok";
+      patInput.value = "";
+      patInput.placeholder = "変更する場合はここに新しいトークンを貼り付け";
+    } else {
+      patStatus.textContent = "未設定です。トークンを貼り付けて保存してください。";
+      patStatus.className = "pat-status ng";
+    }
+  }
+  document.getElementById('patSaveBtn').addEventListener('click', function(){
+    const v = patInput.value.trim();
+    if(!v){ alert("トークンを入力してください"); return; }
+    localStorage.setItem(PAT_KEY, v);
+    refreshPatStatus();
+    loadEvents();
+  });
+  refreshPatStatus();
+
+  // ---------- 地域ボタン（押すと入力欄に入る） ----------
+  const areaInput = document.getElementById('f_area');
+  const areaChips = document.getElementById('areaChips');
+  function syncAreaChips(){
+    const v = areaInput.value.trim();
+    areaChips.querySelectorAll('.chip').forEach(c=>{
+      c.classList.toggle('on', c.dataset.area === v);
+    });
+  }
+  areaChips.querySelectorAll('.chip').forEach(c=>{
+    c.addEventListener('click', ()=>{
+      areaInput.value = (areaInput.value.trim() === c.dataset.area) ? "" : c.dataset.area;
+      syncAreaChips();
+    });
+  });
+  areaInput.addEventListener('input', syncAreaChips);
+
+  // ---------- base64（日本語対応） ----------
+  function b64EncodeUnicode(str){
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    for(let i=0;i<bytes.length;i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  }
+  function b64DecodeUnicode(b64){
+    const binary = atob(String(b64).replace(/\n/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++) bytes[i] = binary.charCodeAt(i);
+    return new TextDecoder('utf-8').decode(bytes);
+  }
+
+  // ---------- GitHub API ----------
+  function ghHeaders(pat){
+    return { "Authorization": "token " + pat, "Accept": "application/vnd.github+json" };
+  }
+  async function ghGetFile(pat, path){
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}?ref=main&t=${Date.now()}`, {
+      headers: ghHeaders(pat), cache:'no-store'
+    });
+    if(res.status === 404) return null;
+    if(!res.ok){
+      const t = await res.text();
+      throw new Error(`取得失敗 (${res.status}): ${t.slice(0,200)}`);
+    }
+    return res.json();
+  }
+  async function ghPutFile(pat, path, base64Content, message, sha){
+    const body = { message, content: base64Content };
+    if(sha) body.sha = sha;
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+      method:'PUT',
+      headers: Object.assign({ "Content-Type":"application/json" }, ghHeaders(pat)),
+      body: JSON.stringify(body)
+    });
+    if(!res.ok){
+      const t = await res.text();
+      throw new Error(`更新失敗 (${res.status}): ${t.slice(0,300)}`);
+    }
+    return res.json();
+  }
+
+  // ---------- 表示まわり ----------
+  const logEl = document.getElementById('log');
+  function log(msg, type){ logEl.textContent = msg; logEl.className = 'show ' + (type||''); }
+
+  const WK = "日月火水木金土";
+  function parseDate(s){
+    const m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s||""));
+    return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
+  }
+  function fmt(s){
+    const d = parseDate(s);
+    return d ? `${d.getMonth()+1}/${d.getDate()}(${WK[d.getDay()]})` : "";
+  }
+  function nowStamp(){
+    const d = new Date(), p = n => String(n).padStart(2,'0');
+    return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+  }
+  function esc(s){
+    return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function areaColor(a){
+    a = String(a||"");
+    if(a.indexOf("つくばみらい")>=0) return "var(--mirai)";
+    if(a.indexOf("守谷")>=0) return "var(--moriya)";
+    if(a.indexOf("つくば")>=0) return "var(--tsukuba)";
+    return "var(--kinko)";
+  }
+
+  // ---------- データ ----------
+  let FILE_SHA = null;
+  let ITEMS = [];
+  let editingId = null;
+
+  function sortItems(list){
+    return list.slice().sort((a,b)=>{
+      const as = parseDate(a.start), bs = parseDate(b.start);
+      return (as-bs) || (parseDate(a.end||a.start) - parseDate(b.end||b.start));
+    });
+  }
+
+  function renderList(){
+    document.getElementById('evCount').textContent = ITEMS.length;
+    const box = document.getElementById('evList');
+    if(!ITEMS.length){ box.innerHTML = '<div class="hint">まだ1件も登録されていません。</div>'; return; }
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    box.innerHTML = sortItems(ITEMS).map(ev=>{
+      const e = parseDate(ev.end || ev.start);
+      const past = e && e < today;
+      const range = (ev.end && ev.end !== ev.start) ? `${fmt(ev.start)}<br>〜${fmt(ev.end)}` : fmt(ev.start);
+      return `<div class="ev-item${past?' past':''}">
+        <div class="d" style="background:${areaColor(ev.area)}">${range}</div>
+        <div class="t">
+          <b>${esc(ev.title)}</b>
+          <span>${esc(ev.area||"地域なし")}${ev.place?"／"+esc(ev.place):""}${ev.url?"":"／リンクなし"}</span>
+        </div>
+        <div class="ops">
+          <button type="button" class="btn-sm" data-edit="${esc(ev.id)}">編集</button>
+          <button type="button" class="btn-sm danger" data-del="${esc(ev.id)}">削除</button>
+        </div>
+      </div>`;
+    }).join("");
+    box.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', ()=>startEdit(b.dataset.edit)));
+    box.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', ()=>removeEvent(b.dataset.del)));
+  }
+
+  async function loadEvents(){
+    const pat = loadPat();
+    const box = document.getElementById('evList');
+    if(!pat){ box.innerHTML = '<div class="hint">① のアクセス許可証を保存すると、掲載中のイベントが表示されます。</div>'; return; }
+    box.innerHTML = '<div class="hint">読み込み中です…</div>';
+    try{
+      const file = await ghGetFile(pat, PATH);
+      if(!file){ FILE_SHA = null; ITEMS = []; renderList(); return; }
+      FILE_SHA = file.sha;
+      const data = JSON.parse(b64DecodeUnicode(file.content));
+      ITEMS = (data.items || []).map(ev => Object.assign({ id: newId() }, ev));
+      renderList();
+    }catch(e){
+      box.innerHTML = '<div class="hint">読み込みに失敗しました：'+esc(e.message)+'</div>';
+    }
+  }
+
+  function newId(){
+    return 'ev-' + Date.now().toString(36) + '-' + Math.floor(Math.random()*46656).toString(36);
+  }
+
+  function startEdit(id){
+    const ev = ITEMS.find(x=>x.id===id);
+    if(!ev) return;
+    editingId = id;
+    document.getElementById('f_start').value = ev.start || "";
+    document.getElementById('f_end').value   = (ev.end && ev.end !== ev.start) ? ev.end : "";
+    document.getElementById('f_title').value = ev.title || "";
+    areaInput.value = ev.area || "";
+    document.getElementById('f_place').value = ev.place || "";
+    document.getElementById('f_url').value   = ev.url || "";
+    syncAreaChips();
+    document.getElementById('editingBox').classList.add('show');
+    document.getElementById('submitBtn').textContent = "この内容で上書きする";
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function cancelEdit(){
+    editingId = null;
+    document.getElementById('editingBox').classList.remove('show');
+    document.getElementById('submitBtn').textContent = "このイベントをカレンダーに掲載する";
+  }
+  document.getElementById('cancelEditBtn').addEventListener('click', ()=>{ cancelEdit(); clearForm(); });
+
+  function clearForm(){
+    ['f_start','f_end','f_title','f_area','f_place','f_url'].forEach(id=>{
+      document.getElementById(id).value = "";
+    });
+    syncAreaChips();
+  }
+
+  // ---------- 保存（掲載・上書き・削除で共通） ----------
+  async function saveAll(items, message){
+    const pat = loadPat();
+    if(!pat) throw new Error("① のアクセス許可証が未設定です。");
+    // 直前に最新のファイルを取り直して、他の端末からの変更を消さないようにする
+    const file = await ghGetFile(pat, PATH);
+    const sha = file ? file.sha : null;
+    let base = { items: [] };
+    if(file){
+      try{ base = JSON.parse(b64DecodeUnicode(file.content)); }catch(e){ base = { items: [] }; }
+    }
+    // 画面上の一覧はサーバー側の並びと同じ想定。id はこのページの中だけの目印なので保存しない
+    const out = {
+      updated: nowStamp(),
+      items: sortItems(items).map(ev=>{
+        const o = { title: ev.title, start: ev.start };
+        if(ev.end && ev.end !== ev.start) o.end = ev.end;
+        o.area = ev.area || "";
+        o.place = ev.place || "";
+        o.url = ev.url || "";
+        return o;
+      })
+    };
+    if(base && base.note) out.note = base.note;
+    const json = JSON.stringify(out, null, 2) + "\n";
+    await ghPutFile(pat, PATH, b64EncodeUnicode(json), message, sha);
+    FILE_SHA = null;
+  }
+
+  document.getElementById('submitBtn').addEventListener('click', async function(){
+    const btn = this;
+    const start = document.getElementById('f_start').value;
+    const endRaw = document.getElementById('f_end').value;
+    const title = document.getElementById('f_title').value.trim();
+    const area  = areaInput.value.trim();
+    const place = document.getElementById('f_place').value.trim();
+    const url   = document.getElementById('f_url').value.trim();
+
+    if(!loadPat()){ log("① のアクセス許可証が未設定です。先に保存してください。", 'err'); return; }
+    if(!start || !title || !area){
+      log("必須項目（開催日・イベント名・開催地域）が足りません。", 'err'); return;
+    }
+    if(endRaw && endRaw < start){
+      log("終了日が開始日より前になっています。日付を確認してください。", 'err'); return;
+    }
+    if(url && !/^https?:\/\//i.test(url)){
+      log("イベントサイトURLは https:// から始まる形で入力してください。", 'err'); return;
+    }
+
+    const item = { id: editingId || newId(), title, start, end: endRaw || "", area, place, url };
+    btn.disabled = true;
+    log("カレンダーを更新しています…", 'busy');
+    try{
+      // 保存の直前に最新の一覧を取り直してから差し替える（他端末の追加を消さないため）
+      const pat = loadPat();
+      const file = await ghGetFile(pat, PATH);
+      let current = [];
+      if(file){
+        try{
+          const data = JSON.parse(b64DecodeUnicode(file.content));
+          current = (data.items||[]).map(ev => Object.assign({ id:newId() }, ev));
+        }catch(e){ current = []; }
+      }
+      let next;
+      if(editingId){
+        // 編集：同じ内容（開始日＋イベント名）の1件を差し替える
+        const target = ITEMS.find(x=>x.id===editingId);
+        const idx = target ? current.findIndex(x => x.title === target.title && x.start === target.start) : -1;
+        next = current.slice();
+        if(idx >= 0) next[idx] = item; else next.push(item);
+      } else {
+        next = current.concat([item]);
+      }
+      await saveAll(next, (editingId ? "イベント修正: " : "イベント追加: ") + title);
+      ITEMS = next;
+      renderList();
+      log("完了しました。1〜2分後にイベントカレンダーへ反映されます。\n" + fmt(start) + "　" + title, 'ok');
+      cancelEdit();
+      clearForm();
+    }catch(e){
+      log("失敗しました：" + e.message, 'err');
+    }finally{
+      btn.disabled = false;
+    }
+  });
+
+  async function removeEvent(id){
+    const ev = ITEMS.find(x=>x.id===id);
+    if(!ev) return;
+    if(!confirm("このイベントを削除します。よろしいですか？\n\n" + fmt(ev.start) + "　" + ev.title)) return;
+    log("削除しています…", 'busy');
+    try{
+      const next = ITEMS.filter(x=>x.id!==id);
+      await saveAll(next, "イベント削除: " + ev.title);
+      ITEMS = next;
+      renderList();
+      if(editingId === id){ cancelEdit(); clearForm(); }
+      log("削除しました。", 'ok');
+    }catch(e){
+      log("削除に失敗しました：" + e.message, 'err');
+    }
+  }
+
+  document.getElementById('purgeBtn').addEventListener('click', async function(){
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const gone = ITEMS.filter(ev=>{ const e = parseDate(ev.end||ev.start); return e && e < today; });
+    if(!gone.length){ log("終了したイベントはありません。", 'ok'); return; }
+    if(!confirm("終了日を過ぎたイベント " + gone.length + " 件を削除します。よろしいですか？")) return;
+    log("削除しています…", 'busy');
+    try{
+      const next = ITEMS.filter(ev=>gone.indexOf(ev)<0);
+      await saveAll(next, "終了したイベントを削除（" + gone.length + "件）");
+      ITEMS = next;
+      renderList();
+      log(gone.length + "件を削除しました。", 'ok');
+    }catch(e){
+      log("削除に失敗しました：" + e.message, 'err');
+    }
+  });
+
+  document.getElementById('reloadBtn').addEventListener('click', loadEvents);
+  loadEvents();
+})();
+</script>
+</body>
+</html>
