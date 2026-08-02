@@ -38,11 +38,10 @@
     background:#fff; font-size:13px; cursor:pointer; user-select:none;
   }
   .chip.on{color:#fff; border-color:transparent;}
-  .chip[data-area="守谷市"].on{background:var(--moriya);}
-  .chip[data-area="つくばみらい市"].on{background:var(--mirai);}
-  .chip[data-area="つくば市"].on{background:var(--tsukuba);}
-  .chip[data-area="土浦市"].on{background:var(--kinko);}
-  .chip[data-area="常総市"].on{background:var(--kinko);}
+  .chip[data-area="守谷"].on{background:var(--moriya);}
+  .chip[data-area="つくばみらい"].on{background:var(--mirai);}
+  .chip[data-area="つくば"].on{background:var(--tsukuba);}
+  .chip[data-area="3市周辺"].on{background:var(--kinko);}
   .submit-btn{
     width:100%; padding:14px; border:none; border-radius:10px; background:var(--onair);
     color:#fff; font-size:15px; font-weight:700; cursor:pointer; margin-top:6px;
@@ -136,14 +135,13 @@
 
     <label>開催地域 <span class="req">＊</span></label>
     <div class="chips" id="areaChips">
-      <div class="chip" data-area="守谷市">守谷市</div>
-      <div class="chip" data-area="つくばみらい市">つくばみらい市</div>
-      <div class="chip" data-area="つくば市">つくば市</div>
-      <div class="chip" data-area="土浦市">土浦市</div>
-      <div class="chip" data-area="常総市">常総市</div>
+      <div class="chip" data-area="守谷">守谷</div>
+      <div class="chip" data-area="つくばみらい">つくばみらい</div>
+      <div class="chip" data-area="つくば">つくば</div>
+      <div class="chip" data-area="3市周辺">3市周辺</div>
     </div>
     <input type="text" id="f_area" placeholder="ボタンを押すとここに入ります（手入力もできます）" style="margin-top:8px;">
-    <div class="hint">上のボタンは入力の近道です。ここに直接書いた地域名（例：取手市、牛久市、県内全域）がそのまま掲載されます。</div>
+    <div class="hint">上のボタンは入力の近道です。ここに直接書いた地域名がそのまま掲載されます（土浦・常総・取手・牛久・石岡などは「3市周辺」を使ってください）。</div>
 
     <label for="f_place">開催場所</label>
     <input type="text" id="f_place" placeholder="例：守谷市中央公民館">
