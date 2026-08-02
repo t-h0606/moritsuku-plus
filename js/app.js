@@ -216,22 +216,10 @@ const CAT_TINTS = {
   kids:    ["#E85D9C", "#FFA8CF"],
   ibaraki: ["#0E7C87", "#5FC9D4"]
 };
-// category は「文字列1つ」（旧・編成会議室経由の記事）と「配列（複数可）」（新・記事投稿ページ）の
-// どちらの形でも入っている可能性があるため、この2つのヘルパーで両対応する。
-function hasCategory(a, cat) {
-  if (!a) return false;
-  return Array.isArray(a.category) ? a.category.includes(cat) : a.category === cat;
-}
-function categoryList(a) {
-  if (!a || !a.category) return [];
-  return Array.isArray(a.category) ? a.category : [a.category];
-}
-
 function thumbHTML(a, cls) {
   if (a.thumb) return `<span class="thumb ${cls}"><img src="${a.thumb}" alt=""></span>`;
-  // サムネイル画像が無いときは、ジャンル色のグラデーションの上に局のロゴを置く（複数ジャンルのときは先頭のジャンル色を使う）
-  const primaryCat = categoryList(a)[0];
-  const [c1, c2] = CAT_TINTS[primaryCat] || ["#9DA9C0", "#C9D2E4"];
+  // サムネイル画像が無いときは、ジャンル色のグラデーションの上に局のロゴを置く
+  const [c1, c2] = CAT_TINTS[a.category] || ["#9DA9C0", "#C9D2E4"];
   return `<span class="thumb ${cls} thumb-logo" style="background:linear-gradient(135deg,${c1},${c2})"><img src="images/logo-moritsuku.webp" alt="もりつく＋"></span>`;
 }
 
@@ -328,10 +316,10 @@ function loadMoreFeed() {
 function renderFeed() {
   // 「県内全域」は3市に属さない記事。専用タブの中だけに出し、他のタブには一切混ざらない
   const filtered = ARTICLES.filter(a => {
-    if (state.cat === "ibaraki") return hasCategory(a, "ibaraki");
-    if (hasCategory(a, "ibaraki")) return false;
+    if (state.cat === "ibaraki") return a.category === "ibaraki";
+    if (a.category === "ibaraki") return false;
     const cityOk = state.city === "all" || (a.city || []).includes(state.city);
-    const catOk = state.cat === "all" || state.cat === "video" || hasCategory(a, state.cat);
+    const catOk = state.cat === "all" || state.cat === "video" || a.category === state.cat;
     return cityOk && catOk;
   });
   // 「最新記事」タブ（＝state.cat が all または video）は featuredAll を見て先頭を決め、
@@ -346,7 +334,7 @@ function renderFeed() {
   const cardsHTML = visibleList.map((a, i) => {
     const badges = `
       <div class="badges">
-        ${categoryList(a).map(c => `<span class="cat ${c}">${CAT_NAMES[c] || c}</span>`).join("")}
+        <span class="cat ${a.category}">${CAT_NAMES[a.category]}</span>
         ${a.city.map(c => `<span class="city-badge ${c}">${CITY_NAMES[c]}</span>`).join("")}
       </div>`;
     const meta = `<div class="meta"><span class="src">${a.source}</span><span>${agoLabel(a)}</span><span class="arrow">→</span></div>`;
