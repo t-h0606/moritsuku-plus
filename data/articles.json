@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T09:05",
+  "updated": "2026-08-02T10:10",
   "items": [
     {
       "title": "大相撲がつくばみらい市で開催！",
@@ -13,6 +13,20 @@
       "url": "https://www.tsukubamirai-sumo.com/",
       "thumb": "images/thumbs/2026-07-29-event-f209.webp",
       "featured": true
+    },
+    {
+      "title": "土浦キララまつり開幕　七夕おどり、山車、花火など【8/1-8/2】",
+      "source": "土浦市観光協会",
+      "date": "2026-08-02T10:10",
+      "city": [
+        "moriya",
+        "tsukubamirai",
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "📰",
+      "url": "https://www.tsuchiura-kankou.jp/whats_new/%E5%9C%9F%E6%B5%A6%E3%82%AD%E3%83%A9%E3%83%A9%E3%81%BE%E3%81%A4%E3%82%8A%EF%BC%92%EF%BC%90%EF%BC%92%EF%BC%96-2/",
+      "thumb": ""
     },
     {
       "title": "イバライドでフェルムドフェスティバル開催れ　稲敷市",
