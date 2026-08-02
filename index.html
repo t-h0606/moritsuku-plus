@@ -93,16 +93,11 @@
         </div>
       </div>
     </div>
-    <!-- イベントカレンダーへの入口（先頭記事の上）。中身は events.html ＋ data/events.json -->
-    <a class="cal-banner" href="events.html">
-      <span class="cal-icon" aria-hidden="true">
-        <span class="cal-top"></span>
-        <span class="cal-day">31</span>
-      </span>
-      <span class="cal-body">
-        <span class="cal-title">イベントカレンダー</span>
-        <span class="cal-sub">守谷・つくばみらい・つくばとその周辺の、これから3か月分のイベント</span>
-      </span>
+    <!-- イベントカレンダーへの入口（ジャンル「イベント」を選んだときだけ表示）。
+         中身は events.html ＋ data/events.json -->
+    <a class="cal-banner" id="calBanner" href="events.html" hidden>
+      <img class="cal-icon" src="images/icon-calendar.webp" alt="" width="122" height="128">
+      <span class="cal-title">イベントカレンダー</span>
       <span class="cal-arrow" aria-hidden="true">→</span>
     </a>
     <div class="card-grid" id="feed"></div>
@@ -149,5 +144,23 @@
 </footer>
 
 <script src="js/app.js"></script>
+<script>
+/* イベントカレンダーの入口は、ジャンル「イベント」を選んでいるときだけ出す。
+   ジャンルの状態は app.js がチップの aria-pressed に書き込むので、それを見張って
+   表示・非表示を切り替える（app.js 側は一切変更していない）。 */
+(function () {
+  const banner = document.getElementById("calBanner");
+  const row = document.querySelector(".genre-row");
+  if (!banner || !row) return;
+  function sync() {
+    const on = row.querySelector('.chip[data-cat="event"][aria-pressed="true"]');
+    banner.hidden = !on;
+  }
+  new MutationObserver(sync).observe(row, {
+    subtree: true, attributes: true, attributeFilter: ["aria-pressed"]
+  });
+  sync();
+})();
+</script>
 </body>
 </html>

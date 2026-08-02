@@ -754,49 +754,35 @@ footer .disc { color: #566280; }
 }
 
 /* ========== イベントカレンダーへの入口（記事一覧の先頭・index.html） ==========
-   押すと events.html（イベントカレンダー）へ移動する帯。
+   ジャンル「イベント」を選んだときだけ表示される帯。押すと events.html へ移動する。
    上辺の3色グラデーションは駅セレクタと同じ「守谷→つくばみらい→つくば」の並び。 */
 .cal-banner {
   position: relative;
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: center; gap: 12px;
   margin: 0 0 15px;
-  padding: 15px 18px 14px 18px;
+  padding: 10px 18px 10px 16px;
   background: linear-gradient(180deg, #FFFFFF, #FFFCF5);
   border: 1px solid var(--paper-line);
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 0.15s, box-shadow 0.15s;
 }
+/* hidden 属性を確実に効かせる（display:flex に負けないよう明示する） */
+.cal-banner[hidden] { display: none; }
 .cal-banner::before {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
   background: linear-gradient(90deg, var(--c-moriya), var(--c-mirai), var(--c-tsukuba));
 }
 .cal-banner:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(31,36,51,0.09); }
-.cal-icon {
-  flex: 0 0 auto; width: 46px; height: 46px;
-  border: 1.5px solid var(--paper-line); border-radius: 11px;
-  background: #fff; overflow: hidden;
-  display: flex; flex-direction: column;
-  box-shadow: 0 2px 6px rgba(31,36,51,0.06);
-}
-.cal-icon .cal-top { display: block; height: 13px; background: var(--onair); }
-.cal-icon .cal-day {
-  flex: 1; display: grid; place-items: center;
-  font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900;
-  font-size: 1.06rem; line-height: 1; color: var(--ink);
-}
-.cal-body { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.cal-icon { flex: 0 0 auto; width: auto; height: 34px; }
 .cal-title {
+  flex: 1 1 0; min-width: 0;
   font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 900;
   font-size: 1.02rem; letter-spacing: 0.05em; color: var(--ink);
 }
-.cal-sub { font-size: 0.72rem; line-height: 1.5; color: var(--ink-sub); }
 .cal-arrow { flex: 0 0 auto; color: var(--c-tsukuba); font-weight: 700; font-size: 0.95rem; }
 @media (max-width: 640px) {
-  .cal-banner { gap: 11px; padding: 13px 14px 12px; }
-  .cal-icon { width: 40px; height: 40px; border-radius: 10px; }
-  .cal-icon .cal-top { height: 11px; }
-  .cal-icon .cal-day { font-size: 0.92rem; }
+  .cal-banner { gap: 10px; padding: 9px 14px 9px 12px; }
+  .cal-icon { height: 29px; }
   .cal-title { font-size: 0.94rem; }
-  .cal-sub { font-size: 0.66rem; }
 }
