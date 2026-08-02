@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "updated": "2026-08-02T15:29",
+=======
+  "updated": "2026-08-02T15:17",
+>>>>>>> Stashed changes
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -17,6 +21,7 @@
       "featured": true
     },
     {
+<<<<<<< Updated upstream
       "title": "関東三大祭とは？いつ開催？川越まつり、石岡のおまつり、もう一つはどこ？",
       "source": "ｄメニューニュース",
       "date": "2026-08-01T06:00",
@@ -29,6 +34,8 @@
       "thumb": ""
     },
     {
+=======
+>>>>>>> Stashed changes
       "title": "【土浦の新名所】コンセプトは\"昼から乾杯できる横丁\" 昭和レトロな食のエンタメ空間「モール505横丁」が8月18日（火）グランドオープン",
       "source": "株式会社LifeBox",
       "date": "2026-08-02T15:05",
@@ -97,9 +104,7 @@
       "source": "土浦市観光協会",
       "date": "2026-08-02T10:10",
       "city": [
-        "moriya",
-        "tsukubamirai",
-        "tsukuba"
+        "kinko"
       ],
       "category": "event",
       "emoji": "📰",
@@ -107,13 +112,11 @@
       "thumb": ""
     },
     {
-      "title": "イバライドでフェルムドフェスティバル開催れ　稲敷市",
+      "title": "イバライドでフェルム・ド・フェスティバル開催！　稲敷市",
       "source": "こもれび森のイバライド",
       "date": "2026-08-02T09:05",
       "city": [
-        "moriya",
-        "tsukubamirai",
-        "tsukuba"
+        "kinko"
       ],
       "category": "event",
       "emoji": "📰",
@@ -125,9 +128,7 @@
       "source": "ねとらぼ",
       "date": "2026-08-02T08:19",
       "city": [
-        "moriya",
-        "tsukubamirai",
-        "tsukuba"
+        "kinko"
       ],
       "category": "gourmet",
       "emoji": "📰",
