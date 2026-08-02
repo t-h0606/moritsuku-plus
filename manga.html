@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- もりつく＋ 今週の4コマ（2026-08-03 新設）
+     中身は data/manga.json だけを見て描画します。新しい話を足すときは
+     ①images/manga/ にコマ画像を4枚置く ②data/manga.json の items のいちばん上に1ブロック足す
+     の2手順だけです。このファイルは触らなくて構いません。
+     ※CSSもJSもこの1ファイルに入っています（共有ファイルを増やさないための設計） -->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>今週の4コマ | もりつく＋</title>
+<meta name="description" content="もりつく＋報道局のスタッフたちの、放送のうらがわ。毎週更新の4コマ漫画です。">
+<meta name="theme-color" content="#16203A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== 4コマページ専用（このページだけで使うスタイル） ===== */
+.mg-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  flex-shrink: 0; margin-top: 2px;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff; font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.mg-back:hover { background: rgba(255,255,255,0.12); }
+
+.mg-hero { padding: 26px 0 6px; }
+.mg-hero .mg-h1 { font-size: 1.7rem; }
+.mg-hero .mg-lead {
+  margin-top: 8px; font-size: 0.85rem; color: var(--ink-sub);
+  line-height: 1.75; max-width: 46em;
+}
+
+/* 今週の1本 */
+.mg-main { padding: 18px 0 6px; }
+.mg-ttl-row {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  padding-bottom: 8px; margin-bottom: 16px;
+  border-bottom: 2px solid var(--paper-line);
+}
+.mg-no {
+  flex-shrink: 0;
+  padding: 3px 10px; border-radius: 999px;
+  background: var(--studio); color: #fff;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 0.72rem; letter-spacing: 0.06em;
+}
+.mg-ttl {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1.2rem; letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+.mg-meta { font-size: 0.72rem; color: var(--ink-sub); margin-left: auto; white-space: nowrap; }
+
+/* コマを縦に4つ並べる */
+.mg-strip {
+  max-width: 620px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.mg-panel {
+  display: block; width: 100%; height: auto;
+  background: #fff;
+  border: 3px solid #1A1A1A;
+  border-radius: 3px;
+}
+.mg-cast {
+  max-width: 620px; margin: 14px auto 0;
+  font-size: 0.74rem; color: var(--ink-sub); text-align: right;
+}
+
+/* バックナンバー */
+.mg-back-sec { padding: 30px 0 10px; }
+.mg-list { display: flex; flex-direction: column; gap: 8px; }
+.mg-row {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  padding: 12px 14px; text-align: left;
+  background: #fff; border: 1px solid var(--paper-line);
+  border-radius: var(--radius); cursor: pointer;
+  font-family: inherit;
+}
+.mg-row:hover { border-color: var(--studio); }
+.mg-row[aria-current="true"] { border-color: var(--studio); background: #F4F7FF; }
+.mg-row-no {
+  flex-shrink: 0; width: 46px; text-align: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 0.76rem; color: var(--studio);
+}
+.mg-row-ttl { font-weight: 700; font-size: 0.92rem; line-height: 1.4; }
+.mg-row-date { margin-left: auto; flex-shrink: 0; font-size: 0.72rem; color: var(--ink-sub); }
+
+.mg-note {
+  margin-top: 26px; font-size: 0.74rem; color: var(--ink-sub); line-height: 1.9;
+}
+.mg-empty { color: var(--ink-sub); font-size: 0.88rem; padding: 30px 2px; text-align: center; }
+
+@media (max-width: 640px) {
+  .mg-hero .mg-h1 { font-size: 1.4rem; }
+  .mg-ttl { font-size: 1.05rem; }
+  .mg-meta { margin-left: 0; width: 100%; }
+  .mg-panel { border-width: 2px; }
+  .mg-strip { gap: 8px; }
+  .mg-row-ttl { font-size: 0.86rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="studio-head">
+  <div class="wrap">
+    <div class="head-top">
+      <div class="brand">
+        <a href="index.html"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
+        <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
+      </div>
+      <a class="mg-back" href="index.html">← トップへ戻る</a>
+    </div>
+  </div>
+</header>
+
+<section class="mg-hero">
+  <div class="wrap">
+    <span class="eyebrow">4KOMA</span>
+    <h2 class="sec-title mg-h1">今週の4コマ</h2>
+    <p class="mg-lead">もりつく＋報道局の、放送のうらがわ。局員たちの日常を4コマでお届けします。</p>
+  </div>
+</section>
+
+<section class="mg-main">
+  <div class="wrap">
+    <div id="mgMain"><p class="mg-empty">読み込み中です…</p></div>
+  </div>
+</section>
+
+<section class="mg-back-sec" id="mgBackSec" hidden>
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:12px;">
+      <h2 class="sec-title">バックナンバー</h2>
+    </div>
+    <div class="mg-list" id="mgList"></div>
+    <p class="mg-note">
+      登場する局員・組織・番組はフィクションです。掲載しているまちの情報は、すべて実在のものです。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">もりつく＋</div>
+    <div class="links">
+      <a href="index.html">トップへ戻る</a><a href="#">会社概要</a><a href="#">お問い合わせ</a><a href="#">出演・情報提供</a>
+    </div>
+    <div class="disc">
+      もりつく＋は架空のローカルテレビ局です。掲載しているニュース・イベント・グルメ情報は実在のものであり、見出しは各配信元の記事へリンクしています。<br>
+      記事の著作権はすべて各配信元に帰属します。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const main    = document.getElementById("mgMain");
+  const listBox = document.getElementById("mgList");
+  const backSec = document.getElementById("mgBackSec");
+  let EPISODES = [];
+
+  /* 日付 "2026-08-03" → "8月3日(月)" */
+  const WD = ["日","月","火","水","木","金","土"];
+  function jpDate(s) {
+    const m = String(s || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return "";
+    const d = new Date(+m[1], +m[2] - 1, +m[3]);
+    return (+m[2]) + "月" + (+m[3]) + "日(" + WD[d.getDay()] + ")";
+  }
+  const esc = s => String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+  /* 1話ぶんを表示する */
+  function render(ep) {
+    if (!ep) { main.innerHTML = '<p class="mg-empty">まだ4コマがありません。</p>'; return; }
+    const panels = (ep.panels || []).map((src, i) =>
+      '<img class="mg-panel" src="' + esc(src) + '" alt="' + esc(ep.title) + ' ' + (i + 1) + 'コマ目" loading="' + (i < 2 ? "eager" : "lazy") + '">'
+    ).join("");
+    main.innerHTML =
+      '<div class="mg-ttl-row">' +
+        (ep.no ? '<span class="mg-no">第' + esc(ep.no) + '話</span>' : "") +
+        '<span class="mg-ttl">' + esc(ep.title) + '</span>' +
+        '<span class="mg-meta">' + esc(jpDate(ep.date)) + '</span>' +
+      '</div>' +
+      '<div class="mg-strip">' + panels + '</div>' +
+      (ep.cast ? '<div class="mg-cast">出演：' + esc(ep.cast) + '</div>' : "");
+    listBox.querySelectorAll(".mg-row").forEach(b =>
+      b.setAttribute("aria-current", b.dataset.no === String(ep.no) ? "true" : "false"));
+  }
+
+  /* バックナンバー一覧 */
+  function renderList() {
+    if (EPISODES.length <= 1) { backSec.hidden = true; return; }
+    backSec.hidden = false;
+    listBox.innerHTML = EPISODES.map(ep =>
+      '<button class="mg-row" type="button" data-no="' + esc(ep.no) + '">' +
+        '<span class="mg-row-no">第' + esc(ep.no) + '話</span>' +
+        '<span class="mg-row-ttl">' + esc(ep.title) + '</span>' +
+        '<span class="mg-row-date">' + esc(jpDate(ep.date)) + '</span>' +
+      '</button>'
+    ).join("");
+    listBox.querySelectorAll(".mg-row").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const ep = EPISODES.find(e => String(e.no) === btn.dataset.no);
+        if (!ep) return;
+        render(ep);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
+  fetch("data/manga.json", { cache: "no-store" })
+    .then(r => r.json())
+    .then(data => {
+      EPISODES = (data.items || []).slice()
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)));  /* 新しい話が先頭 */
+      renderList();
+      render(EPISODES[0]);
+    })
+    .catch(() => { main.innerHTML = '<p class="mg-empty">4コマを読み込めませんでした。時間をおいてお試しください。</p>'; });
+})();
+</script>
+</body>
+</html>

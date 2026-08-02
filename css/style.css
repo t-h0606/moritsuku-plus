@@ -786,3 +786,40 @@ footer .disc { color: #566280; }
   .cal-icon { height: 29px; }
   .cal-title { font-size: 0.94rem; }
 }
+
+/* ========== ヘッダーの「今週の4コマ」ボタン（v48／ON AIRランプと差し替え） ==========
+   ※ 上の .onair-lamp / .bulb / @keyframes blink は使われなくなりましたが、
+      他への影響を避けるためそのまま残してあります。 */
+.manga-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255,75,92,0.55);
+  background: rgba(255,75,92,0.10);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: #FFC9CE;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.manga-btn:hover { background: rgba(255,75,92,0.22); }
+/* 2×2の小さな四角＝「コマ」のアイコン */
+.manga-ico {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px;
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+}
+.manga-ico i { display: block; border-radius: 1.5px; background: #FF8B96; }
+@media (max-width: 640px) {
+  .manga-btn { padding: 6px 11px; font-size: 0.7rem; letter-spacing: 0.02em; gap: 6px; }
+  .manga-ico { width: 12px; height: 12px; }
+}
