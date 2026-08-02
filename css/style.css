@@ -10,6 +10,7 @@
   --c-moriya: #2FA36B;
   --c-mirai: #F59E2D;
   --c-tsukuba: #3D7BFF;
+  --c-kinko: #8892A6;
   --radius: 16px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -104,7 +105,7 @@ img { display: block; max-width: 100%; }
   left: 30px; right: 30px; top: 4.5px;   /* 丸(14px)の中心=7px に線の中心を合わせる */
   height: 5px;
   border-radius: 3px;
-  background: linear-gradient(90deg, #C3CBDA, var(--c-moriya) 30%, var(--c-mirai) 62%, var(--c-tsukuba) 100%);
+  background: linear-gradient(90deg, #C3CBDA, var(--c-moriya) 25%, var(--c-mirai) 50%, var(--c-tsukuba) 75%, var(--c-kinko) 100%);
   opacity: 0.9;
   z-index: 0;
 }
@@ -646,6 +647,7 @@ section { padding: 26px 0 40px; }
 .city-badge.moriya { color: var(--c-moriya); border-color: var(--c-moriya); }
 .city-badge.tsukubamirai { color: #C97D14; border-color: var(--c-mirai); }
 .city-badge.tsukuba { color: var(--c-tsukuba); border-color: var(--c-tsukuba); }
+.city-badge.kinko { color: var(--c-kinko); border-color: var(--c-kinko); }
 .card .title { font-weight: 700; font-size: 0.95rem; line-height: 1.4; flex-grow: 1; }
 .card .meta { display: flex; gap: 8px; font-size: 0.7rem; color: var(--ink-sub); }
 .card .meta .src { font-weight: 700; }

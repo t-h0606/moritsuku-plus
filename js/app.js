@@ -6,12 +6,15 @@
    このファイルは触らないでください。
    ===================================================================== */
 
-const CITY_NAMES = { moriya: "守谷", tsukuba: "つくば", tsukubamirai: "つくばみらい" };
+const CITY_NAMES = { moriya: "守谷", tsukuba: "つくば", tsukubamirai: "つくばみらい", kinko: "3市周辺" };
 const CAT_NAMES = { news: "ニュース", event: "イベント", gourmet: "グルメ", kids: "キッズ", ibaraki: "県内全域" };
 
 // 記事一覧の「もっと見る」の件数設定。最初に出す件数と、ボタンを押すたびに増える件数。
 const FEED_INITIAL_COUNT = 15;
 const FEED_STEP = 15;
+
+// 駅セレクタで「3市周辺」を選んだときに表示してよいジャンル（それ以外のチップは隠す）
+const KINKO_ALLOWED_CATS = ["all", "event", "gourmet"];
 
 // 読み込んだデータの置き場
 let ARTICLES = [], VIDEOS = {}, WEATHER = {}, STAFF = [];
@@ -492,6 +495,7 @@ function bindControls() {
   document.querySelectorAll(".station").forEach(b => b.addEventListener("click", () => {
     state.city = b.dataset.city; setPressed(".station", "city", state.city);
     state.visibleCount = FEED_INITIAL_COUNT;   // まちを変えたら表示件数を最初からやり直す
+    applyKinkoGenreLock(state.city === "kinko");
     renderFeed(); renderNewsCaster();
   }));
   document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
@@ -500,6 +504,19 @@ function bindControls() {
     applyVideoMode(state.cat === "video");
     renderFeed();
   }));
+}
+
+// 「3市周辺」を選んでいる間は、対応していないジャンル（ニュース・動画・キッズ・県内全域）の
+// チップを隠す。もし隠れるジャンルを選んだ状態で3市周辺に切り替えたら「最新記事」に戻す。
+function applyKinkoGenreLock(on) {
+  document.querySelectorAll(".chip").forEach(b => {
+    b.hidden = on && !KINKO_ALLOWED_CATS.includes(b.dataset.cat);
+  });
+  if (on && !KINKO_ALLOWED_CATS.includes(state.cat)) {
+    state.cat = "all";
+    setPressed(".chip", "cat", state.cat);
+    applyVideoMode(false);
+  }
 }
 
 // ジャンル「動画」選択時：ヘッダー〜気象台〜「まちの新着ニュース」見出し〜ジャンルは固定のまま、
