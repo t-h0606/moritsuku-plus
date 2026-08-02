@@ -262,7 +262,9 @@ a.ev-row .ev-title { color: var(--link-ink, #1F2433); }
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     document.getElementById("todayDate").textContent =
       `${today.getMonth() + 1}月${today.getDate()}日（${WK[today.getDay()]}）`;
-    const list = visible(EVENTS).filter(ev => {
+    /* 「本日のイベント」は地域チップの絞り込みを受けない（常に全地域を表示する）。
+       絞り込みが効くのは下の月ごとの一覧だけ。visible() をここで使わないこと。 */
+    const list = EVENTS.filter(ev => {
       const s = startOf(ev), e = endOf(ev) || startOf(ev);
       return s && s <= today && e >= today;
     }).sort((a, b) => startOf(a) - startOf(b));
@@ -308,7 +310,7 @@ a.ev-row .ev-title { color: var(--link-ink, #1F2433); }
       areaFilter = b.dataset.area;
       box.querySelectorAll(".ev-fchip").forEach(x =>
         x.setAttribute("aria-pressed", x.dataset.area === areaFilter ? "true" : "false"));
-      renderToday(); renderMonths();
+      renderMonths();   /* 本日のイベントは絞り込みの対象外なので描き直さない */
     }));
   }
 
