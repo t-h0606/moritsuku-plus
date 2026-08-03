@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T23:06",
+  "updated": "2026-08-04T06:54",
   "items": [
     {
       "title": "みらいフェスタ２０２６",
@@ -103,6 +103,14 @@
       "area": "3市周辺",
       "place": "常陸國總社宮",
       "url": "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/"
+    },
+    {
+      "title": "茨城県最大規模のまちおこしフェス「IBARAKI DREAM LAND 2026」",
+      "start": "2026-10-17",
+      "end": "2026-10-18",
+      "area": "3市周辺",
+      "place": "笠間芸術の森公園",
+      "url": "https://ibaraki-dream-land.com/"
     }
   ]
 }
