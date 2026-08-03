@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T17:03",
+  "updated": "2026-08-03T17:24",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,20 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "商用化目指す光量子コンピューターが稼働 研究拠点で世界初",
+      "source": "サイエンスポータル",
+      "date": "2026-08-03T17:24",
+      "city": [
+        "tsukuba"
+      ],
+      "category": [
+        "news"
+      ],
+      "emoji": "📰",
+      "url": "https://news.yahoo.co.jp/articles/b46a67684ffc8f22a5699073262824e6ebd16b93",
+      "thumb": ""
     },
     {
       "title": "ポニークリーニングより、24時間利用できるコンビニ連携宅配クリーニング「らくらくクリーニング」を茨城県の一部地域で提供開始",
