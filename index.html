@@ -27,7 +27,7 @@
   <div class="wrap">
     <div class="head-top">
       <div class="brand">
-        <h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1>
+        <h1 class="logo"><a href="#" id="logoHome" aria-label="もりつく＋ トップに戻る"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></a></h1>
         <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
       </div>
       <a class="manga-btn" href="manga.html">
@@ -162,6 +162,21 @@
     subtree: true, attributes: true, attributeFilter: ["aria-pressed"]
   });
   sync();
+})();
+
+/* ロゴをタップしたら：駅セレクタ「すべて」・ジャンル「最新記事」に戻してからページ最上部へ。
+   実際の絞り込みは app.js 側の既存クリック処理をそのまま使う（ここでは state を直接触らない）。 */
+(function () {
+  const logo = document.getElementById("logoHome");
+  if (!logo) return;
+  logo.addEventListener("click", function (e) {
+    e.preventDefault();
+    const allStation = document.querySelector('.station[data-city="all"]');
+    const allChip = document.querySelector('.chip[data-cat="all"]');
+    if (allStation && allStation.getAttribute("aria-pressed") !== "true") allStation.click();
+    if (allChip && allChip.getAttribute("aria-pressed") !== "true") allChip.click();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
 </script>
 </body>
