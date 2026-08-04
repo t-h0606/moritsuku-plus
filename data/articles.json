@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T16:10",
+  "updated": "2026-08-04T16:12",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,18 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "移住＆お仕事の話｜つくばの広い空の下で暮らしながら、家族の笑顔を写真に残す【茨城県つくば市】",
+      "source": "ｄメニューニュース",
+      "date": "2026-08-04T07:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNUc2Yk1XY2pUWTRDMUhmak9LZXk4NlJ2NVZYUU9UckJWbXNjN1dfMjdNVXgybmE4WEZUUjgzZjFrX3VjUGU4UENhM25URFk0ZW9LYjFpVmFvR3pxdnF4S2Y3UnFtX25XekxGOWZ4ZWp0X05keG5tb2VTeWpnTnhmY2dUOUtSTm5kbEtGSm1QQQ?oc=5",
+      "thumb": ""
     },
     {
       "title": "常磐道つくばみらいスマートICが8月29日開通。谷和原ICの渋滞回避、17分→9分に｜自動車交通トピックス",
