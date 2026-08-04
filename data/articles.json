@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T20:21",
+  "updated": "2026-08-04T20:43",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,20 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "開催から101周年！第95回 土浦全国花火競技大会",
+      "source": "土浦全国花火競技大会",
+      "date": "2026-08-04T20:43",
+      "city": [
+        "kinko"
+      ],
+      "category": [
+        "event"
+      ],
+      "emoji": "📰",
+      "url": "https://www.tsuchiura-hanabi.jp/",
+      "thumb": ""
     },
     {
       "title": "約12万人が訪れる！第71回 とりで利根川大花火",
