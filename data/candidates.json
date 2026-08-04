@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-04T19:42",
-  "count": 220,
+  "updated": "2026-08-04T20:21",
+  "count": 216,
   "candidates": [
     {
       "id": "1f544dc706b0",
@@ -16,19 +16,6 @@
       "sure": true
     },
     {
-      "id": "1b32d0148ad4",
-      "title": "日清、茨城県つくばみらい市に「カップヌードル特化型工場」",
-      "source": "watch.impress.co.jp",
-      "date": "2026-08-04T18:00",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9OaFFlWHBWY3FkVExrTFg4R0VaNUNPVklEVTFyUlFtM2dkM2lCampoR1NRbVBsTUJlZXQtWVVUbEtWYXZueUljU0lRRFZJUmJIZ0dNOWFLQlV2Y3hHSnp4M2NOZDI?oc=5",
-      "sure": true
-    },
-    {
       "id": "1ba9be36d329",
       "title": "「ふるなび」が、令和8年熊本地震の災害支援として23自治体の寄附受付を開始※2026/08/04受付自治体追加",
       "source": "産経ニュース",
@@ -39,6 +26,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9qVk93cDQwYjVLU0VCcW1MM291bFg2bXdid1dnUW1pQlNYai1XZWhVTURudmtaekV4Q2lOZGlNWDRMSUZHd05TaUdMcjF5N2NXNDhhX1NyV0ktRGZaajNidmNlSGJ3QVltZVhSbFJ4bnFsMF9acG0zSDlqcw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "094703b1f284",
+      "title": "『今日、好きになりました。』カラオケ館と夏のスペシャルキャンペーン開催",
+      "source": "T COM（アットティーコム）",
+      "date": "2026-08-04T17:22",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB1NUpBLTBmQ25iWVk1WlZ5bUVMWmx0VnJ1ckRKRV8wUV9HSXFyR01HZkhibHpzUnNuYWE5bFptcW1WVzdtRkVQZmFlUTVtc0lsREY3R21JMXE?oc=5",
       "sure": false
     },
     {
@@ -68,19 +68,6 @@
       "sure": false
     },
     {
-      "id": "e29bc20602ea",
-      "title": "取手市でも「令和の大改修」を推進します",
-      "source": "city.toride.ibaraki.jp",
-      "date": "2026-08-04T17:04",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSnh1dWI2VmpVVjZnTklYaDVTVmlIR0E5QjRQV2FaaEFSS0Z4WmFxQlJhOGVvU1F4ck9vbVBvQ3BNVXNwTDVyUGNvcFdsNENKem1wbDFZUzBZdUtnTlBMQUJmX1NOWXA0cHZra0RtYlM3MGpOcUdqTzV6SlhRTWtEY0w5cmM3QTJ3N1N3WUxLN0QwSERVcGttd25ha0M?oc=5",
-      "sure": true
-    },
-    {
       "id": "1dba3a6bca2e",
       "title": "日清食品、茨城・つくばみらいに「カップヌードル特化型工場」建設へ　29年度稼働予定　設備投資額約700億円",
       "source": "ｄメニューニュース",
@@ -104,17 +91,6 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBiSGFCd2dJaTBCV01SQkVzOF9MY3NoMXFmZUtybmFwcjNZb1hhV0w3b3NucUNRVjNWSERyRnFUTXg1YWxuQWtnZEQ3WTFRZWNfVm5kT19sMDNaTktsOHFGOFlvVVZQM0tw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "0425d1e6b2a5",
-      "title": "「まんじゅうや」の票は有効？ 茨城 神栖市長選の裁判始まる | NHKニュース | 裁判、茨城県、選挙",
-      "source": "NHKニュース",
-      "date": "2026-08-04T16:39",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lVzZTcnBDZ3BGS0VCenUwdVpmTVdQQlFacVFvbms0UlNOMFNhcHIxN1lueU9hdnVNaDNMVjE3bHZsWl90NW1aRU5fSTlDVVJaSl80QkhrajgtMVhyYzdz?oc=5",
       "sure": true
     },
     {
@@ -155,17 +131,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5HRHlVM1pPZEVrS3FSd0Q5ZzlkLXR1cFFfdFhyMkRNTnpNXzNMcnByYWlTOXg3ZXZ0eXZ3RUV0UHVNckRrbW1xMXlPeVRMY3E0ZVZ4LXh1Zi1SM3o1VVJXNFEzeGpZdXlTdmc?oc=5",
       "sure": false
-    },
-    {
-      "id": "764b6615cea3",
-      "title": "NEW！いばらきの梨特集",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-08-04T12:28",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1EdVZwSXJsZXgtZVZtM0RKaWp4SlJzZjE1VFpoUVZlVDBBZVVSRFRMSVpqQ1BKMXprQkVYb0k5SEYzNjdHazFQSzRrTUhvT04xNEJkVDlrQlBiZzJpODlNaE9PUTZkNVhzaTdFM29reDNnQQ?oc=5",
-      "sure": true
     },
     {
       "id": "3a8c49c7464d",
@@ -230,6 +195,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBjeVhlRjNUWHZSM2VMZGJPMDN2OXY5ZDN3NFpaNnhka0hRUlFRT3czc2Nib1BBcGliekV5X0JHcTBJcWJ1NXU4NGo1RzJqc2Q3TXRta0VtSGxnZDV1N1pWaEpNUF91M3NDN25BY05zNVFQZF9f?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a973ca77b355",
+      "title": "画像17 / 19＞牛久大仏(茨城)の魅力を徹底解説！“世界一高い青銅製の仏像”の楽しみ方から、人気のお土産まで丸わかり【コロナ対策情報付き】",
+      "source": "ウォーカープラス",
+      "date": "2026-08-04T08:05",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5jVy02RlZHbW9DTkFhZ0ViWV9TXzlMbjQ1Z0tZYXFONUpKY3BEVE5QNFVxWEs4Y0dWQm51eF9Ca3VoRWlHbTV0LU5OekdOMHJQdWRXSFh0MGlhdkdBaTh4SDdkTHJQbDhwRWlXQnNHakhjZ3FIUHpkTWpDb1pKYkE?oc=5",
       "sure": true
     },
     {
@@ -312,7 +290,7 @@
     },
     {
       "id": "e7c91e01e4dc",
-      "title": "事業モデルを機敏に転換、エンバイオの屋根上太陽光 - 探訪",
+      "title": "事業モデルを機敏に転換、エンバイオの屋根上太陽光",
       "source": "日経BP",
       "date": "2026-08-04T05:00",
       "city": [
@@ -620,6 +598,19 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5KWk5aangtdUU0TUszOHZCdkpSZjh0N1hrT2FMZTFkemxHdU9va3Vlcjh1S1l5UF82Y1ExR0g4ZW43TVNiWEwxXzBUTlJaZUdOby16dWZydTh5cEtiZWtj?oc=5",
       "sure": true
+    },
+    {
+      "id": "5d33d53504fb",
+      "title": "ラーメン店が本気で作る夏のかき氷。8月4日より新商品「濃厚バナナショコラ」を数量限定販売。笠間栗をたっぷり使用した「か",
+      "source": "ニコニコニュース",
+      "date": "2026-08-03T12:18",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8wakxIOTZ1Q1NMX01aTk56TTRVRGNwYXo1Zy16NzJKdmFsM0lDWlNUbGZjZzdWbDM2SGh1UXlINlpjdktrcHo5Y28yNVZRWUVLQkdYQg?oc=5",
+      "sure": false
     },
     {
       "id": "e9ab50acaa52",
@@ -1009,6 +1000,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8ydGpLa2ttRUM4UjFQYUlEcm5MeTBOVGtzeFd0S29FMUVVQkxXb0FoQndFRDFtY2JpcXdZWWZuRnNRRmxiOGN1NnBRbTNCMVhtVFdPd2JqS2JYVE5EeXhj?oc=5",
+      "sure": true
+    },
+    {
+      "id": "c9cfccdb1a10",
+      "title": "＜画像6 / 9＞おいもバウムから栗カレーまで！SAPAで人気の茨城土産9選",
+      "source": "ウォーカープラス",
+      "date": "2026-08-02T20:33",
+      "city": [
+        "moriya"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE10WmdJZEtqT1RkWlZRd3VxSWRsOEpwT1pDR1l6TjdqWnZOUU1wVWlWMUZuQTdnZ2ViRXpDYVhfZ3lCU01heVU1VFFYUDZDMXBMNzZabzZ5ZjhfeE1PNm1MV05WcDJhWE1lTGhuaDRNdGZaX3dPT3dic2d5bw?oc=5",
       "sure": true
     },
     {
@@ -2065,6 +2069,19 @@
       "sure": true
     },
     {
+      "id": "4f296f747d85",
+      "title": "画像19 / 19＞牛久大仏(茨城)の魅力を徹底解説！“世界一高い青銅製の仏像”の楽しみ方から、人気のお土産まで丸わかり【コロナ対策情報付き】",
+      "source": "ウォーカープラス",
+      "date": "2026-08-01T09:24",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9wQzlvUjhuZ3pqcmxVYXRHVF9pX2FsNmhOeGRBY0dzelRHempfQ3UzSXk0Rnc4ckQwTll3VHp3X1VOWUpsYmdrU0FpTk5mQ0pzb0JjblE4TXd0T0lvbUxPVGw4eDU0SXdQS0Yzcmh4NzlsQ09IWTRwYzRxUFJKbXc?oc=5",
+      "sure": true
+    },
+    {
       "id": "e96b65c14279",
       "title": "技能継承と品質向上を目指し、前川製作所が「社内溶接技術競技会」を開催",
       "source": "朝日新聞",
@@ -2193,32 +2210,6 @@
       "sure": true
     },
     {
-      "id": "28f510a140b5",
-      "title": "傍らのひと （３０）プロゴルフのキャディー 原田真由美（はらだ・まゆみ）さん 不振の時こそ存在価値 どんな言葉で何を語るか",
-      "source": "chukei-news.co.jp",
-      "date": "2026-08-01T05:12",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1kVG9LWWs4bGhKMi1fNVJqZ2J6QVh3aDdzZU1jdlVkMmJTVTd1UnEtSmNmNlFZdFBYak9tLThYdlg2dHFtVTJtSUFLaEdVOFdlSEh6TnhjLW9IclRoSjdrVEsxLUt6QmpPUlU4d1psSkg1NEU?oc=5",
-      "sure": false
-    },
-    {
-      "id": "41122eee0ed3",
-      "title": "＜画像5 / 5＞これは買っておきたい！東日本サービスエリア・パーキングエリアのお土産ベスト5",
-      "source": "ウォーカープラス",
-      "date": "2026-08-01T04:39",
-      "city": [
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBteW9jdmJWaFNXMTZ0aHNnVmpCODh1djBPcFFVMldydEo3Y1JNNG1naEU2WTFDRlN2WFJBLVNDWm5ZSThkYURrSlU1RC1RZGp2cEIwcVBLZ0JiTkdiN2s3RVFOcEFUZUlZ?oc=5",
-      "sure": false
-    },
-    {
       "id": "6b8d325f38c0",
       "title": "茨城県の過去の天気(アメダス・降水量・2026年08月)",
       "source": "tenki.jp",
@@ -2238,19 +2229,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9leUV3ZUQyX3l1WUxXRGRNbG1pakdfZXF0d1p0eUV5dVl2ckZ0RlA3aWhsMHcwV0FMSnZqN0hOczg3TmVZNzJXUWRVZ09vSkhPNDlSS3RqZVV3cnp2Ylk3b2VzLTg?oc=5",
-      "sure": true
-    },
-    {
-      "id": "21b07b169195",
-      "title": "画像10 / 19＞牛久大仏(茨城)の魅力を徹底解説！“世界一高い青銅製の仏像”の楽しみ方から、人気のお土産まで丸わかり【コロナ対策情報付き】",
-      "source": "ウォーカープラス",
-      "date": "2026-08-01T02:54",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5keW1iZ1NZdUdIeDZOWWh6WHkyR0xrbXp5SnFKQkt0clZkNU5sR0ZYQ0hwNjJ1SlZRckEtVUNjTlJ4QnZQMzFrU3poOTk3aGNyS3plRER4OFQ0UnpxczhaT1htZDlXM1lEd0ZuWUlpd0Y2bW1JS25vQXpNZ3lIcms?oc=5",
       "sure": true
     },
     {
@@ -2704,28 +2682,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1rVk1PQWV1ZFBxMmdCZUljaXZXOTZFNTk2M2c1Z2drb0RickZEZlNSeXFGcEEwSmlIbHdNZzFyTGNZc0NPdEJ2bzExZjZsbDdIYkduLTllTQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "82f3c774b779",
-      "title": "R8年度 茨城県 企業の採用担当者及び経営者向け 「採用力強化支援事業」の実施について",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-07-28T19:59",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbmpXYlhIeWdJWGQ3a1hWUWpYcGw4Q0ZKQlRsTDl1dUR3d2thbW9vblRQOXl4WUtmSC1wMU0zYXBjNUdGQTRSdlQxNU5wZm5qR0FLV2lPTlU2MXF5VjlLeDBlQ1BVR3NvZzczYnVtVzR6TmRiR2ZNTUZySkJ0bGowcmxWenRRV3Atc0dRTkdFYVc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "0a4d5c0feba0",
-      "title": "R８年度 茨城県 企業の採用担当者向け 「採用力強化支援事業」の実施について",
-      "source": "pref.ibaraki.jp",
-      "date": "2026-07-28T19:59",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbmpXYlhIeWdJWGQ3a1hWUWpYcGw4Q0ZKQlRsTDl1dUR3d2thbW9vblRQOXl4WUtmSC1wMU0zYXBjNUdGQTRSdlQxNU5wZm5qR0FLV2lPTlU2MXF5VjlLeDBlQ1BVR3NvZzczYnVtVzR6TmRiR2ZNTUZySkJ0bGowcmxWenRRV3Atc0dRTkdFYVc?oc=5",
       "sure": true
     }
   ]
