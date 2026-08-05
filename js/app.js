@@ -119,13 +119,25 @@ function cautionKey(w) {
   return "mild";
 }
 
+// ③ キャラの一言を選ぶ。天気ごとに複数用意されていれば、その日のぶんを1つ選ぶ。
+//    （毎回ランダムにすると読み込むたびに文が変わってしまうので、日付で決めて1日は固定する）
+//    flavor が文字列1つだけの旧形式にも対応。
+function flavorOf(set, w) {
+  const f = set.flavor;
+  if (!f) return "";
+  if (typeof f === "string") return f;                 // 旧形式
+  const list = f[cautionKey(w)] || f.mild;
+  if (!list) return "";
+  return Array.isArray(list) ? pickOfDay(list, Date.now()) : list;
+}
+
 function wxComment(who, w) {
   const set = WX_COMMENTS[who];
   if (!set || !set.laundry) return "";   // 旧データ形式なら空にして崩れを防ぐ
   const parts = [
     set.laundry[laundryKey(w)],
     set.caution[cautionKey(w)],
-    set.flavor
+    flavorOf(set, w)
   ].filter(Boolean);
   return parts.join(" ");
 }
