@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T07:37",
+  "updated": "2026-08-06T07:41",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,20 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "CULTA、柏の葉・つくばに新たな研究開発拠点を開設",
+      "source": "CULTA",
+      "date": "2026-08-06T07:41",
+      "city": [
+        "tsukuba"
+      ],
+      "category": [
+        "news"
+      ],
+      "emoji": "📰",
+      "url": "https://culta.jp/news/202608_chiba_tsukuba",
+      "thumb": ""
     },
     {
       "title": "【土浦市】7年ぶりに復活！「生タピオカ専門店 茨谷園」が川口ショッピングセンター・モール505に8月1日オープン",
