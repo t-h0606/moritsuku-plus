@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>4コマ投稿 | もりつく＋（内部用）</title>
+<style>
+  :root{
+    --navy:#16203A; --moriya:#2FA36B; --mirai:#F59E2D; --tsukuba:#3D7BFF; --kinko:#8892A6; --onair:#FF4B5C;
+    --bg:#FAF7F0; --card:#FFFFFF; --line:#E6E1D6; --text:#22283A; --sub:#6B7280;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--bg); color:var(--text); padding-bottom:60px;
+  }
+  header{background:var(--navy); color:#fff; padding:18px 20px;}
+  header h1{margin:0; font-size:18px; font-weight:700;}
+  header p{margin:4px 0 0; font-size:12px; opacity:.7;}
+  main{max-width:640px; margin:0 auto; padding:20px 16px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px; margin-bottom:16px;
+  }
+  .card h2{font-size:14px; margin:0 0 12px; color:var(--sub); font-weight:700; letter-spacing:.02em;}
+  label{display:block; font-size:13px; font-weight:600; margin:12px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=text], input[type=password], input[type=date]{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    font-size:14px; font-family:inherit; background:#fff; color:var(--text);
+  }
+  .hint{font-size:12px; color:var(--sub); line-height:1.7; margin:6px 0 0;}
+  .pat-status{font-size:12px; margin-top:8px;}
+  .pat-status.ok{color:var(--moriya);}
+  .pat-status.ng{color:var(--onair);}
+  .btn{
+    display:inline-block; padding:10px 18px; border:none; border-radius:999px;
+    background:var(--navy); color:#fff; font-size:13px; font-weight:700;
+    font-family:inherit; cursor:pointer;
+  }
+  .btn.sub{background:#fff; color:var(--text); border:1px solid var(--line); font-weight:600;}
+  .btn.danger{background:#fff; color:var(--onair); border:1px solid var(--onair); font-weight:600;}
+  .btn:disabled{opacity:.45; cursor:default;}
+  .btn-main{
+    width:100%; padding:15px; font-size:15px; border-radius:12px; background:var(--onair);
+  }
+
+  /* 自動採番の表示 */
+  .auto-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .auto-box{
+    flex:1 1 0; min-width:130px; border:1px solid var(--line); border-radius:10px;
+    padding:10px 12px; background:#FCFBF8;
+  }
+  .auto-box .k{font-size:11px; color:var(--sub);}
+  .auto-box .v{font-size:16px; font-weight:700; margin-top:2px;}
+
+  /* コマ選択 */
+  .drop{
+    border:2px dashed var(--line); border-radius:12px; padding:22px; text-align:center;
+    color:var(--sub); font-size:13px; cursor:pointer; background:#FCFBF8;
+  }
+  .drop.on{border-color:var(--navy); background:#EEF1F7;}
+  .panels{display:flex; flex-direction:column; gap:10px; margin-top:12px;}
+  .panel-row{
+    display:flex; gap:10px; align-items:center;
+    border:1px solid var(--line); border-radius:10px; padding:8px; background:#fff;
+  }
+  .panel-row img{width:120px; height:auto; border-radius:4px; border:1px solid var(--line); display:block;}
+  .panel-no{
+    flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--navy); color:#fff;
+    font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .panel-info{flex:1 1 0; min-width:0; font-size:11px; color:var(--sub); line-height:1.6; word-break:break-all;}
+  .panel-ops{flex:0 0 auto; display:flex; flex-direction:column; gap:4px;}
+  .mini{
+    padding:4px 8px; font-size:11px; border:1px solid var(--line); border-radius:6px;
+    background:#fff; cursor:pointer; font-family:inherit;
+  }
+  .mini:disabled{opacity:.3; cursor:default;}
+
+  .chips{display:flex; gap:6px; flex-wrap:wrap;}
+  .chip{
+    padding:7px 12px; border-radius:999px; border:1px solid var(--line);
+    background:#fff; font-size:12px; cursor:pointer; user-select:none;
+  }
+  .chip.on{background:var(--navy); color:#fff; border-color:transparent;}
+
+  .check{display:flex; align-items:flex-start; gap:8px; font-size:13px; font-weight:600; margin-top:4px;}
+  .check input{margin-top:2px;}
+
+  #log{
+    display:none; white-space:pre-wrap; font-size:12.5px; line-height:1.8;
+    padding:12px 14px; border-radius:10px; margin-top:14px;
+  }
+  #log.show{display:block;}
+  #log.ok{background:#EAF7EF; color:#1B6B43;}
+  #log.err{background:#FDEDEE; color:#A32330;}
+  #log.info{background:#EEF1F7; color:#2B3A5B;}
+
+  /* 掲載中の一覧 */
+  .ep{
+    display:flex; align-items:center; gap:10px; padding:10px 0;
+    border-top:1px solid var(--line);
+  }
+  .ep:first-child{border-top:none;}
+  .ep-no{
+    flex:0 0 auto; font-size:12px; font-weight:700; color:var(--navy);
+    background:#EEF1F7; border-radius:6px; padding:3px 8px;
+  }
+  .ep-body{flex:1 1 0; min-width:0;}
+  .ep-ttl{font-size:13.5px; font-weight:700; line-height:1.5;}
+  .ep-meta{font-size:11px; color:var(--sub); margin-top:2px;}
+  .ep-ops{flex:0 0 auto; display:flex; gap:6px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>4コマ投稿ページ</h1>
+  <p>もりつく＋（内部用）／ 画像とタイトルを入れるだけで「今週の4コマ」に載ります</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>アクセス許可証（初回だけ）</h2>
+    <label for="patInput">GitHubトークン</label>
+    <input type="password" id="patInput" placeholder="ghp_ で始まる文字列を貼り付け" autocomplete="off">
+    <p class="hint">記事投稿ページ・イベント投稿ページと<strong>同じトークンで大丈夫</strong>です。ただし保存場所が別なので、この画面でも一度だけ貼り付けが必要です。</p>
+    <div style="margin-top:10px;"><button class="btn sub" id="patSaveBtn" type="button">保存する</button></div>
+    <div class="pat-status" id="patStatus"></div>
+  </div>
+
+  <div class="card">
+    <h2>今回の話</h2>
+    <div class="auto-row">
+      <div class="auto-box"><div class="k">話数（自動）</div><div class="v" id="autoNo">…</div></div>
+      <div class="auto-box"><div class="k">公開日（自動）</div><div class="v" id="autoDate">…</div></div>
+    </div>
+    <p class="hint">話数は掲載済みのいちばん大きい番号＋1、公開日は今日の日付が自動で入ります。</p>
+
+    <label for="titleInput">タイトル</label>
+    <input type="text" id="titleInput" placeholder="例：大きすぎたカンペ" maxlength="40">
+    <p class="hint">1行に収まる長さで。全角20文字くらいまでが目安です。</p>
+
+    <label>出演（任意・押した順に並びます）</label>
+    <div class="chips" id="castChips"></div>
+    <input type="text" id="castInput" placeholder="自由に書き換えられます" style="margin-top:8px;">
+  </div>
+
+  <div class="card">
+    <h2>コマ画像</h2>
+    <div class="drop" id="drop">
+      ここをタップして画像を選ぶ（4枚まとめて選べます）<br>
+      <span style="font-size:11px;">選んだ順ではなく、ファイル名の順に並びます。あとで並べ替えもできます。</span>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    <div class="panels" id="panels"></div>
+
+    <label style="margin-top:16px;">
+      <span class="check">
+        <input type="checkbox" id="tidyChk" checked>
+        <span>コマを自動でそろえる（おすすめ）</span>
+      </span>
+    </label>
+    <p class="hint">まわりの白フチ・黒枠を切り取り、4枚の縦横比をそろえます。GPT image 2 は1コマ目だけ枠付きで出ることがあるため、既定でオンにしています。仕上がりが不自然なときはオフにしてください。</p>
+
+    <div style="margin-top:18px;">
+      <button class="btn btn-main" id="submitBtn" type="button">この4コマを掲載する</button>
+    </div>
+    <div id="log"></div>
+  </div>
+
+  <div class="card">
+    <h2>掲載中の4コマ</h2>
+    <div id="epList"><p class="hint">読み込み中です…</p></div>
+    <p class="hint" style="margin-top:12px;">削除するとページから消えますが、コマ画像そのものはリポジトリに残ります（容量はごくわずかです）。</p>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  const OWNER = "t-h0606";
+  const REPO  = "moritsuku-plus";
+  const MANGA_PATH = "data/manga.json";
+  const IMG_DIR = "images/manga";
+  const PAT_KEY = "moritsuku_add_manga_pat";
+  const OUT_W = 1200;      // 書き出し幅
+  const OUT_Q = 0.82;      // WebP品質（文字を読ませるため記事サムネより高め）
+
+  const CAST_NAMES = ["福老局長","四六ガマ子","ポン田P","ウリD","福老ハム太","カワセミドリ","白鷺ノン","隼ソラ"];
+
+  /* ================= PAT ================= */
+  const patInput  = document.getElementById('patInput');
+  const patStatus = document.getElementById('patStatus');
+  function loadPat(){ return localStorage.getItem(PAT_KEY) || ""; }
+  function refreshPatStatus(){
+    const pat = loadPat();
+    if(pat){
+      patStatus.textContent = "設定済みです（保存済みのトークンを使用します）";
+      patStatus.className = "pat-status ok";
+      patInput.value = "";
+      patInput.placeholder = "変更する場合はここに新しいトークンを貼り付け";
+    } else {
+      patStatus.textContent = "未設定です。トークンを貼り付けて保存してください。";
+      patStatus.className = "pat-status ng";
+    }
+  }
+  document.getElementById('patSaveBtn').addEventListener('click', function(){
+    const v = patInput.value.trim();
+    if(!v){ alert("トークンを入力してください"); return; }
+    localStorage.setItem(PAT_KEY, v);
+    refreshPatStatus();
+    loadEpisodes();
+  });
+  refreshPatStatus();
+
+  /* ================= 共通ユーティリティ ================= */
+  function b64EncodeUnicode(str){
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    for(let i=0;i<bytes.length;i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  }
+  function b64DecodeUnicode(b64){
+    const binary = atob(b64.replace(/\n/g,''));
+    const bytes = new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++) bytes[i] = binary.charCodeAt(i);
+    return new TextDecoder('utf-8').decode(bytes);
+  }
+  function blobToBase64(blob){
+    return new Promise((resolve, reject)=>{
+      const r = new FileReader();
+      r.onloadend = ()=> resolve(r.result.split(',')[1]);
+      r.onerror = reject;
+      r.readAsDataURL(blob);
+    });
+  }
+  function todayStr(){
+    const d = new Date();
+    const p = n => String(n).padStart(2,'0');
+    return d.getFullYear() + "-" + p(d.getMonth()+1) + "-" + p(d.getDate());
+  }
+  function nowStamp(){
+    const d = new Date();
+    const p = n => String(n).padStart(2,'0');
+    return todayStr() + "T" + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
+  /* ================= GitHub API ================= */
+  function ghHeaders(pat){
+    return { "Authorization": "token " + pat, "Accept": "application/vnd.github+json" };
+  }
+  async function ghGetFile(pat, path){
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+      headers: ghHeaders(pat), cache: "no-store"
+    });
+    if(res.status === 404) return null;                 // まだ無いファイル
+    if(!res.ok) throw new Error(`取得失敗 (${res.status}): ${(await res.text()).slice(0,200)}`);
+    return res.json();
+  }
+  async function ghPutFile(pat, path, base64Content, message, sha){
+    const body = { message, content: base64Content };
+    if(sha) body.sha = sha;
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: Object.assign({ "Content-Type": "application/json" }, ghHeaders(pat)),
+      body: JSON.stringify(body)
+    });
+    if(!res.ok) throw new Error(`更新失敗 (${res.status}): ${(await res.text()).slice(0,300)}`);
+    return res.json();
+  }
+
+  /* ================= コマ画像の下ごしらえ ================= */
+  function loadImage(file){
+    return new Promise((resolve, reject)=>{
+      const img = new Image();
+      const url = URL.createObjectURL(file);
+      img.onload = ()=>{ URL.revokeObjectURL(url); resolve(img); };
+      img.onerror = ()=>{ URL.revokeObjectURL(url); reject(new Error("画像を読めませんでした：" + file.name)); };
+      img.src = url;
+    });
+  }
+
+  /* まわりの白フチ・黒枠を検出する。
+     端から順に「ほぼ白一色の行」「ほぼ黒一色の行」を飛ばし、絵が始まったら止める。
+     切りすぎ防止のため、1辺あたり最大12%までしか削らない。 */
+  function detectTrim(img){
+    const c = document.createElement('canvas');
+    const S = Math.min(400, img.width);                 // 判定は縮小画像で十分
+    c.width = S; c.height = Math.round(img.height * S / img.width);
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    const d = ctx.getImageData(0,0,c.width,c.height).data;
+    const W = c.width, H = c.height;
+    const at = (x,y)=>{ const i=(y*W+x)*4; return (d[i]+d[i+1]+d[i+2])/3; };
+
+    function lineKind(fixed, isRow){
+      const len = isRow ? W : H;
+      let white=0, dark=0;
+      for(let i=0;i<len;i++){
+        const v = isRow ? at(i,fixed) : at(fixed,i);
+        if(v > 242) white++; else if(v < 70) dark++;
+      }
+      if(white/len > 0.93) return "white";
+      if(dark/len  > 0.90) return "dark";
+      return "art";
+    }
+    function eat(startFn, limit, isRow){
+      let n = 0, seenDark = false;
+      while(n < limit){
+        const k = lineKind(startFn(n), isRow);
+        if(k === "white"){ n++; continue; }
+        if(k === "dark" && !seenDark){ seenDark = true; n++; continue; }
+        if(k === "dark" && seenDark){ n++; continue; }
+        break;
+      }
+      return n;
+    }
+    const limH = Math.floor(H*0.12), limW = Math.floor(W*0.12);
+    const top    = eat(n=>n,        limH, true);
+    const bottom = eat(n=>H-1-n,    limH, true);
+    const left   = eat(n=>n,        limW, false);
+    const right  = eat(n=>W-1-n,    limW, false);
+
+    const k = img.width / W;                            // 縮小前の座標へ戻す
+    let x = Math.round(left*k), y = Math.round(top*k);
+    let w = img.width - Math.round((left+right)*k);
+    let h = img.height - Math.round((top+bottom)*k);
+    if(w < img.width*0.7 || h < img.height*0.7) return {x:0,y:0,w:img.width,h:img.height};
+    return {x,y,w,h};
+  }
+
+  function median(arr){
+    const a = arr.slice().sort((p,q)=>p-q);
+    const m = Math.floor(a.length/2);
+    return a.length % 2 ? a[m] : (a[m-1]+a[m])/2;
+  }
+
+  /* 選ばれた画像すべてを、同じ縦横比・幅1200pxのWebPにして返す */
+  async function buildPanels(items, tidy){
+    const imgs = [];
+    for(const it of items) imgs.push(await loadImage(it.file));
+
+    const crops = imgs.map(img => tidy ? detectTrim(img) : {x:0,y:0,w:img.width,h:img.height});
+    const ratios = crops.map(c => c.w / c.h);
+    const target = tidy ? median(ratios) : null;
+
+    const blobs = [];
+    for(let i=0;i<imgs.length;i++){
+      let {x,y,w,h} = crops[i];
+      if(tidy){
+        // 縦横比を中央基準でそろえる（差が大きいものは無理に合わせない）
+        const r = w/h;
+        if(Math.abs(r - target)/target < 0.15){
+          if(r > target){ const nw = h*target; x += (w-nw)/2; w = nw; }
+          else          { const nh = w/target; y += (h-nh)/2; h = nh; }
+        }
+      }
+      const outH = Math.round(OUT_W * h / w);
+      const cv = document.createElement('canvas');
+      cv.width = OUT_W; cv.height = outH;
+      cv.getContext('2d').drawImage(imgs[i], x, y, w, h, 0, 0, OUT_W, outH);
+      const blob = await new Promise(res => cv.toBlob(res, 'image/webp', OUT_Q));
+      if(!blob) throw new Error("画像の書き出しに失敗しました（" + items[i].file.name + "）");
+      blobs.push({ blob, w: OUT_W, h: outH });
+    }
+    return blobs;
+  }
+
+  /* ================= コマの選択UI ================= */
+  let PICKED = [];   // { file, url }
+  const fileInput = document.getElementById('fileInput');
+  const drop      = document.getElementById('drop');
+  const panelsBox = document.getElementById('panels');
+
+  drop.addEventListener('click', ()=> fileInput.click());
+  drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('on'); });
+  drop.addEventListener('dragleave', ()=> drop.classList.remove('on'));
+  drop.addEventListener('drop', e=>{
+    e.preventDefault(); drop.classList.remove('on');
+    addFiles(Array.from(e.dataTransfer.files || []));
+  });
+  fileInput.addEventListener('change', ()=>{
+    addFiles(Array.from(fileInput.files || []));
+    fileInput.value = '';
+  });
+
+  function addFiles(files){
+    const imgs = files.filter(f => f.type.startsWith('image/'));
+    imgs.sort((a,b)=> a.name.localeCompare(b.name, 'ja', {numeric:true}));
+    imgs.forEach(f => PICKED.push({ file:f, url: URL.createObjectURL(f) }));
+    renderPanels();
+  }
+  function renderPanels(){
+    panelsBox.innerHTML = '';
+    PICKED.forEach((p, i)=>{
+      const row = document.createElement('div');
+      row.className = 'panel-row';
+
+      const no = document.createElement('div');
+      no.className = 'panel-no'; no.textContent = i+1;
+
+      const im = document.createElement('img'); im.src = p.url; im.alt = '';
+
+      const info = document.createElement('div');
+      info.className = 'panel-info';
+      info.textContent = p.file.name + "（" + Math.round(p.file.size/1024) + "KB）";
+
+      const ops = document.createElement('div');
+      ops.className = 'panel-ops';
+      const up = document.createElement('button');
+      up.className='mini'; up.type='button'; up.textContent='▲'; up.disabled = (i===0);
+      up.addEventListener('click', ()=>{ const t=PICKED[i-1]; PICKED[i-1]=PICKED[i]; PICKED[i]=t; renderPanels(); });
+      const dn = document.createElement('button');
+      dn.className='mini'; dn.type='button'; dn.textContent='▼'; dn.disabled = (i===PICKED.length-1);
+      dn.addEventListener('click', ()=>{ const t=PICKED[i+1]; PICKED[i+1]=PICKED[i]; PICKED[i]=t; renderPanels(); });
+      const rm = document.createElement('button');
+      rm.className='mini'; rm.type='button'; rm.textContent='削除';
+      rm.addEventListener('click', ()=>{ URL.revokeObjectURL(PICKED[i].url); PICKED.splice(i,1); renderPanels(); });
+      ops.append(up, dn, rm);
+
+      row.append(no, im, info, ops);
+      panelsBox.appendChild(row);
+    });
+  }
+
+  /* ================= 出演チップ ================= */
+  const castChips = document.getElementById('castChips');
+  const castInput = document.getElementById('castInput');
+  CAST_NAMES.forEach(name=>{
+    const b = document.createElement('div');
+    b.className = 'chip'; b.textContent = name;
+    b.addEventListener('click', ()=>{
+      const cur = castInput.value.split('／').map(s=>s.trim()).filter(Boolean);
+      const at = cur.indexOf(name);
+      if(at >= 0) cur.splice(at,1); else cur.push(name);
+      castInput.value = cur.join('／');
+      syncCastChips();
+    });
+    castChips.appendChild(b);
+  });
+  function syncCastChips(){
+    const cur = castInput.value.split('／').map(s=>s.trim());
+    Array.from(castChips.children).forEach(c=>{
+      c.classList.toggle('on', cur.includes(c.textContent));
+    });
+  }
+  castInput.addEventListener('input', syncCastChips);
+
+  /* ================= 掲載中の一覧 ================= */
+  let EPISODES = [];
+  let MANGA_SHA = null;
+  const epList = document.getElementById('epList');
+
+  async function loadEpisodes(){
+    const pat = loadPat();
+    try{
+      let json;
+      if(pat){
+        const f = await ghGetFile(pat, MANGA_PATH);
+        if(!f) throw new Error("data/manga.json が見つかりません");
+        MANGA_SHA = f.sha;
+        json = JSON.parse(b64DecodeUnicode(f.content));
+      } else {
+        const r = await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/main/${MANGA_PATH}?t=` + Date.now());
+        json = await r.json();
+      }
+      EPISODES = (json.items || []).slice().sort((a,b)=> String(b.date).localeCompare(String(a.date)));
+      renderEpList();
+      refreshAuto();
+    }catch(err){
+      epList.innerHTML = '<p class="hint">一覧を読めませんでした：' + err.message + '</p>';
+    }
+  }
+
+  function renderEpList(){
+    if(!EPISODES.length){ epList.innerHTML = '<p class="hint">まだ1話もありません。</p>'; return; }
+    epList.innerHTML = '';
+    EPISODES.forEach(ep=>{
+      const row = document.createElement('div');
+      row.className = 'ep';
+
+      const no = document.createElement('div');
+      no.className = 'ep-no'; no.textContent = '第' + ep.no + '話';
+
+      const body = document.createElement('div');
+      body.className = 'ep-body';
+      const t = document.createElement('div'); t.className='ep-ttl'; t.textContent = ep.title || '(無題)';
+      const m = document.createElement('div'); m.className='ep-meta';
+      m.textContent = (ep.date || '') + '　コマ' + ((ep.panels||[]).length) + '枚'
+                    + (ep.cast ? '　出演：' + ep.cast : '');
+      body.append(t, m);
+
+      const ops = document.createElement('div');
+      ops.className = 'ep-ops';
+      const ed = document.createElement('button');
+      ed.className='mini'; ed.type='button'; ed.textContent='編集';
+      ed.addEventListener('click', ()=> editEpisode(ep));
+      const dl = document.createElement('button');
+      dl.className='mini'; dl.type='button'; dl.textContent='削除';
+      dl.addEventListener('click', ()=> deleteEpisode(ep));
+      ops.append(ed, dl);
+
+      row.append(no, body, ops);
+      epList.appendChild(row);
+    });
+  }
+
+  function refreshAuto(){
+    const maxNo = EPISODES.reduce((m,e)=> Math.max(m, Number(e.no)||0), 0);
+    document.getElementById('autoNo').textContent = '第' + (maxNo + 1) + '話';
+    document.getElementById('autoDate').textContent = todayStr();
+  }
+
+  /* 一覧からの編集・削除は manga.json だけを書き換える */
+  async function saveManga(items, message){
+    const pat = loadPat();
+    if(!pat) throw new Error("トークンが未設定です");
+    const f = await ghGetFile(pat, MANGA_PATH);           // 直前に取り直す（他端末の追加を消さないため）
+    if(!f) throw new Error("data/manga.json が見つかりません");
+    const cur = JSON.parse(b64DecodeUnicode(f.content));
+    cur.items = items;
+    cur.updated = nowStamp();
+    await ghPutFile(pat, MANGA_PATH, b64EncodeUnicode(JSON.stringify(cur, null, 2) + "\n"), message, f.sha);
+    return cur;
+  }
+
+  async function editEpisode(ep){
+    const t = prompt("タイトルを直します", ep.title || "");
+    if(t === null) return;
+    const c = prompt("出演を直します（空でも可）", ep.cast || "");
+    if(c === null) return;
+    try{
+      log("保存しています…", "info");
+      const pat = loadPat();
+      const f = await ghGetFile(pat, MANGA_PATH);
+      const cur = JSON.parse(b64DecodeUnicode(f.content));
+      const target = (cur.items||[]).find(x => String(x.no) === String(ep.no));
+      if(!target) throw new Error("その話が見つかりませんでした");
+      target.title = t.trim();
+      if(c.trim()) target.cast = c.trim(); else delete target.cast;
+      cur.updated = nowStamp();
+      await ghPutFile(pat, MANGA_PATH, b64EncodeUnicode(JSON.stringify(cur, null, 2) + "\n"),
+                      `4コマ 第${ep.no}話 を編集`, f.sha);
+      log("✅ 直しました。1〜2分でサイトに反映されます。", "ok");
+      loadEpisodes();
+    }catch(err){ log("エラー：" + err.message, "err"); }
+  }
+
+  async function deleteEpisode(ep){
+    if(!confirm(`第${ep.no}話「${ep.title}」を削除します。よろしいですか？`)) return;
+    try{
+      log("削除しています…", "info");
+      const pat = loadPat();
+      const f = await ghGetFile(pat, MANGA_PATH);
+      const cur = JSON.parse(b64DecodeUnicode(f.content));
+      cur.items = (cur.items||[]).filter(x => String(x.no) !== String(ep.no));
+      cur.updated = nowStamp();
+      await ghPutFile(pat, MANGA_PATH, b64EncodeUnicode(JSON.stringify(cur, null, 2) + "\n"),
+                      `4コマ 第${ep.no}話 を削除`, f.sha);
+      log("✅ 削除しました。1〜2分でサイトに反映されます。", "ok");
+      loadEpisodes();
+    }catch(err){ log("エラー：" + err.message, "err"); }
+  }
+
+  /* ================= 投稿 ================= */
+  const logEl = document.getElementById('log');
+  function log(msg, type){ logEl.textContent = msg; logEl.className = 'show ' + (type||''); }
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.addEventListener('click', async function(){
+    const pat = loadPat();
+    const title = document.getElementById('titleInput').value.trim();
+    const cast  = castInput.value.trim();
+    const tidy  = document.getElementById('tidyChk').checked;
+
+    if(!pat){ log("トークンが未設定です。いちばん上の欄に貼り付けて保存してください。", "err"); return; }
+    if(!title){ log("タイトルを入れてください。", "err"); return; }
+    if(!PICKED.length){ log("コマ画像を選んでください。", "err"); return; }
+    if(PICKED.length !== 4 && !confirm(`コマが${PICKED.length}枚です。このまま掲載しますか？`)) return;
+
+    submitBtn.disabled = true;
+    try{
+      /* ① いちばん新しい manga.json を取り直し、話数を決める */
+      log("① 掲載済みの4コマを確認しています…", "info");
+      const f = await ghGetFile(pat, MANGA_PATH);
+      if(!f) throw new Error("data/manga.json が見つかりません");
+      const cur = JSON.parse(b64DecodeUnicode(f.content));
+      cur.items = cur.items || [];
+      const no = cur.items.reduce((m,e)=> Math.max(m, Number(e.no)||0), 0) + 1;
+      const date = todayStr();
+
+      /* ② 画像を整えて書き出す */
+      log("② コマ画像を整えています…", "info");
+      const built = await buildPanels(PICKED, tidy);
+
+      /* ③ 1枚ずつアップロード */
+      const paths = [];
+      for(let i=0;i<built.length;i++){
+        const path = `${IMG_DIR}/${date}-${no}-${i+1}.webp`;
+        log(`③ コマ画像をアップロード中… (${i+1}/${built.length})`, "info");
+        const exist = await ghGetFile(pat, path);            // 同名があれば上書き
+        await ghPutFile(pat, path, await blobToBase64(built[i].blob),
+                        `4コマ 第${no}話 ${i+1}コマ目`, exist ? exist.sha : null);
+        paths.push(path);
+      }
+
+      /* ④ manga.json を更新（直前に取り直して、他端末の追加分を消さない） */
+      log("④ 4コマページに反映しています…", "info");
+      const f2 = await ghGetFile(pat, MANGA_PATH);
+      const cur2 = JSON.parse(b64DecodeUnicode(f2.content));
+      cur2.items = cur2.items || [];
+      const item = { no, title, date, panels: paths };
+      if(cast) item.cast = cast;
+      cur2.items.unshift(item);
+      cur2.updated = nowStamp();
+      await ghPutFile(pat, MANGA_PATH, b64EncodeUnicode(JSON.stringify(cur2, null, 2) + "\n"),
+                      `4コマ 第${no}話「${title}」を掲載`, f2.sha);
+
+      log(`✅ 第${no}話「${title}」を掲載しました（コマ${paths.length}枚）。\n`
+        + `1〜2分でサイトに反映されます。\n`
+        + `確認：https://t-h0606.github.io/moritsuku-plus/manga.html\n`
+        + `（反映されないときは Ctrl+Shift+R で強制再読み込み）`, "ok");
+
+      /* 入力を片づける */
+      PICKED.forEach(p => URL.revokeObjectURL(p.url));
+      PICKED = []; renderPanels();
+      document.getElementById('titleInput').value = '';
+      castInput.value = ''; syncCastChips();
+      loadEpisodes();
+
+    }catch(err){
+      log("エラー：" + err.message + "\n\n何も壊れていません。原因を直してもう一度お試しください。", "err");
+    }finally{
+      submitBtn.disabled = false;
+    }
+  });
+
+  loadEpisodes();
+})();
+</script>
+</body>
+</html>
