@@ -1,6 +1,18 @@
 {
-  "updated": "2026-08-03T12:00",
+  "updated": "2026-08-05T16:47",
   "items": [
+    {
+      "no": 2,
+      "title": "よゆうです！",
+      "date": "2026-08-05",
+      "panels": [
+        "images/manga/2026-08-05-2-1.webp",
+        "images/manga/2026-08-05-2-2.webp",
+        "images/manga/2026-08-05-2-3.webp",
+        "images/manga/2026-08-05-2-4.webp"
+      ],
+      "cast": "ウリD／福老ハム太"
+    },
     {
       "no": 1,
       "title": "ADハム太のおしごと",
