@@ -63,7 +63,7 @@ async function boot() {
     bindControls();
 
     // ページを開きっぱなしでも午前5時をまたいだら自動で交代する
-    setInterval(() => { renderNewsCaster(); refreshOnairCaster(); renderWeather(); }, 60 * 1000);
+    setInterval(() => { renderNewsCaster(); refreshOnairCaster(); renderWeather(); refreshStaffBlog(); }, 60 * 1000);
   } catch (e) {
     console.error(e);
     document.getElementById("feed").innerHTML =
@@ -485,6 +485,15 @@ function renderVideo() {
 }
 
 /* ========== スタッフ紹介 ========== */
+
+// ひとことは staff.json の blog に複数用意しておけば、その日のぶんを自動で選ぶ
+// （毎回ランダムだと読み込むたびに変わってしまうので、日付で決めて1日は固定する）。
+// 文字列1つだけの旧形式にも対応。文言を直したいときは staff.json を編集。
+function blogOfDay(s) {
+  if (!s || !s.blog) return "";
+  return Array.isArray(s.blog) ? pickOfDay(s.blog, Date.now()) : s.blog;
+}
+
 function renderStaff() {
   document.getElementById("staff").innerHTML = STAFF.map(s => `
     <a class="staff-card" href="#">
@@ -492,7 +501,7 @@ function renderStaff() {
       <span class="body">
         <div class="role">${s.role}</div>
         <div class="name">${s.name}</div>
-        <div class="blog">${s.blog}</div>
+        <div class="blog">${blogOfDay(s)}</div>
       </span>
     </a>`).join("");
 }
@@ -587,6 +596,15 @@ function renderNewsCaster() {
   img.alt = s.name + "（" + r.label + "リポーター）";
   el.title = s.name + "／" + r.label + "リポーター";
   el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
+}
+
+// スタッフ紹介のひとことも午前5時に入れ替わる。当番日が変わったときだけ描き直す。
+let currentStaffDay = null;
+function refreshStaffBlog() {
+  const day = broadcastDayNo();
+  if (day === currentStaffDay) return;
+  currentStaffDay = day;
+  renderStaff();
 }
 
 let currentOnairStaff = null;
