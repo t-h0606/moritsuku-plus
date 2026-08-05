@@ -27,10 +27,12 @@
   <div class="wrap">
     <div class="head-top">
       <div class="brand">
-        <h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1>
+        <h1 class="logo"><a href="#" id="logoHome" aria-label="もりつく＋ トップに戻る"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></a></h1>
         <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
       </div>
-      <div class="onair-lamp"><span class="bulb"></span>ON AIR</div>
+      <a class="manga-btn" href="manga.html">
+        <span class="manga-ico" aria-hidden="true"><i></i><i></i><i></i><i></i></span>今週の4コマ
+      </a>
     </div>
   </div>
 </header>
@@ -160,6 +162,21 @@
     subtree: true, attributes: true, attributeFilter: ["aria-pressed"]
   });
   sync();
+})();
+
+/* ロゴをタップしたら、駅セレクタ「すべて」・ジャンル「最新記事」に戻して最上部へスクロールする。
+   state を直接書き換えず、既存のボタンを .click() するだけなので app.js は変更していない。 */
+(function () {
+  const logo = document.getElementById("logoHome");
+  if (!logo) return;
+  logo.addEventListener("click", function (e) {
+    e.preventDefault();
+    const allStation = document.querySelector('.station[data-city="all"]');
+    const allChip = document.querySelector('.chip[data-cat="all"]');
+    if (allStation && allStation.getAttribute("aria-pressed") !== "true") allStation.click();
+    if (allChip && allChip.getAttribute("aria-pressed") !== "true") allChip.click();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
 </script>
 </body>
