@@ -2,7 +2,7 @@
    役割：一度読んだ「入れ物」（HTML/CSS/JS/画像）を端末に保存し、2回目以降を高速化する。
    データ（data/*.json）は常に新しいものを取りに行き、通信できないときだけ保存分を使う。
    ※ サイトを更新したら下の CACHE の数字を1つ上げてください（古い保存分が捨てられます）。 */
-const CACHE = "moritsuku-v44";
+const CACHE = "moritsuku-v48";
 const SHELL = [
   "./", "./index.html", "./css/style.css", "./js/app.js", "./manifest.json",
   "./images/fukuro-kyokucho.webp", "./images/shiroku-gamako.webp", "./images/ponda-p.webp",
@@ -33,10 +33,11 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   // データは「新しいもの優先」。取れなければ保存分（＝圏外でも直近の内容が読める）
-  // データと、局内ツールの2ページ（記事投稿ページ・編成会議室）は「新しいもの優先」。
+  // データと、局内ツールの3ページ（記事投稿ページ・イベント投稿ページ・編成会議室）は「新しいもの優先」。
   // これらは更新頻度が高く、古いキャッシュが残ると投稿処理が古い版で動いてしまうため。
   if (url.pathname.includes("/data/") ||
       url.pathname.endsWith("/add-article.html") ||
+      url.pathname.endsWith("/add-event.html") ||
       url.pathname.endsWith("/desk.html")) {
     e.respondWith(
       fetch(req).then(res => {

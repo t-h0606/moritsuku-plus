@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- もりつく＋ お問い合わせ・情報提供（2026-08-04 新設）
+     送信先（Formspreeのエンドポイント）は設定済みです：https://formspree.io/f/xrpzzaar
+     受信先メールアドレスを変えるときは、このファイルではなく
+     Formspree の管理画面（Form Settings）で変更してください。
+
+     送信の仕組み：Formspree（外部サービス）へ普通にフォーム送信し、
+     終わったら contact.html?sent=1 に戻ってくる → 画面上部に完了メッセージが出る。
+     JavaScriptに頼らないので、reCAPTCHAが出る場合でも確実に届きます。 -->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>お問い合わせ・情報提供 | もりつく＋</title>
+<meta name="description" content="もりつく＋への、掲載記事の取り下げ・修正のご依頼、情報提供、取材のご依頼などのお問い合わせ窓口です。">
+<meta name="theme-color" content="#16203A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== お問い合わせページ専用（このページだけで使うスタイル） =====
+   events.html / manga.html と同じく、CSSもJSもこの1ファイルに閉じ込めています。
+   共有ファイル（style.css / app.js）を増やさないための作りです。 */
+
+/* 戻るボタン（events.html の .ev-back と同じ見た目） */
+.doc-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  flex-shrink: 0; margin-top: 2px;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff; font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.doc-back:hover { background: rgba(255,255,255,0.12); }
+
+.doc-hero { padding: 26px 0 4px; }
+.doc-hero h1 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1.7rem; color: var(--ink); line-height: 1.4;
+}
+.doc-hero .lead {
+  margin-top: 10px; font-size: 0.86rem; color: var(--ink-sub);
+  line-height: 1.9; max-width: 44em;
+}
+
+.doc-body { padding: 8px 0 40px; }
+.doc-body .wrap > * + * { margin-top: 26px; }
+
+/* 説明ブロック */
+.note-box {
+  border: 1.5px solid var(--paper-line); border-radius: var(--radius);
+  background: #fff; padding: 16px 18px;
+}
+.note-box h2 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 0.98rem; color: var(--ink); margin-bottom: 8px;
+}
+.note-box p, .note-box li { font-size: 0.83rem; color: var(--ink-sub); line-height: 1.95; }
+.note-box ul { margin: 6px 0 0 1.1em; }
+.note-box li { margin-bottom: 2px; }
+.note-box strong { color: var(--ink); font-weight: 700; }
+
+/* 取り下げ依頼の目立たせ枠 */
+.note-box.urgent {
+  border-color: rgba(255,75,92,0.32);
+  background: linear-gradient(180deg, #FFF6F2, #fff 60%);
+}
+
+/* 送信完了メッセージ */
+#sentMsg {
+  border: 1.5px solid var(--c-moriya); border-radius: var(--radius);
+  background: #F1FAF5; padding: 16px 18px;
+}
+#sentMsg[hidden] { display: none; }
+#sentMsg .t {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1rem; color: var(--c-moriya); margin-bottom: 6px;
+}
+#sentMsg p { font-size: 0.83rem; color: var(--ink-sub); line-height: 1.95; }
+
+/* ===== フォーム ===== */
+.form-card {
+  border: 1.5px solid var(--paper-line); border-radius: var(--radius);
+  background: #fff; padding: 20px 20px 24px;
+}
+.form-card .fc-head {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1.05rem; color: var(--ink);
+  padding-bottom: 12px; margin-bottom: 18px;
+  border-bottom: 2px solid var(--studio);
+}
+.field + .field { margin-top: 18px; }
+.field label {
+  display: block; font-size: 0.83rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 6px;
+}
+.req, .opt {
+  display: inline-block; margin-left: 6px; vertical-align: 1px;
+  font-size: 0.64rem; font-weight: 700; padding: 2px 7px; border-radius: 999px;
+}
+.req { background: var(--onair); color: #fff; }
+.opt { background: #F0EEE7; color: var(--ink-sub); }
+.field .hint { font-size: 0.73rem; color: var(--ink-sub); line-height: 1.8; margin-top: 5px; }
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="url"],
+.field select,
+.field textarea {
+  width: 100%; box-sizing: border-box;
+  border: 1.5px solid var(--paper-line); border-radius: 10px;
+  padding: 11px 13px; font-size: 0.92rem; font-family: inherit;
+  color: var(--ink); background: #FCFBF8;
+}
+.field textarea { min-height: 170px; resize: vertical; line-height: 1.8; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--c-tsukuba); background: #fff;
+}
+
+/* 同意チェック */
+.agree {
+  margin-top: 22px; padding: 14px 16px;
+  border: 1.5px solid var(--paper-line); border-radius: 12px; background: #FAF8F3;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.agree input { margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; }
+.agree span { font-size: 0.8rem; color: var(--ink-sub); line-height: 1.8; }
+.agree a { color: var(--c-tsukuba); text-decoration: underline; }
+
+.send-btn {
+  margin-top: 20px; width: 100%;
+  background: var(--studio); color: #fff; border: none; border-radius: 999px;
+  padding: 15px 20px; font-size: 0.95rem; font-weight: 700;
+  font-family: "M PLUS Rounded 1c", sans-serif; cursor: pointer;
+}
+.send-btn:hover { background: #22304F; }
+.send-note { margin-top: 10px; font-size: 0.73rem; color: var(--ink-sub); line-height: 1.8; text-align: center; }
+
+/* ハニーポット：人には見えない。ボットだけが埋めるので迷惑投稿の判別に使う */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 640px) {
+  .doc-hero h1 { font-size: 1.35rem; }
+  .form-card { padding: 16px 15px 20px; }
+  .note-box { padding: 14px 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="studio-head">
+  <div class="wrap">
+    <div class="head-top">
+      <div class="brand">
+        <a href="index.html"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
+        <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
+      </div>
+      <a class="doc-back" href="index.html">← トップへ戻る</a>
+    </div>
+  </div>
+</header>
+
+<section class="doc-hero">
+  <div class="wrap">
+    <h1>お問い合わせ・情報提供</h1>
+    <p class="lead">
+      掲載記事の取り下げ・修正のご依頼、まちの情報のご提供、取材のご依頼などを承っています。
+      いただいた内容は運営者が確認のうえ、順次対応いたします。
+    </p>
+  </div>
+</section>
+
+<section class="doc-body">
+  <div class="wrap">
+
+    <!-- 送信が終わって戻ってきたときだけ出る（?sent=1 が付いている場合） -->
+    <div id="sentMsg" hidden>
+      <div class="t">送信が完了しました</div>
+      <p>
+        お問い合わせありがとうございます。内容を確認のうえ、ご記入いただいたメールアドレス宛にご返信いたします。<br>
+        個人で運営しているため、ご返信までにお時間をいただく場合があります。何卒ご了承ください。
+      </p>
+    </div>
+
+    <div class="note-box">
+      <h2>このサイトについて</h2>
+      <p>
+        「もりつく＋」は、動物のキャラクターが運営する架空のローカル報道局という体裁をとったウェブサイトです。
+        <strong>登場する局員・組織・番組はすべて架空のものですが、掲載している地域情報・イベント情報はすべて実在のものです。</strong>
+      </p>
+      <p style="margin-top:10px;">
+        掲載している記事には2種類あります。
+        <strong>他媒体の記事をご紹介する場合は、見出しとリンクのみを掲載</strong>しており、
+        記事本文および画像の転載は行っておりません（見出しをタップすると配信元のページへ移動します）。
+        これらの著作権は各配信元に帰属します。
+      </p>
+      <p style="margin-top:10px;">
+        もう1つは、<strong>当サイトが自ら取材・執筆した記事</strong>です。
+        こちらの文章・写真の著作権は当サイトに帰属します。
+        ご利用をご希望の場合は、下のフォームよりご相談ください。
+      </p>
+    </div>
+
+    <div class="note-box urgent">
+      <h2>掲載の取り下げ・修正をご依頼の方へ</h2>
+      <p>
+        <strong>ご依頼を確認しだい、速やかに対応いたします。</strong>
+        お手続きを早くするために、下のフォームで次の点をお知らせください。
+      </p>
+      <ul>
+        <li>該当する記事の見出し、または該当ページのURL（「該当記事のURL」欄）</li>
+        <li>取り下げ・修正のどちらをご希望か、その理由</li>
+        <li>ご依頼者と該当記事との関係（記事の配信元、掲載されているお店の方、など）</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <h2>お受けしている内容</h2>
+      <ul>
+        <li>掲載記事の取り下げ・修正のご依頼</li>
+        <li>掲載内容の誤りのご指摘</li>
+        <li>まちの情報のご提供（お店・イベント・話題）</li>
+        <li>取材・掲載のご希望</li>
+        <li>本サイトの運営に関するお問い合わせ</li>
+      </ul>
+      <p style="margin-top:10px;">
+        なお、営業目的のご連絡にはご返信いたしかねる場合があります。
+      </p>
+    </div>
+
+    <!-- ===== 入力フォーム ===== -->
+    <form class="form-card" id="contactForm"
+          action="https://formspree.io/f/xrpzzaar"
+          method="POST">
+
+      <div class="fc-head">入力フォーム</div>
+
+      <!-- 送信後の戻り先。Formspreeがこのページへ ?sent=1 付きで戻してくれる -->
+      <input type="hidden" name="_next" value="https://t-h0606.github.io/moritsuku-plus/contact.html?sent=1">
+      <!-- 届くメールの件名。中身は送信時にJSが差し替える -->
+      <input type="hidden" name="_subject" id="mailSubject" value="もりつく＋ お問い合わせ">
+
+      <div class="field">
+        <label for="f_type">お問い合わせの種類<span class="req">必須</span></label>
+        <select id="f_type" name="お問い合わせの種類" required>
+          <option value="">選択してください</option>
+          <option value="掲載の取り下げ・修正のご依頼">掲載の取り下げ・修正のご依頼</option>
+          <option value="掲載内容の誤りのご指摘">掲載内容の誤りのご指摘</option>
+          <option value="情報提供（お店・イベント・話題）">情報提供（お店・イベント・話題）</option>
+          <option value="取材・掲載のご希望">取材・掲載のご希望</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f_org">会社名・団体名・店舗名<span class="opt">任意</span></label>
+        <input type="text" id="f_org" name="会社名・団体名・店舗名" autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="f_name">お名前<span class="req">必須</span></label>
+        <input type="text" id="f_name" name="お名前" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="f_kana">フリガナ<span class="opt">任意</span></label>
+        <input type="text" id="f_kana" name="フリガナ">
+      </div>
+
+      <div class="field">
+        <label for="f_email">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="f_email" name="メールアドレス" required autocomplete="email">
+        <div class="hint">ご返信先です。お間違いがないかご確認ください。</div>
+      </div>
+
+      <div class="field">
+        <label for="f_article">該当記事のURL<span class="opt">任意</span></label>
+        <input type="url" id="f_article" name="該当記事のURL" placeholder="https://">
+        <div class="hint">取り下げ・修正のご依頼、誤りのご指摘のときにご記入ください。</div>
+      </div>
+
+      <div class="field">
+        <label for="f_site">ホームページ等のURL<span class="opt">任意</span></label>
+        <input type="url" id="f_site" name="ホームページ等のURL" placeholder="https://">
+        <div class="hint">お店・団体の公式サイトやSNSがあれば。情報提供のときの確認に使わせていただきます。</div>
+      </div>
+
+      <div class="field">
+        <label for="f_subject">件名<span class="opt">任意</span></label>
+        <input type="text" id="f_subject" name="件名">
+      </div>
+
+      <div class="field">
+        <label for="f_body">内容<span class="req">必須</span></label>
+        <textarea id="f_body" name="内容" required></textarea>
+      </div>
+
+      <!-- ボットよけ。人間には見えない欄なので、埋まっていたら迷惑投稿と判断される -->
+      <div class="hp" aria-hidden="true">
+        <label>この欄は入力しないでください <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <label class="agree" for="f_agree">
+        <input type="checkbox" id="f_agree" required>
+        <span><a href="privacy.html">プライバシーポリシー</a>に同意のうえ送信します。</span>
+      </label>
+
+      <button type="submit" class="send-btn">この内容で送信する</button>
+      <div class="send-note">
+        送信内容は外部サービス「Formspree」を経由して運営者に届きます。<br>
+        詳しくは<a href="privacy.html" style="color:var(--c-tsukuba);">プライバシーポリシー</a>をご覧ください。
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">もりつく＋</div>
+    <div class="links">
+      <a href="index.html">トップへ戻る</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ・情報提供</a>
+    </div>
+    <div class="disc">
+      もりつく＋は架空のローカル報道局です。掲載しているニュース・イベント・グルメ情報は実在のものです。<br>
+      他媒体の記事は見出しとリンクのみを掲載しており、その著作権は各配信元に帰属します。当サイトが取材・執筆した記事の著作権は当サイトに帰属します。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ① 送信が終わって戻ってきたとき（?sent=1）だけ、完了メッセージを出して上へスクロールする */
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    var box = document.getElementById("sentMsg");
+    if (box) {
+      box.hidden = false;
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+    /* アドレスバーから ?sent=1 を消す。リロードで再表示されるのを防ぐため */
+    if (history.replaceState) history.replaceState(null, "", location.pathname);
+  }
+
+  /* ② 届くメールの件名を「種類＋お名前」にして、受信箱で見分けやすくする */
+  var form = document.getElementById("contactForm");
+  if (!form) return;
+  form.addEventListener("submit", function () {
+    var type = document.getElementById("f_type").value || "お問い合わせ";
+    var name = document.getElementById("f_name").value || "";
+    document.getElementById("mailSubject").value =
+      "【もりつく＋】" + type + (name ? "／" + name + " 様" : "");
+  });
+})();
+</script>
+
+</body>
+</html>

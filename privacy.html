@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- もりつく＋ プライバシーポリシー（2026-08-04 新設）
+     法律に関わる文面です。文言を変えるときは、末尾の「最終改定日」も必ず更新してください。
+     Googleアナリティクスを導入した日・お問い合わせフォームの仕組みを変えた日も、改定日の更新対象です。 -->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>プライバシーポリシー | もりつく＋</title>
+<meta name="description" content="もりつく＋における個人情報の取り扱い、アクセス解析ツールの利用、外部サービスへの情報送信についてのご説明です。">
+<meta name="theme-color" content="#16203A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===== プライバシーポリシー専用（このページだけで使うスタイル） ===== */
+.doc-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  flex-shrink: 0; margin-top: 2px;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff; font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.doc-back:hover { background: rgba(255,255,255,0.12); }
+
+.doc-hero { padding: 26px 0 4px; }
+.doc-hero h1 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1.7rem; color: var(--ink); line-height: 1.4;
+}
+.doc-hero .lead {
+  margin-top: 10px; font-size: 0.86rem; color: var(--ink-sub);
+  line-height: 1.9; max-width: 44em;
+}
+
+.doc-body { padding: 8px 0 40px; }
+.policy {
+  border: 1.5px solid var(--paper-line); border-radius: var(--radius);
+  background: #fff; padding: 24px 26px 28px;
+}
+.policy section + section { margin-top: 30px; }
+.policy h2 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900; font-size: 1rem; color: var(--ink);
+  padding-left: 13px; position: relative; margin-bottom: 10px; line-height: 1.5;
+}
+.policy h2::before {
+  content: ""; position: absolute; left: 0; top: 0.18em; bottom: 0.18em;
+  width: 5px; border-radius: 3px; background: var(--studio);
+}
+.policy h3 {
+  font-size: 0.88rem; font-weight: 700; color: var(--ink);
+  margin: 16px 0 6px;
+}
+.policy p, .policy li, .policy td, .policy th {
+  font-size: 0.84rem; color: var(--ink-sub); line-height: 1.95;
+}
+.policy p + p { margin-top: 10px; }
+.policy ul { margin: 8px 0 0 1.2em; }
+.policy li { margin-bottom: 4px; }
+.policy strong { color: var(--ink); font-weight: 700; }
+.policy a { color: var(--c-tsukuba); text-decoration: underline; word-break: break-all; }
+
+/* 外部送信の一覧表 */
+.tbl-wrap { overflow-x: auto; margin-top: 12px; }
+.policy table { width: 100%; border-collapse: collapse; min-width: 480px; }
+.policy th, .policy td {
+  border: 1px solid var(--paper-line); padding: 9px 11px;
+  text-align: left; vertical-align: top;
+}
+.policy th { background: #FAF8F3; color: var(--ink); font-weight: 700; font-size: 0.8rem; white-space: nowrap; }
+.policy td { font-size: 0.8rem; }
+
+/* 制定日・改定日 */
+.policy .dates {
+  margin-top: 32px; padding-top: 18px; border-top: 1.5px solid var(--paper-line);
+  font-size: 0.79rem; color: var(--ink-sub); line-height: 2;
+}
+
+@media (max-width: 640px) {
+  .doc-hero h1 { font-size: 1.35rem; }
+  .policy { padding: 18px 16px 22px; }
+}
+</style>
+</head>
+<body>
+
+<header class="studio-head">
+  <div class="wrap">
+    <div class="head-top">
+      <div class="brand">
+        <a href="index.html"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
+        <div class="tagline">守谷〜つくばをつなぐ、まちの報道局</div>
+      </div>
+      <a class="doc-back" href="index.html">← トップへ戻る</a>
+    </div>
+  </div>
+</header>
+
+<section class="doc-hero">
+  <div class="wrap">
+    <h1>プライバシーポリシー</h1>
+    <p class="lead">
+      もりつく＋（以下「当サイト」）における、利用者の情報の取り扱いについてご説明します。
+    </p>
+  </div>
+</section>
+
+<section class="doc-body">
+  <div class="wrap">
+    <div class="policy">
+
+      <section>
+        <h2>1. 当サイトと運営者について</h2>
+        <p>
+          当サイトは、動物のキャラクターが運営する架空のローカル報道局という体裁をとったウェブサイトです。
+          <strong>登場する局員・組織・番組はすべて架空のものですが、掲載している地域情報・イベント情報はすべて実在のものです。</strong>
+          また、当サイトの運営および本ポリシーに基づく責任は、下記の実在する運営者が負います。
+        </p>
+        <h3>運営者</h3>
+        <p>
+          もりつく＋報道局
+        </p>
+      </section>
+
+      <section>
+        <h2>2. 当サイトが取得する情報</h2>
+        <h3>（1）アクセス状況の情報</h3>
+        <p>
+          当サイトでは、後述のアクセス解析ツールにより、閲覧されたページ、滞在時間、参照元のサイト、
+          ご利用のブラウザや端末の種類、おおよその地域といった情報を自動的に取得しています。
+          <strong>これらの情報に、氏名・住所・電話番号など個人を特定できるものは含まれません。</strong>
+        </p>
+        <h3>（2）お問い合わせいただいた際の情報</h3>
+        <p>
+          お問い合わせフォームからご連絡いただいた場合、入力された
+          お名前、フリガナ、メールアドレス、会社名・団体名・店舗名、URL、件名、お問い合わせ内容を取得します。
+        </p>
+      </section>
+
+      <section>
+        <h2>3. 情報の利用目的</h2>
+        <ul>
+          <li>お問い合わせへのご回答および必要なご連絡のため</li>
+          <li>掲載内容の確認、修正、取り下げなどの対応のため</li>
+          <li>当サイトの利用状況の把握、コンテンツおよび使い勝手の改善のため</li>
+        </ul>
+        <p>上記の目的以外には利用いたしません。</p>
+      </section>
+
+      <section>
+        <h2>4. アクセス解析ツールについて</h2>
+        <p>
+          当サイトでは、Google LLC が提供するアクセス解析ツール「Googleアナリティクス」を利用しています。
+          Googleアナリティクスはトラフィックデータの収集のために Cookie を使用しますが、
+          <strong>このトラフィックデータは匿名で収集されており、個人を特定するものではありません。</strong>
+        </p>
+        <p>
+          収集されたデータは、Google のプライバシーポリシーに基づいて管理されます。
+          詳しくは
+          <a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">Google プライバシーポリシー</a>
+          および
+          <a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用</a>
+          をご覧ください。
+        </p>
+        <h3>収集を望まれない場合</h3>
+        <p>
+          ご利用のブラウザの設定で Cookie を無効にしていただくか、
+          Google が提供する
+          <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener">Googleアナリティクス オプトアウト アドオン</a>
+          をご利用いただくことで、収集を停止できます。
+        </p>
+      </section>
+
+      <section>
+        <h2>5. 外部サービスへの情報送信について</h2>
+        <p>
+          当サイトをご利用の際、以下の外部サービスに情報が送信されます。
+          いずれも、当サイトの分析およびお問い合わせへの対応のために必要な範囲に限られます。
+        </p>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th>送信先</th><th>送信される情報</th><th>利用目的</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google LLC<br>（Googleアナリティクス）</td>
+                <td>閲覧ページ、滞在時間、参照元、ブラウザ・端末の種類、おおよその地域、Cookie識別子</td>
+                <td>当サイトの利用状況の分析および改善</td>
+              </tr>
+              <tr>
+                <td>Formspree, Inc.<br>（お問い合わせフォーム）</td>
+                <td>フォームに入力されたお名前、フリガナ、メールアドレス、会社名・団体名・店舗名、URL、件名、お問い合わせ内容</td>
+                <td>お問い合わせ内容を運営者へ届けるため</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          各サービスにおける情報の取り扱いは、それぞれの事業者が定めるプライバシーポリシーに従います。
+        </p>
+      </section>
+
+      <section>
+        <h2>6. 第三者への提供</h2>
+        <p>
+          取得した情報は、次の場合を除き、ご本人の同意なく第三者に提供することはありません。
+        </p>
+        <ul>
+          <li>法令に基づく場合</li>
+          <li>人の生命、身体または財産の保護のために必要があり、ご本人の同意を得ることが困難な場合</li>
+          <li>前項に記載した外部サービスへの送信（サービスの提供に必要な範囲に限ります）</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. 情報の管理と保存期間</h2>
+        <p>
+          お問い合わせいただいた内容および個人情報は、対応の記録として適切に管理し、
+          必要がなくなった時点で速やかに削除いたします。
+          漏えい、滅失または毀損の防止のため、必要かつ適切な措置を講じます。
+        </p>
+      </section>
+
+      <section>
+        <h2>8. 開示・訂正・削除のご請求</h2>
+        <p>
+          ご本人からの、保有する個人情報の開示、訂正、追加、削除、利用停止のご請求につきましては、
+          <a href="contact.html">お問い合わせフォーム</a>より承ります。
+          ご本人であることを確認させていただいたうえで、法令に従い遅滞なく対応いたします。
+        </p>
+      </section>
+
+      <section>
+        <h2>9. 掲載内容と著作権について</h2>
+        <p>当サイトが掲載する記事には、次の2種類があります。</p>
+        <h3>（1）他媒体の記事のご紹介</h3>
+        <p>
+          各報道機関・自治体・店舗などが公開している情報について、
+          <strong>見出しとリンクのみ</strong>を掲載しています。
+          記事本文および画像の転載は行っておりません。
+          これらの著作権は、すべて各配信元に帰属します。
+        </p>
+        <h3>（2）当サイトが取材・執筆した記事</h3>
+        <p>
+          運営者自身が取材し、執筆・撮影した記事です。
+          <strong>これらの文章および写真の著作権は、当サイトに帰属します。</strong>
+          引用の範囲を超えて無断で転載・複製することはご遠慮ください。
+          ご利用をご希望の場合は、<a href="contact.html">お問い合わせフォーム</a>よりご相談ください。
+        </p>
+        <h3>取り下げ・修正のご依頼</h3>
+        <p>
+          いずれの記事についても、掲載内容の取り下げ・修正のご依頼は
+          <a href="contact.html">お問い合わせフォーム</a>より承ります。
+          ご依頼を確認しだい、速やかに対応いたします。
+        </p>
+      </section>
+
+      <section>
+        <h2>10. 免責事項</h2>
+        <p>
+          当サイトは掲載情報の正確性に努めていますが、その内容を保証するものではありません。
+          また、当サイトからリンクした外部サイトの内容および、そこで提供される情報・サービスについては、
+          当サイトは責任を負いかねます。各サイトの管理者にお問い合わせください。
+        </p>
+      </section>
+
+      <section>
+        <h2>11. 本ポリシーの変更</h2>
+        <p>
+          本ポリシーの内容は、法令の改正やサービスの変更に応じて予告なく変更することがあります。
+          重要な変更を行う場合は、当ページにてお知らせします。
+          変更後の内容は、当ページに掲載した時点から効力を生じるものとします。
+        </p>
+      </section>
+
+      <div class="dates">
+        制定日：2026年8月4日<br>
+        最終改定日：2026年8月4日
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">もりつく＋</div>
+    <div class="links">
+      <a href="index.html">トップへ戻る</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ・情報提供</a>
+    </div>
+    <div class="disc">
+      もりつく＋は架空のローカル報道局です。掲載しているニュース・イベント・グルメ情報は実在のものです。<br>
+      他媒体の記事は見出しとリンクのみを掲載しており、その著作権は各配信元に帰属します。当サイトが取材・執筆した記事の著作権は当サイトに帰属します。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
