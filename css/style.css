@@ -73,6 +73,16 @@ img { display: block; max-width: 100%; }
 @media (max-width: 640px) {
   .tagline { font-size: 0.64rem; letter-spacing: 0.04em; white-space: nowrap; }
 }
+/* タグラインが長いため、画面が狭くなるほど段階的に詰める。
+   4コマボタンと同じ行に並ぶので、はみ出すと横スクロールが出てしまう。 */
+@media (max-width: 400px) {
+  .tagline { font-size: 0.52rem; letter-spacing: 0; }
+}
+/* 320px級の旧機種だけは1行に収まらないので、ここだけ折り返しを許可する */
+@media (max-width: 340px) {
+  .brand { flex: 1 1 auto; min-width: 0; }
+  .tagline { white-space: normal; line-height: 1.5; }
+}
 .onair-lamp {
   display: inline-flex;
   align-items: center;
