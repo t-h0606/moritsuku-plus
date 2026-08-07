@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T08:43",
+  "updated": "2026-08-07T09:47",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,18 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "つくばの飲食店で31人食中毒 茨城",
+      "source": "47news.jp",
+      "date": "2026-08-06T19:56",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE90dDZqeV85eG1nNGdTUWhVejRTSktwbUo2bXRzenFPLS1MTkh4cGd0a2JpQUZMSjE4cm15b2psTnFDR29Ib3J3RDU0bw?oc=5",
+      "thumb": ""
     },
     {
       "title": "カピバラの赤ちゃん4匹誕生　茨城・日立のかみね動物園見学呼びかけ",
