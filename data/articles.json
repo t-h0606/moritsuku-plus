@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T12:48",
+  "updated": "2026-08-08T14:29",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,21 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "茨城県内で交通死亡事故が増加しています。",
+      "source": "city.tsukubamirai.lg.jp",
+      "date": "2026-08-07T12:01",
+      "city": [
+        "tsukubamirai",
+        "tsukuba",
+        "moriya",
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOWtJREhRNTdXeHpXRmZYSzl1czV4UDFqT3FUa1B0WHF3OGRldWRIY293RWVsbzhKUV9xQkM3TTNXaE1PQWlNZ1BWM1BmSG50ek9DV2ZLa0JtaWMydTB0eHozdHVaUlVpclBfRlZoUmdPYm1JMjhRdzNScWlJUVJKQVIzSGdKbmM5ZjdWZDBLOFVlSWY0MFpHZWsyOV9fNmlTNV9iZmd3?oc=5",
+      "thumb": ""
     },
     {
       "title": "茨城・つくば駅前「旧国家公務員宿舎跡地70街区」、広大な敷地の行方は？問われるスーパーシティ実装の実体",
