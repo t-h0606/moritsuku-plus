@@ -218,6 +218,17 @@ a.ev-row .ev-title { color: var(--link-ink, #1F2433); }
   }
   function startOf(ev) { return parseDate(ev.start) || parseDate(ev.date); }
   function endOf(ev) { return parseDate(ev.end) || startOf(ev); }
+  /* いま画面に出ている◯か月ぶんの範囲に、そのイベントがかかっているかどうか。
+     地域チップと月ごとの一覧で同じ判定を使うことで、
+     「一覧に1件も出ない地域のチップ」が残らないようにしている。
+     例：牛久のイベントが8月で終わり、9月以降に無くなれば「牛久」チップは自動的に消える。 */
+  function inShownMonths(ev) {
+    const now = new Date();
+    const from = new Date(now.getFullYear(), now.getMonth(), 1);
+    const to   = new Date(now.getFullYear(), now.getMonth() + MONTHS_SHOWN, 0);
+    const s = startOf(ev), e = endOf(ev) || startOf(ev);
+    return !!s && s <= to && e >= from;
+  }
   function areaColor(area) {
     const a = String(area || "");
     for (const [key, col] of AREA_COLORS) if (a.indexOf(key) >= 0) return col;
@@ -302,7 +313,8 @@ a.ev-row .ev-title { color: var(--link-ink, #1F2433); }
 
   function renderFilter() {
     const found = [];
-    EVENTS.forEach(ev => { if (ev.area && found.indexOf(ev.area) < 0) found.push(ev.area); });
+    EVENTS.filter(inShownMonths)
+          .forEach(ev => { if (ev.area && found.indexOf(ev.area) < 0) found.push(ev.area); });
     const areas = BASE_AREAS.concat(found.filter(a => BASE_AREAS.indexOf(a) < 0));
     const box = document.getElementById("areaFilter");
     box.innerHTML = `<button class="ev-fchip" data-area="all" aria-pressed="true">すべて</button>` +
