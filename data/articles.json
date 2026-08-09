@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T14:43",
+  "updated": "2026-08-09T14:56",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,20 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "合併めぐり土浦市長「かすみがうら新市長の検証見守りたい」",
+      "source": "NEWSつくば",
+      "date": "2026-08-06T14:56",
+      "city": [
+        "kinko"
+      ],
+      "category": [
+        "news"
+      ],
+      "emoji": "📰",
+      "url": "https://newstsukuba.jp/61974/06/08/",
+      "thumb": ""
     },
     {
       "title": "日本初の醸造場「牛久シャトー」 ワインコンクールで初の銅賞受賞",
