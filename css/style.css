@@ -123,7 +123,7 @@ img { display: block; max-width: 100%; }
   left: 30px; right: 30px; top: 4.5px;   /* 丸(14px)の中心=7px に線の中心を合わせる */
   height: 5px;
   border-radius: 3px;
-  background: linear-gradient(90deg, #C3CBDA, var(--c-moriya) 25%, var(--c-mirai) 50%, var(--c-tsukuba) 75%, var(--c-kinko) 100%);
+  background: linear-gradient(90deg, #C3CBDA, var(--c-tsukuba) 25%, var(--c-moriya) 50%, var(--c-mirai) 75%, var(--c-kinko) 100%);
   opacity: 0.9;
   z-index: 0;
 }
