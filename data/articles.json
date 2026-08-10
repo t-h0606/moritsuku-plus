@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T20:23",
+  "updated": "2026-08-10T20:28",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,18 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "8月15日 関東鉄道，「 常総線騰波ノ江駅開業100周年イベント 」開催",
+      "source": "鉄道ファン・railf.jp",
+      "date": "2026-08-10T10:45",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBZaDIzWkVpUDE1YVpYYVlEeUdnTFF6T3lrd2pkZndodnR2bUJXRnlCWWptYXdmWENoOE9qOEQ5dERHVHlMQzIyTHBtSEVsMU5lR0RXZkZselc?oc=5",
+      "thumb": ""
     },
     {
       "title": "《広角レンズ》子の急病、スマホで相談　茨城県内自治体で導入増　医師不足や救急縮小カバー",
