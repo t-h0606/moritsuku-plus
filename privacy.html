@@ -96,12 +96,34 @@
      説明は privacy.html の第4章（アクセス解析ツール）と第5章（外部送信）に記載済み。
      ※局内専用ツール（desk / add-article / add-event / add-manga）には入れないこと。
         自分の作業アクセスが数字に混ざってしまうため。 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9P2HYHM9KE"></script>
 <script>
+(function () {
+  /* 端末ごとのアクセス解析オフスイッチ。
+     ?ga=off を付けて一度開くと、その端末（ブラウザ）では以後カウントされない。
+       例）https://moritsuku.net/?ga=off
+     元に戻すときは ?ga=on を付けて開く。
+       例）https://moritsuku.net/?ga=on
+     スマホのモバイル回線はアクセスのたびにIPが変わり、GA側のIP除外が効かないため、
+     サイト側で覚えておく方式にしている。設定はその端末のブラウザにだけ保存される。 */
+  var off = false;
+  try {
+    var p = new URLSearchParams(location.search).get('ga');
+    if (p === 'off') localStorage.setItem('mk_ga_off', '1');
+    if (p === 'on')  localStorage.removeItem('mk_ga_off');
+    off = localStorage.getItem('mk_ga_off') === '1';
+  } catch (e) { /* localStorageが使えない環境ではそのまま計測する */ }
+  if (off) return;
+
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = function () { dataLayer.push(arguments); };
   gtag('js', new Date());
   gtag('config', 'G-9P2HYHM9KE');
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9P2HYHM9KE';
+  document.head.appendChild(s);
+})();
 </script>
 </head>
 <body>
