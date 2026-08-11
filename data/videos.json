@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06",
+  "updated": "2026-08-11",
   "_使い方": "shows に番組を並べます。items に縦動画（YouTubeショート）のURLを新しい順に足すだけです。accent＝見出し左の帯とダミー画像の色／caster＝見出しに立つキャラ（0局長 1ガマ子 2ポン田P 3ウリD 4ハム太 5ミドリ 6ノン 7ソラ、\"onair\" で日替わり）／サムネは指定不要（YouTubeの縦サムネを自動取得）／title の下に小さい文字を出したいときだけ meta を足す",
   "shows": [
     {
@@ -16,18 +16,6 @@
         {
           "youtube": "https://youtube.com/shorts/Nn--WKS_d9s",
           "title": "メヒコ「カニピラフスペシャルセット」を調査"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/id__vjgsBpM",
-          "title": "フラミンゴを見ながらカニピラフ"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/Nn--WKS_d9s",
-          "title": "サンプル動画③"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/id__vjgsBpM",
-          "title": "サンプル動画④"
         }
       ]
     },
@@ -37,24 +25,7 @@
       "label": "TXさんぽ",
       "accent": "#F59E2D",
       "caster": 4,
-      "items": [
-        {
-          "youtube": "https://youtube.com/shorts/Nn--WKS_d9s",
-          "title": "サンプル動画①"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/id__vjgsBpM",
-          "title": "サンプル動画②"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/Nn--WKS_d9s",
-          "title": "サンプル動画③"
-        },
-        {
-          "youtube": "https://youtube.com/shorts/id__vjgsBpM",
-          "title": "サンプル動画④"
-        }
-      ]
+      "items": []
     }
   ]
 }
