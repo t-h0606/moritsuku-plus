@@ -21,6 +21,7 @@ import json
 import re
 import hashlib
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -34,6 +35,14 @@ ARTICLES_FILE = ROOT / "data" / "articles.json"
 MAX_AGE_DAYS = 7          # これより古い候補は消える
 MAX_PER_FEED = 40         # 1つのRSSから読む最大件数
 MAX_CANDIDATES = 150      # 候補リストの最大件数（3市と県内全域で別枠）
+
+# 県全域のRSS（茨城新聞・LuckyFM）から拾うときの地名フィルタ。
+# タイトルにこのどれかが入っている記事だけを候補にする。
+# 水戸・日立など、もりつく＋の対象外の記事で候補リストが埋もれるのを防ぐため。
+# 「筑波」は筑波山・筑波大学を拾える一方、筑波銀行など対象外の記事も混ざる。
+# 余計なものが多いと感じたら、この行から "筑波" を消すだけでよい。
+NEWS_AREA_WORDS = ["守谷", "つくばみらい", "つくば", "みらい平", "筑波",
+                   "土浦", "石岡", "牛久", "取手", "常総"]
 
 # ---- 収集する注文書（クエリ）一覧 -------------------------------------
 # (デフォルト都市, デフォルトカテゴリ, 検索クエリ)
@@ -62,10 +71,29 @@ QUERIES = [
     ("ibaraki",      "news",    "茨城県 when:7d"),
 ]
 
-# ここに普通のRSS（市公式サイトなど）を足すと収集対象を増やせる
-# (デフォルト都市, デフォルトカテゴリ, RSSのURL)
+# ---- 配信元のRSSを直接読む（Googleニュース経由とは別枠） ----------------
+# Googleニュース経由だと記事URLが「news.google.com/rss/articles/...」という
+# 転送用リンクになり、元記事のURLが分からない。Xに貼ってもカードが出ず、
+# 読者も転送ページを1枚踏むことになる。
+# ここに配信元のRSSを直接登録すると、元記事のURLがそのまま手に入る。
+# ※ QUERIES（Googleニュース経由）は今までどおり全部生きている。これは上乗せ。
+#
+# (デフォルト都市, デフォルトカテゴリ, RSSのURL, 絞り込みキーワード or None)
+#   絞り込みキーワードを入れると、タイトルにそのどれかが含まれる記事だけを拾う。
+#   None なら全記事を拾う。
 EXTRA_FEEDS = [
-    # 例: ("tsukubamirai", "event", "https://www.city.tsukubamirai.lg.jp/????.xml"),
+    # 号外NET（地元3市）。タイトルが必ず「【○○市】」で始まるので地域判定が正確。全記事を拾う
+    ("moriya", "news", "https://toride-moriya-tsukubamirai.goguynet.jp/feed/", None),
+    # 号外NET つくば市。全記事を拾う
+    ("tsukuba", "news", "https://tsukuba.goguynet.jp/feed/", None),
+    # 号外NET 土浦・かすみがうら・石岡市 → 3市周辺あつかい。全記事を拾う
+    ("kinko", "news", "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/feed/", None),
+    # NEWSつくば（つくば・土浦の地域メディア）。全記事を拾う
+    ("tsukuba", "news", "https://newstsukuba.jp/feed/", None),
+    # LuckyFM 茨城放送。県全域なので地名で絞る
+    ("kinko", "news", "https://lucky-ibaraki.com/feed/", NEWS_AREA_WORDS),
+    # 茨城新聞クロスアイ。県全域が流れてくるので地名で絞る
+    ("kinko", "news", "https://ibarakinews.jp/news/hphead.rss", NEWS_AREA_WORDS),
 ]
 
 # ---- 仕分け用のキーワード ---------------------------------------------
@@ -138,10 +166,83 @@ def detect_category(title: str, default_cat: str) -> str:
     return default_cat
 
 
+def clean_url(url: str) -> str:
+    """記事URLから広告・解析用の飾りを落とす。
+    LuckyFMのRSSは ?utm_source=rss&utm_medium=rss&... という長い追跡パラメータを
+    付けてくる。そのまま保存すると、同じ記事が別物として重複判定されてしまう。"""
+    url = (url or "").strip()
+    if "?" not in url:
+        return url
+    base, _, query = url.partition("?")
+    keep = [kv for kv in query.split("&")
+            if kv and not kv.split("=")[0].lower().startswith(("utm_", "fbclid", "gclid"))]
+    return base + ("?" + "&".join(keep) if keep else "")
+
+
+def looks_garbled(entries) -> bool:
+    """タイトルが文字化けしていないか見る。
+    文字コードの解釈に失敗すると、読めなかった文字が「\ufffd（黒ひし形の?）」に
+    置き換わる。これが混じっていたら化けていると判断する。"""
+    for e in entries[:5]:
+        if "\ufffd" in (e.get("title") or ""):
+            return True
+    return False
+
+
+def fetch_feed(url: str):
+    """RSSを1本読む。1本が落ちても全体を止めないよう、失敗しても空を返す。
+    茨城新聞のRSSは宣言が UTF-8 なのに中身が別の文字コードで、そのままだと
+    文字化けする。feedparser に文字コードを推測させたうえで、駄目なら
+    バイト列から読み直す。"""
+    try:
+        parsed = feedparser.parse(url)
+        if parsed.entries and not looks_garbled(parsed.entries):
+            return parsed.entries
+    except Exception as e:
+        print(f"  [警告] 読み込み失敗: {url} ({e})")
+        return []
+
+    # 記事が取れなかった、または文字化けしていた場合はバイト列から読み直す
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "moritsuku-plus/1.0"})
+        with urllib.request.urlopen(req, timeout=30) as res:
+            raw = res.read()
+        for enc in ("utf-8", "cp932", "euc-jp", "shift_jis"):
+            try:
+                text = raw.decode(enc)
+            except UnicodeDecodeError:
+                continue
+            # 宣言と実体が食い違っているので、宣言のほうを実体に合わせる
+            text = re.sub(r'encoding="[^"]*"', f'encoding="{enc}"', text, count=1)
+            entries = feedparser.parse(text.encode(enc)).entries
+            if entries:
+                print(f"  [復旧] {url} を {enc} として読み直しました")
+                return entries
+    except Exception as e:
+        print(f"  [警告] 読み直しも失敗: {url} ({e})")
+    return []
+
+
 def parse_published(entry):
     if getattr(entry, "published_parsed", None):
         return datetime(*entry.published_parsed[:6], tzinfo=timezone.utc).astimezone(JST)
     return datetime.now(JST)
+
+
+# 配信元のRSSを直接読むときの媒体名（記事URLのドメインから引く）
+SOURCE_BY_DOMAIN = {
+    "toride-moriya-tsukubamirai.goguynet.jp": "号外NET",
+    "tsukuba.goguynet.jp": "号外NET",
+    "tsuchiura-kasumigaura-ishioka.goguynet.jp": "号外NET",
+    "newstsukuba.jp": "NEWSつくば",
+    "lucky-ibaraki.com": "LuckyFM 茨城放送",
+    "ibarakinews.jp": "茨城新聞クロスアイ",
+}
+
+
+def source_from_url(url: str) -> str:
+    host = urllib.parse.urlparse(url or "").netloc.lower()
+    return SOURCE_BY_DOMAIN.get(host, "")
 
 
 def clean_source(entry) -> str:
@@ -190,20 +291,28 @@ def collect():
         pool[c["id"]] = c
 
     # --- RSSを巡回して新しい候補を追加 ---
-    feeds = [(city, cat, gnews_url(q)) for city, cat, q in QUERIES]
-    feeds += EXTRA_FEEDS
+    # (デフォルト都市, デフォルトカテゴリ, URL, 絞り込み語, 直接RSSか)
+    feeds = [(city, cat, gnews_url(q), None, False) for city, cat, q in QUERIES]
+    feeds += [(city, cat, url, words, True) for city, cat, url, words in EXTRA_FEEDS]
 
-    for default_city, default_cat, url in feeds:
-        parsed = feedparser.parse(url)
-        for entry in parsed.entries[:MAX_PER_FEED]:
+    for default_city, default_cat, url, filter_words, is_direct in feeds:
+        entries = fetch_feed(url)
+        for entry in entries[:MAX_PER_FEED]:
             title = strip_media_suffix(entry.get("title", "").strip())
-            link = entry.get("link", "")
+            link = clean_url(entry.get("link", ""))
             if not title or not link:
+                continue
+            # 県全域のRSSは、対象エリアの地名が入っている記事だけ拾う
+            if filter_words and not any(w in title for w in filter_words):
                 continue
 
             published = parse_published(entry)
             if published < cutoff:            # 消印チェック
                 continue
+
+            # 配信元名。Googleニュース経由は entry.source に入っているが、
+            # 配信元のRSSを直接読む場合は入っていないので、URLから引く。
+            src = clean_source(entry) or source_from_url(link)
 
             cid = make_id(title)
             if default_city == "ibaraki":
@@ -219,6 +328,13 @@ def collect():
                 for c in cities:
                     if c not in pool[cid]["city"]:
                         pool[cid]["city"].append(c)
+                # 同じ記事がGoogleニュース経由でも入っていたら、元記事のURLで上書きする。
+                # Googleの転送リンクはXでカードが出ず、読者も余計な1ページを踏むため。
+                if is_direct and "news.google.com" in pool[cid].get("url", ""):
+                    pool[cid]["url"] = link
+                    if src:
+                        pool[cid]["source"] = src
+                    pool[cid]["sure"] = True
             else:
                 # タイトルに地名が入っているか（入っていない=本文マッチの可能性）
                 sure = (default_city == "ibaraki") or any(
@@ -226,7 +342,7 @@ def collect():
                 pool[cid] = {
                     "id": cid,
                     "title": title,
-                    "source": clean_source(entry),
+                    "source": src,
                     "date": published.strftime("%Y-%m-%dT%H:%M"),
                     "city": cities,
                     "category": cat,
