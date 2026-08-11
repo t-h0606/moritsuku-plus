@@ -102,6 +102,17 @@
   #log.busy{background:#EEF1F7; color:var(--navy); border:1px solid #D6DCEA;}
   .hint{font-size:11.5px; color:var(--sub); margin-top:4px; line-height:1.5;}
   .req{color:var(--onair);}
+  /* ===== 掲載後に出る「Xにも投稿」欄 =====
+     X APIは使わない。文面を入れた投稿画面を開くだけなので、費用も認証も不要。 */
+  #xAfter{margin-top:14px; padding:12px 14px; border:1.5px solid var(--navy);
+    border-radius:12px; background:#fff;}
+  #xAfter[hidden]{display:none;}
+  #xAfter .x-head{font-weight:800; font-size:0.9rem; margin-bottom:4px;}
+  #xAfter .x-note{font-size:0.74rem; color:#6B7280; margin-bottom:10px; line-height:1.7;}
+  #xAfter .x-title{font-size:0.82rem; line-height:1.55; margin-bottom:10px; word-break:break-all;}
+  #xAfter .x-go{background:#000; color:#fff; border:none; border-radius:999px;
+    padding:10px 20px; font-size:0.82rem; font-weight:700; cursor:pointer;}
+  #xAfter .x-go.done{background:#7A8394;}
 </style>
 </head>
 <body>
@@ -214,6 +225,15 @@
     上のチェックを入れたときだけ、「最新記事」タブの先頭も同時にこの記事に差し替わります（この場合も、それまで「最新記事」タブの先頭だった記事は自動的に通常表示に戻ります）。チェックを入れなければ「最新記事」タブの並びには一切影響しません。
   </div>
   <div id="log"></div>
+
+  <!-- 掲載が終わったときだけ出る「Xにも投稿」欄。
+       押すとXの投稿画面が開くだけで、X APIは一切使っていない（費用ゼロ・認証不要）。 -->
+  <div id="xAfter" hidden>
+    <div class="x-head">𝕏 にも投稿する</div>
+    <div class="x-note">押すとXの投稿画面が新しいタブで開きます。文面はその場で自由に直せます。投稿するかどうかは最後にご自分で決められます。</div>
+    <div class="x-title" id="xAfterTitle"></div>
+    <button type="button" class="x-go" id="xAfterBtn">𝕏 に投稿</button>
+  </div>
 
 </main>
 
@@ -482,6 +502,40 @@
     logEl.className = 'show ' + (type||'');
   }
 
+  /* ===== Xへの投稿（Intent URL方式） =====
+     X API は使わない。文面をURLに載せて「投稿画面」を開くだけなので、
+     APIキーも審査も費用も不要。実際に投稿するかどうかはKさんがXの画面で決める。
+     ※ /intent/post はスマホアプリで無限ループになる報告があるため、/intent/tweet を使う。 */
+  const SITE_URL = "https://moritsuku.net/";
+  const X_TAGS = { moriya: "#守谷", tsukubamirai: "#つくばみらい", tsukuba: "#つくば", kinko: "#茨城" };
+
+  function xPostText(item){
+    const tags = [...new Set((item.city || []).map(c => X_TAGS[c]).filter(Boolean))];
+    tags.push("#もりつくプラス");
+    return [
+      item.title, "", item.url, "",
+      "▼まちの情報はもりつく＋で", SITE_URL, "",
+      tags.join(" ")
+    ].join("\n");
+  }
+
+  function showXAfter(item){
+    const box = document.getElementById('xAfter');
+    const btn = document.getElementById('xAfterBtn');
+    document.getElementById('xAfterTitle').textContent = item.title;
+    btn.className = 'x-go';
+    btn.textContent = '𝕏 に投稿';
+    // addEventListener ではなく onclick にしているのは、続けて2件目を投稿したときに
+    // 前の記事のイベントが残らないようにするため。
+    btn.onclick = () => {
+      window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(xPostText(item)),
+                  "_blank", "noopener,noreferrer");
+      btn.classList.add('done');
+      btn.textContent = '✓ 開きました';
+    };
+    box.hidden = false;
+  }
+
   async function submitArticle(asFeatured){
     const pat = loadPat();
     const url = document.getElementById('f_url').value.trim();
@@ -585,6 +639,9 @@
       let doneMsg = asFeatured ? "先頭記事として掲載しました！" : "掲載が完了しました！";
       if(alsoAll) doneMsg = "先頭記事として掲載し、「最新記事」タブの先頭も差し替えました！";
       log(doneMsg + "サイトに反映されるまで1〜2分ほどお待ちください。\n(強制再読み込み: Ctrl+Shift+R)", 'ok');
+
+      // 「Xにも投稿」欄を出す。このあとフォームをリセットするので、先に値を渡しておく
+      showXAfter({ title, url, city: Array.from(selectedCities) });
 
       // フォームをリセット（PATは残す）
       document.getElementById('f_url').value = '';

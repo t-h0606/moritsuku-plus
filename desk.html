@@ -90,6 +90,24 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
 #output-area .hint { font-size: 0.76rem; color: var(--sub); margin: 8px 2px; line-height: 1.7; }
 .empty { text-align: center; color: var(--sub); padding: 40px 10px; font-size: 0.85rem; }
 
+/* ===== 掲載後に出る「Xにも投稿」欄 =====
+   X APIは使わない。文面を入れた投稿画面を開くだけなので、費用も認証も不要。 */
+#xPanel { position: fixed; left: 0; right: 0; bottom: 56px; z-index: 60;
+  background: #fff; border-top: 2px solid var(--ink); box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
+  padding: 12px 14px 14px; max-height: 46vh; overflow-y: auto; }
+#xPanel[hidden] { display: none; }
+#xPanel .x-head { display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 0.9rem; margin-bottom: 4px; }
+#xPanel .x-close { margin-left: auto; border: 1.5px solid var(--line); background: #fff;
+  border-radius: 999px; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+#xPanel .x-note { font-size: 0.74rem; color: var(--sub); margin-bottom: 10px; line-height: 1.7; }
+#xPanel .x-row { display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; border-top: 1px solid var(--line); }
+#xPanel .x-title { flex: 1 1 0; min-width: 0; font-size: 0.8rem; line-height: 1.5; }
+#xPanel .x-go { flex: 0 0 auto; background: #000; color: #fff; border: none; border-radius: 999px;
+  padding: 8px 15px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+#xPanel .x-go.done { background: #7A8394; }
+
 #toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: 70px;
   background: var(--ink); color: #fff; padding: 10px 20px; border-radius: 999px;
   font-size: 0.82rem; font-weight: 700; opacity: 0; pointer-events: none;
@@ -168,6 +186,14 @@ header .note { font-size: 0.72rem; color: #9DA9C0; margin-top: 2px; }
   <button class="btn gen" id="genBtn">JSON</button>
   <button class="btn del" id="delBtn">🗑 削除</button>
   <button class="btn publish" id="publishBtn">📡 サイトに掲載</button>
+</div>
+
+<!-- 掲載が終わったときだけ出る「Xにも投稿」欄。
+     押すとXの投稿画面が開くだけで、X APIは一切使っていない（費用ゼロ・認証不要）。 -->
+<div id="xPanel" hidden>
+  <div class="x-head">𝕏 にも投稿する<button type="button" class="x-close" id="xClose">閉じる</button></div>
+  <div class="x-note">押すとXの投稿画面が新しいタブで開きます。文面はその場で自由に直せます。投稿するかどうかは最後にご自分で決められます。</div>
+  <div id="xList"></div>
 </div>
 
 <div id="toast"></div>
@@ -461,6 +487,7 @@ document.getElementById("publishBtn").addEventListener("click", async () => {
     state.selected.clear();
     toast(`📡 ${fresh.length} 件を掲載しました！数分でサイトに反映されます`, 4000);
     render();
+    showXPanel(fresh);   // ← 掲載したぶんだけ「Xにも投稿」欄に並べる
   } catch (err) {
     toast("エラー：" + err.message, 4500);
   } finally {
@@ -504,6 +531,63 @@ document.getElementById("tokenDelete").addEventListener("click", () => {
   localStorage.removeItem(LS_TOKEN);
   updateTokenStatus();
   toast("トークンを削除しました");
+});
+
+
+/* ========== Xへの投稿（Intent URL方式） ==========
+   X API は使わない。文面をURLに載せて「投稿画面」を開くだけなので、
+   APIキーも審査も費用も不要。実際に投稿するかどうかはKさんがXの画面で決める。
+   ※ /intent/post はスマホアプリで無限ループになる報告があるため、/intent/tweet を使う。 */
+const SITE_URL = "https://moritsuku.net/";
+const X_TAGS = { moriya: "#守谷", tsukubamirai: "#つくばみらい", tsukuba: "#つくば", kinko: "#茨城" };
+
+function xPostText(item){
+  const cities = Array.isArray(item.city) ? item.city : (item.city ? [item.city] : []);
+  const tags = [...new Set(cities.map(c => X_TAGS[c]).filter(Boolean))];
+  tags.push("#もりつくプラス");
+  return [
+    item.title,
+    "",
+    item.url,
+    "",
+    "▼まちの情報はもりつく＋で",
+    SITE_URL,
+    "",
+    tags.join(" ")
+  ].join("\n");
+}
+
+function openXIntent(item){
+  const u = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(xPostText(item));
+  window.open(u, "_blank", "noopener,noreferrer");
+}
+
+function showXPanel(items){
+  const list = document.getElementById("xList");
+  list.innerHTML = "";
+  items.forEach(it => {
+    const row = document.createElement("div");
+    row.className = "x-row";
+    const t = document.createElement("div");
+    t.className = "x-title";
+    t.textContent = it.title;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "x-go";
+    b.textContent = "𝕏 に投稿";
+    b.addEventListener("click", () => {
+      openXIntent(it);
+      b.classList.add("done");
+      b.textContent = "✓ 開きました";
+    });
+    row.append(t, b);
+    list.appendChild(row);
+  });
+  document.getElementById("xPanel").hidden = false;
+}
+
+document.getElementById("xClose").addEventListener("click", () => {
+  document.getElementById("xPanel").hidden = true;
 });
 
 async function init(){
