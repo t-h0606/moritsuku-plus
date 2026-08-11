@@ -108,6 +108,22 @@
   .mg-row-ttl { font-size: 0.86rem; }
 }
 </style>
+<!-- このページの正式なURL。/ と /index.html のように同じ内容が2つのURLで
+     開ける状態を、検索エンジンに「こちらが正規」と伝えるための指定。 -->
+<link rel="canonical" href="https://moritsuku.net/manga.html">
+
+<!-- Googleアナリティクス（GA4）測定ID: G-9P2HYHM9KE
+     訪問者数やよく読まれたページを把握するためのもの。個人を特定する情報は取得していない。
+     説明は privacy.html の第4章（アクセス解析ツール）と第5章（外部送信）に記載済み。
+     ※局内専用ツール（desk / add-article / add-event / add-manga）には入れないこと。
+        自分の作業アクセスが数字に混ざってしまうため。 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9P2HYHM9KE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-9P2HYHM9KE');
+</script>
 </head>
 <body>
 
@@ -115,10 +131,10 @@
   <div class="wrap">
     <div class="head-top">
       <div class="brand">
-        <a href="index.html"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
+        <a href="./"><h1 class="logo"><img src="images/logo-moritsuku.webp" alt="もりつく＋" width="459" height="144"></h1></a>
         <div class="tagline">守谷〜つくばの地域情報を紹介する、まちの報道局</div>
       </div>
-      <a class="mg-back" href="index.html">← トップへ戻る</a>
+      <a class="mg-back" href="./">← トップへ戻る</a>
     </div>
   </div>
 </header>
@@ -152,7 +168,7 @@
   <div class="wrap">
     <div class="f-logo">もりつく＋</div>
     <div class="links">
-      <a href="index.html">トップへ戻る</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ・情報提供</a>
+      <a href="./">トップへ戻る</a><a href="privacy.html">プライバシーポリシー</a><a href="contact.html">お問い合わせ・情報提供</a>
     </div>
     <div class="disc">
       もりつく＋は架空のローカル報道局です。掲載しているニュース・イベント・グルメ情報は実在のものです。<br>
