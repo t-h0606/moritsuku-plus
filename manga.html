@@ -69,8 +69,9 @@
   border: 3px solid #1A1A1A;
   border-radius: 3px;
 }
+/* 出演者名。1コマ目の上（タイトル行とコマの間）に置く */
 .mg-cast {
-  max-width: 620px; margin: 14px auto 0;
+  max-width: 620px; margin: 0 auto 10px;
   font-size: 0.74rem; color: var(--ink-sub); text-align: right;
 }
 
@@ -229,8 +230,8 @@
         '<span class="mg-ttl">' + esc(ep.title) + '</span>' +
         '<span class="mg-meta">' + esc(jpDate(ep.date)) + '</span>' +
       '</div>' +
-      '<div class="mg-strip">' + panels + '</div>' +
-      (ep.cast ? '<div class="mg-cast">出演：' + esc(ep.cast) + '</div>' : "");
+      (ep.cast ? '<div class="mg-cast">出演：' + esc(ep.cast) + '</div>' : "") +
+      '<div class="mg-strip">' + panels + '</div>';
     listBox.querySelectorAll(".mg-row").forEach(b =>
       b.setAttribute("aria-current", b.dataset.no === String(ep.no) ? "true" : "false"));
   }
