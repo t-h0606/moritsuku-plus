@@ -546,8 +546,10 @@ section { padding: 26px 0 40px; }
 .short-shelf::-webkit-scrollbar-thumb { background: #3A4763; border-radius: 4px; }
 .short-shelf .item { flex: 0 0 168px; scroll-snap-align: start; }
 .short-shelf .screen { aspect-ratio: 9 / 16; }   /* ← 縦動画。共通の16:9を上書き */
-.short-shelf .screen .play { width: 46px; height: 46px; }
-.short-shelf .screen .play::after { border-width: 8px 0 8px 14px; margin-left: 3px; }
+/* 縦動画のカードでは再生マークを出さない。サムネイルに文字が入っているため、
+   中央の丸が邪魔になる。押せることはカード全体のホバーで伝える。
+   ※横動画（.screen 共通）の再生マークはそのまま残している。 */
+.short-shelf .screen .play { display: none; }
 .short-shelf .v-caption { margin-top: 8px; }
 .short-shelf .v-caption .t { font-size: 0.84rem; line-height: 1.45; }
 
@@ -758,8 +760,6 @@ footer .disc { color: #566280; }
   .show-row .sec-head { margin-bottom: 14px; }
   .short-shelf { gap: 10px; }
   .short-shelf .item { flex: 0 0 148px; }
-  .short-shelf .screen .play { width: 40px; height: 40px; }
-  .short-shelf .screen .play::after { border-width: 7px 0 7px 12px; }
   .news-head .sec-head { margin-bottom: 8px; }
   /* 駅セレクタを横スクロールなしで1画面に収める */
   .rail-nav { padding: 6px 0 20px; padding-left: 76px; }
