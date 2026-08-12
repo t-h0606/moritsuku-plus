@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T07:08",
+  "updated": "2026-08-12T16:39",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,19 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "ナシの出荷最盛期　JA水郷つくば　選果場設備を一新",
+      "source": "NEWSつくば",
+      "date": "2026-08-12T11:32",
+      "city": [
+        "tsukuba",
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://newstsukuba.jp/62032/12/08/",
+      "thumb": ""
     },
     {
       "title": "つくば市消防フェア2026 in つくば市消防本部｜2026年10月31日(土)",
