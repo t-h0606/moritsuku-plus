@@ -546,10 +546,27 @@ section { padding: 26px 0 40px; }
 .short-shelf::-webkit-scrollbar-thumb { background: #3A4763; border-radius: 4px; }
 .short-shelf .item { flex: 0 0 168px; scroll-snap-align: start; }
 .short-shelf .screen { aspect-ratio: 9 / 16; }   /* ← 縦動画。共通の16:9を上書き */
-/* 縦動画のカードでは再生マークを出さない。サムネイルに文字が入っているため、
-   中央の丸が邪魔になる。押せることはカード全体のホバーで伝える。
-   ※横動画（.screen 共通）の再生マークはそのまま残している。 */
-.short-shelf .screen .play { display: none; }
+/* 縦動画のカードは、サムネイルに文字が入っているため中央の大きな再生マークが邪魔になる。
+   右下に小さく置いて、文字を隠さずに「動画である」ことだけ伝える。
+   再生時間（.dur）を入れたときは、その左隣に並ぶ。
+   ※横動画（.screen 共通）の大きい再生マークはそのまま残している。 */
+.short-shelf .screen .play {
+  inset: auto 8px 8px auto;          /* 中央寄せを解除して右下へ */
+  width: 26px; height: 26px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+}
+.short-shelf .screen .play::after {
+  border-width: 5px 0 5px 9px;
+  border-color: transparent transparent transparent #fff;   /* 黒地に置くので白抜き */
+  margin-left: 2px;
+}
+.short-shelf .screen:hover .play { transform: none; }        /* 小さいので拡大はしない */
+/* 再生マークは右端から50pxの位置に固定し、その右隣に再生時間を置く。
+   :has() のような新しい記法を使わずに並べているので、古いブラウザでも崩れない。
+   再生時間が無い動画では、マークだけが少し内側に寄って表示される。 */
+.short-shelf .screen .play { right: 50px; }
+.short-shelf .screen .dur  { right: 8px; bottom: 10px; }
 .short-shelf .v-caption { margin-top: 8px; }
 .short-shelf .v-caption .t { font-size: 0.84rem; line-height: 1.45; }
 
