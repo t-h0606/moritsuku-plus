@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T08:28",
+  "updated": "2026-08-14T08:44",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,20 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "【つくば市】一緒に盛り上がろう！つくばマラソンのボランティアを募集しているそうですよ",
+      "source": "号外NET",
+      "date": "2026-08-14T08:43",
+      "city": [
+        "tsukuba"
+      ],
+      "category": [
+        "event"
+      ],
+      "emoji": "📰",
+      "url": "https://tsukuba.goguynet.jp/2026/08/14/tsukuba-marathon-volunteer/",
+      "thumb": ""
     },
     {
       "title": "【つくば市】不正アクセスによるシステム障害により、WonderGOO PLUS＋ つくば店が現金払い限定になっていました。",
