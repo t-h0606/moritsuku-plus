@@ -545,12 +545,17 @@ function xPostText(item){
   const cities = Array.isArray(item.city) ? item.city : (item.city ? [item.city] : []);
   const tags = [...new Set(cities.map(c => X_TAGS[c]).filter(Boolean))];
   tags.push("#もりつくプラス");
+  // 記事タイトルの末尾に配信元を添える（例：…でした。　by号外NET）。
+  // 転載ではなく紹介であることが投稿を見ただけで伝わるようにするため。
+  // 配信元が空のときは何も付けない。
+  const src = (item.source || "").trim();
+  const head = src ? item.title + "　by" + src : item.title;
   return [
-    item.title,
+    head,
     "",
     item.url,
     "",
-    "▼まちの情報はもりつく＋で",
+    "▼つくば〜守谷周辺の情報はもりつく＋で",
     SITE_URL,
     "",
     tags.join(" ")
