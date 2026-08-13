@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T06:58",
+  "updated": "2026-08-14T07:57",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,19 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "茨城県内、激しい雨 守谷、取手、利根3市町 レベル4大雨危険警報 交通機関にも乱れ",
+      "source": "茨城新聞クロスアイ",
+      "date": "2026-08-14T06:21",
+      "city": [
+        "moriya",
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://ibarakinews.jp/news/newsdetail.php?f_jun=1786628806226500",
+      "thumb": ""
     },
     {
       "title": "イオンそよらつくば学園の森、2026年10月開業－茨城初のイオン系近隣商圏型新業態、コストコそばに",
