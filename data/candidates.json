@@ -1,7 +1,44 @@
 {
-  "updated": "2026-08-15T18:22",
+  "updated": "2026-08-16T06:17",
   "count": 238,
   "candidates": [
+    {
+      "id": "3fb97c2c82bf",
+      "title": "「土浦と大曲」時を超える花火の絆【見上げるごらん】55",
+      "source": "NEWSつくば",
+      "date": "2026-08-16T06:00",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9DbTJsWmpWRm1EMGpsNktuZkxQODBrVnVPdGVXcUNQVkpGVnRpT1ViWE1QeEdDYW5FbHVmQnhfeFZPb3NkbVhBRXV1TQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "1dba3a6bca2e",
+      "title": "日清食品、茨城・つくばみらいに「カップヌードル特化型工場」建設へ 29年度稼働予定 設備投資額約700億円",
+      "source": "山陽新聞",
+      "date": "2026-08-16T01:49",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxPLWJNTGI4QVF0czF2bTZoNGRWLUw3eU91OV9menBrVEtXNU8wdFNRWWtHTW1MQnZHS1o2aFZmd1pjRk9DZ1plVGg1M3d3TmVPdmxLM3MxT2hpbUhzM2xZNDdjMFhaUWkwQl9MNE41eG5WR1NWd0FHQ3BtU016WW90LWd6VktSU0tpb0tNU0V0ZlFhai1TR2hfQW1MNWw4TFQ1eUFhNF9rZUJESnpsakItMXYxd0trZXR3dUxYd0FWVUdVSXhoUS1jQTVoUFlEdGVmdFR2Tm9jaXd3TzJsNmw4T29RMXBSS29sU0JMcl9SV2xDRDF4UjVjM3ZJVVEtQnEyTzNuMEJRYXNQVndpNnFTY1hwSzBnZnZmU3BVMkxKWkRHdTVfWEVma0F0N2NaOXNuNENRdC1FanR5MnRsd1Y3YzJvUDhOREJfVkw4UDRSSm1Kel9tSWdVckdtYU9CUW9ndE5sWThvNXdjSVlfcFZaRnZkQU5KSE9KdWFEY2lYT3BIbjh1NFBmVnExbw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "1f391a2d6b8a",
+      "title": "茨城県の過去の雨雲レーダー(2026年08月15日)",
+      "source": "tenki.jp",
+      "date": "2026-08-16T00:22",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE12bzZ1NXFobE9kQkstYllBVHdSdG4ycEF5dHRRczJJWVRiLWFIYkRqY3VGY0k2dFpjbXJQSVUyWDdhNFhuYzZXQTlkUDlOYVBWWjl4LTFnOA?oc=5",
+      "sure": true
+    },
     {
       "id": "c27ca871454b",
       "title": "イオンそよらひたち野うしく、2026年11月開業－新都市ライフHD所有「西友」跡を全面刷新",
@@ -65,6 +102,20 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://newstsukuba.jp/62061/15/08/",
+      "sure": false
+    },
+    {
+      "id": "e701a7b97156",
+      "title": "【澄川駅徒歩9分】トランクルーム「スペラボ札幌澄川一条店」が2026年9月1日にオープン！",
+      "source": "PR TIMES",
+      "date": "2026-08-15T13:30",
+      "city": [
+        "tsukuba",
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1aSE9zclRpX3BEN0Zka01YS1pZa3o2eWZlN2QxWlhSeGR2aHZkTnFOTFdQUk5BMHlqZTBGUFhNbzZDbUhuTGxYLVdfMDdlbUczVjlxT1F0bkRFX194cHR5aG9LYUY5cW5sWVE?oc=5",
       "sure": false
     },
     {
@@ -329,7 +380,7 @@
     },
     {
       "id": "8393531f3ccd",
-      "title": "震度2 群馬県南部 2026年08月15日06:58ごろ 地震詳細 | 愛媛のニュース - Nスタえひめ｜あいテレビは6チャンネル",
+      "title": "震度2 群馬県南部 2026年08月15日06:58ごろ 地震詳細 | 愛媛のニュース",
       "source": "TBS NEWS DIG",
       "date": "2026-08-15T07:05",
       "city": [
@@ -506,6 +557,17 @@
       "sure": true
     },
     {
+      "id": "9e8115cef40a",
+      "title": "茨城県の過去のアメダス実況(2026年08月14日)(風向・風速)",
+      "source": "tenki.jp",
+      "date": "2026-08-15T00:30",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mUTY1YlNlS2d5MWF1UGVSUVh0TUh1YWFiNG5KbGR4cnd0Xy1qVk9JV0VJVFQ5TTY4S1V2NDM0YlBDNXkydXRiYWxwWjRXbzVjU0xlT0ZpbGFkNlhVSTFwQ0dVRTY?oc=5",
+      "sure": true
+    },
+    {
       "id": "6427318d3060",
       "title": "茨城県の過去の雨雲レーダー(2026年08月14日)",
       "source": "tenki.jp",
@@ -567,6 +629,19 @@
       "emoji": "🍜",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNFp2SXBsYk5mdWJlMEVsRzBPdFNLcnptQ3g2ZnVnekxzaFdjNkZPZTUzM04xRWVmNm9nR254RGNhMW5CajFQRVRramctUFQ5U0NSeUI3bGNMa1VjWXJwNHQ2enptek80eTFBck0xeXp0NHNMUHRpdHZNTGU1Q3NmNU9YYUZJTEdVVENUc3g1RQ?oc=5",
       "sure": false
+    },
+    {
+      "id": "9039318faea6",
+      "title": "【圏央道】常総市内で事故復旧緊急工事 一部通行止め解除（14日19:50現在）",
+      "source": "千葉テレビ放送",
+      "date": "2026-08-14T19:50",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hNzktRm10QjRNZ19WTVZLaTYyZEtOX241SldJampHQlNfNjRDV3ZCSW9TTjJjZWl3UTU3dzhTU0E4V2NjemJzMWVmMVh4dE9XdmpGdC1raTdtLTBmM1Y1T2xIakY?oc=5",
+      "sure": true
     },
     {
       "id": "874e31a3b175",
@@ -1127,6 +1202,19 @@
       "sure": true
     },
     {
+      "id": "bf6b6dade58c",
+      "title": "【画像】千葉・松戸市、茨城・守谷市の全域などに避難指示",
+      "source": "ライブドアニュース",
+      "date": "2026-08-13T19:07",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE10MTVaMDZUa0daeXZmMkthQXM4R2hiVmtFazhUWWttUXE0YmE3SFduaFpISjNUMG04VV8wYmI1YXlKMHhncDJxd2U5TGVDLS12UzAzZUd1UmVXN09kYmtKdWNFOThiMmtkVVRaX0tEQVlTVlQ0VUU4Qm10eGo?oc=5",
+      "sure": true
+    },
+    {
       "id": "d560493a9f88",
       "title": "【レベル4土砂災害危険警報】茨城県・守谷市に発表 18:59時点（TBS NEWS DIG Powered by JNN）",
       "source": "Yahoo!ニュース",
@@ -1464,6 +1552,19 @@
       "sure": true
     },
     {
+      "id": "7ad09eae4505",
+      "title": "【画像】【レベル４大雨危険警報】茨城県・守谷市に発表 17:20時点",
+      "source": "ライブドアニュース",
+      "date": "2026-08-13T17:20",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1yakR6NnRnMHA0UE1sZEVkQWVNTDBuSk96aVFaenFaVkp1dU1RNGdxNkVQa2RPVzVEaXYxOE1teFBfdXFRQXJwYTFuOUFJaFNOS3N5RVd4US1DekRfaUVua2RUQXQ2ZFBQTmRVWTdtT09zUnNCT1NReTVFNVo?oc=5",
+      "sure": true
+    },
+    {
       "id": "5fd686351453",
       "title": "【関鉄常総線】大雨 運転再開には時間がかかる見込み（13日17:10現在）",
       "source": "千葉テレビ放送",
@@ -1566,6 +1667,19 @@
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8zd1RxeHRYWW1Xc3NqWlRkS3g1TVJ4YTlJS29IcUpYbnJYTjdfN29QMmNzMDYyak1hMDhBazRnM09zM2x2NlhNSEFIY0dIcGZkTDlUOUx5bHdvTjg?oc=5",
       "sure": false
+    },
+    {
+      "id": "132c86ab93e2",
+      "title": "【フロアマップ公開中】ビックマーチつくば本店 | つくば市 みどりの駅 | パチンコ・パチスロ店舗情報",
+      "source": "DMMぱちタウン",
+      "date": "2026-08-13T16:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1iUUwzMmVSZjRlSl9FNElMM0FLUXZIUnQ3RWVsUzFiYTQxeDhZVnVZNlBGRThsTnBUYjVRaUUwczc1RkMtX3VwMktWR1hyUS1fSExR?oc=5",
+      "sure": true
     },
     {
       "id": "f909d00f8e64",
@@ -2067,71 +2181,6 @@
       "sure": true
     },
     {
-      "id": "6e6d0fff3766",
-      "title": "木育キャラバン in いなしき",
-      "source": "city.inashiki.lg.jp",
-      "date": "2026-08-12T16:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9RTnhQbHNIQkM0dWVpWVRZMHJIMGN6bmd5eC10T3NpS1RDRVJ2X291c3lLUFBOalNvMmlQMnRHRGRwLUZTMGsxMHBpb0RFOThSWVM5N203dVJpR2hMXzR2enlB?oc=5",
-      "sure": false
-    },
-    {
-      "id": "ca33ffe698ff",
-      "title": "【つくばマラソン】2024/11/24 3時間50分切りめざせ！ Gage Workman (3TmxebJqBE)",
-      "source": "Mshale",
-      "date": "2026-08-12T15:50",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5vV0gzdS1Nck5sRVByeXpxNVhRVlFXNjdQUi1BaVVoNmRJUzYtLUpzRDVORG96ZnVSZk1JbmVLaTJ6YTZvRE9Qamg3VVJyMW5BWF9aMWNuVDRxSWs?oc=5",
-      "sure": true
-    },
-    {
-      "id": "faae4cdc53d1",
-      "title": "安全技術のオートリブも参画、ラジコン交通安全教室が10周年…つくばの小学生400人以上が参加 2枚目の写真・画像",
-      "source": "レスポンス（Response.jp）",
-      "date": "2026-08-12T15:30",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPQlhIZERzWHJ2b2FwNEVqdXA5ZDFKdFJXYmJDeWdVUTZsSFQ0MGFUcnF2Y3Y5aUhyUnJPWjJzaHpDS1F4ajIzLVVHeHh6T09TTWVhRmNldmRZVTNHUjdjWllPNEJpOUI3SXk5Tm9QblZBQ05SWjdjcXlwdkhmbkttcU9qSEpObnZvWHdYOHloc3V0SHd4QmREUE5ZTlBUMTMxV254MU0xNEJPSXlLaW1FZ0VHZTUxRlZ4QkJrbV9PRTVmZU9SRGlIMjd3emo?oc=5",
-      "sure": true
-    },
-    {
-      "id": "f5e3df0f9d78",
-      "title": "安全技術のオートリブも参画、ラジコン交通安全教室が10周年…つくばの小学生400人以上が参加",
-      "source": "レスポンス（Response.jp）",
-      "date": "2026-08-12T15:30",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5UbmVCVENweGZyN2lhNzQxczNkWWJuSUhYWWVMcnQwU0s5YjIwOENzQ0ptX2tmZFFxN3VzRXB3aUNtQWg3NGo4ZzNFNEx4d0ZfdkRudnpnUXE5d2RXeUE0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "cdce97977224",
-      "title": "安全技術のオートリブも参画、ラジコン交通安全教室が10周年…つくばの小学生400人以上が参加 4枚目の写真・画像",
-      "source": "レスポンス（Response.jp）",
-      "date": "2026-08-12T15:30",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaFQ5QVRwaWIzbnNmYWxKU1N2azNHdU1QRk1YcW0tY09EdWg2WW8xa2ZyM3FGR2dOV0NydFJuV1pJQkVndUtkeVMyUUQ0T1FWR2E5MGNUYzVzU2F5LXM2ZWVaVUg4YVNnb21EdWcxME85Wm51U0RsSTkzc3EyUjBta3VUaWl0eVMwRTZ5NkR4cw?oc=5",
-      "sure": true
-    },
-    {
       "id": "16c4444d84ae",
       "title": "茨城県に上陸の“台風15号”強風で女性4人ケガ 一部で断水も",
       "source": "Yahoo!ニュース",
@@ -2143,29 +2192,14 @@
       "sure": true
     },
     {
-      "id": "ab66cffd27c3",
-      "title": "20191124 つくばマラソン 32㎞ 7/8 Jalen Williams (ifWpMU0Mxo)",
-      "source": "Mshale",
-      "date": "2026-08-12T13:02",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9FMnVHcUJBb2V6Mkc0WFVra3NWT1BoNG92UVZiUVZMT1RVRzBMX2lKaXctb0doQTlYa09zQi1LWHJMQTdYYTF6N0RnZzdnZzUwN3J5U3NPR0hqU0k?oc=5",
-      "sure": true
-    },
-    {
-      "id": "4b60a3c9c887",
-      "title": "レディ・オア・ノット２ 守谷(茨城県)の上映映画館・上映スケジュール",
-      "source": "MOVIE WALKER PRESS",
-      "date": "2026-08-12T12:46",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FNE9jUmxmX1lBem5Kc24zQ1dJa0kzaWtHLXc4WFprLVlfaXJQSExWcHRPYURTVS1yVmN1OGZqb0hTWjJjZ3Q4bllUYjh3NlgxTEMtVmZpMTdXM1ptM3g0?oc=5",
+      "id": "64e03c501bca",
+      "title": "台風15号 観測史上初の茨城県上陸 列島横断中 関東で3人けが強風で倒木など被害相次ぐ 高速道路一部通行止めも",
+      "source": "Yahoo!ニュース",
+      "date": "2026-08-12T06:24",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB0dXhaeXFLQUJseXNIbnFpcHIzaW9kOXBiWGdHMkhSb18tYVRQYmZVRm12UXQyZU9FT3RqQXduZUgzUjhsVEdrb2ZXLXF1YkpMRW1fZnBtVWx4TmJuMDJaZHJIenNkelFiMHp0TTlsX1VMa3AwbGtqVzl2Ynd1ZGc?oc=5",
       "sure": true
     },
     {
@@ -2894,39 +2928,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9qYkRCTkh5Z216aXhJTEg1cVZMdm1tTi03bURfazlMUWdOV1R0Q2gwMm0yMjlscUp6Q2FEWkJCUmtTTjk5b0l6Umk1SkFXTkVvd1NoMjV4WG9SaF9KMENTZUtlSS1nVmxmX1E2VE0waGh3dEJhRTJOeFVWbThvMk0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "c0c7534a7391",
-      "title": "茨城県の過去のアメダス実況(2026年08月08日)(積雪深)",
-      "source": "tenki.jp",
-      "date": "2026-08-09T00:30",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBzM2JYcVlPRjhmSlFtdGw3d3dONWN0N0hGRTNsRE9hVy1VZnRCX1B3Z1BxRTFfOEtCRTF3cnJSRXhWbVFSTlJkajVTdXFCdDRoWm1zbm9BeHJCSG1iNUdfSGs4VE0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "8e9daaa6a363",
-      "title": "茨城県の過去のアメダス実況(2026年08月08日)(気温)",
-      "source": "tenki.jp",
-      "date": "2026-08-09T00:30",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBNTnVQdjhZNVFyWGhpQWNVamhhc0E0anYzVmJHTF9ETElpVkpjekI0eEtScWJBb2RCXzZQM2J5dGUwSzBqSTlJdDdKUVliT0hpY3pzdklid1Q?oc=5",
-      "sure": true
-    },
-    {
-      "id": "48a154547047",
-      "title": "茨城県の過去の雨雲レーダー(2026年08月08日)",
-      "source": "tenki.jp",
-      "date": "2026-08-09T00:22",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB1ZXJ4OUtOQ0NSamRTbS1NNnpEekNwZ2lJNFRZUWRWNE5ScUlzX080dUxYdGxkanZDUTFhWm1EeEtacFJJU1F2bTdRMmZmVkJIbEY5U0pQTQ?oc=5",
       "sure": true
     }
   ]
