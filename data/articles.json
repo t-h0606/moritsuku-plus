@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:07",
+  "updated": "2026-08-17T06:51",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,19 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "つくばと土浦が中心になる大都市圏⑵《吾妻カガミ》222",
+      "source": "NEWSつくば",
+      "date": "2026-08-17T06:00",
+      "city": [
+        "tsukuba",
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://newstsukuba.jp/62079/17/08/",
+      "thumb": ""
     },
     {
       "title": "【土浦市】「真鍋のまつり」を前にひと足早く！真鍋新町で「納涼祭」が8月22日開催、ものまねステージや豪華景品抽選会も実施",
