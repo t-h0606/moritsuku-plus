@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T06:47",
+  "updated": "2026-08-18T06:48",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,18 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "【土浦市】縁日にマルシェ、キッチンカーも！大手町で8月23日に「一中地区公民館夏まつり」を開催",
+      "source": "号外NET",
+      "date": "2026-08-17T13:15",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/2026/08/17/icchuchiku-kouminkan/",
+      "thumb": ""
     },
     {
       "title": "巨大ねぶたがつくばの夜を進む！茨城県つくば市の夏を彩る「まつりつくば2026」8月22・23日開催　TXは臨時列車16本でお出かけ支援",
