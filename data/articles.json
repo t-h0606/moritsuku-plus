@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T06:12",
+  "updated": "2026-08-20T06:16",
   "items": [
     {
       "title": "道の駅常総「HOT＆COOL祭り」を8月8日(土)～16日(日)に開催！\n水遊び・スイカ・縁日・抽選会など、\nお盆休みは家族みんなで“熱くて涼しい”夏を満喫！",
@@ -15,6 +15,30 @@
       "url": "https://www.atpress.ne.jp/news/619240",
       "thumb": "images/thumbs/2026-08-02-event-dc37.webp",
       "featured": true
+    },
+    {
+      "title": "資源物の持ち去り防止にご協力ください",
+      "source": "city.tsuchiura.lg.jp",
+      "date": "2026-08-19T11:27",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVUUxcmNQQTJCdU9hUXIxZE01dmRULUc0VW1ZWFJMVXA4X1JRb1NmUkxPZHNpWm5xYmdzdUZTQUMtZE9lWFdhdl9EcEQ1U1VRUzl5YzhsWjllam45YzBMaWxNSjkzWUhVN01tMGxoZWFGUUpja1FOTzdfc052XzhpOUxHTGpHYjhDQmZlTg?oc=5",
+      "thumb": ""
+    },
+    {
+      "title": "【つくば市】流山市から移転。女性専用「マシンピラティススタジオReMore」が二の宮にOPENするそうですよ。",
+      "source": "号外NET",
+      "date": "2026-08-19T07:38",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://tsukuba.goguynet.jp/2026/08/19/remore/",
+      "thumb": ""
     },
     {
       "title": "「音」で土浦の今を残したい 子どもたちと集めた音でVR・AIアート体験を",
