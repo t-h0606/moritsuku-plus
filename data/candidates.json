@@ -1,7 +1,527 @@
 {
-  "updated": "2026-08-28T14:04",
-  "count": 228,
+  "updated": "2026-08-29T05:40",
+  "count": 227,
   "candidates": [
+    {
+      "id": "c869afec55fd",
+      "title": "【茨城・つくばに新拠点】月額26,400円～の長期・マンスリーレンタカー「マンスリーゴー」、つくば支店を本格始動！",
+      "source": "ニコニコニュース",
+      "date": "2026-08-29T03:30",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9BY3VtSnY0TzVEczRyTlUxMHpydjMzbWI4MVc3Rkl3LUx0YVdSVC11M1EtSUJURGt1MFUyUTk3d29XWjg5dnhXNVNCMlZldHBWcVZ6N19Vdkw5TmpUMXBSWjJWSFhuYkV5UWxJdDFzMS1tNUFwRlZjNDZmUQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "cf400dfae56f",
+      "title": "＜画像5 / 6＞常陸牛につくば美豚！茨城ご当地肉グルメ土産6選",
+      "source": "ウォーカープラス",
+      "date": "2026-08-29T02:05",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBJZVIyc0lSeEk4eEV2MlYyMHEtN0VfLVh0Z1NCeTVLQW16QXZmSnRpdldXSkQxck1XSjRpZWVfMkhwZUtHVUNTTUZBeGpwSzBldlM1RkRacWRLWnp4N1NYWUJ0RExacmJkaS1tVVZfSWZoTjdIZGFMT29fOA?oc=5",
+      "sure": true
+    },
+    {
+      "id": "f867ffa8baaa",
+      "title": "プロ野球・ＤｅＮＡ４―２中日",
+      "source": "つくば経済新聞",
+      "date": "2026-08-29T01:50",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAyUTRhV3lrZVktUFZQcGdEOUo4Qm1HQ1NJY0N2VnhrbFRlMVZ1am1pMG5WSWRMTjlLWmFyMUx4Qm1nTkFuWTZkNlRhdFROZ0h5Mk1xMQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "3b5254b0c27e",
+      "title": "茨城県の過去の雨雲レーダー(2026年08月28日)",
+      "source": "tenki.jp",
+      "date": "2026-08-29T00:22",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFByTXhzZkoycnhQbUVRcFVmYVBIZS1ON0ZEUVFtRzZ3X19nNzMxYUhESUpoc3I0Ymt5a2d5NVBYUUlMekk3clZRcVd2Q2FXV0swbzJ2bHV6cw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "5018a23d843e",
+      "title": "プロ野球・阪神４―１巨人",
+      "source": "つくば経済新聞",
+      "date": "2026-08-28T23:49",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9LaHBHX0ZwOWVGMmE2ZXBxcUl5djlodzR1YjUwSVZNeThBY0U0NmRyaTVzZEs3R21HbDBnTENHZXJQLVNWNUVmbWhfU1pxUldna0JObQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "6f1abef1608d",
+      "title": "第71回とりで利根川大花火【ドローンショー】（2026年8月8日）",
+      "source": "city.toride.ibaraki.jp",
+      "date": "2026-08-28T23:45",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBtYmd5R185MTRMWGV0OC1Xd2RROEpOZzMtdzluTnF3WURLak9HRmV4N3dJc3NleVBLU0J4WnF3S3NvS2liemY5bDlhTHV5NUc4V04tSnFHTkowdjlWdTBGN1ljYzY5Ny1INGkyOElNMzU2MU5MaWtQdklmWjF5REE?oc=5",
+      "sure": false
+    },
+    {
+      "id": "d26eeef2749c",
+      "title": "会派制を導入しました",
+      "source": "city.tsukubamirai.lg.jp",
+      "date": "2026-08-28T22:49",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WZ25fei1Gd2xQZHN0V1RLZGdvNTFhVG9XTXJWVVpLdW9lcUpGYk1OaWxnSGtaYVdfcEYxNDBoWER3NldFTWpNVDJERTg1cVFMRkp5WXpmei1HQVBqb21xTUIwQjZMbG1hLUpBSG5Jaw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "1c0b8798d250",
+      "title": "ザ・マミィ林田洋平、つくばで過ごしたモラトリアムの日々。なんだかんだで思い出だらけ",
+      "source": "千葉テレビ放送",
+      "date": "2026-08-28T22:35",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DVGZSTWZrMVgtOE93eUl3NjZMNW1QaDNJYkxuc1djZjNta3F4VXZHZHJNRGdQWWlpN2dSd2pWV0RhRVZPc1k5VkxzZ2FVNlJyellUSzdqVU5rNERlVi1V?oc=5",
+      "sure": true
+    },
+    {
+      "id": "44c193349257",
+      "title": "「犯罪につながる？」女子トイレと性の多様性…悪者にされる当事者 オープンリーゲイ“女装子”満島てる子さんと考える「トイレ問題」の本質《連載②》",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T21:30",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qUDcxVjh5bEpUcmJOZ0s4TTh4MDdmWmc1dVlhT1dKMHRqcWVIZFU1bEs4bWowWDJuY1A0TXZucTFEc29MQ25uR3c4dEs1MDlQalpVZHUtZ2dCeDBTQkVaQW42ODdxdUE?oc=5",
+      "sure": false
+    },
+    {
+      "id": "783cbedc42c6",
+      "title": "トピックス - 2026年8月28日(金曜日) | 伊奈第2保育所公式ホームページ",
+      "source": "city.tsukubamirai.lg.jp",
+      "date": "2026-08-28T21:15",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNQ2FlVFcxQ254d0N4aWxVcGg2eWZBcVJ3YlhSR25WT2pncDJEakxNRUpPU0E5V0xqUk5BaENDUVRCSDFPMnM1UFJLd29BMlVxTUMyZTBwRVp3U25wTEJMTG82Q2Y5S2ZYRE1mQmdGdGdfVnNzVWJCZXpReUlQMGkwNmlqSmRSVDEzaFNnUXIzN1YyMndGN00tMzRDanlPZw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "b59fe6a06c31",
+      "title": "成人した子どもが実家に出戻り－老後資金を守るための「親子同居」ルールとは",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T20:47",
+      "city": [
+        "tsukuba",
+        "tsukubamirai"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1sZmNoMk1mam1FRkdwZXJ4ZU1HZTdCSHl3QnAycm81Q1pnalBNQjMyNTI1am80Y3hfWlVISjdCaVhzZ0ItdWxxNU43bmhBTmNGakctMWxEOXdZbmo3Rml5OTA5OHU1Vjg5M1lyTTZWNGcwNFpFaUJhN1RWZms?oc=5",
+      "sure": false
+    },
+    {
+      "id": "379df3d79ee3",
+      "title": "紫電改展示館が8月末で休館 入館者数は例年の約2倍に 来年秋に新施設がオープン 愛媛",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T19:54",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9sZzlSeVZLaHJlNEc3dm9VeDQwMzhGTkVvMHZ2a3Y2OVA3RllrMGdXampITnhzMmduZnJhN21vRnkzTjdmZTFOMkcyNEFfMGJfWUo4X0hjWHpDUFd5MkJJUFpvTko3bUk?oc=5",
+      "sure": false
+    },
+    {
+      "id": "e782733692d0",
+      "title": "【Mrs. GREEN APPLE×花火】常総きぬ川花火大会2025『Breakfast』 / Joso Kinugawa Fireworks 2025 – Music × Fireworks Cohutta Ga (a7jWdqCLig)",
+      "source": "Mshale",
+      "date": "2026-08-28T19:37",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9LdWFxa3lJQlc0TUZ3dHp4dTVaZlc5cmV4aDlOc3BhS3BaaWJiRFBCQm10VzJYb0tKejNZNlhVVEY1bUVWV1ZoMmwtZEhKSkk3djh5cVRIWFBaOVE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "728326a7d6e6",
+      "title": "パラリンピックから５年",
+      "source": "つくば経済新聞",
+      "date": "2026-08-28T19:32",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1RUUQ4eGhGeEhYWWdfRVRNeWdIWmRObkhlSmFlRW9SUE50Smh4bUVSbXRQMmJIb09HbjdFVDY2VlQtN3Q4aTJ5VDlyVjdKMnB6WHR1OQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "b8667ad57955",
+      "title": "参院、バーチャル参観可能に",
+      "source": "つくば経済新聞",
+      "date": "2026-08-28T19:32",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBKYmVLZnJNbXhZcGUzZmNfaVIwdDN2ODlXTDRvdWdidk8zVE02WVNCY3dTaV9qaTRiUzBQelZZbWJXNnJlY0JHX2hvQU5vdWNhaU9mZw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "fad30d4d9d24",
+      "title": "装着型カメラ、本格導入へ",
+      "source": "つくば経済新聞",
+      "date": "2026-08-28T19:32",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1nVkppVUkwelhuYjg5bFBELXJHMEVDVE92WERneEo4TFRqa3JnbXh3WnJPZzZ1SUNJM3g2SV9OVThDUmFOWjVOc3RDVWFSU2JzengwZg?oc=5",
+      "sure": false
+    },
+    {
+      "id": "387dd81333ed",
+      "title": "大相撲夏巡業のぶつかり稽古で胸を出す朝乃山＝茨城県つくばみらい市 - 朝乃山、故郷富山を案じる 豪雨も実家など大きな被害なし - 写真・画像(1/1)",
+      "source": "西日本新聞me",
+      "date": "2026-08-28T19:22",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TOS1XYTZUUnVLUlRpTmVaR3JuMmFmd2Z5cEdNWno1VFFQdldTRnEzUlFycFBCODlyQnQ4eWRSVDJabGxPYTlRcmwtaW9PLWgtM3dTYjJoSQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "9bd3ca15f14b",
+      "title": "大相撲夏巡業で熱海富士（左）と相撲を取る大の里。奥は師匠の二所ノ関親方＝茨城県つくばみらい市 - 大の里、熱海富士に6勝5敗 横綱と大関候補が熱戦 - 写真・画像(1/1)",
+      "source": "西日本新聞me",
+      "date": "2026-08-28T19:22",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1hWm1KUFJZcTVrRFVwSFdGNDZxd2FQcDVncU9QY0dGSEpKdV90OVlYOUZOOFMtRU42OVp5X29EXzJodmJaSEJhZ2JZU3BCYTFEZ0NXaFB2dw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "b5b9f2de92db",
+      "title": "大の里、熱海富士に６勝５敗",
+      "source": "埼玉新聞",
+      "date": "2026-08-28T18:34",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9Rd1I1NjlZQURLQUxnOXZ1SkVNanFQUnJWa0U5V0hybkVvVDhERjZfeHJZaElZVnlnV0NzY2cwV3VQLUJKOEV2ckl1c3JYX1RVelJ1VzV4VQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "4551645c9494",
+      "title": "再生が進む久米南町の棚田のそばにブドウ刈りができる観光農園オープン 宿泊施設やレストランに併設【岡山】",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T18:30",
+      "city": [
+        "tsukuba",
+        "tsukubamirai"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5Nk1nblpFdXJ2MHhnTmhsTDRyampUVXBETjFRWnZzRGJRa2FIblFUamdzQ2x4Q3dpNTZna1JHc3RBSjJPU0lCcjNBblhpdDZXSHlBZnMzWmNQdw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "1c0db55aafc0",
+      "title": "朝乃山、故郷富山を案じる／豪雨も実家など大きな被害なし",
+      "source": "四国新聞",
+      "date": "2026-08-28T18:28",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5LNVBaYmxpX00yTUFhRVVwYXNGbExlckR2TjhqbWNzQ2xoclJHdXQ3WlJvQjJZQlJJMnRqbTF1Q3BkS2VaLXkxNjVUdGJTd1BfbDNmRl9iQmIteGVYV3NaSlpWaWkzSHRpUHA4ZjdQMDQ1V3E1aFhsUXRvVUhobGc?oc=5",
+      "sure": false
+    },
+    {
+      "id": "dcedccfbd0dc",
+      "title": "朝乃山、故郷富山を案じる",
+      "source": "カナロコ",
+      "date": "2026-08-28T18:28",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBISENHU01OaW4xODJTZ0pQc3JVZk1RY3lDQnNKakgwVno1b0ZrZG5WSGxvcjh2WGdTZmJGR3lUYXNuZkVpTU9HOW1WalM1NndhbGZEMlkxMUxjQ0NtYWJFa1k4N1JnREU?oc=5",
+      "sure": false
+    },
+    {
+      "id": "a2b813329721",
+      "title": "自治会の高齢化などで途絶えた“盆踊り” 8年ぶりに復活 祭りを通じて近所付き合いの希薄化解消へ 三重･津市",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T18:27",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1qQzlaa2NBMVB3NWxRUFBlUVdqT2pncVJLRlhWV29PMGg4TWdoMGFReFJwY1VLdEtwTVRPMmMtTnFsVEdQaDZRVF8zUUJGRW1hV0RNYjZ1dUVCdw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "dd140224992a",
+      "title": "「取手ジャズフェスティバル2026」Part2（市民会館大ホール）",
+      "source": "city.toride.ibaraki.jp",
+      "date": "2026-08-28T18:21",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE0tTEJRWTFGVnl0TzNJMEZ5VGdRN05iOVFUYS1TZVhjSGVnOWFvalAxWkNNQnFmTDRTdWg2RU5wRk1wMGxocU1iYWF1blRNcUNTWDhrUS1EVS1tVEJWSG5ua3lET2ZkbllqQ3NydVdpUmNTZGZU?oc=5",
+      "sure": true
+    },
+    {
+      "id": "56cd5e9a1457",
+      "title": "高市総理 チームみらい安野党首から「AI家庭教師」 早速効果を体感",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T18:19",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBMaEJoV1NEaTcyLUM3VFdhNkdMeldPaFhlWV82S05teE5DYkJWU0VjZW9mTW52YlJGVFNESjh3RHRUb0dPQ05NLVVUU1dFTHk4MndFeFlfVnlJQ25aem5DVXZLczFmeFk?oc=5",
+      "sure": false
+    },
+    {
+      "id": "13f78444946c",
+      "title": "お茶1杯にも2時間並びたい－Heyteaなど中国ティーが米国で人気、日本にも広がる",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T17:52",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPazlyc2Y3SzlTQ2ZlV3hKcXpPdFpwQXV5MFZXVHdiZnVFdXRZRDNaMTJBTlBYcU5vNV8ydmtaem90cm8wdDNTOHpaTU9TcjN4LUFORF9pQnlVRURqQXhOQ3pZUy11SlRKUGZwbElCMm5vdktWaGE4ZDc4YjVsOFJERjZHZTNWRlE?oc=5",
+      "sure": false
+    },
+    {
+      "id": "07712d5de7b4",
+      "title": "親子で「防災食」づくりに挑戦する体験会 つくばみらい市",
+      "source": "NHKニュース",
+      "date": "2026-08-28T17:45",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5uMjNnRXQ4LXBnNTBEMGZ6Y0dpbFJQSmdPOVMwZ3Z1eEZUMC1YemJSemFEQmRwajZpV0tpNnhpeVZZX2N4OW1oS1NPSlJSSlk0MF8zWWxZSmE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "13eae67680a8",
+      "title": "【茨城・つくばに新拠点】月額26,400円〜の長期・マンスリーレンタカー「マンスリーゴー」、つくば支店を本格始動！",
+      "source": "PR TIMES",
+      "date": "2026-08-28T17:42",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE95cXdldk9aZ1pnSHlaLU9mQUFyQ3RpYzZLZy1sWEVTckdUUWsxYzdUNHNvSUlpTGJic1RXTHM3Rm1LdHZSV3dDd0VpcEZreWdpaC1sMHlyc1drWkZPdHctemFETXR4TzRZR1E?oc=5",
+      "sure": true
+    },
+    {
+      "id": "6377e14d9f43",
+      "title": "「ジェラートの日」由来は「ローマの休日」だった!?変わり種は『ビール』の味!?蓋つきケースで保管「出てきてからのお楽しみ」青森市と八戸市にオープンした新店舗【#わっちタグ】 | 青森のニュース│ATV NEWS│青森テレビ (1ページ)",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T17:30",
+      "city": [
+        "tsukuba",
+        "tsukubamirai",
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1fNV9HQ0FGOUlyUEJ4UEZtSV9zbUhVMjdudmVMUWJvUGpVXzdFTEk2Y1NHRnU4TVU5VndQNVVXM255WkVhMTJBQzdpNWdJRVg5MU1sQ2N0R0FHd1VtRzdjMUFvdG1yVFk?oc=5",
+      "sure": false
+    },
+    {
+      "id": "88688369420a",
+      "title": "ママハピEXPO@イオンモールつくば(茨城県)の情報",
+      "source": "ウォーカープラス",
+      "date": "2026-08-28T17:24",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ZWlg4X3h2YThZa0NhTkZRSUd6QVUyem5qNUtSTzNCRUxkQlF2amRocHRyZ0lqNmpXSkJjR1FQYlU5cnhkd2d0b0ptOENrQnV2Ui1ZTDZvbW9JcEU?oc=5",
+      "sure": true
+    },
+    {
+      "id": "ad42c06728d1",
+      "title": "人気店“いろり山賊”錦店が8月末で閉店へ…開店前から惜しむ客が続々と「免許取ってドライブに来る人が多い」「なんとしても来たかった」",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T17:09",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9icDUzNTVTbzBUVkEwLVQzV0JMd0p0dGRlQ1puNmdnQ3JEeFBsV0ZQSjJvaEdqT0JUbHlQYzJCd3M1X3l1dElVRFBEOFpuUW9fRS00Vm9ldmM0SXdhUDdLcmRMZW9GdXM?oc=5",
+      "sure": false
+    },
+    {
+      "id": "3104960cb267",
+      "title": "「友だちと夏祭りに行った」 夏休みの思い出胸に小中学校で新学期スタート",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T16:57",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCeXRBLWJPYWVBV0Q5TVNCY01mUERQUHkwYVdfU2ZoMjJqRXpyUV9FSmxVR1pKSHYzbERLQkNTUUpRcDJlOU0xa3BOazBQa05aamVYdG1Jd0lOdw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "0fd03a25d3e4",
+      "title": "茨城大学で学びませんか？ ―留学生の学び―",
+      "source": "ibaraki.ac.jp",
+      "date": "2026-08-28T16:48",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE05X3Ywc1ZIeVdadUJ3c2MwRWEyaTZrRHBUY2tnOVhOSVlqbV9za0lMMGtKdGFRc2pNMHhTSEtWMUpHOXR6Xzh1UnlQX3I2T3NUTUU4TVRNOWJPbU94dEQwUXY1MG5IUEgwRy1XT3Zn?oc=5",
+      "sure": true
+    },
+    {
+      "id": "e68fe1e217f3",
+      "title": "つくばエクスプレスの新グッズ「パンタでGO!! TX-3000系」が8/28（金）発売、八潮夜市2026にも登場",
+      "source": "三郷ぐらし",
+      "date": "2026-08-28T16:14",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5rM0wxNEdTR1ZKRlRRVFZmSFRVUWktNDVWa2FVMFcwV2NiSkNRN1FDcFNuYVB6RW9LTWJ5Qk1EQ1BSZEo1TTZHbDg0d0hWYnlWWmI1bg?oc=5",
+      "sure": true
+    },
+    {
+      "id": "ccba5f86466b",
+      "title": "取手ジャズフェスティバル2026 Part2を開催します",
+      "source": "city.toride.ibaraki.jp",
+      "date": "2026-08-28T16:04",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUENNb195UGtORXIycDBxTjlkeWJmaEhnMGFFR2FJdHRJRHMyNk1fTEt6T2UxVEVpakhwckI5bFhxcXkwbG9FTVJscTNsNndic09VWFplRlNyYXNEUThjY2FwUHRIVlM3RG1hVkt0MkR4SmRJbnM0bWgycWtGQW43Q252YWFMWF9MdXBRSzAzbmlGX3M?oc=5",
+      "sure": true
+    },
+    {
+      "id": "d45ebc706b83",
+      "title": "【土浦市】世界のグルメとふれあい動物園が登場！うらら大屋根広場で「世界のごはん＆おやつフェスティバル」が8月29・30日に開催",
+      "source": "号外NET",
+      "date": "2026-08-28T15:30",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/2026/08/28/sekainogohan2608/",
+      "sure": true
+    },
+    {
+      "id": "f767ce574e51",
+      "title": "優良建設業6社を表彰 茨城・つくばみらい市",
+      "source": "茨城新聞クロスアイ",
+      "date": "2026-08-28T15:04",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAzUEhWTV8tVzZMTXNmVVZwbUp6UFJEOWx6bC13MElHZ05pQlp1SkVGMkUtQzNjS2prYjk2MS1DWXZZN052RS0yRWxYTDFyNVljdVdTYjdNTTA2aWI0d2szSmNPN0ZMV3Z6M1BRSncwa3lDU0U?oc=5",
+      "sure": true
+    },
+    {
+      "id": "15c7c05d0dcf",
+      "title": "思考するドライバー 山野哲也の“目”――ポルシェ・タイカンGTS編",
+      "source": "webCG",
+      "date": "2026-08-28T15:00",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1HUFhzcTJUeTBtQk5Pd2lXNXVWMDMtWWpfWGVwOHBlU1dnWm9xdV9hTWx2anZERzA5V0xtT2M0b0dzaU04czh1LVVqSVlsZUpqVVHSAVJBVV95cUxNR1BYc3EyVHkwbUJOT3dpVzV1VjAzLVlqX1hlcDhwZVNXZ1pvcXVfYU1sdmp2REcwOVdMbU9jNG9Hc2lNOHM4dS1VaklZbGVKalVR?oc=5",
+      "sure": false
+    },
+    {
+      "id": "96b86e2f2f50",
+      "title": "ニュース",
+      "source": "シネマサンシャイン・ディノスシネマズ",
+      "date": "2026-08-28T14:37",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE04Q3RXbmRNM0I4Smg0QzJ0SXlSRVhNZjh4SzJtVE5RXzJYMFdlTV8temRkb0FnU2V3U0pCcDRnZDFjc2pOYktsQW0teFlyekJCanVlOVJqQUpMY1pQWjJVLXEyODFXbklQZW9sYzln?oc=5",
+      "sure": false
+    },
+    {
+      "id": "b87c89c9f782",
+      "title": "「公認出せない」自民・鈴木幹事長 金銭授受疑惑受けて福岡県連幹部に対し…改革要求 来年の統一地方選挙に向け",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T13:54",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE94UERGNmNjRmlRY3FZWng3d2hzVFdXVVc3bElyNnN1djFDYkFhMFBCVE1fQ242TU9uQTU4RXFwcGtYTU56VGJaYW4tN25pUFExekpNcl83TWZ4YkN1U0hkQmMwTDQyemtaMHl2MzZPb3pTV05W?oc=5",
+      "sure": false
+    },
     {
       "id": "1fc5887b472d",
       "title": "【つくば市】ジョイフル「鬼滅の刃」第3弾！不死川兄弟の好物をイメージしたデザートプレートが販売中です",
@@ -66,6 +586,34 @@
       "sure": true
     },
     {
+      "id": "3ae72f1bfd07",
+      "title": "第28回YOSAKOIさせぼ祭り ことしは１２７チームが出場 | 長崎のニュース | 天気 | NBC長崎放送",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T11:54",
+      "city": [
+        "tsukubamirai",
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLeEk2bmNiaU50S1ZvblpkMGJtcmdsa3NYaE84ZENETGJCV3U4MTR6NHJlQVNMYnRwNWwteE5wVWE1RWM1V0U5RWxpczFkNnhtQW1ZdkloNmlSUQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "9ecfad52ba64",
+      "title": "長崎県の諫早市議会でミュージックフェスマラソンTシャツ着用 来年開催 | 長崎のニュース | 天気 | NBC長崎放送",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T11:52",
+      "city": [
+        "tsukubamirai",
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1nNVRyT3RqV0FzTVFLSUxvdFZ4UGVadGdwTWVzWUpxQmgzV21BSEZVV25Pcnh0emN0M19zQU9KQUNZekdPMHRTRWpEQWdqamphZlZYUnIwSS1kZw?oc=5",
+      "sure": false
+    },
+    {
       "id": "aa22b1d67f74",
       "title": "CBRE／茨城県「守谷ロジスティクスセンター」内覧会9月15・16日開催",
       "source": "物流ニュースのLNEWS",
@@ -102,6 +650,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE93QndkQjNkUHNHUTZXNFZXM1JFeHh6SmpuZGdKS2VWS3AtbHBjTmlaNXRqM2RFNUZrV0hLRWZWMk1leVpJSWxCWllTNnNKX2NBNF9Mbw?oc=5",
+      "sure": false
+    },
+    {
+      "id": "171da4b051a1",
+      "title": "熊本地震、２８日で１カ月",
+      "source": "つくば経済新聞",
+      "date": "2026-08-28T11:33",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1zd2dNQmd5bk0zYTRfMG1JUnpZLUp0SWtOTTRCVVJSaThnVWk1elBxUWszLU1hWnFiUzJ1c0xEY1ZsNjkwZzJOUnhkZjJvWU92cXpqeA?oc=5",
       "sure": false
     },
     {
@@ -154,6 +715,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5adWNNWlZyQmFCTzNGWElxOUVKX3dVbTZIYnpneUVhaVNmejZpd2FDYkk2bTlNcUtxMXluc2w0TjI2MUVaZHV2VURxZVZBWjl1N0ZmTEtDMThMdi13MzYyX2ZZNVFHNTlNNHE1Y3BPZ1AyaW1vRy15WXZ3QQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "039e29ad76e3",
+      "title": "旧ユーゴ内戦・大量虐殺の罪で終身刑のラトコ・ムラディッチ元司令官が拘置所で死去 数か月にわたる深刻な健康状態の悪化で",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-28T10:08",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBqZDZGVzFfTHctTWVWQnh4SW8xN0t5U3hURmV4dGJDUTdJTWVQekhWYWdMbU5pV1Rfbi1jOGZ1RTVyLU5TWkxyNVRpeV9XNWtKOUdXcWFjZEptZkZZRWYxUnI4SDRJV1lyakpCb0llQm95dTJR?oc=5",
       "sure": false
     },
     {
@@ -274,6 +848,19 @@
       "sure": false
     },
     {
+      "id": "dbce98eb67b0",
+      "title": "＜画像7 / 12＞北関東最大級のSC、イーアスつくばがオープン",
+      "source": "ウォーカープラス",
+      "date": "2026-08-28T04:36",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9vYnBmMVZIQXVmc2lJb0hzSmZRZ294b1c5ZkhMeUtUY1ROQWdvUDZBRnJjUmc2SVN6bWRXMHdXMjRSYjZxWHBiYjNCX1I1R190OE1sTnRJbHZuMkMwd0Jsd1RyeGY?oc=5",
+      "sure": true
+    },
+    {
       "id": "1bbdaa9487aa",
       "title": "オンタリオ湖が“アメリカ湖”に？ トランプ氏が名称変更の大統領令に署名",
       "source": "TBS NEWS DIG",
@@ -300,6 +887,19 @@
       "sure": false
     },
     {
+      "id": "318e27d6f46a",
+      "title": "＜画像6 / 6＞関東の三大祭、茨城県の常陸國總社宮例大祭が開催",
+      "source": "ウォーカープラス",
+      "date": "2026-08-28T03:08",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9BMkFYc3h0ZU00U3hwRWRqNFhnS0k2UXpIME9RSlJ4dTgwMkFTQ3Z2SlB2NG1lNllIRFpIczJEZmFTbnJBX253WDd3RTZoaE5sN3JHYkRXZ3BwNWh3eDVCRWZWX2FVMTdFWHp4Y1QzcmZDa0IxSEhxdjd3?oc=5",
+      "sure": true
+    },
+    {
       "id": "8f4636c21e84",
       "title": "がんを知るセミナーにご参加ください",
       "source": "city.tsuchiura.lg.jp",
@@ -311,6 +911,30 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQU2hjUDB1YlhwS0dOOHpwVDRVREhnQWM5eHN6UU55UTNMNVdNSHNjRUk5ZGpvai1kWFpZemFUWFZiN0xGX254VThOVDdjWTJuLVRqeVVfY1p0R3dWd1VoRjdKMFVpdXUtT0hKc0ZnbFBlM0VmNFZSazFZSG1fZmUxbHg5UmROTXJXYm12ZQ?oc=5",
       "sure": false
+    },
+    {
+      "id": "cb998621254b",
+      "title": "茨城県の過去のアメダス実況(2026年08月27日)(風向・風速)",
+      "source": "tenki.jp",
+      "date": "2026-08-28T02:44",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE51eUIyQVdLTkZYWUlQcVp3WEJxTDdCNEpiRFZhdlBQWThsTGl1NXVFVm1ycnBkRGVvMFpUdC02ZDJuVkJxeDRoMWU4Y3J5WWVkb21hQmdJeFNnXzNHS1luSU5ESHE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "0c9090e7ec6e",
+      "title": "画像1 / 2＞不思議な空間が広がる「世にも不思議な美術展～トリックアートの世界2～」が茨城県つくば市で開催中",
+      "source": "ウォーカープラス",
+      "date": "2026-08-28T02:42",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBoYWNTakkwN3ItS05kekxtMU11eWRkVkREd1I0VVZzU2MxaFp1SF9Ld0ZCamg1QVR2OHJ1V2l3Nk9GOTVkbS12VE5jc3pBdVVaZU02SjRtX3hwQlFqLXdjU0VBODNtYkNHbnRB?oc=5",
+      "sure": true
     },
     {
       "id": "8f3e50cd3e26",
@@ -400,6 +1024,19 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOLWZWclg5Njdjb1Q4TzNsaGlTQThQMGRnYTJId25WQklKZFltWms5eTF3RGFSUG0zWWRZN2NvSHBjbHVubFN6TUpuSWNNbEhEdUZvbWxqenZEalNaVDEteWg3aWFXQ1RtRHRScVhyUGgtWUZSUFlBRi1ieS1vWXFKWkExWjJ3aU9wRTFaQXBIYWxUSUN2d2tVQkE5U3JPWXdfNjFYdUVB?oc=5",
       "sure": true
+    },
+    {
+      "id": "7d046a154451",
+      "title": "信玄公祭り「いざ出陣！」 市川右團次さん演じる信玄公が率いる甲州軍団出陣",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-27T23:01",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBCU3l6X2hqSkdPOUZmckxYVThVelZqbFpsU0QyNVR5eW9hWl9yNU54NVVpRWlhbDl3NTNMWDUwZC1jVXhDQV83V0hIWDNJVUNfbS0wYThlc0d6czhQeXBB?oc=5",
+      "sure": false
     },
     {
       "id": "874b47c75626",
@@ -574,6 +1211,19 @@
       "sure": true
     },
     {
+      "id": "10bce120544b",
+      "title": "イオン、期間限定で１４５品目値下げ",
+      "source": "つくば経済新聞",
+      "date": "2026-08-27T18:46",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xSGJ6akxESjZsNHhhX0N4UUM1ZXAwQlU5cl9JYkl5NTZJaUVEOW1QLVo5TVlTSm5neHhSVnE1V3k5cjRoV0k5WFhHakNRX3BKRmdnMw?oc=5",
+      "sure": false
+    },
+    {
       "id": "1f4ce023b18c",
       "title": "「食材にこだわりを持たないことがこだわり…」長野市に新しいパン店がオープンへ「食材や産地にこだわると価格が高くなる…」食材よりもお客様に喜びを…おすすめは「信州人のソウルフード・牛乳パン」 | SBC NEWS | 長野のニュース | SBC信越放送 (1ページ)",
       "source": "TBS NEWS DIG",
@@ -607,6 +1257,20 @@
       "city": [
         "tsukubamirai",
         "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rYnZSSkxTYlZuZTVLMXl5WTIxV25VaXUzekhncGRpM3JoWEUtQVR6ZVlUUTRVVlpBYnpUOTNONFZtbThwXzZDdkd3bC13YzBVQ2xRdzVlMnpmUQ?oc=5",
+      "sure": false
+    },
+    {
+      "id": "8ba899894434",
+      "title": "再開発が検討されている都心部の一角「ヤマダデンキLABI広島」が移転のために10月4日閉店へ 新たな店舗は11月上旬オープン予定 閉店後のビルはどうなる？",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-27T17:50",
+      "city": [
+        "tsukuba",
+        "tsukubamirai"
       ],
       "category": "gourmet",
       "emoji": "🍜",
@@ -744,6 +1408,19 @@
       "sure": true
     },
     {
+      "id": "3c69c64aabf0",
+      "title": "【 独自インタビュー 】杏さん 自身のスローガンは「これでいい “より” これがいい！」 子育てきっかけでパズルに夢中「子どもが寝ている横でも」",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-27T13:10",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "kids",
+      "emoji": "🧒",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1WRzZRRnAzR1pORGgyQTNYV3dMYkpZWUJGRzNFcXhOQmo0aGdQN3Nic2M2UlMzUm9JY3ZydEVkd0g5ZWd4RzBlczNjOWdrMWFLVVFUclNaZw?oc=5",
+      "sure": false
+    },
+    {
       "id": "8942bfee95b1",
       "title": "トピックス",
       "source": "city.tsukubamirai.lg.jp",
@@ -836,6 +1513,32 @@
       "sure": false
     },
     {
+      "id": "ee1b32651eeb",
+      "title": "「5回ほど行きました」「何度行けば満足するのか…」 東日本の“道の駅”人気ランキング1位に「スタバなども入ってます」「ものすごい行列でびっくり」の声（ねとらぼ）",
+      "source": "Yahoo!ニュース",
+      "date": "2026-08-27T12:10",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9wT2VNbUpsSFg2YVhSYmdnZFZOcTJKUG9IdUhxazBZUFFXNHM0b1BpMmNzcjl6bHcwdm5FZWMxLU8xX0F3YkdPTzBab3I0dkUwTVVxQXdLcEh2dmxIMXJCV3BjMkV3V1g2ejFNNFNGTnNRblk0SHMwckZfRU4wTXc?oc=5",
+      "sure": false
+    },
+    {
+      "id": "0cc3d828d31c",
+      "title": "＜画像1 / 3＞守谷SAの守犬メロンパンがキュート！人気ご当地キャラみやげ3選",
+      "source": "ウォーカープラス",
+      "date": "2026-08-27T12:01",
+      "city": [
+        "moriya"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ZM01YNEtYLTBQbXFTbWhDOUFQRHR6VUFKREtaeGtoYmJfTzFBUWlYUVF1MjhmcVAzanZMcGlGbjgyaVFJVm96dVppTUJIa0FCd0U2b0toeWFPMjBoTm8yXzJvRzR4UWc2UlE?oc=5",
+      "sure": true
+    },
+    {
       "id": "e8700a81e2ed",
       "title": "邦人観光客５人と連絡取れず ネパール",
       "source": "つくば経済新聞",
@@ -872,6 +1575,32 @@
       "category": "gourmet",
       "emoji": "🍜",
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0tbUl2LWw1LXJKM1VDWVRZMWJpdE95M0hoeWxMS3pwdDdBd0pORnE4MHU3VllMenY3ZFE5TXMtQ29nWjZ4QnlVaWdsWFVZTmJJSUY2amdHTG9TcHByNVBVbWZR?oc=5",
+      "sure": true
+    },
+    {
+      "id": "1d919fedacc7",
+      "title": "「廃墟モール」から再生へ。土浦モール505に8/18オープンした横丁にかける想い。 | 株式会社LifeBox",
+      "source": "アットプレス",
+      "date": "2026-08-27T11:38",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE05UzJGdzVkZ3ZrWGJlLTJ0M3BrOWVGNW5xYVAwTXo4aEtIOExiZGtVZWR4Z0VGdlR5dDlNVXJHUU9fbEhIcGtTTndEX0Y2bVE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "9f24cd466f7d",
+      "title": "茨城県土浦市のモール505に食のエンターテインメント空間「モール505横丁」がオープン",
+      "source": "wowKorea",
+      "date": "2026-08-27T11:38",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE96c0NwSlAtaFdIVHlsd21hdmVxenBEMXNlT1FPX0o5ME4zcjZoRmd5c0dRN2lfV19weG91XzlranlvQlR6Z2dhOWdNNkxxa1hTZUlGMkZJdGpVUQ?oc=5",
       "sure": true
     },
     {
@@ -1046,6 +1775,19 @@
       "sure": false
     },
     {
+      "id": "7e6d300b9155",
+      "title": "赤根智子所長「ICCは決して負けない」トランプ政権から制裁 日本政府に『法の支配』守る努力求める",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-27T05:57",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBfelJ5b2RjTHdQU2dVbHBQWmNYODNpUDNYeG5OR3FGWjhWSTBYUk54ZmhFY3RyT3ByNE5YbHhuSlNFdWV2NlRoMzdPUmQ4U3lUNzBjcGNJUkVFcG9Va3pPWGtPRmRNdW4tNTF3TTZiUDJ0UGsz?oc=5",
+      "sure": false
+    },
+    {
       "id": "c590854a96f9",
       "title": "【つくば市】8/27 最高32℃、暑さ、朝と昼間は雨の可能性がある予想【朝版】",
       "source": "Yahoo!ニュース",
@@ -1080,6 +1822,19 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNaHVkR2xLSWRRY2c0SUNMejdoZHNUTjFybHdYMHFhNGxDdFN3Z0RiMUJveVpiQW5FMHI2WEhxOE8zSDZqTTJ4S2RkZXRENHJCQ284cVNPLVNiN1JQd09Pc0pKbWw2RXBWU29tYkpyMXJneWVDQ1E5SUhIdkpSTV9zS0FuUGp3a1U?oc=5",
+      "sure": false
+    },
+    {
+      "id": "07c9abfc80ca",
+      "title": "【速報】ネパール大規模洪水 “ツアー参加”の日本人5人と連絡取れず 日本大使館「現地当局に捜索・救助を要請」",
+      "source": "TBS NEWS DIG",
+      "date": "2026-08-27T02:22",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5jMXp6cGtHY0lQODdlQWNPb0tSZWhMUFJDOWxYNDczZ2JOR0xmWWZNdklLX2JCZjFFSDBBSWhMWXVDenNiUmJYLXp3ZlhkYk5DejhOa0J4aFpwakVaR21qZWdyX2oyYWJNRUVWNjM3TXFTOGJt?oc=5",
       "sure": false
     },
     {
@@ -1304,206 +2059,6 @@
       "sure": false
     },
     {
-      "id": "5fea39f80bba",
-      "title": "SNSで人気“モールフラワー” 仕事も子育ても叶えたい！内職で母親らが製作 石川発のブランドの挑戦",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T19:40",
-      "city": [
-        "tsukuba",
-        "tsukubamirai"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1zbXlFSjVfZ0FYYy1sanNIVnU0OFQ3eTNQVmFwWTRmYnVTajJoMm5MZEU2SjAyaXE5S1BQb3VNUkE1eEZYYV9uNlJYN3J0X2dVcWNDX25mTWlPZw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "e1ecb48e1b7d",
-      "title": "岐阜城から取り外されたしゃちほこ",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T19:38",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5zUGZWcjFyMi1nVDZjenRhSjlkZHZoa1ZSY21KV195OThQWGoxUW8tQ1R0S3FvZVBmdk5KcEJnQ21mVXQ1SHllYS0zY3R1LUs2UkxtUw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "730d19e95a96",
-      "title": "レジ介さずフリマ発送",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T19:38",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE82NHdraS1jYUxCaDNRbU1fUnpPVFNaVnU2b21FRUo1WjFOeDBEdDljQklxWGt1QldBQ0Q4MHFjSXRmYWU3SGx3bXhoeGRnbEg3bklYaA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "a6c4f1ea1f0a",
-      "title": "病院火災で乳幼児死亡 パキスタン",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T19:25",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE16WlRGS0JQd0NiZVgxV2xWTVljNGY0a0Q0bk1uRUFONkRTNDQ5S2lpUVZwc3lzLWhHNWJFT1JzaUVfdEl6RUlfQi12QWxSTlZwaHI5Yw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "a377c87dbe85",
-      "title": "日向坂46「ひなたフェス2026」へ 「おひさま」歓迎の取り組み 宮崎市の中心市街地でも進む",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T19:00",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE96cWo5Yk90elVUVEhGSjRJaXowRkY0dUlycHoyZFd2cHBVeDBDSFY4eVBGV1lCNnJzekpmYkFBa0tFSGZDRUxYa0RLekpia1pWVkU4WEtMOF9Rdw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "67814181f37b",
-      "title": "総事業費9億3000万円！山口市最大規模の「平川地域交流センター」が9月24日オープン 山口",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T18:40",
-      "city": [
-        "tsukubamirai",
-        "tsukuba",
-        "kinko"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE51ZktPSmh3VjRCd2ZOVFdSa1NOQko3Z2RjYngzNGFDaGQ4dkt5TlJmUU5KODZuWnRRODc1cTR2NEJFOVpROXFuSFFDbFljOFBCNXlZTjU2N2ZoSy1EX0ZSWkR6QkpzZXM?oc=5",
-      "sure": false
-    },
-    {
-      "id": "92391984f237",
-      "title": "水原まつり高校生死亡事故 死因は脳損傷と判明 高校生の頭に強い衝撃か 灯籠とアーケード柱の間に挟まれる 新潟・阿賀野市",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T18:29",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5oNDVZSmFNUmVFTm9US0JuU3BYUkphNkZPdGJ2ZDFlcU9QYjFfMkhJSTBTd2xha0kzVE1RYmhyYU9ZV0JZVE5nSVFsMGhFU3ZQRzU5dDl0MDFwbHFneEhjRHdIb1B3SlE?oc=5",
-      "sure": false
-    },
-    {
-      "id": "ae6df95a6d72",
-      "title": "「防衛産業に参入を」呉市がセミナー開催 製造業など約100社が参加 防衛装備庁の担当者「中小企業の技術を防衛装備品に」 広島 | RCC NEWS | 広島ニュース | RCC中国放送 (1ページ)",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T18:10",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9pNUY3MUxOSHBBNVBWSXItVzRTMEszVWwzeVFQcnBUSjJLTkhMSTA2enZPLXFNckhrS2JORHhHem9Db3ZNb18wQ2ZxTS1PMlZhUVhSMDRhVF90ZmktUm9jZGJ4cUhJalU?oc=5",
-      "sure": false
-    },
-    {
-      "id": "b3944b5fdf28",
-      "title": "常総市コミバス「JOYBUS」  9月1日からルート大幅再編",
-      "source": "LuckyFM 茨城放送",
-      "date": "2026-08-26T17:11",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://lucky-ibaraki.com/news_list/845950/",
-      "sure": true
-    },
-    {
-      "id": "2413d397d3cb",
-      "title": "石岡市長　副市長置かず「交際費ゼロ」　学校トイレの洋式化も　補正予算案へ",
-      "source": "LuckyFM 茨城放送",
-      "date": "2026-08-26T17:08",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://lucky-ibaraki.com/news_list/845921/",
-      "sure": true
-    },
-    {
-      "id": "6d0283243abb",
-      "title": "「副首都」構想関連法施行に向け関係機関が初会合を開催",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T17:03",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBuaGtqaDNFdk5vZmszX3NDSGpJYWxLLThacDhTV2VGSmtuYUtBc1M4dzltQzVvZWo3OEhNRXIzWXZsY0hNWXotLWJZVzh3TjVTWmk0VjlYcGdQT2VMcEFDUy1DNnZzSW9sRFlaaXpSelBOb2ts?oc=5",
-      "sure": false
-    },
-    {
-      "id": "aba798c64fa7",
-      "title": "中村唯人、地元・茨城でふるさとコンサート開催！　懐かしの昭和歌謡や未発表曲を披露、恩師・田尾将実との共演も",
-      "source": "ｄメニューニュース",
-      "date": "2026-08-26T17:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNelpZS0hIemhFakpXSTJGdFFhODFkcGFab0RPUE5ZZUZxTGNqYWFIR2RtWGN0dUJORHBpNFptblJ0MHI3amxQMm44TVJDQWlDa193TjVwTHpzSkEwUFdLX1AtNUNWeHRSVDFmcG9QbjNGNko1QXhoaWViNzNPZks5QdIBhgFBVV95cUxNWlBwRW8xazNZTlk2RXlSWGFySkkzZFgyeGJOYVl4X01VTjdKLTNOYnRzcFlSY0pONG5GUEltcWE1dUlZSUYzeWx4aGFJRW5LVzBUSGpfLTVqMWdaT2lkWnFtbG96d0tfM3piWXRpYzh6MVhQeW1VUU9fUF9uQWhEWUQyeHlYdw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a3cf7dd70fcd",
-      "title": "プレスリリース PRTIMES記事詳細 | さんにちEye 山梨日日新聞デジタル",
-      "source": "sannichi.co.jp",
-      "date": "2026-08-26T16:58",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1yTzd6VTZ5RERySnFDUmt1Tk9KUHFrYmZqS0J0YVFILVNkWFJyampMX3Q2b3p0anFOZ0ExckxfVTJZTjlJTVV5Q0gwZTh4dFRsOXhtV1U5TTlLNExZcFZrR29Ubw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "77dc12674ca6",
-      "title": "実母の浮気現場、DV、小中学生の売春…母親たちから届く悲痛なSOS 虐待体験を乗り越えた女性が誓う“ママ育て”",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T16:45",
-      "city": [
-        "tsukuba",
-        "tsukubamirai"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nblBQWnctYmc2ZkY1bmZ1U0VwVV83NWE1U2psRXhQSnVIako4aTA5RUJmUkN1cVRpeXVfLWxoWHBPRnZUUnRiWFRoajFhZWFFMlNpOG9ZX3BGdw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "dba051248e3b",
-      "title": "【U-25】8/30(日) ジョイフル本田つくばFC戦 開催情報",
-      "source": "栃木シティ｜",
-      "date": "2026-08-26T16:44",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxPa0c5NzQ5U2dSWUtNcExGb2JQR1RxQjE3aUdwaHZrZlAycmxqc1NrV1RTbHRhX0ptQWxHclhIeHdMS1BWUk16czFodjJpWHlUNlFLTHNzb1FHOGZxM0lMUzlndF9YYy01eFladnpmdmZEOF9zbWxhbU1Rb01xYWliLWVpTHZnYk0xbVN0bzkzbF85SXpMTlhxSG9iRnllb19hR1lhdThZZDJhWFM5ZUxETFljQ0hFcHFTSDcxNnRSa1h5UjkxUEhxX3M3aDlpVE9ZR2w2WEMwb0hXcXRyV3FSWmx1dllHVjZPcktEd1g2a0IwZEZtWXo2TE5aQ2ZIMzRDSVMzN3g0cTk3MWEtOFdudjNBT2lKVlNLamF2MEZxcFd0UDViaTMtR0p4Qkl2SDFOZW16M09JWl9fbE0?oc=5",
-      "sure": true
-    },
-    {
       "id": "63251361284f",
       "title": "「住宅防火・防災キャンペーン」の実施について",
       "source": "pref.ibaraki.jp",
@@ -1526,98 +2081,6 @@
       "sure": true
     },
     {
-      "id": "7cc8f5d39eb2",
-      "title": "【 市川團十郎 】親子3人での旅巡業で四国・松山へ 「カメラ色々撮ってます」「思い出をカメラと携帯で」貴重なプライベートショットを多数公開",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T15:14",
-      "city": [
-        "tsukubamirai",
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4yaTYwRlpRdTlVdnBYc3g3NmNjeDdtdFNkSjRMeUo3RUx2eWotVlZLTDZSelNnRlJ2aGl4bHUwZjNZTjZDeFVVTjVkTGZRSjIzVkN0UldvSUpHeDAyQ3oxSFpkOFA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "b9a4871cad78",
-      "title": "「ユカタハタ」と「ゾウリエビ」を展示の夏祭り水槽 しまね海洋館アクアス | BSSニュース | BSS山陰放送 (1ページ)",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T15:08",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE56VmUxd1VaYTBNTExUczEyS3BpbkRGY0RRLWtiRVZkVXlSMUFldjdCUzJrQXFUUjduemI0Q0pXa2pyNlJWUjFsSWdfYUxCX0h5NnpaV3hxZ3NlMmNaNkZMc1QzbGsyTnc?oc=5",
-      "sure": false
-    },
-    {
-      "id": "2a29972579d1",
-      "title": "吉川愛、小物ブランド「＆ONDO」イメージキャラクター就任「寒い冬でも安心できるお守りです」",
-      "source": "ｄメニューニュース",
-      "date": "2026-08-26T14:39",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRWluRFhzejZtbTdka3F5cHV6STlzQTd3WmlZVnRDUHRWYUdVQy1JQUVIQl9YQnZMeHNrUzU4T2tteE8takdUUklTQjNBamw5SWRTVTViaG9KS0M4cUlZaTZfWWFhTVJyQkg0TWNoMExhbHdkYWFNTjhkNVZJQ00xUVhkMmJoWmxLZ3hPcU1CNXB5MTlJQ0o1eGNOczNZMlAzeTl6SHJGMDRPdmQ1Wk5NRUx2eHlPNGgydzNj0gG7AUFVX3lxTE1FaW5EWHN6Nm1tN2RrcXlwdXpJOXNBN3daaVlWdENQdFZhR1VDLUlBRUhCX1hCdkx4c2tTNThPa214Ty1qR1RSSVNCM0FqbDlJZFNVNWJob0pLQzhxSVlpNl9ZYWFNUnJCSDRNY2gwTGFsd2RhYU1OOGQ1VklDTTFRWGQyYmhabEtneE9xTUI1cHkxOUlDSjV4Y05zM1kyUDN5OXpIckYwNE92ZDVaTk1FTHZ4eU80aDJ3M2M?oc=5",
-      "sure": false
-    },
-    {
-      "id": "d04efe13bb24",
-      "title": "【石岡市】石岡発『ごじゃっぺタクシー』が映画祭で観客賞！10月10日から土浦セントラルシネマズで公開",
-      "source": "号外NET",
-      "date": "2026-08-26T14:30",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/2026/08/26/gj-taxi/",
-      "sure": true
-    },
-    {
-      "id": "5916e592f11e",
-      "title": "高齢者センター 研修室エアコンの動作不良について",
-      "source": "city.tsukubamirai.lg.jp",
-      "date": "2026-08-26T14:22",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMGlnRER4NGkzT3JCdTAwQ2pHRGNFdFZteWNMcEZwclIwNlByeXVQVGc0cUk2YzNrWTczOVdHVng2U0pLNC1hbXh1a1FTVUg1RjVhcDRpX3ZZYTllZmlLNWh5NERaSFdCRGJpZ1NJRE15Y0E0RUtSaXhnbWM3OE51ZnljbXpBc2RJYU02RTBucFFrUUppT0ZleU1vZUU?oc=5",
-      "sure": false
-    },
-    {
-      "id": "aceffea8a63a",
-      "title": "小美玉市長　TX空港延伸に強い期待感「まずは土浦延伸を最優先」",
-      "source": "LuckyFM 茨城放送",
-      "date": "2026-08-26T14:02",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://lucky-ibaraki.com/news_list/845707/",
-      "sure": true
-    },
-    {
-      "id": "ea1837248a38",
-      "title": "中村唯人、デビュー1周年記念“ふるさとコンサート”開催！地元・守谷に350人が集結",
-      "source": "t.co",
-      "date": "2026-08-26T13:58",
-      "city": [
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE1Yc3RNNWJXdHBSWXpHTWpSQ2o2X1c0OU9SM3BTUEFGRkJoOC0yNE1hOWx6ZTE4STNJV29B?oc=5",
-      "sure": true
-    },
-    {
       "id": "9b9739c9aa53",
       "title": "茨城県の校長公募、AI面接を導入…多様な人材確保へ",
       "source": "リセマム",
@@ -1627,245 +2090,6 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9HNUhKZEh5N2JTQWhmRGhEb0x1MFFWZjBZX0xuM2JlYy1wbDdybmdPVzVhNlMzejZ2UzRLM1FnaHk0aUVJUzhTNENBMnE5UG02VEZ6LUx1TE5nSWRmeWpyVzBWOWRudw?oc=5",
       "sure": true
-    },
-    {
-      "id": "8e2decdc2d57",
-      "title": "取手市と連携し地域の子育て応援 「とりでっ子見守りおむつ定期便」市役所で出発式 9月1日（火）〔茨城 栃木〕",
-      "source": "PR TIMES",
-      "date": "2026-08-26T13:10",
-      "city": [
-        "kinko"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfOE5GQmZtX1pGTF9YZS1mSi1OOTdqWlpLTFZES1ZKQ0RMRmNReERybFRzLVdtVDdxay1JZ3dxbTVIeXBOb045UVR5Tldhc25XcjU0RDdVSm1odHdTdXZoLVlWRUtaSk5jc0E?oc=5",
-      "sure": true
-    },
-    {
-      "id": "7f7688b77b60",
-      "title": "【幼稚園WARS】デザインマンホール蓋の完成・設置について（5種類）",
-      "source": "city.tsukubamirai.lg.jp",
-      "date": "2026-08-26T12:40",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPakcwZjJ4YjFjUGhsWWpTYlp6VXM1ZWtRMlN3dTg0VklJVWRQUUJsWkpRaVBuN2x4ZllMeGc0VHZpWERyYTFlaG52VVNqMFIxdlFtVG4tQzF6eWlFaEstRldPLUx0dF9ydXZDcFNYTWFPZFMxQkQ5T2stdlNiSUhMYWN2OHUwbGRDUmxab2ppYmNBaVVuTHk1QUpTNEhiaXhodW01Nw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "03c29207dc6b",
-      "title": "2027年開催「宮崎国スポ・障スポ」の協賛企業に感謝状 協賛金・寄付金は約2億5000万円に",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T12:10",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nQUVkZXMxUERwRkdYQVFXLXFoUDFQbkJSd1Z2TjQ5UkdmeGx2ZW81aTVwNDJBU2c3WXFwZDVnbWFEa2ZENWxVbWdVbnVEWjR6N0pyOEczWk4xQQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "93a3b40629fc",
-      "title": "よさこい祭り人出「約１０２万人」２０２３年以来の１００万人超え スマホ位置情報を元に推計",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T12:05",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8zUXdpNFc2eWt0SzloSnFnS3JqNXBnaVpweUViZFpJeHdKN3h5OWx5UFVpdUlsZmJjMk1BTVdsTGtWOGZyOW1ZM0tBZDNyc2VhMUlsRHRvYkJXME0?oc=5",
-      "sure": false
-    },
-    {
-      "id": "9b9d4b41d967",
-      "title": "シン・いばらきメシ総選挙2026の事前投票受付中",
-      "source": "city.toride.ibaraki.jp",
-      "date": "2026-08-26T12:03",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbUlXNmlLbkRCbG1kcGhNb2RVV0NaOVg2YS12a2ZwaWlCYmNYSjBtN05naFNQbkxUUGxNU3N5YjRWZ2RPZkw3Mmh3Y2hMeEs4N0cyMS1SaWZHVXVwM1lMU251RW1HWFZleURITkRCVHlqR2M3RnBNRjNzVUJDOHpSbmNpV3RBdEVEeWs2LURtTzFzLWtjalcyYVBUaE4?oc=5",
-      "sure": false
-    },
-    {
-      "id": "bc81bc29e31f",
-      "title": "全英女子オープンゴルフで初優勝した桑木志帆選手に岡山県がスポーツ特別顕賞を授与へ",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T12:00",
-      "city": [
-        "tsukuba",
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE92V0tZb2VmWldwRkZYRE9VMXg1bWl0bEE3TEhVUkVrX3MxbjZONWh0TjFoeDVRQkZuRTEyWEU0clN6Z2Vub2RmMlh0UTBuNjNTeUM5VnNXWVYwdw?oc=5",
-      "sure": false
-    },
-    {
-      "id": "6914b6b9d89d",
-      "title": "茨城県水戸市にて、0歳～中学3年生を対象に医療相談「いつでもドクター」・オンライン診療サービス「オンライン一次救急」の提供を開始",
-      "source": "朝日新聞",
-      "date": "2026-08-26T11:59",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE53SE4xdkVXZ19MR3R5QVF6QTZRZDNLd19ZYUVMSHJPakNqVFBudU5OcV9pS0ZNanFkOExzaWl1OUpiNXUzNWpuOExUM09BMHlTaEtmdHVUbk1URVU?oc=5",
-      "sure": true
-    },
-    {
-      "id": "35bd910ce4c8",
-      "title": "大手保険会社の放課後児童預かり「まちのひみつ基地」プレオープン 10月から本格始動へ 大分",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T11:54",
-      "city": [
-        "kinko",
-        "tsukuba",
-        "tsukubamirai"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaWFV2X296WjFFa1VuTnV3MV9ENkh6bjEzX1FQR0xtcEE4bVpkS3o5Vkw0a3Zjb1p3QVdxZTI4SUpMTkRhVDE0dng2cEdzZkJQTWQzTHQzUWU1QQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "a14c5119c88d",
-      "title": "取手市がVDIと決別した理由 更改費用「4倍超」を約1.7倍に圧縮：費用を抑え、運用負荷も減らした",
-      "source": "TechTargetジャパン",
-      "date": "2026-08-26T11:46",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9nNUc1MUZSVWI4R1pZWmx4dHZWVTNJWHVWTjlLU3ZaUzVfWTY5elNsb1VFLVRaV0J3VldpTDBlc1lNU05CUjY0Z2huck15QjZyems5SlJ5bF9aRzNtRG1YSnNLYmpVckM4dWhIT2hCYw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "ee7cdca0f540",
-      "title": "カナダ、米国産品に報復関税",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T11:39",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1EMVkwLWg4dzlObTZLR0JZWm9CaWlFWnNpdm9KdlRsMGxYbDBTREo5N0FBODFsTEo5Mk55Z2pIZGg2MHd1eU1lYlBvYy03Ymg0NmFRdg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "998d56f99ad1",
-      "title": "ＣＩＡ長官、ロシア訪問",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T11:39",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBoZWFmRUREcWlZb3phbGd1b0ZqVWZKT3lMeEhlRGlJamVDeC1IdEI5THNkVUxoaWtwNkNmMUJfWW1pQV9sQ1B3TGh5YkdHN29jbERKcA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "779785239abc",
-      "title": "錦織圭、予選１回戦突破 全米テニス",
-      "source": "つくば経済新聞",
-      "date": "2026-08-26T11:39",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5JZWxmaTduc3FrS1F1aE9uRXJTWlhXUjRoZkZqTE5QYXFlVWVBWEt0VXprbGVHRWdmN09PaVJSckpUMHhiN3pqakdRb0RLTUJEb2xpeQ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "68764e3a11f8",
-      "title": "夏の風物詩「山スイカ」直売所がオープン!強い甘みとシャリシャリ食感が人気【愛媛・伊予市】",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T11:38",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1JY1FNbjVNb1FkX3dITUFJQjNXREYzZGJLMVhlQlJYNVdPVEVqVGdNVGFFZmlRS3dCQXVvMW9LLTFnbzhLb09CQUFLakJ6Q3dWRHJscmczdTlIYTlEZ2hJ?oc=5",
-      "sure": false
-    },
-    {
-      "id": "929b62ed3203",
-      "title": "A4用紙1枚で世界記録98mへ挑戦！札幌で「北海道紙ひこうき選手権」が初開催、親子で熱中した夏休みの思い出 札幌・大和ハウスプレミストドーム",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T11:20",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5Udk9MOUhVMnh3TzFCdURXZUxoOUY1LWpRWnZVS0FidTFLTlBlVjFPejlQQUhIMmZlbE4tRDFQVzVwdWZnckJkMXVBQWZpb2xETUJvM1E2QkZZRWtkc0NV?oc=5",
-      "sure": false
-    },
-    {
-      "id": "59f13dbc4cdc",
-      "title": "宇宙をテーマにした夏休み親子教室 講師はJAXA宇宙教育センターで勤務経験のある「宇宙兄さんズ」＝静岡",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T11:20",
-      "city": [
-        "tsukuba",
-        "tsukubamirai"
-      ],
-      "category": "kids",
-      "emoji": "🧒",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE93NldDZmdDa0Z5TkV1eVVDUHAyZEwwMXBncUJqSHVzVlBhbFNqSV9hc3BxdmFrdTN4aE5rc3ozQ0ZlRVdJbGYyN1BzOTM5X3ByQUlpUlpwdFR5YUFrZFRF?oc=5",
-      "sure": false
-    },
-    {
-      "id": "f51db7d522b7",
-      "title": "常磐道つくばみらいスマートIC、29日に開通へ 「地域の発展に」 [茨城県]",
-      "source": "朝日新聞",
-      "date": "2026-08-26T11:15",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9PWDh4SmxJX3JfSmQ1aFhWQ1BwLUxXRU5tcGJLemxCQXNfR1dtT0xBdTBSTjkyTmZBX2xDbm1lZktCUTJlNVA0N3Q1OUJ6Q3E0clVKNWgxUHptNlVPdHJYXzRIS1o3Z1E?oc=5",
-      "sure": true
-    },
-    {
-      "id": "9b02426d557a",
-      "title": "常磐道つくばみらいスマートIC、29日に開通へ 「地域の発展に」",
-      "source": "Yahoo!ニュース",
-      "date": "2026-08-26T11:15",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5QklRRnRyWFdBUWkxTkw0NU1GTlo1WEVMbE5JdnRJaUVBLXRxOXhiYkxyRHFIWVlhQTNIQzUzNXJ1MEhfNXhQZUlhRmI0SXR5Y25UU3dMTnhKbDZ5MGpXRV9VRVZudjllX0phNnFncFVLOFpFWjAtbDBoMTZlc0U?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a9bdf68cd1d2",
-      "title": "82グルメがエントリー　シン・いばらきメシ総選挙の事前投票始まる",
-      "source": "ｄメニューニュース",
-      "date": "2026-08-26T11:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNTc0Ml9rZnFxdUktZDFaSjdwYUhReW1DV05DbUNGQ2p6VERKd21HWGhkOXlkME1Xb3FtQlhLUmRlUS1UQTk2azl0V2ZzYjJheHIxbTFYdmtlczdqODBhcGhKUlFINk1rZGZkY0N1ME52WHdMVzhSN3JaSDFqcDdBNGVFWVpUVi1tdEd0ZHA0NW5STG1yLW1hN2tNMUM0UdIBngFBVV95cUxQNTc0Ml9rZnFxdUktZDFaSjdwYUhReW1DV05DbUNGQ2p6VERKd21HWGhkOXlkME1Xb3FtQlhLUmRlUS1UQTk2azl0V2ZzYjJheHIxbTFYdmtlczdqODBhcGhKUlFINk1rZGZkY0N1ME52WHdMVzhSN3JaSDFqcDdBNGVFWVpUVi1tdEd0ZHA0NW5STG1yLW1hN2tNMUM0UQ?oc=5",
-      "sure": false
     },
     {
       "id": "176328a00033",
@@ -1879,32 +2103,6 @@
       "sure": true
     },
     {
-      "id": "18d88561a134",
-      "title": "【首都高ら4社】道路パトロールとドローン連携、広域点検から現場対応まで一元管理 道路管理を省人化・効率化",
-      "source": "建設通信新聞Digital",
-      "date": "2026-08-26T10:17",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9Yb0V4T3dIR3dLXzNldnlmY2lOeng2WXZXb1NLTVd0bGxCUkhWc3NRbF85d0FsMjdiOWswUUxYY2JwNVNsaGw4VnJJUlRYUjQwekR4TlVQOA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "c46dd0afd019",
-      "title": "新着情報“Ｎ－ＢＯＸカスタムLターボ特別仕様車スタイル+ブラック”2023年式クリスタルブラックパール入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-08-26T09:57",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTU4xN1ZPTVBIRzVJTVBIUjJKR0dqMWlrUm04N2RXTHFBVTVaRVhoZ2s0SXRuSDdOYnZXMmdHbjZzNjRGOU1ZeXlCRlAxby1VX2h3dmFOeEUxSTdoeHp6ekhmSDBJVTA1eFgyaS0xcHpEbGpzMUVGUjVDOEE2LWZySlF3?oc=5",
-      "sure": false
-    },
-    {
       "id": "0c4711355a29",
       "title": "【速報】埼玉県で地震 栃木県、茨城県、群馬県、千葉県など揺れる 茨城県南部が震源",
       "source": "Yahoo!ニュース",
@@ -1913,185 +2111,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9xMFEzUGpvR2N0ZmFONHg5dVZHY1Z5QjFlSThBdE92Q0FGd0pkZnM1WmRuYlY4SXVtVU5pd1NwcURXUDdlY093bUJsQTV2T0l0emFIMXNjckZXNW8xanVrbDJPd2dVTUhrTEhLcEZjWGpXaUtKaXNJaEs4WHBPLUE?oc=5",
-      "sure": true
-    },
-    {
-      "id": "b35bee56a70a",
-      "title": "首都高速やエアロセンスら4社、ドローンとパトロールカーを連携させた遠隔・リアルタイム一元管理の実証を実施",
-      "source": "ドローンジャーナル",
-      "date": "2026-08-26T09:19",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1vOWpYMG9MQWZKNmlTNHFMNl9aOXpKaWxlZW9UT096US1meG1GWV95MFZnc3paQUctVDNZc3hPN2t5Z19nei1aUXB6M0hZNDZpd1lfSUxOX21wX2xRNzVybFU3OTBIUGZWVHc?oc=5",
-      "sure": false
-    },
-    {
-      "id": "357963d3a31e",
-      "title": "関東で地震 M3．4 震源は茨城県南部",
-      "source": "Yahoo!ニュース",
-      "date": "2026-08-26T09:16",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBLQVNvNFhjZHdCa1J4RWRGSVBGRENEQTE4VzFiWG9QU2NSa0NqYmlWbWFlN1RSZE5pMGp5Z24zbHdwSGhna1NJN3doejhYdVdzdmU4LVJCdzFDS0l2bGZVb1d4Y2szTFlUeWRoaUZlUEdoeFFBSlduWFUtdmhWVGc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "18aa37e5e5ce",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 高知のニュース・天気｜KUTV NEWS | KUTVテレビ高知",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:47",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPaHpQazNWTFc0MjRQSGtCZ19kUjdqVjNBYjFPOTNkLUpnZ3FpQXV5YzFCYmhsVUhmX1UyTEZOWGwzQWVvSVQtdnBNQlZuTDJCOU01S2lmSVMxWmdxaEF2amFNeWJIbzczRVkzRFUzMFJFTUVfaUhoT0hROFBBSlNpY2xsVkpGUVJw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "b897a0254b3e",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 名古屋・愛知・岐阜・三重のニュース【CBC news】 | CBC web",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:47",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbThyeW5STGJkWDYxZHNIUlVxdkdOaHFES2REWjdhV2U3WUsxMnBiZ0h5SzB2NlU3akNTaHZMT0c0VHZRM3hSSmhkbFd3X1FmbFh3Y0IzbFpnOVFGa3ZmNGg3NDhFLS1lbmIxbkxvQVh5NlMzMTllZVZtcS1rNDRHRmVqZ1d3VVk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "68865c500b62",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 長崎のニュース | 天気 | NBC長崎放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:46",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQl9fdnlXMGV0QnpMV1NiYUw0MVB1ODQ5Q1ZCZWZ6Zjh4dktHb2VVUUFRdWoxRWVRRnRENnhCWXJyTi1jOWx0QW1BeXhSUjJnV0dkTXdoMUtwSWg0YjdJMjlyRW5lb0pqb2JNSmRELXVIRklURUxsV1ZSejFkZmlVVllUVi1kTVE?oc=5",
-      "sure": true
-    },
-    {
-      "id": "86650204c891",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 山梨のニュース | ＵＴＹテレビ山梨",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:41",
-      "city": [
-        "tsukuba",
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNd0JxZ1dCNjNDNks5dXUxNmpldzBJYUlqa0hRUWNNbmZwWTdVNGowemgzY3M4S1F3WmdPV01wQkMzckNhclJhMkhJaHc1Z3hwX3JiZFUzNUdwOWxIcTNzSm05NDJXM0d3NlBiQldSUGdlVTkwaDl1a3NROEdHNEdDenZpRDJsQ00?oc=5",
-      "sure": true
-    },
-    {
-      "id": "af4047425afa",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 福島のニュース│TUF",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukuba",
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQS0FCWEZJSjh2LVJ0ZzZZNVZKTkRCa29DdERhZkpRbHowdE5xZTlhNElZU09adVFMd0p6QWxHUDRJTTJYTDQzemNkM0FocWhnZlh3OEtMbWxSYi0za2RoOHRHQ2gzYTY4WWxtYjM3c3F2VVY3T3hLdXc2b2RuWmV6WEQtbWplbXM?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a5e2cc52a01b",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 静岡のニュース | SBSNEWS | 静岡放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNem9EOEFGNUlXbDZlYS1Tc1ktMFpYZzF5LVBsbm5vWjBOQXB0Z3RTa0JfaWJvcWhQWXRPWVFkcFBXWlJDMWNRb194eE1naXdlUTJPTDFKejJBZmdQY2J6ZEdqOUh6ZXNZSjdEMXFUcjZJalpTV01TLXNsaEZlb3BmTUVDc0YtNG8?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5cb16198d9d3",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 新潟のニュース・天気｜BSN NEWS｜BSN新潟放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbXZBa1l0aVQ0ZzRyQV9hLVZSRG5Zc3NQYzlxWlJlamNIX3VuN0dvYkxwWEtUVEN6eml2RnF0T3dwZ2NRQWRaYzVCT2xfSUxieEdqcktJQ1dCdmtyelFFVXQwTzF3VlJ1QkVFaWlLcU5ZSS1wSDdIQUE4N2l6Z0RQMk4wVVpHU1E?oc=5",
-      "sure": true
-    },
-    {
-      "id": "982ed8d188e6",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | IBC NEWS | IBC岩手放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNmgyc2h2SWNVNVFaaDZ6eEo1XzlyS19XTG8wdHVta0Y4Y2tIOHBxQmg5bWlXRHUxd3UyZU9zMS1obi1tWTZlVG5YN1FTZVZ6VjFKclp6Y3lkRHN6SXY2SkFLdGNGVTFTeFBqMzdoTGxLM2dUR2NuRHNZRE5zN01RdGFZaTc1YnM?oc=5",
-      "sure": true
-    },
-    {
-      "id": "7bf1d8b09690",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 山口のニュース・天気・防災｜tys NEWS｜ｔｙｓテレビ山口",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdGF6YUJXRVBiUERyUmpoREZoSkg3em5RZVdJazBzLVhmWmZPUFZVT0t5OGYzaHZBWERHX1ZtcldER09iOXpkamJRRTNPRUNTVDhnTHdsa2l6MUI5eVFmSV9yUldsWV9YbW9rYnBBVU94bTN6QUV1b2dLaWR3ODZwM0thRXpsTXc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "2ac3d4dc30e0",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 富山のニュース｜天気・防災｜チューリップテレビ",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRXBQMzk0TkRtM3VaMkpVRlVaUlJQYWJPdnRGbEVaQ2xENGJ4amRRU3BzN0g1WGlpTjdYby1yS2xYTXM5dENFT0RaX0dzcTFwN1VCem5HVEFYaXR3eHYwcUd2SHZlNm5adHd3Q1Rsc3VmZkJ2M0xSa0JkSFNiblhFWUxKNXI0RlU?oc=5",
-      "sure": true
-    },
-    {
-      "id": "891502db2ab8",
-      "title": "震度2 茨城県南部 2026年08月26日08:33ごろ 地震詳細 | 愛媛のニュース",
-      "source": "TBS NEWS DIG",
-      "date": "2026-08-26T08:39",
-      "city": [
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQME9SQWxVd0dyNTVFdm1lSEZFZXJuMFM0NnlTd1UwZ3JpanJBRmdrazgxeVVJS0g1ZlNCWDB5b2ZnaTR2djlja2Q1Y2tHaWFYUUwyblhTbnhNNkhZTTRVbHRxM2stc0h0RjAwaFlyTFVTQjZEMHl6aUxqMlROM0taWE1ZYVpzUDg?oc=5",
       "sure": true
     },
     {
@@ -2224,6 +2243,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBsd3ktY20zbnhqN2RHclB5RWU2SlpJVHhIU1RJWEltQUl3Z2NLeldDVm5xZzlVdV9tVFNEVFh3NEtXejhEaVFYZGZHaHBQTXBiYl9jQjE4LVF3YWdmMXFzaHdZZVhkT2RqeDR4WTFiOU91Z1ZXOE1vUEFB?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a1d8dd7d711e",
+      "title": "新いばらき公共施設予約システムのアカウント登録方法",
+      "source": "pref.ibaraki.jp",
+      "date": "2026-08-24T16:00",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB4djV3X05DMjluazVFbzVTbU0zRkp4VjF1SG5PcUhqWUVnYUVRd0ZZWXdLeklTbTZfa1RvS3MtQ3ZlMk95dUhzQVhXUnFKVmQ3dkc4OHRBcmVDQ1V2c2ZXckF0UWFDMXE0dXNEQkhyWmQwUnBXbW5xd1ZkYzc?oc=5",
       "sure": true
     },
     {
@@ -2801,61 +2831,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE94LVo3VzQ5OGt0S1gtVDRjUE1RT0JCYkt5M2tMcE1HMlR0N0dvdGNNLWI4RWhJbXI2SDF4eGxQb1pJMExJWjZCcXhvdkwtd2hURUktS1hZZU8yUGwxb3duTmlFZw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "ecda8ef84b20",
-      "title": "茨城県の過去のアメダス実況(2026年08月21日)(風向・風速)",
-      "source": "tenki.jp",
-      "date": "2026-08-22T00:30",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YSmE5SHJOMHYxNlNaMHF1aUNKZTB4c0NVTlo1UU14NV9TX3VSMjBiY3VHMzlSOFlvYnl4SldsWElwQ2hoM1h2VmFRZXZXY3VCTnpVS0t5aTlCazFjc2RjZUVmT0U?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5abe7b728fba",
-      "title": "茨城県の過去のアメダス実況(2026年08月21日)(積雪深)",
-      "source": "tenki.jp",
-      "date": "2026-08-22T00:30",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5LbXVIV3lJcTR6cmN0Tkg1a0RHdUNTaGVHbGlvS2p6VW91UEhSeV9OY2ZBaHp2V1h2UnpGR1FjR1J4UmNvdXFJUnk4d3VtdkNzRWJNWUVNZnpfQUtVQzd5NjVXRlA?oc=5",
-      "sure": true
-    },
-    {
-      "id": "4869e9f34014",
-      "title": "茨城県・エネルギー価格上昇による企業への影響調査",
-      "source": "tdb.co.jp",
-      "date": "2026-08-21T18:13",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBTVDJFWVlyTlhDcS1rbG4xbUU5eVA2OTNDaW5abWtQY2F3X0ZaWVlORXllTWRvMUg1YjRhOUJ2SzBDQVloRU83Wm5tN3hzYlVYZWxtQzJGdVRvQnZBZmRrYWxBZG1OUC1NRmtTbWJtRjFoWnRna0E?oc=5",
-      "sure": true
-    },
-    {
-      "id": "7387b2d14c72",
-      "title": "千葉や茨城で道路冠水",
-      "source": "ウェザーニュース",
-      "date": "2026-08-21T16:01",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5GV05jU1BkOFFxWkRpYzctQWFDVDBYVDhRNVZudndNYXhyeC1IbVlXMDdZbnBfWGZob192b1Q5S2FOOEdXZGlqY045U3pBeDlCWk55Z0k1UUk4TFNZWkdXNWczSl9DdWNNRERKaU1xWng?oc=5",
-      "sure": true
-    },
-    {
-      "id": "7942a1f51e14",
-      "title": "【レベル3大雨警報】茨城県・神栖市に発表 14:43時点（TBS NEWS DIG Powered by JNN）",
-      "source": "Yahoo!ニュース",
-      "date": "2026-08-21T14:44",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rNXRIQW12T2kxa29qN0pkUWZoU2I3M05hZmd6bUdaT25XdTFRMEZ1dzJhY2lzSHlPc2NhQi1CeUU0eXdQWG44N2FXMGhCS2hVQmlfWGpPRGFVSlNhXzF5LTZQalZ5Y295R3JKSW5TcmR5UFJZVXZxMGllYTBEZG8?oc=5",
       "sure": true
     }
   ]
