@@ -1,7 +1,33 @@
 {
-  "updated": "2026-09-22T08:48",
-  "count": 240,
+  "updated": "2026-09-22T17:12",
+  "count": 238,
   "candidates": [
+    {
+      "id": "ebdc1f5e2ecb",
+      "title": "風俗店従業員の髪切る　暴行容疑で客の男逮捕　茨城県警土浦署",
+      "source": "茨城新聞クロスアイ",
+      "date": "2026-09-22T14:15",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://ibarakinews.jp/news/newsdetail.php?f_jun=1790054045754900",
+      "sure": true
+    },
+    {
+      "id": "a9e7ff7fc6cc",
+      "title": "運動公園→データセンター　つくば市長の宿痾《吾妻カガミ》223",
+      "source": "NEWSつくば",
+      "date": "2026-09-22T11:35",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://newstsukuba.jp/62399/22/09/",
+      "sure": true
+    },
     {
       "id": "efce79d13ff6",
       "title": "9月22日ごみの収集に関すること",
@@ -1756,7 +1782,7 @@
     },
     {
       "id": "2b632cbe5813",
-      "title": "ベトナムフェスティバル茨城2026 - ベトナムと日本を結ぶ架け橋",
+      "title": "ベトナムフェスティバル茨城2026",
       "source": "Vietnam.vn",
       "date": "2026-09-20T16:00",
       "city": [
@@ -2185,32 +2211,6 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5iZjZ2Sm9VR0JucEV5N0twX194OV9ub0F0MFA0anZidTAyakdVUUlRNThyNGsxZWhIUjdBalo0RDQ0X2pPN2xUWHF5c21wZjBKcFZjdHd5QU1HR0psNVBvTHlWZGc0ZnNPTEhUSjRSWkVuQ3k3a19rcV9tWHhuS2c?oc=5",
       "sure": true
-    },
-    {
-      "id": "6d6efbb114c5",
-      "title": "横浜市立中山など6団体が東日本大会へ 東関東吹奏楽コン中学B部門",
-      "source": "朝日新聞",
-      "date": "2026-09-19T20:30",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9DcDYxYWl0UHBRMWlRMmxweC1wV3hDdmxMSHczSUZFMkMtenRjTkdHcnd4V2huUnZ4MUtmWkdBWjYxeFdfeDNDa0h4bDVMZ0FQLVRsYU83X2locFlidjlHNkp1aUZ6VDg?oc=5",
-      "sure": false
-    },
-    {
-      "id": "f7ad14515c9e",
-      "title": "新着情報“ＭＲワゴンL”2013年式シャンパンピンクPM入荷しました！",
-      "source": "中古車のガリバー",
-      "date": "2026-09-19T20:28",
-      "city": [
-        "moriya"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUEJlSkIwbEtqc3kteUxVMXpUWTk2UWhyWXRyU0FCYVBoM1BvNGotTDNUTHBiQkFsclR6dl8tcDZLV0tNWXhqVE9Za2hGRWlMZkV5c2p2SUs0SVZSWHA5VDFjaXRmUmNDSFBzVlgwNGJ3ZUxiRVdWMEFFanVfcUllSGNR?oc=5",
-      "sure": false
     },
     {
       "id": "0c64d3651aaf",
@@ -2943,28 +2943,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE90NjU4OENhU2NXME0xODNuUUlPY09xdHFqcHJaX2lWRURvM3BFbkNCY1NtVzBCTFpCUUJXOGJ1em9YaXFVczdNZjBPbEJYcGo3dnc0d2dpZw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "089991580d64",
-      "title": "国道で信号柱に衝突 軽乗用車の女性重傷 茨城・日立",
-      "source": "Yahoo!ニュース",
-      "date": "2026-09-15T10:59",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5BOG53djZBMHBpMDVTQUZmQ0FfNXNRSzBBdXF0S2lhajNoSkFTR2dGSFoxT01LdVQ1Mng3VWstMXRoNjhoMlkxb2ZGU3M0ZS1KM0lpNTJjY3lJekx2UmpubmlPb0I3RHpZSjU5M2ZlbDZEU2lFQno3bU1lQXJSU2s?oc=5",
-      "sure": true
-    },
-    {
-      "id": "cc0e4ebbef3d",
-      "title": "丸全昭和運輸／茨城県の明伸HDなど子会社化へ、倉庫・輸送・機工の一貫体制を取り込む",
-      "source": "物流ニュースのLNEWS",
-      "date": "2026-09-15T10:58",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1reUpvcDM5NjJhODk4WWpaSDlDdWZrQVlVaFFtX1MzbjZEQjU1SzZ5WHZNNEhOWW90bXlPLWlKUW45RGJOVktqU3JtSGRORUhjMzZUQw?oc=5",
       "sure": true
     }
   ]
