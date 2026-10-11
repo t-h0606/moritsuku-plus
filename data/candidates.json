@@ -1,7 +1,46 @@
 {
-  "updated": "2026-10-10T18:21",
-  "count": 221,
+  "updated": "2026-10-11T09:04",
+  "count": 220,
   "candidates": [
+    {
+      "id": "38c7f60b06a1",
+      "title": "柳沢教授「寄り道大事」　筑波大付属病院50周年　6期生、医学生時代回顧　信念貫き基礎研究の道　茨城",
+      "source": "茨城新聞クロスアイ",
+      "date": "2026-10-11T07:54",
+      "city": [
+        "kinko"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://ibarakinews.jp/news/newsdetail.php?f_jun=1791639483447900",
+      "sure": true
+    },
+    {
+      "id": "b34e72002c44",
+      "title": "【つくば市】今年(2026年)で13回目！クラフトビールの祭典「つくばクラフトビアフェスト2026」が10/16～3日間開催されますよ♪",
+      "source": "号外NET",
+      "date": "2026-10-11T07:38",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://tsukuba.goguynet.jp/2026/10/11/tsukuba-craft-beer-fest2026/",
+      "sure": true
+    },
+    {
+      "id": "4785501ca274",
+      "title": "抗がん剤治療が効き10カ月《ハチドリ暮らし》66",
+      "source": "NEWSつくば",
+      "date": "2026-10-11T06:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://newstsukuba.jp/62653/11/10/",
+      "sure": false
+    },
     {
       "id": "78f03f804cd8",
       "title": "【ふるさと納税】茨城県つくばみらい市の厳選返礼品3選の紹介！創業の技が光る海苔や熟成栗に注目（LIMO）",
@@ -2216,45 +2255,6 @@
       "sure": false
     },
     {
-      "id": "12deee6008c1",
-      "title": "千葉県で最大震度4のやや強い地震 千葉県・旭市",
-      "source": "au Webポータル",
-      "date": "2026-10-08T04:17",
-      "city": [
-        "moriya"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xR1VKM3o0OVZPQktCZkFoNzZxdm4tV0xGcURucVJDcmpDY2xLdGdfUXlBNG9vcWFHZGltMzUtRUltMmJPYUoyMkRmcUR1YVR3MllucVl1QUZlSEhydmcwN1FsMjJjTzNUcEYwT0Rn?oc=5",
-      "sure": false
-    },
-    {
-      "id": "ff5c1479b875",
-      "title": "画像12 / 19＞牛久大仏(茨城)の魅力を徹底解説！“世界一高い青銅製の仏像”の楽しみ方から、人気のお土産まで丸わかり【コロナ対策情報付き】",
-      "source": "ウォーカープラス",
-      "date": "2026-10-08T03:20",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ZU2ptODJxMG1XNEx2YjVWcC05N2ZSOWVLUkc4MHFWUlhtV29KaC1SX0d2aEZ6bE5lQXB0T1JLQlRPa19IenlsT1B1aHR3eDZ2X0pfc1ktY1BPanpqbjBleXNyNDRFc0FxRVFCcmNldlFXLU5jOVZXRWdnTG1YTDA?oc=5",
-      "sure": true
-    },
-    {
-      "id": "87752c16345e",
-      "title": "つくば1GWデータセンター計画、「物流倉庫」から用途変更。市議会が説明会要請を全会一致で決議",
-      "source": "Howl.link",
-      "date": "2026-10-08T02:25",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE1LRkMwWnZlR0ZWYnhnc0ZFT2pTR0ZHXzV6dS1QeWRWWG5PR0RmdzRqSHdyVE1zdkd0QWw0?oc=5",
-      "sure": true
-    },
-    {
       "id": "4124cdc536ef",
       "title": "茨城県の過去の天気(実況天気・2026年10月07日)",
       "source": "tenki.jp",
@@ -2725,17 +2725,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBSOXZ5VENnS0VjaS1pSllCVGtia3pGOFdfR2pFa0prb1g3eEw0dmRRSkU3YlJkdEF2bWRsNW9TLUtNRnR0TGpGVm14TXVVTUZHd1A1a3ZWRFhXQXZrU3Fhd0ZNYXJwQlU?oc=5",
-      "sure": true
-    },
-    {
-      "id": "1c9e6ad3a143",
-      "title": "秋季関東高校野球茨城県大会 4日決勝 霞ケ浦×水城 頂点懸け両雄激突",
-      "source": "Yahoo!ニュース",
-      "date": "2026-10-04T06:00",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBza3JUVk5TekxxLW9DdmJWZExjWmVJNUNaeWl5cVd1bmlGRi1iSENOWHA1VExtZUxZb1lJcHowMDNiMVZvTG5yMHNuX0gtUGhJMERZR0dhRWFvNFpRRUpXcTBrelNwc0RrY2JPNWFqWk5OOWQ1NXNHaXA5NjNKdG8?oc=5",
       "sure": true
     }
   ]
