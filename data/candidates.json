@@ -1,7 +1,137 @@
 {
-  "updated": "2026-10-17T21:40",
-  "count": 214,
+  "updated": "2026-10-18T07:51",
+  "count": 217,
   "candidates": [
+    {
+      "id": "9e62d56fffac",
+      "title": "【つくば市】イーアスつくばでお得にパスタランチを楽しむなら「鎌倉パスタ イーアスつくば店」はいかが？",
+      "source": "号外NET",
+      "date": "2026-10-18T07:38",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://tsukuba.goguynet.jp/2026/10/18/kamakura-pasta-lunh/",
+      "sure": true
+    },
+    {
+      "id": "77cd5233f84e",
+      "title": "人手不足でも、うまい中華を。味坊集団が挑む「ロボ町中華」という新業態",
+      "source": "TABI LABO",
+      "date": "2026-10-18T06:00",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBTeW5Tams4UThJQXVuZEdOdU9VRUxnY0ZVajFnVEk4bHhxQ0l5cmltRHZLVjlobzhnN3FCOVJzMXlCb2VaUFJfTVFJaDB4SDlFVWdiTmhBOHFRYllDWGtZenBpc09Ua0V5?oc=5",
+      "sure": false
+    },
+    {
+      "id": "7a2c222a994b",
+      "title": "日産キックスX e-4ORCE（前編）",
+      "source": "webCG",
+      "date": "2026-10-18T06:00",
+      "city": [
+        "moriya"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5qaWtRUUlxU01UYjBNMUVweXB5VFBkUlgwN0tHM21KMHlrOEh3Skxkb2tyYVdaQk5SNk9IaXhZRWJKbDlFZ0d4cWRjT3ZBeU3SAVJBVV95cUxQSzFmcV9lclJ2RkQ5UzRVT0pjb0l2RXVlSkJHTnc3eGQ0am5sdVB4c0oxNWppRlZPeXg4X1dGNFFqTjlaMEJPRk5hd0NMQ0hwUE5B?oc=5",
+      "sure": false
+    },
+    {
+      "id": "d22f9d85007f",
+      "title": "土浦の花火100年の紡ぎ ⑽《見上げてごらん》57",
+      "source": "NEWSつくば",
+      "date": "2026-10-18T06:00",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://newstsukuba.jp/62727/18/10/",
+      "sure": true
+    },
+    {
+      "id": "5574d18cdc89",
+      "title": "おさがり会(茨城県)の情報",
+      "source": "ウォーカープラス",
+      "date": "2026-10-18T03:16",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5kWG13Sl91bzEycHBvMHZSWmUyR0wwdkFVaWFSWkl5MGdqanB3TkZXOXVEeDhvMWd4b1hXXzRTZEVjelVOb2RaYlJLTVRDOFljTFQ2WS00bEV4VEU?oc=5",
+      "sure": true
+    },
+    {
+      "id": "a76eb503e9b7",
+      "title": "画像3 / 3＞巨大風車が光りながら回転！茨城県土浦市の霞ヶ浦総合公園で「第9回光がつくる“Art”水郷桜イルミネーション」が開催中",
+      "source": "ウォーカープラス",
+      "date": "2026-10-18T02:34",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxTFdVelg3N3ZHSXZwb195dEdZV1ZBa0tMbl9Ub2xydENTTm9nU0xDQzJINDFsdjJRZXhkMlg0bDlMbDJnNW0wYkhnV3ZfVHF5Q1pmbVJfY0JYOERFX2wxS3I2MHhEOXVpUEFBM0lR?oc=5",
+      "sure": true
+    },
+    {
+      "id": "3ab9ef27f67e",
+      "title": "茨城県の過去の雨雲レーダー(2026年10月17日)",
+      "source": "tenki.jp",
+      "date": "2026-10-18T00:22",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1qeThDN2ZXYWZza0c4S2V5aS1La1dsVjRibEduY1V2ZE5sUGNSV1ctTHZZVGFTRC03UkI0Z0NwWTY3bTVIRmdBQU1QZWM5YV9GbmlfT2hwcw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "2ed347eb447c",
+      "title": "【年内オープン予定】つくば・天久保に「黒墨商店」登場｜揚げない焼きドーナツ専門店",
+      "source": "ぐんぐるブログ",
+      "date": "2026-10-17T23:08",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9MSTJZaVd5eEdDdXc5OW1vcGRKQWRjSGk1NWlRaHVCcHU2Y25jOHh2dVRyRE42eHBEaEp0MWRKSlBsbVZORzdQRFl4THAwbVk2eE1lSHpWM3BPUWRwXzBtdy02VGQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "4e59540d6966",
+      "title": "つくばの伝説的なお店が守谷にオープンしたらしい【ラーメン三水】",
+      "source": "YouTube",
+      "date": "2026-10-17T21:59",
+      "city": [
+        "moriya",
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5xMGlORjEzRFJtZWV4N3k4OTVjV2l2R0hscW1tSWhUTENRS2lOemxzaE15c01JWGxuWHlUcmZEZk5oVXJHWmFoT0NtV0xnMDZiR3Vlc0c1dUc4UW1h?oc=5",
+      "sure": true
+    },
+    {
+      "id": "dc9c90f36e60",
+      "title": "つくばの伝説的なお店が守谷にオープンしたらしい",
+      "source": "YouTube",
+      "date": "2026-10-17T21:59",
+      "city": [
+        "moriya",
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1jVkRPT3daOTJhSmxlMHFaLWx3b0wtUUhBUkNuWjBPWnNhSVd4dkU2djY1TV9jcHlRRXJfUUxFeUFTZGtDbVZ5a1BhSlJ5Nk10QUdFM2RqRTlGYkJ6?oc=5",
+      "sure": true
+    },
     {
       "id": "a7f536de0d9a",
       "title": "【町田市】町田マルイにオフプライスストア「アエナ」が戻ってくる！10/27オープン予定です",
@@ -40,8 +170,41 @@
       "sure": true
     },
     {
+      "id": "98f080986bb0",
+      "title": "海岸で溺れていた高齢の男女2人を救助も意識不明 茨城・ひたちなか市（テレビ朝日系（ANN））",
+      "source": "Yahoo!ニュース",
+      "date": "2026-10-17T18:44",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA3cl9IVnpEcE9sVm82Zkd0Q2xlbXdROGdTQWJoYlI5ZmlPeGpmMS1LVm5wUlVQQ3REZ3hEckpIRV9temZNclZOMksxQktZc09QM0U3blJjZjZ5OGFEaEhfZEJya2xDOElQQXBzX2NfTGkxYTR0YWxfLV9kMGM4UE0?oc=5",
+      "sure": true
+    },
+    {
+      "id": "4892c7bda12c",
+      "title": "【速報】茨城県ひたちなか市の海岸で「高齢者2人が溺れている」通報 男女2人が意識なしで病院に搬送",
+      "source": "TBS NEWS DIG",
+      "date": "2026-10-17T18:36",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBqOURYNUZtUlA2NmN3dWFxajlFNzZJaGkzcmh3VVNQbEQtR2xVVEh0Mm9veWtocENzYVFnRFh3aklvQTVWNkZLZ2dBZDJ6Zl9ObTE3M05kMA?oc=5",
+      "sure": true
+    },
+    {
       "id": "39a38e935b42",
       "title": "茨城 ひたちなか 高齢の男女2人海で溺れる 搬送時意識なし",
+      "source": "NHKニュース",
+      "date": "2026-10-17T18:02",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5QYXI0NHI3blNyM2FVOXlsU045cmpLWlVZSUtHZVdwVUZwQjd0b202NHpPbjhGMUFmcUVad0Rkd0xHX1F5MkQza0Y5SVhBWkh2UVBnVmFHSG9xUlBVQThv?oc=5",
+      "sure": true
+    },
+    {
+      "id": "94a6b49f1557",
+      "title": "茨城 ひたちなか 男女2人が海で溺れ死亡",
       "source": "NHKニュース",
       "date": "2026-10-17T18:02",
       "city": [],
@@ -181,6 +344,17 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://tsukuba.goguynet.jp/2026/10/17/pink-ribbon-camgpain-tsukubasan/",
+      "sure": true
+    },
+    {
+      "id": "d2d9025640f4",
+      "title": "養豚場で豚熱感染を確認 茨城",
+      "source": "Yahoo!ニュース",
+      "date": "2026-10-17T10:12",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sSGNULUw2X3pLcHpoN2ZldnRUWW5kSHZyU3BOSEZ4bjBsMG1LZ2ZtV2tIRHRReWZjTTFZNW5XT0R0YlAyZV9hTjE2QkpUa0ZJTlBTbGlQYXcxS0F4Z3lsdEM3NmI0RkdtOC1FaUVkTDZxdXJfeTEycWRVZlREX2M?oc=5",
       "sure": true
     },
     {
@@ -328,7 +502,8 @@
       "source": "つくば経済新聞",
       "date": "2026-10-17T05:17",
       "city": [
-        "kinko"
+        "kinko",
+        "tsukuba"
       ],
       "category": "event",
       "emoji": "🎪",
@@ -1458,6 +1633,20 @@
       "sure": false
     },
     {
+      "id": "ae30161af0aa",
+      "title": "南流山駅・流山セントラルパーク駅の終電｜TX秋葉原方面は23:55、武蔵野線は0:19・0:20発が最終",
+      "source": "ジモはる",
+      "date": "2026-10-15T16:00",
+      "city": [
+        "moriya",
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE51YXh6VmVBd1NMeHg2UFdzb3ZRbDhlZ1UzV1RXNklCNlZPQ25OWkpDak1uUzRoSWZycHRkOWlQejRmR3hFd21PNzFRYzk1d1FkVUhKUDFVakc1bnBFWGpUeGFObEk0azVZVVJzNkJOdlZoM0RBYlVUWlZzQ18yZw?oc=5",
+      "sure": false
+    },
+    {
       "id": "16838183fc67",
       "title": "TX沿線自治体共同ウォーキングイベ...｜Release No.3038984｜eltha（エルザ）",
       "source": "eltha",
@@ -1966,6 +2155,19 @@
       "sure": true
     },
     {
+      "id": "0c2f9770bccf",
+      "title": "「プロ球団の二軍誘致」は地方活性化の有効カード 球団と行政の“力関係”は昔と今ですっかり逆転した",
+      "source": "日刊ゲンダイDIGITAL",
+      "date": "2026-10-15T06:00",
+      "city": [
+        "tsukubamirai"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9mLWhSOS1QclBucGdTb200Qjh2TW1KUVUwcF9wbFZsaW80cVBKQ2JTYkhxek85NWFoRVZiY3RSR1ZndXhlcGxwV0RGekpJaDZjSHU4a1VwUzltUnBwSE5lY0JWcEdYdmdm?oc=5",
+      "sure": false
+    },
+    {
       "id": "19672bc866f4",
       "title": "【つくば市】10/15 最高22℃、最低15℃、朝から晴れる予想【朝版】",
       "source": "Yahoo!ニュース",
@@ -2183,149 +2385,6 @@
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE94cldkUnE2YV9oajctMG5ONGR3RGkwcG5hcnl5Z3NXemtVTW9tcFZmRDhmUFhlcEFLYjhlYTFMSkJwLXkwVUhHdnBKSnd2R0NDR1NJMDczYUN6SXJkSnc?oc=5",
       "sure": false
-    },
-    {
-      "id": "7642201df5d4",
-      "title": "土浦市モール505の再開発を中心市街地の活性化の起爆剤に！",
-      "source": "選挙ドットコム",
-      "date": "2026-10-14T21:38",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9FdDBLZFJTSHJ4RWNaY2pRX1FvZXZwUkNyOXZwM00xaksyT205c2lSYUl4cGM2a2F5NW9hTUtXMGo0dlplelRSUUNuSm9mUXFFTFg2X19uams0R25xZWVz?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a0996b354ca1",
-      "title": "USシネマつくば「クジラに落ちた男」の上映時間（つくば市）",
-      "source": "映画.com",
-      "date": "2026-10-14T20:20",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5GTXJqa1FReDB5ZUhiRS11VHdfalljOUJ2VnZrdVdqMXlDR3BOSllHU284Z3hUc2N0OGpNME5haWphTExjVWRpSTBuWjh1SEt3NXVSazNHR0dLUlpoc1hGdg?oc=5",
-      "sure": true
-    },
-    {
-      "id": "ad21273ec3f2",
-      "title": "【10月13日オープン】群馬県高崎・通町に「温泉焼き鳥 ゆの鳥」｜備長炭で焼く地鶏串30種以上",
-      "source": "ぐんぐるブログ",
-      "date": "2026-10-14T20:13",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00dmhaNHJCWXRVSWtxc0I3ZUcyNDY1SkNfNGotbWVlRmNqVHZkRWxiZEJDdEtRWVRxZUZObzZORHpTZF8yTXVVNnhLMG9LcUFHcGZyRTgyWTBkb1MwcFFfQ0QxTlA?oc=5",
-      "sure": false
-    },
-    {
-      "id": "7b33ed64d121",
-      "title": "ガイドと一緒にバスでめぐろう！つくばの科学館JAXA衛星スタンプラリー(茨城県)の情報",
-      "source": "ウォーカープラス",
-      "date": "2026-10-14T19:42",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5WckpBa044aENzQ0txN0Q0RUQ0VGVFbUlEamc5Vk41NUZ1OThpXzlZeG9xYzJEajVYb2xYVU5tMzZmU05aY1FRcXpFUHBaOWJfZ2sxdU5iM3RuXzg?oc=5",
-      "sure": true
-    },
-    {
-      "id": "0a78400af425",
-      "title": "【かすみがうら市・土浦市】かいつかに「ずっしり濃密 紅天使スイートポテト」が新登場！13周年感謝祭では新商品入りの特別セットを1,013円で販売中です",
-      "source": "号外NET",
-      "date": "2026-10-14T19:05",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/2026/10/14/kaitsuka-autmun/",
-      "sure": true
-    },
-    {
-      "id": "759ae609884f",
-      "title": "VRChatに初の公式“道の駅”が誕生 Hondaが実在する茨城「道の駅常総」をワールド化",
-      "source": "KAI-YOU",
-      "date": "2026-10-14T19:00",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5lSEhZdUR6b0I0U29ZZm1HX1daWnQ4NWtJdzQ4S0pPRTdMbFc4WXFucWVxSlVkMTU0X254WWJzV3FncXU3NTVZMQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "41036f4abc77",
-      "title": "令和9年度競輪開催施策における開催場が決定！【競輪ワールドシリーズ、ケイリンアドバンス、ルーキーシリーズ】",
-      "source": "netkeirin",
-      "date": "2026-10-14T18:30",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE53bGMxeUxCNXM3S1JvMWhIZGlYWjM1MFh0dVNQbkZLakU1ZkhaUEt3by1NVUNmZU5OdEU0MmpyN0Z3NS1TWTdOYm1tSzBWRXhEMThUWF9PV1hoUW9xYi0xclF3bmR1OVRUb0tkN3RhaUM4bDdL?oc=5",
-      "sure": false
-    },
-    {
-      "id": "aee164fb1f1b",
-      "title": "八潮からTXで青井へ。10月18日「WAっしょい祭り」で無料体験やハロウィンパレード",
-      "source": "やしおん",
-      "date": "2026-10-14T18:00",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5OYS1GNFVPeDFtUFUxZl9BRjV6VmpUTzFkY0FKaXFhQjJaTjNvMFJObmxiOHR2Vm9IZ0o3MjllWUMzYXpF?oc=5",
-      "sure": false
-    },
-    {
-      "id": "8a1332da1274",
-      "title": "昭和を駆けた「筑波鉄道」がよみがえる！ 土浦で当時の記憶をたどる資料展が開催中",
-      "source": "LuckyFM 茨城放送",
-      "date": "2026-10-14T17:52",
-      "city": [
-        "kinko"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://lucky-ibaraki.com/news_list/859126/",
-      "sure": true
-    },
-    {
-      "id": "22abfbfa8b65",
-      "title": "「全国地域安全運動」で特殊詐欺に注意呼びかけ つくば",
-      "source": "NHKニュース",
-      "date": "2026-10-14T17:24",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5rVzVTN1dvZGJJZWk4MTFtZXdBTUk2UUZ0VjB5SEYxT3BJcVp5a2JSRFpBQnNEb3Y0bWNvYmNpWVF6TnhBNmRMcU5Bc1BiZU9FZlkzUmcxb292U28zdG9F?oc=5",
-      "sure": true
-    },
-    {
-      "id": "69de7645cdbf",
-      "title": "つくば市内の動物の交通事故死",
-      "source": "西日本新聞me",
-      "date": "2026-10-14T17:09",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE40eW10OHVaQzE1UlNrU2ExRDFOOHpWdEdSZXdJUE5GQTlkVHNIZGR0WHJtWXZIZU1KdGtkTjlmZ25aMGtTZnl5b0UxQXMzMGJTQ01STEJISQ?oc=5",
-      "sure": true
     },
     {
       "id": "698894e9f499",
@@ -2646,28 +2705,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5WdzM4U1lfVGxyNlgtcVYwTHJaWnpXeEEtcVI4b0t2ckFfUmNudlp0MTdsOFRDbUp4NWw0NTlpT21pcWR0SVAyUDMyWUZMWkMzalZ6RGM1M2tXc0ZmaXN1V0ZCVzhuUEpYUFMzMHJYTnNQVE0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "aef1d18b04d8",
-      "title": "青森国スポ 茨城県選手団 堂々の入場 初の屋内開会式",
-      "source": "Yahoo!ニュース",
-      "date": "2026-10-11T06:00",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE85Q0RMVVZJa3BmN2gtdG5FUlh5MldyU3ZSMjZ0WldmRmNZM0RWaFZicDNCdHBMMndLUjA5ZFBIVGtGZjNqUFRDbTQ4dTVHQlBLUkNiRko2QzlUSWllXzNnejV2azRZWVpsN0ppaktXRlpsZk5od25mdmdkd0NUNU0?oc=5",
-      "sure": true
-    },
-    {
-      "id": "a1e64e6fdf75",
-      "title": "茨城県の過去のアメダス実況(2026年10月10日)(気温)",
-      "source": "tenki.jp",
-      "date": "2026-10-11T00:30",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1ZSExMXzJURFRWTnVCb214QkM5d3YyYkZxX2tUeHhBYzdNNFpJUGxfRlZtamF5TDk3N01JWEJPTWpxb2VfTlJfTElpZnhYMnFmYzZmZEJLUTU?oc=5",
       "sure": true
     }
   ]
