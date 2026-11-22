@@ -1,7 +1,83 @@
 {
-  "updated": "2026-11-22T09:54",
-  "count": 237,
+  "updated": "2026-11-22T19:40",
+  "count": 235,
   "candidates": [
+    {
+      "id": "76c013b83b19",
+      "title": "2026年度 JFA第50回全日本U-12サッカー選手権大会 茨城県大会 優勝はアントラーズつくば！",
+      "source": "Green Card ニュース",
+      "date": "2026-11-22T14:30",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB0UWJiVkJWcDdXN28wbWtnMFd2WWxQamtYOV9JVFJQNVdpRkF5bS1mWk54aG83YTVVRUVWbS02UVNrYVJ3WEZQMGd4c1laNHBxSDFLd3pMQlRidw?oc=5",
+      "sure": true
+    },
+    {
+      "id": "5758332d0fe3",
+      "title": "HEART花火2027 三浦春馬さんに想いを届けたい in 土浦 - クラウドファンディング",
+      "source": "クラウドファンディング - READYFOR",
+      "date": "2026-11-22T11:29",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5mRUpXY0hUMlZ4TnNjM2VSMmdnaEk5aGhQX0R1MFNFbWlrdFltTFlHejNLMTJWbDlhMXdCYnpiSDhGS2VqVnZBYlk0WQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "255ff88d72fb",
+      "title": "【5組10名限定】茨城県近代美術館「中西夏之 緩やかにみつめるためにいつまでも佇む、装置」招待券プレゼント 〆切は11月29日(日)",
+      "source": "美術展ナビ",
+      "date": "2026-11-22T10:55",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5zOWxIYkIwV3NxM3BsRl9DRW1RUmRGcWJmR2hQaG42RzdTM2hIMTlxNmNhZlVlZzllbTlRekszdVBuWHRaYm5RMW0tUHVmZEl1a2tqU0VMRlIyUEpJMXU5VWJ0WkRaWDJ3OGxjeVQydU1FLTU2Z1E?oc=5",
+      "sure": true
+    },
+    {
+      "id": "0cc3d828d31c",
+      "title": "＜画像1 / 3＞守谷SAの守犬メロンパンがキュート！人気ご当地キャラみやげ3選",
+      "source": "ウォーカープラス",
+      "date": "2026-11-22T10:40",
+      "city": [
+        "moriya"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ZM01YNEtYLTBQbXFTbWhDOUFQRHR6VUFKREtaeGtoYmJfTzFBUWlYUVF1MjhmcVAzanZMcGlGbjgyaVFJVm96dVppTUJIa0FCd0U2b0toeWFPMjBoTm8yXzJvRzR4UWc2UlE?oc=5",
+      "sure": true
+    },
+    {
+      "id": "756a66f10d89",
+      "title": "取手藝祭2026(茨城県)の情報",
+      "source": "ウォーカープラス",
+      "date": "2026-11-22T10:16",
+      "city": [
+        "kinko"
+      ],
+      "category": "event",
+      "emoji": "🎪",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1DRUs1MHZYeDlZcWlmNkJ2RV9Tc3Rtc1NES2laclN0MUU4U3dKeVFqVGVvUTdvN2p5TDR4NEpvTzVVZXdsZ2IxcWNNVkJ6RHpEQVBmVlZiUGZ2UWc?oc=5",
+      "sure": true
+    },
+    {
+      "id": "e1eaefb54ea0",
+      "title": "茨城・筑西の廣澤美術館で茨城が生んだ巨匠・鶴岡義雄の回顧展が開幕 光と影が織りなす「舞妓」の美",
+      "source": "とりぷれ",
+      "date": "2026-11-22T10:00",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9KU3VYUlN1S3d3UFVjSV9HLXprckxHVjdqYlNObmxDQlhhUjB4OW5ibnZJQ2lkUGNMODgxRHZfc0VXbVV2dkYw?oc=5",
+      "sure": true
+    },
     {
       "id": "aeabbd7adb40",
       "title": "【重要】健診WEB予約システム再開のお知らせ",
@@ -92,6 +168,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4yTVVvN3pJVFJqOEFsaGpzMl9BMTBhVjIyRHhjbXoyZmxudFBFZ3ZicmNhR3p6ZE16TC0tNnhWWk5waWdEVktTelFKQkluMmtsRE9xTlVjWlFCSTJONkFBVnNTeEVtWkM5S3VCc3FPeElXYUJENW43NUVOMzFZRm8?oc=5",
+      "sure": true
+    },
+    {
+      "id": "3d01b110b25e",
+      "title": "茨城県で最大震度1の地震 茨城県・常陸大宮市 (TBS NEWS DIG Powered by JNN)",
+      "source": "Yahoo!ニュース",
+      "date": "2026-11-22T09:16",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcTJNYzVFdG5rVE9qZkFPMEJ3elpjZ1hBR1pIZ2k1RlBEYm4xQWNFUGNCajNUY3lSbTZlQjc1ZU5HMHNFajBpd0ZkZHRnR2ZoMk1xQlp3WGh5NDh2VVJrQWdGNHZjWldmN1BORXBEQ0tuSU01eTgzcTQzYXBpbDFTaXFmWWJEVmhCZFotNTR3?oc=5",
       "sure": true
     },
     {
@@ -207,6 +294,17 @@
       "emoji": "📰",
       "url": "https://newstsukuba.jp/63158/22/11/",
       "sure": false
+    },
+    {
+      "id": "1c5ea99c9ae6",
+      "title": "茨城県の過去の雨雲レーダー(2026年11月21日)",
+      "source": "tenki.jp",
+      "date": "2026-11-22T00:22",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5Qbml3RG9lMnY1Zjlock9uMHVsT1A1eU5NUjE3WU1UeldtOVlSUkdsdUNMb1ltdEJJdHNBSzlVamNkdFFrS1dfcU0xQm1lVlhUejNwNXFSRQ?oc=5",
+      "sure": true
     },
     {
       "id": "b9f4a3275eda",
@@ -414,6 +512,17 @@
       "category": "news",
       "emoji": "📰",
       "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9acjlJODA5VFFLUDZmd1BVRXZwbl85Y19CNkhyQ2hUTER1eEtNR3BGeDJ2bXJaQVBjS0x0LUpGWUVQQQ?oc=5",
+      "sure": true
+    },
+    {
+      "id": "e50bc262d4a5",
+      "title": "茨城県の過去のアメダス実況(2026年11月20日)(気温)",
+      "source": "tenki.jp",
+      "date": "2026-11-21T00:30",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBNeWNLRUlTYkVIRTZlWk5rTExuanU4N2RZaVlDRGZTMExSYzRNSE1vX3lnYUp5LVdtNkc2aWIxMm5Dd1BldHd3Zzl0V3VTa2dDUFJPbkxISTY?oc=5",
       "sure": true
     },
     {
@@ -1196,6 +1305,19 @@
       "sure": true
     },
     {
+      "id": "a375843c2c2e",
+      "title": "千葉の“スパイダーマン”逮捕 指輪など2500万円相当盗んだ容疑の男 客装い茨城の宝石店に入り閉店まで隠れ犯行か 支柱伝って逃走も（FNNプライムオンライン（フジテレビ系））",
+      "source": "Yahoo!ニュース",
+      "date": "2026-11-19T22:15",
+      "city": [
+        "moriya"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CZ3NncHhDZEpENENCQlB6Z3dCdHBMNFVTQ0tNamhVVkp3bGtqcmhTWllBZzROV2N1YVlGOFphVW5EckRmdkViYXlaM2E1UE0tZmV5bHVyLUtsS25XWGwwdjV3V1ZUUmxCbENza2hTUTItMG02dWI2SXZDUHVRa1E?oc=5",
+      "sure": true
+    },
+    {
       "id": "fdb42f6b0d94",
       "title": "日本政府、米中露首脳会談で国際環境への影響注視…高市首相「日本の利益が損なわれることはない」",
       "source": "au Webポータル",
@@ -1330,6 +1452,19 @@
       "category": "event",
       "emoji": "🎪",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5vbnhZbHp1T0RWNDNicENjbnBnNW1qVk50QWJxeXFJTHdUb2F4QlZ1TmZEd1RTQUpnc2JkS1BDMWY2bG5pRlNpMHR0V2ZsWE1HNFR3?oc=5",
+      "sure": true
+    },
+    {
+      "id": "51aab8650ddf",
+      "title": "北関東最大級のSC、イーアスつくばがオープン",
+      "source": "ウォーカープラス",
+      "date": "2026-11-19T17:00",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5wNFk5a2tPd2JFQUZSVHZmTFVXM1otTkw4Yk5UbjZpaHFKOTZmN3YwQWN0OEhJNTZhLU5wRE1nZFdkU0RlWmlQcmJ6akVHRTlIX3fSAVdBVV95cUxQR2VURGNpQkprR09JU1VuRXBkMldQT0xlMERXaHRlalBtQ0YyXzJXUHRNeUhaaGNkT2t0T2JIUWh4WUF3bmkxbGdvWmZsd0RDYkYtSVh3Qk0?oc=5",
       "sure": true
     },
     {
@@ -1806,6 +1941,17 @@
       "category": "kids",
       "emoji": "🧒",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE80Q1R1VENTaWN1YUVNMUMwQ0J5YjEwejNjR3hFSzY5eWVoekJ2aXp4Z0xadlNBZDhNdWpOZG8waVk2V0xSQXhDY05zUmFNeGJuR1E?oc=5",
+      "sure": true
+    },
+    {
+      "id": "17275f5ba42e",
+      "title": "茨城県の過去の天気(雨雲レーダー・2026年11月)",
+      "source": "tenki.jp",
+      "date": "2026-11-18T21:31",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9DSlJkaFRPSndua0pUM1R0ZXZ4emdubks3UTlSemQ3WUFrazkwc3NVLXhVLVluT1V6cFJ6XzNyb05IbU95REM1ajEwYlVBQlR0blRB?oc=5",
       "sure": true
     },
     {
@@ -2346,19 +2492,6 @@
       "sure": true
     },
     {
-      "id": "4927699c7133",
-      "title": "《連載:迫る県議選 選挙区情勢》(9) 守谷市 龍ケ崎市・利根町 小美玉市",
-      "source": "Howl.Link",
-      "date": "2026-11-18T10:00",
-      "city": [
-        "moriya"
-      ],
-      "category": "gourmet",
-      "emoji": "🍜",
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE05NGdRM3VzT2ZNcTFac09RZHVaWXhiRnRRZTVRbTJlWG5TcXdWS0hIMGFUTGNBQlFVZzBF?oc=5",
-      "sure": true
-    },
-    {
       "id": "a4b4d95e5614",
       "title": "【速報】関東で地震 M3.5 震源は茨城県南部",
       "source": "Yahoo!ニュース",
@@ -2381,48 +2514,6 @@
       "sure": true
     },
     {
-      "id": "03a479f27ffd",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | 富山のニュース｜天気・防災｜チューリップテレビ",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:48",
-      "city": [
-        "moriya",
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTEo1U3pQeEJXbnFtckFjV2tQUlRmNWdETS1kS05wOG14UTBZTldIRDFJNHRTS2dzbGNPMENWZk03QVV4aVNoaFoyZjFlcThmX1BLYTFaS0Q0cG0zbEVuNmdsSGMtNS01Zzh5R0tSLTFoOFBBVFBGNUl5ek5KYTFqcnR4c29NcFk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "59d233def4d2",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | RCC NEWS | 広島ニュース | RCC中国放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:48",
-      "city": [
-        "tsukubamirai",
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUlBJSkhPRzZsWHBqRXlZSUNXMDJ6THdXdFZKQjZ6dWd4LUcwa2JTa0paSzBSVmp4Mk9TRjV6RFh3bnQ4S0ZxTHpxSWdfRklpajJFVHc1Rk11MmNGYTVPWWY3VjFsUkZNVFhpeXlmeTc2aS1RTFdyZnBPYmplNkhvVnBnRld4RXM?oc=5",
-      "sure": true
-    },
-    {
-      "id": "0bc70b894087",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | 沖縄のニュース｜RBC 琉球放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:48",
-      "city": [
-        "tsukubamirai",
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUngtUWlXMTlBNHBLRk15UDlXX1RERkxNNllpMGlqNGIxWWhabWVzbzR6OEVESlZPSGxMSlpNWFFCeWREWm9Vci1CbXpxeHNOQmc4Q0lDUnR6dEJQTDJWYUJETzgyX3ZVLVEyeWp3M2xybmlJTW1FcW1ITkU1el9nVENYaHZTdlE?oc=5",
-      "sure": true
-    },
-    {
       "id": "6be4437ddf73",
       "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | 山梨のニュース | ＵＴＹテレビ山梨",
       "source": "TBS NEWS DIG",
@@ -2431,50 +2522,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSlQtMnpVNFZ3ZWFNRTk5TkhTQnZsZklodllTQi1CbDAxZjdmcFVRMEdSSFlwYS1OY1k0UzhHU0VsTE9DRWR2cXRLZmhwTlNZS0dnNGhxSzZMYjFmZkRqZmNGdTRIZVJpUFFUZDVGYXJsaFNPWnhzMDAyNnV1ajlVMGpkV0kybzA?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5b0ab8588a8c",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | 福島のニュース│TUF",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:47",
-      "city": [
-        "moriya",
-        "tsukubamirai",
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV3pLckdnMVQ0blNlVGRpbEtFVkdRYUJ0T2o3eUN2NFYxbjMtTXY1RzlWTEtPejJaRi1xUlhFLXEzU09xbDFjV1poTjczVGRYRUwxVlppZElLY05sX1VkRUN6eFNvMU5seWRnN09GZlhkbjMxN2RkT2k3TDZ5bHBKdlMtdUttVW8?oc=5",
-      "sure": true
-    },
-    {
-      "id": "eec395f427b1",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | BSSニュース | BSS山陰放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:47",
-      "city": [
-        "moriya",
-        "kinko",
-        "tsukubamirai"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQc1JkbENwUkltdHNjbVYyZmI3SGJQZlNwS0JnRmc2UGlCblR5SHMwZDg0aDA5aHE0YVIwT196OUNhS3hMYkc3TUs4ZUlDX3ZmLVBmNEQ0bnZrZnBjdDM5QmRPSlNkR3BBVU5wc3BQSnBQbnlHNXQ2S0o5TEo1N25MdGRKX3Z0UHc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "c08c829197c5",
-      "title": "震度2 茨城県南部 2026年11月18日09:41ごろ 地震詳細 | 石川県のニュース｜MRO北陸放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-18T09:47",
-      "city": [
-        "tsukubamirai",
-        "moriya"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUVB0OHVkU3hKeVlEYW5WNmxCaXM1cGxaZE52TElGT0hpNlBoZUJEZzkyNHJ0NVIzYUtKTjhKZTMwdjBFQVdBYXlWNlpzOTF1YnVfTFVKb25iVDFqUHJLUFlaN2ZMaGstMllYN05NRFpDRnZ3VzVNV0xGcnZiWmFUci1Rc3FrZVE?oc=5",
       "sure": true
     },
     {
@@ -2489,6 +2536,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNjNYQ1kxa1NfeFFaYXlYd0V5V3lHMTRob1llMWJDelJLSzF2S0pYSFJOVlBBWXpJdlV0Vk1BNzBTcW5xVWljdFE0Y0E4Z3J5T01sY3JRUm9TS3hqcV9JbWtxaTRaQ3ZwaDQ3OS1EX1BZN2I4ang2aTVzVmV4TXJKY1hNTzgxMHVXRmhYb1daS2k?oc=5",
+      "sure": true
+    },
+    {
+      "id": "5f2483c60f2d",
+      "title": "茨城県の過去の天気(実況天気・2026年11月17日)",
+      "source": "tenki.jp",
+      "date": "2026-11-18T09:29",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JNGxEVTJyS2liQzNfWTNaNE1GeXgtZk9rdTkwbG9iVGRHM250Vy0zZTJIT1d5VnlNNEhyclJpSDNjRnYxclBDZ2FrNlV5WlNSN2loZzZ2a2M3dw?oc=5",
       "sure": true
     },
     {
@@ -2632,6 +2690,17 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1qZW91TVNVOHltdUJfaXBydmxrUDNlUndzM0dWOGpZMnMzQzMxVF9ab2VsbWtpa1MxdWJ2ampJVzAzOTlpcFF2ejF0Z3hKc3hJdzNhRURIdnZvczEzNVA3dnBDdVc4UmMxZGlxWA?oc=5",
+      "sure": true
+    },
+    {
+      "id": "1085cb3a232a",
+      "title": "茨城県の過去の天気(実況天気・2026年11月16日)",
+      "source": "tenki.jp",
+      "date": "2026-11-17T02:30",
+      "city": [],
+      "category": "ibaraki",
+      "emoji": "🗾",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA3ZUw0dG56UTR3N3pxZ0lrTjlOWGZwTzJ1RHNfcHJDVm1BQnV4QUFwVW9xRXYzaHRRdnlKa3g0VGRSWmJITnhleDdNN19nM2lCNXZpMzVfa3JTdw?oc=5",
       "sure": true
     },
     {
@@ -2830,105 +2899,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPR0NnRGtZYzA5RHBnQ2dWRjR6Tm8yVzZWMFkxbVdJakFMT1BaNnp4VVRJLWt6dm1CM1pKVTFmb2MxSzZvODRhcjhkX29BN294NXNlTWxDUQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "ba91ffa9be37",
-      "title": "【速報】関東で地震 M3．6 震源は茨城県沖",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-15T15:10",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTmNrN0VhME9ERTFfTXRublNoRUNyOURHcTQ5MnpTSUQwbWRKMXIzSHNwLWI2YUZmQ3YzV0xELTdaQWl4eHpybGVWTnZRRGpxLVlJNTNQdlc0eE96WFRod29VNFRTMFJYR0psbjA1eUs5aktURUh6TlkzV0JEUGZIWEFEQzZjLWtfblFsU05B?oc=5",
-      "sure": true
-    },
-    {
-      "id": "2c6938089cd3",
-      "title": "震度1 茨城県沖 2026年11月15日14:00ごろ 地震詳細 | 山梨のニュース | ＵＴＹテレビ山梨",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-15T14:17",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdnl4VFBma1JXZ2Q0ZHFjSVNJcURxN2xEOTQtbkxnZnJtQ2hNTjk2ckpMYTRtSEoyNEN2a3dqdTZYMi04c1NkRWNVLTZ3Z0F4NjlUY3dWVGllYUg3cDlDakpoUURObjljWUhnbzBBa2NDM3JHU2VpSkMwamV2UUJibk40bnlMTkk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "3637a960ab91",
-      "title": "茨城県で最大震度1の地震 茨城県・高萩市（TBS NEWS DIG Powered by JNN）",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-15T14:04",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5qd1JCdlpnSGlKcFd0QlNrOHBSNkNJbWEydmhCcDFJM29WY1ZZWXRQSXQ0UWNkcE1KVlNpU3doUWxJSDR0WUFjaGg5cEhJUGtZc2tQNlFJUUwxbVVJYXFrSHRmTGxqbjdVekpLVEJZcE9GMGUzaGFFNlRrYThlVWc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "dd2d4ab1dee5",
-      "title": "茨城県で最大震度1の地震 茨城県・高萩市（FNNプライムオンライン（フジテレビ系））",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-15T14:03",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5ia19YNUw1WXVxQ0lkTzBDcngxU2R0SUNFNXV6MVh4Z29OZnpzWTFXUVMzcVpsNnlYcEJNanJvb1RJUXlMNmpHby1PbEZGa1EyaFF1cEVmMFMyLXhYN2hSQWhoZE5ueHRzY21vTk82b1FpcUxUejloQTh3Rkp2UnM?oc=5",
-      "sure": true
-    },
-    {
-      "id": "5d45153153c0",
-      "title": "茨城県で最大震度1の地震 茨城県・高萩市",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-15T14:02",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE45eTJZSGhDWTB1V2Jia0Z0RVRBdW1Yb1dhTWY5X0ZMOVgwWHRRWlBKelhSYlpONmRkck9TZHVmUWxnTFJKMEJLbk9oRjhDcDZuYjY0LUUtcw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "8e9dc12a2022",
-      "title": "震度1 茨城県沖 2026年11月15日14:00ごろ 地震詳細 | 長崎のニュース | 天気 | NBC長崎放送",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-15T14:00",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOel83RnNzRTJCY215SlJDeGNjUzNTRmhEdHplQmo4eXhxTUdMSVM4eUh0d2NGOHZFb29ha0tUVEF4Q1hWN2VpZEx2WkR3aUFkNWhTa1RNbEhpbDlUX1dwTV9JWXlpa2Z1WGNheVJXb1VCVzR3eVk2WkJ0dnNuejF3VS16RnVPNmc?oc=5",
-      "sure": true
-    },
-    {
-      "id": "31b58b1ec656",
-      "title": "震度1 茨城県沖 2026年11月15日14:00ごろ 地震詳細",
-      "source": "TBS NEWS DIG",
-      "date": "2026-11-15T14:00",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOY1FWVUZVbmYxSllGQ1Bsd0l5VlV0bE0xRlA5S2FVa3NiVW5PSXlqXzFGM2RfcXZSUGctMHowR044NFlTelhaWS00dk9NNjNUNnM2YWNTdlhsby11QVE0WDNsOUNzYzRPNmFyLVVsSmpqeUpWM3lYTkNhNTFWYVdUVU53?oc=5",
-      "sure": true
-    },
-    {
-      "id": "9af4be5243a6",
-      "title": "あれ、千葉県を走ってるのに「茨城県」の看板が出てきたんだが… 2kmもしないでまた千葉県 ローソンが賑わう“不思議な飛び地”とは",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-15T12:12",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE13Smg3ZF9vSVhDeXpvdUFPSVhRNk9MbDV5ckctN0F6UmdwNzIwSFN2SFFtLVUwUTVkXzZ1LTNJRUtxME05ZXRlMjNoNU9EeDNXLWR2RkFGelNBMm1CR1lKU05rcEQ3OEl5ZG9Pb0FqSlQ5WmdvU0tCLV9yVmVHdzg?oc=5",
-      "sure": true
-    },
-    {
-      "id": "22af840c8670",
-      "title": "週刊地震情報 2026.11.15 茨城県沖で活発な地震活動 9日(月)にM5.8",
-      "source": "ウェザーニュース",
-      "date": "2026-11-15T10:37",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBaM05WOWVfbi0tSTlLblozd3JMTndQbmE5VnRFSzZqT1pFYUswUkZGTVRxZkgxbTA0RERKcDFmWUZjTFMyclBqd0hFdVdVNUZJQk5leQ?oc=5",
       "sure": true
     }
   ]
