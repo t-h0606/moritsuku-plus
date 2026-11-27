@@ -1,7 +1,33 @@
 {
-  "updated": "2026-11-27T03:48",
-  "count": 239,
+  "updated": "2026-11-27T12:27",
+  "count": 233,
   "candidates": [
+    {
+      "id": "e9a7359e80a4",
+      "title": "【つくば市】11月30日は「つくば市民の日」！対象施設が無料で利用できたり、割引になったりしますよ♪",
+      "source": "号外NET",
+      "date": "2026-11-27T07:38",
+      "city": [
+        "tsukuba"
+      ],
+      "category": "news",
+      "emoji": "📰",
+      "url": "https://tsukuba.goguynet.jp/2026/11/27/tsukuba-shimin-nohi/",
+      "sure": true
+    },
+    {
+      "id": "0be2ef674c24",
+      "title": "【土浦市】おいしい言い訳、できました。荒川沖東に100日間限定の「遅刻でドーナツ」が11月27日オープン",
+      "source": "号外NET",
+      "date": "2026-11-27T06:22",
+      "city": [
+        "kinko"
+      ],
+      "category": "gourmet",
+      "emoji": "🍜",
+      "url": "https://tsuchiura-kasumigaura-ishioka.goguynet.jp/2026/11/27/chikokudedonuts/",
+      "sure": true
+    },
     {
       "id": "fa7a54b083f6",
       "title": "風景の足跡【茨城県水戸市 TETSU ART PLAZA篇】(テレ東、2026/12/4 22:54 OA)の番組情報ページ",
@@ -325,7 +351,7 @@
     },
     {
       "id": "7fbe3540ac1b",
-      "title": "トピックス - 2026年11月26日(木曜日) | わかくさ幼稚園公式ホームページ",
+      "title": "トピックス",
       "source": "つくばみらい市",
       "date": "2026-11-26T16:43",
       "city": [
@@ -2345,19 +2371,6 @@
       "sure": true
     },
     {
-      "id": "0760fc224c99",
-      "title": "《連載:迫る県議選 選挙区情勢》(13) 筑西市 常総市・八千代町 坂東市・五霞町・境町",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-24T07:54",
-      "city": [
-        "kinko"
-      ],
-      "category": "news",
-      "emoji": "📰",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOSWxOejh5SUdzUWFGUkpMSjV2TFF3R1p1WHB4eTZwbk5IUjBPcVNmVHdxOXcwLW5jOFFoaTQ4YnBMdFZyS2ludUctYzZwUDZuOTNpbnRBWVdkMmw3SEs2czN0WGM3d1BRbWprODZYRjlpSFhqVTJnUzQ4T3E0WUY0b3l3UDN2U3d5bzFKdkF3?oc=5",
-      "sure": true
-    },
-    {
       "id": "870a66c89184",
       "title": "創造の軌跡 独自の絵画観一堂に 没後初の中西夏之展 県近代美術館 茨城ゆかりの作品も",
       "source": "東京新聞",
@@ -2378,19 +2391,6 @@
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBwS0RPaGEwN21pSGJMdUVBMnJmNmxhYVpIQVdSUkV5bVBOTW0tRExWZGUtaVBYMVhVRUNzU0dUdk5SWHZEdXhGM1N6b2ttRGRhbWI1THB0b19lUUpGWExjRGFuWkFVVXRwS1hlbnd4dFZZWTNaeTFmeGdEeEU1clU?oc=5",
       "sure": true
-    },
-    {
-      "id": "89d6eb549512",
-      "title": "「柏の葉スマートシティ」って何がすごい? 一般非公開の研究ラボから医療連携型ホテル、居酒屋横丁まで見てきた",
-      "source": "au Webポータル",
-      "date": "2026-11-24T07:15",
-      "city": [
-        "tsukuba"
-      ],
-      "category": "event",
-      "emoji": "🎪",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBQTjdCYXBXLVBRMk44WmpMY21VUWs0UWVUeXNHaFBjSDVuNVBkRXRnOG96X2JZMkp2Y3VuUGRQMmpfNGdtSi1KTzRyTkxRQWtXd0dUMm1lMy1pN0tqMjBGQWt4SXFQTWI4U3pKeXFn?oc=5",
-      "sure": false
     },
     {
       "id": "6aaf687eb49e",
@@ -2876,74 +2876,6 @@
       "category": "ibaraki",
       "emoji": "🗾",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5WekVTXzhDU201ZU10NklUTy1ab1VvTUp6OWNDZzhyeEdURTViSzFwSVdwRFpXWFA5RU5yX0EzdTY4czdDOFlXY2p5ajlWMHRqcEc1NHJaVG5tZzdNY0hkaFhsTnI?oc=5",
-      "sure": true
-    },
-    {
-      "id": "77a2a653627d",
-      "title": "【茨城県】MTB体験や自転車スタンプラリー「サイクルスタイルさくらがわ2026」12/6開催",
-      "source": "サイクルスポーツ.jp",
-      "date": "2026-11-20T11:36",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBnR1RycDV4c0hmbGxaell2OVRRbTg4NExNdmZpRnpSVzZQUFN2TklQdXBCd3RFM2RuMVZ0YkxUNzV0cWxCa2J3NnJpY3NUTEFSd2xERHFHaHI?oc=5",
-      "sure": true
-    },
-    {
-      "id": "d3a98d484919",
-      "title": "湯本健一、地元の茨城県で撮影した自身初のカレンダーが3/4発売",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-20T11:20",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TWkNkdXFXb3M5LXhaX3RIZl9aNkpDU0themNjRGsyUVh0WXBScnJGLTcwc0VITW9pUmlhV3VITVUxZnNQSUdGc21aQ0I3OGxpay1SX0Z2ZnRvOTRvdy1fWGpaUTdDalFKSU1iTDZNeHM1OUZWUTdoNWYyNDBXUEk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "9e67df86844c",
-      "title": "紅葉、新作ゴジラ映画とコラボ、茨城・袋田の滝がライトアップで競演 [茨城県]",
-      "source": "朝日新聞",
-      "date": "2026-11-20T11:15",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9UcjNTMUFRRXZmT0ZVcWtabnNua1NMdEY2cHZUWGFfSzJ0d2lWelJOOFBhMEVIR01YYXhzT2dnRlJWWXBXWHhmV2E0eFFzcWJuM1F6TEVwVExXN1paZ0x0Ui0wZ3FnNzQ?oc=5",
-      "sure": true
-    },
-    {
-      "id": "4d2c2d9c7fb3",
-      "title": "茨城県の過去の天気(実況天気・2026年11月19日)",
-      "source": "tenki.jp",
-      "date": "2026-11-20T09:29",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5QWE1zeW5SelA1NzNnNlZFeTN5aXhvTWI2VHVoWGlxYXRLb0IydnJxZ3RiU0xCQV9vU0FzNFk4b0V1cDJRTmNhU1ppLTlCRUZMaDFIaFVGNE9hdw?oc=5",
-      "sure": true
-    },
-    {
-      "id": "0c50d0e1c8b3",
-      "title": "茨城・坂東市 市役所職員を収賄容疑で逮捕",
-      "source": "Yahoo!ニュース",
-      "date": "2026-11-20T09:09",
-      "city": [],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5XczZIT2JmaDZ1aURRT2k0WEo2Rkxod0tDa0l1dWtIWGdoV0R6RXpmSW5lZFoyR0ZBaE9OQ05rdXRIN096WTR6THRoZWhnalpEUXNlX3ppU0wtdEZrX1hRRHJnZlZvQ0J0U1ZXOXZLTGsyT0k5VE1yaEZPaVBLYVk?oc=5",
-      "sure": true
-    },
-    {
-      "id": "714fdc3c854b",
-      "title": "【茨城】2026年11月21日・22日・23日三連休の無料イベント6選 働く車＆芋フェス＆花火",
-      "source": "いこーよニュース",
-      "date": "2026-11-20T06:04",
-      "city": [
-        "kinko"
-      ],
-      "category": "ibaraki",
-      "emoji": "🗾",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBoVTgzZTE0LVZRSS15dkJ6eGE3R2c2c0JpeGFOSTNMOUZjekNzMzFuT1QwYU5Hc3VWV1Z1UURQX2pSaHhtMnJZbWxJMDdPX3A4REE?oc=5",
       "sure": true
     }
   ]
